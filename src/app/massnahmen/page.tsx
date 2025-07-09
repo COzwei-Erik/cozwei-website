@@ -1,7 +1,7 @@
 "use client";
 import Header from "../Header";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { useLanguage, translations } from "../LanguageContext";
 
 export default function Massnahmen() {
@@ -11,6 +11,57 @@ export default function Massnahmen() {
   const [emailTouched, setEmailTouched] = useState(false);
   const [privacyChecked, setPrivacyChecked] = useState(false);
   const isEmailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+  // Memoize partners data to prevent unnecessary re-renders
+  const partners = useMemo(() => [
+    {
+      type: 'link',
+      href: 'https://solera.de/',
+      logo: '/Pictures/Logos Partner/image.png',
+      name: t.partnerSoleraTitle,
+      text: t.partnerSoleraDesc
+    },
+    {
+      type: 'link',
+      href: 'https://www.effizienzpioniere.de/',
+      logo: '/Pictures/Logos Partner/image copy.png',
+      name: t.partnerEffizienzTitle,
+      text: t.partnerEffizienzDesc
+    },
+    {
+      type: 'link',
+      href: 'https://www.grundsteine.com/',
+      logo: '/Pictures/Logos Partner/image copy 2.png',
+      name: t.partnerGrundsteineTitle,
+      text: t.partnerGrundsteineDesc
+    },
+    {
+      type: 'link',
+      href: 'https://envoria.com/de',
+      logo: '/Pictures/Logos Partner/image copy 3.png',
+      name: t.partnerEnvoriaTitle,
+      text: t.partnerEnvoriaDesc
+    },
+    {
+      type: 'link',
+      href: 'https://www.finmatch.de/',
+      logo: '/Pictures/Logos Partner/image copy 4.png',
+      name: t.partnerFinmatchTitle,
+      text: t.partnerFinmatchDesc
+    },
+    {
+      type: 'link',
+      href: 'https://www.remzero.de/',
+      logo: '/Pictures/Logos Partner/image copy 5.png',
+      name: t.partnerRemzeroTitle,
+      text: t.partnerRemzeroDesc
+    },
+    {
+      logo: '/Pictures/Logos Kunden/image copy 7.png',
+      name: t.partnerMicrosoftTitle,
+      text: t.partnerMicrosoftDesc
+    }
+  ], [t]);
 
   return (
     <div className="min-h-screen flex flex-col font-sans bg-white text-gray-900">
@@ -25,6 +76,8 @@ export default function Massnahmen() {
             style={{objectFit: 'cover', objectPosition: 'center'}}
             className="opacity-90"
             priority
+            placeholder="blur"
+            blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
           />
           <div className="absolute inset-0 bg-black/30" />
         </div>
@@ -68,7 +121,15 @@ export default function Massnahmen() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-center place-items-stretch h-full">
               {/* Card 1 */}
               <div className="flex flex-col h-[520px] rounded-3xl bg-white/60 border border-[#81B29A]/20 backdrop-blur-xl transition-all duration-300 hover:scale-105 hover:border-2 hover:border-[#81B29A] hover:ring-2 hover:ring-[#81B29A]/30 overflow-hidden group">
-                <Image src="/Pictures/image copy 2.png" alt="Card 1" width={600} height={256} quality={40} className="w-full h-64 object-cover rounded-t-2xl transition-all duration-300" />
+                <Image 
+                  src="/Pictures/image copy 2.png" 
+                  alt="Card 1" 
+                  width={600} 
+                  height={256} 
+                  quality={75}
+                  className="w-full h-64 object-cover rounded-t-2xl transition-all duration-300"
+                  loading="lazy"
+                />
                 <div className="flex flex-col p-8 flex-1">
                   <h3 className="text-lg font-extrabold mb-2" style={{ color: '#23243a' }}>
                     {t.measuresCard1Title}
@@ -84,7 +145,15 @@ export default function Massnahmen() {
               </div>
               {/* Card 2 */}
               <div className="flex flex-col h-[520px] rounded-3xl bg-white/60 border border-[#81B29A]/20 backdrop-blur-xl transition-all duration-300 hover:scale-105 hover:border-2 hover:border-[#81B29A] hover:ring-2 hover:ring-[#81B29A]/30 overflow-hidden group">
-                <Image src="/Pictures/Bild2.png" alt="Card 2" width={600} height={256} quality={40} className="w-full h-64 object-cover rounded-t-2xl transition-all duration-300" />
+                <Image 
+                  src="/Pictures/Bild2.png" 
+                  alt="Card 2" 
+                  width={600} 
+                  height={256} 
+                  quality={75}
+                  className="w-full h-64 object-cover rounded-t-2xl transition-all duration-300"
+                  loading="lazy"
+                />
                 <div className="flex flex-col p-8 flex-1">
                   <h3 className="text-lg font-extrabold mb-2" style={{ color: '#23243a' }}>
                     {t.measuresCard2Title}
@@ -115,6 +184,7 @@ export default function Massnahmen() {
                 className="w-full h-[480px] rounded-2xl border border-[#81B29A]/30"
                 style={{ background: 'white' }}
                 allowFullScreen
+                loading="lazy"
               />
             </div>
             <form className="flex flex-col items-center gap-4 mt-8 mb-2 w-full max-w-md mx-auto">
@@ -160,55 +230,6 @@ export default function Massnahmen() {
             <h2 className="text-3xl sm:text-4xl font-extrabold mb-10 text-center" style={{ color: '#3D405B' }}>Unsere Partner</h2>
             {/* Slider logic */}
             {(() => {
-              const partners = [
-                {
-                  type: 'link',
-                  href: 'https://solera.de/',
-                  logo: '/Pictures/Logos Partner/image.png',
-                  name: t.partnerSoleraTitle,
-                  text: t.partnerSoleraDesc
-                },
-                {
-                  type: 'link',
-                  href: 'https://www.effizienzpioniere.de/',
-                  logo: '/Pictures/Logos Partner/image copy.png',
-                  name: t.partnerEffizienzTitle,
-                  text: t.partnerEffizienzDesc
-                },
-                {
-                  type: 'link',
-                  href: 'https://www.grundsteine.com/',
-                  logo: '/Pictures/Logos Partner/image copy 2.png',
-                  name: t.partnerGrundsteineTitle,
-                  text: t.partnerGrundsteineDesc
-                },
-                {
-                  type: 'link',
-                  href: 'https://envoria.com/de',
-                  logo: '/Pictures/Logos Partner/image copy 3.png',
-                  name: t.partnerEnvoriaTitle,
-                  text: t.partnerEnvoriaDesc
-                },
-                {
-                  type: 'link',
-                  href: 'https://www.finmatch.de/',
-                  logo: '/Pictures/Logos Partner/image copy 4.png',
-                  name: t.partnerFinmatchTitle,
-                  text: t.partnerFinmatchDesc
-                },
-                {
-                  type: 'link',
-                  href: 'https://www.remzero.de/',
-                  logo: '/Pictures/Logos Partner/image copy 5.png',
-                  name: t.partnerRemzeroTitle,
-                  text: t.partnerRemzeroDesc
-                },
-                {
-                  logo: '/Pictures/Logos Kunden/image copy 7.png',
-                  name: t.partnerMicrosoftTitle,
-                  text: t.partnerMicrosoftDesc
-                }
-              ];
               const [current, setCurrent] = useState(0);
               const visible = 3;
               const max = partners.length;
@@ -238,7 +259,12 @@ export default function Massnahmen() {
                         const Card = (
                           <div key={i} className="flex-shrink-0 w-full sm:w-[280px] mx-2 flex flex-col items-center bg-white/80 rounded-2xl border border-[#81B29A]/20 p-6 transition hover:scale-105 hover:border-[#81B29A]" style={{ maxWidth: 280, minWidth: 280, minHeight: 340, height: 340 }}>
                             <div className="w-28 h-20 mb-4 flex items-center justify-center">
-                              <img src={partner.logo} alt={partner.name + ' Logo'} className="object-contain max-h-16" />
+                              <img 
+                                src={partner.logo} 
+                                alt={partner.name + ' Logo'} 
+                                className="object-contain max-h-16"
+                                loading="lazy"
+                              />
                             </div>
                             <h3 className="text-lg font-bold mb-2 text-center" style={{ color: '#3D405B' }}>{partner.name}</h3>
                             <p className="text-sm text-center text-[#23243a]">{partner.text}</p>

@@ -27,11 +27,15 @@ export default function Home() {
       {/* Hero Section with Background Image */}
       <header className="relative flex flex-col items-center justify-center min-h-screen w-full text-center">
         <Image 
-          src="/Pictures/Bild+Logo_V2+Farbe.png" 
+          src="/Pictures/Bild+Logo_V2+Farbe.webp" 
           alt="COzwei Hero Background" 
           fill 
           style={{objectFit: 'cover', objectPosition: 'center 72%'}}
           className="z-0 opacity-90"
+          priority
+          quality={85}
+          placeholder="blur"
+          blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
         />
         <div className="absolute inset-0 bg-black/30 z-10" />
         <div className="relative z-20 flex flex-col items-center justify-center w-full h-full">
@@ -87,7 +91,14 @@ export default function Home() {
               </div>
               {/* Dekarbonisierung Card */}
               <div className="flex flex-col rounded-3xl bg-white/60 border border-[#81B29A]/20 backdrop-blur-xl transition-all duration-300 hover:scale-105 hover:border-2 hover:border-[#81B29A] hover:ring-2 hover:ring-[#81B29A]/30 overflow-hidden group">
-                <img src="/Pictures/pexels-pixabay-60575.jpg" alt="Dekarbonisierung" className="w-full h-64 object-cover rounded-t-2xl transition-all duration-300" />
+                <Image 
+                  src="/Pictures/pexels-pixabay-60575.jpg" 
+                  alt="Dekarbonisierung" 
+                  width={600} 
+                  height={256} 
+                  quality={75}
+                  className="w-full h-64 object-cover rounded-t-2xl transition-all duration-300" 
+                />
                 <div className="flex flex-col p-8 flex-1">
                   <h3 className="text-2xl font-extrabold mb-2" style={{ color: '#23243a' }}>{t.decarbonization}</h3>
                   <p className="mb-6 text-base" style={{ color: '#23243a' }}>{t.decarbonizationDesc}</p>
@@ -118,18 +129,18 @@ export default function Home() {
           <div className="max-w-7xl mx-auto px-4">
             <h2 className="text-4xl font-extrabold text-center mb-10" style={{ color: '#3D405B', letterSpacing: '-0.01em' }}>{t.customers}</h2>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-10 gap-y-8 justify-items-center items-center mb-6">
-              <img src="/Pictures/Logos Kunden/Bild1.png" alt="Kunde 1" className="max-h-16 max-w-[140px] object-contain filter grayscale hover:grayscale-0 transition duration-200" />
-              <img src="/Pictures/Logos Kunden/Ernst_Klett_Verlag.svg.png" alt="Kunde 2" className="max-h-16 max-w-[140px] object-contain filter grayscale hover:grayscale-0 transition duration-200" />
-              <img src="/Pictures/Logos Kunden/image.png" alt="Kunde 3" className="max-h-16 max-w-[140px] object-contain filter grayscale hover:grayscale-0 transition duration-200" />
-              <img src="/Pictures/Logos Kunden/image copy.png" alt="Kunde 4" className="max-h-16 max-w-[140px] object-contain filter grayscale hover:grayscale-0 transition duration-200" />
-              <img src="/Pictures/Logos Kunden/image copy 2.png" alt="Kunde 5" className="max-h-16 max-w-[140px] object-contain filter grayscale hover:grayscale-0 transition duration-200" />
-              <img src="/Pictures/Logos Kunden/image copy 3.png" alt="Kunde 6" className="max-h-16 max-w-[140px] object-contain filter grayscale hover:grayscale-0 transition duration-200" />
-              <img src="/Pictures/Logos Kunden/image copy 4.png" alt="Kunde 7" className="max-h-16 max-w-[140px] object-contain filter grayscale hover:grayscale-0 transition duration-200" />
-              <img src="/Pictures/Logos Kunden/image copy 5.png" alt="Kunde 8" className="max-h-16 max-w-[140px] object-contain filter grayscale hover:grayscale-0 transition duration-200" />
-              <img src="/Pictures/Logos Kunden/image copy 6.png" alt="Kunde 9" className="max-h-16 max-w-[140px] object-contain filter grayscale hover:grayscale-0 transition duration-200" />
-              <img src="/Pictures/Logos Kunden/image copy 7.png" alt="Kunde 10" className="max-h-16 max-w-[140px] object-contain filter grayscale hover:grayscale-0 transition duration-200" />
-              <img src="/Pictures/Logos Kunden/image copy 8.png" alt="Kunde 11" className="max-h-16 max-w-[140px] object-contain filter grayscale hover:grayscale-0 transition duration-200" />
-              <img src="/Pictures/Logos Kunden/image-removebg-preview.png" alt="Kunde 12" className="max-h-16 max-w-[140px] object-contain filter grayscale hover:grayscale-0 transition duration-200" />
+              <Image src="/Pictures/Logos Kunden/Bild1.png" alt="Kunde 1" width={140} height={64} quality={75} className="max-h-16 max-w-[140px] object-contain filter grayscale hover:grayscale-0 transition duration-200" />
+              <Image src="/Pictures/Logos Kunden/Ernst_Klett_Verlag.svg.png" alt="Kunde 2" width={140} height={64} quality={75} className="max-h-16 max-w-[140px] object-contain filter grayscale hover:grayscale-0 transition duration-200" />
+              <Image src="/Pictures/Logos Kunden/image.png" alt="Kunde 3" width={140} height={64} quality={75} className="max-h-16 max-w-[140px] object-contain filter grayscale hover:grayscale-0 transition duration-200" />
+              <Image src="/Pictures/Logos Kunden/image copy.png" alt="Kunde 4" width={140} height={64} quality={75} className="max-h-16 max-w-[140px] object-contain filter grayscale hover:grayscale-0 transition duration-200" />
+              <Image src="/Pictures/Logos Kunden/image copy 2.png" alt="Kunde 5" width={140} height={64} quality={75} className="max-h-16 max-w-[140px] object-contain filter grayscale hover:grayscale-0 transition duration-200" />
+              <Image src="/Pictures/Logos Kunden/image copy 3.png" alt="Kunde 6" width={140} height={64} quality={75} className="max-h-16 max-w-[140px] object-contain filter grayscale hover:grayscale-0 transition duration-200" />
+              <Image src="/Pictures/Logos Kunden/image copy 4.png" alt="Kunde 7" width={140} height={64} quality={75} className="max-h-16 max-w-[140px] object-contain filter grayscale hover:grayscale-0 transition duration-200" />
+              <Image src="/Pictures/Logos Kunden/image copy 5.png" alt="Kunde 8" width={140} height={64} quality={75} className="max-h-16 max-w-[140px] object-contain filter grayscale hover:grayscale-0 transition duration-200" />
+                              <Image src="/Pictures/Logos Kunden/image copy 6.png" alt="Kunde 9" width={140} height={64} quality={75} className="max-h-16 max-w-[140px] object-contain filter grayscale hover:grayscale-0 transition duration-200" />
+                <Image src="/Pictures/Logos Kunden/image copy 7.png" alt="Kunde 10" width={140} height={64} quality={75} className="max-h-16 max-w-[140px] object-contain filter grayscale hover:grayscale-0 transition duration-200" />
+                <Image src="/Pictures/Logos Kunden/image copy 8.png" alt="Kunde 11" width={140} height={64} quality={75} className="max-h-16 max-w-[140px] object-contain filter grayscale hover:grayscale-0 transition duration-200" />
+                              <Image src="/Pictures/Logos Kunden/image-removebg-preview.png" alt="Kunde 12" width={140} height={64} quality={75} className="max-h-16 max-w-[140px] object-contain filter grayscale hover:grayscale-0 transition duration-200" />
             </div>
             <p className="text-center mt-2 text-[#81B29A] text-base font-medium opacity-80">{t.andManyMore}</p>
           </div>

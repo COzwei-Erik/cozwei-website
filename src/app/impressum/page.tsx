@@ -3,6 +3,11 @@ import Header from "../Header";
 import React from "react";
 import { useLanguage, translations } from "../LanguageContext";
 
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+};
+
 export default function Impressum() {
   const { language } = useLanguage();
   const t = translations[language] || translations.de;

@@ -13,7 +13,7 @@ export default function Klimaschutzkonzepte() {
       <section className="relative flex flex-col items-center justify-center min-h-screen w-full text-center overflow-hidden">
         <div className="absolute inset-0 w-full h-full z-0">
           <Image 
-            src="/Pictures/image copy 6.png"
+            src="/Pictures/image copy 6.webp"
             alt="Klimaschutzkonzepte Hero Background" 
             fill
             style={{objectFit: 'cover', objectPosition: 'center'}}

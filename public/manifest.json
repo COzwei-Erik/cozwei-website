@@ -1,0 +1,16 @@
+{
+  "name": "COzwei - Nachhaltigkeit & Dekarbonisierung",
+  "short_name": "COzwei",
+  "description": "COzwei GmbH - Ihr Partner für Nachhaltigkeit und Dekarbonisierung",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#81B29A",
+  "icons": [
+    {
+      "src": "/Pictures/cozwei.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}
