@@ -1,23 +1,13 @@
 "use client";
 import Image from "next/image";
 import Header from "./Header";
-import { useState, useEffect, useRef } from "react";
-import { FaCloud, FaLeaf } from "react-icons/fa";
+import { useState, useRef } from "react";
 import { useLanguage, translations } from "./LanguageContext";
 
 export default function Home() {
   const { language } = useLanguage();
   const t = translations[language] || translations.de;
-  const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownTimeout = useRef<NodeJS.Timeout | null>(null);
-
-  const handleDropdownEnter = () => {
-    if (dropdownTimeout.current) clearTimeout(dropdownTimeout.current);
-    setDropdownOpen(true);
-  };
-  const handleDropdownLeave = () => {
-    dropdownTimeout.current = setTimeout(() => setDropdownOpen(false), 150);
-  };
 
   return (
     <div className="min-h-screen flex flex-col font-sans bg-white text-gray-900">
@@ -79,7 +69,7 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
               {/* Nachhaltigkeit Card */}
               <div className="flex flex-col rounded-3xl bg-white/60 border border-[#81B29A]/20 backdrop-blur-xl transition-all duration-300 hover:scale-105 hover:border-2 hover:border-[#81B29A] hover:ring-2 hover:ring-[#81B29A]/30 overflow-hidden group">
-                <img src="/Pictures/pexels-akilmazumder-1072824.jpg" alt="Nachhaltigkeit" className="w-full h-64 object-cover rounded-t-2xl transition-all duration-300" />
+                <Image src="/Pictures/pexels-akilmazumder-1072824.jpg" alt="Nachhaltigkeit" className="w-full h-64 object-cover rounded-t-2xl transition-all duration-300" />
                 <div className="flex flex-col p-8 flex-1">
                   <h3 className="text-2xl font-extrabold mb-2" style={{ color: '#23243a' }}>{t.sustainability}</h3>
                   <p className="mb-6 text-base" style={{ color: '#23243a' }}>{t.sustainabilityDesc}</p>

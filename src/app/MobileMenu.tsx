@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import { HiX } from "react-icons/hi";
 
 type Language = "de" | "en" | "pt";
@@ -11,7 +12,7 @@ interface MobileMenuProps {
   setDropdownOpen: (open: boolean) => void;
   language: Language;
   setLanguage: (lang: Language) => void;
-  t: any;
+  t: Record<string, string>;
 }
 
 export default function MobileMenu({ 
@@ -31,7 +32,7 @@ export default function MobileMenu({
         <button className="self-end mb-4 p-2" onClick={onClose} aria-label="Menü schließen">
           <HiX size={32} style={{ color: '#3D405B' }} />
         </button>
-        <a href="/" className="mb-6 flex items-center gap-2" onClick={onClose}>
+        <Link href="/" className="mb-6 flex items-center gap-2" onClick={onClose}>
           <Image 
             src="/Pictures/cozwei.png" 
             alt="COzwei Logo" 
@@ -39,7 +40,7 @@ export default function MobileMenu({
             height={100}
             priority
           />
-        </a>
+        </Link>
         <div className="flex flex-col gap-4 text-lg font-bold">
           <div className="relative">
             <button 
@@ -54,13 +55,13 @@ export default function MobileMenu({
             </button>
             {dropdownOpen && (
               <div className="flex flex-col mt-2 bg-white border border-[#81B29A]/30 rounded-2xl shadow-lg py-2 z-50">
-                <a href="/nachhaltigkeit" className="block px-6 py-3 hover:bg-[#81B29A]/10 text-[#3D405B] text-base font-semibold" onClick={onClose}>{t.sustainability}</a>
-                <a href="/dekarbonisierung" className="block px-6 py-3 hover:bg-[#81B29A]/10 text-[#3D405B] text-base font-semibold" onClick={onClose}>{t.decarbonization}</a>
-                <a href="/massnahmen" className="block px-6 py-3 hover:bg-[#81B29A]/10 text-[#3D405B] text-base font-semibold" onClick={onClose}>{t.measures}</a>
+                <Link href="/nachhaltigkeit" className="block px-6 py-3 hover:bg-[#81B29A]/10 text-[#3D405B] text-base font-semibold" onClick={onClose}>{t.sustainability}</Link>
+                <Link href="/dekarbonisierung" className="block px-6 py-3 hover:bg-[#81B29A]/10 text-[#3D405B] text-base font-semibold" onClick={onClose}>{t.decarbonization}</Link>
+                <Link href="/massnahmen" className="block px-6 py-3 hover:bg-[#81B29A]/10 text-[#3D405B] text-base font-semibold" onClick={onClose}>{t.measures}</Link>
               </div>
             )}
           </div>
-          <a href="/ueber-uns" className="hover:text-green-700 transition text-[#3D405B] font-bold text-2xl pl-1" onClick={onClose}>{t.about}</a>
+          <Link href="/ueber-uns" className="hover:text-green-700 transition text-[#3D405B] font-bold text-2xl pl-1" onClick={onClose}>{t.about}</Link>
           <a href="#kontakt" className="hover:text-green-700 transition text-[#3D405B] font-bold text-2xl pl-1" onClick={onClose}>{t.contact}</a>
         </div>
         <div className="mt-8 flex items-center gap-1 border rounded px-2 py-1 bg-white self-start">

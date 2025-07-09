@@ -11,7 +11,8 @@ export default function Massnahmen() {
   const [emailTouched, setEmailTouched] = useState(false);
   const [privacyChecked, setPrivacyChecked] = useState(false);
   const isEmailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-
+  const [current, setCurrent] = useState(0); // moved from inside callback
+  const visible = 3;
   // Memoize partners data to prevent unnecessary re-renders
   const partners = useMemo(() => [
     {
@@ -62,6 +63,14 @@ export default function Massnahmen() {
       text: t.partnerMicrosoftDesc
     }
   ], [t]);
+  const max = partners.length;
+  const canPrev = max > visible;
+  const canNext = max > visible;
+  // Calculate the correct transform so the last slide is always fully visible
+  const getTransform = () => {
+    if (current > max - visible) return `-${(max - visible) * (100 / visible)}%`;
+    return `-${current * (100 / visible)}%`;
+  };
 
   return (
     <div className="min-h-screen flex flex-col font-sans bg-white text-gray-900">
@@ -230,16 +239,6 @@ export default function Massnahmen() {
             <h2 className="text-3xl sm:text-4xl font-extrabold mb-10 text-center" style={{ color: '#3D405B' }}>Unsere Partner</h2>
             {/* Slider logic */}
             {(() => {
-              const [current, setCurrent] = useState(0);
-              const visible = 3;
-              const max = partners.length;
-              const canPrev = max > visible;
-              const canNext = max > visible;
-              // Calculate the correct transform so the last slide is always fully visible
-              const getTransform = () => {
-                if (current > max - visible) return `-${(max - visible) * (100 / visible)}%`;
-                return `-${current * (100 / visible)}%`;
-              };
               return (
                 <div className="relative w-full">
                   <button
@@ -259,7 +258,7 @@ export default function Massnahmen() {
                         const Card = (
                           <div key={i} className="flex-shrink-0 w-full sm:w-[280px] mx-2 flex flex-col items-center bg-white/80 rounded-2xl border border-[#81B29A]/20 p-6 transition hover:scale-105 hover:border-[#81B29A]" style={{ maxWidth: 280, minWidth: 280, minHeight: 340, height: 340 }}>
                             <div className="w-28 h-20 mb-4 flex items-center justify-center">
-                              <img 
+                              <Image 
                                 src={partner.logo} 
                                 alt={partner.name + ' Logo'} 
                                 className="object-contain max-h-16"

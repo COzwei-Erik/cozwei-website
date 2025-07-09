@@ -145,7 +145,7 @@ export default function UeberUns() {
             {t.aboutBenefitsTitle}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl w-full mb-12">
-            {[t.aboutBenefit1, t.aboutBenefit2, t.aboutBenefit3, t.aboutBenefit4, t.aboutBenefit5, t.aboutBenefit6].map((item, idx) => (
+            {[t.aboutBenefit1, t.aboutBenefit2, t.aboutBenefit3, t.aboutBenefit4, t.aboutBenefit5, t.aboutBenefit6].map((item) => (
               <div
                 key={item}
                 className="flex items-center justify-center text-[#3D405B] text-xl font-semibold h-20 bg-white/60 border border-[#81B29A]/20 rounded-3xl backdrop-blur-xl transition-all duration-300 hover:scale-105 hover:border-2 hover:border-[#81B29A] hover:ring-2 hover:ring-[#81B29A]/30 overflow-hidden group text-center px-4"
@@ -239,7 +239,7 @@ function EuropeMap() {
             onMouseLeave={() => { setSintraBox(false); setHovered(null); }}
           >
             <div className="bg-white/90 border border-[#81B29A]/40 rounded-xl p-4 flex flex-col items-center w-56">
-              <img src="/Pictures/image copy 5.png" alt="Sintra" className="w-32 h-32 object-cover rounded-lg mb-2 transition-all duration-300" />
+              <Image src="/Pictures/image copy 5.png" alt="Sintra" width={128} height={128} className="w-32 h-32 object-cover rounded-lg mb-2 transition-all duration-300" />
               <div className="font-bold text-[#3D405B] mb-1">Sintra, Portugal</div>
               <a
                 href="https://www.google.com/maps?q=AV+Heliodoro+Salgado+48A,+Sintra,+Portugal"
@@ -267,7 +267,7 @@ function EuropeMap() {
             onMouseLeave={() => { setStuttgartBox(false); setHovered(null); }}
           >
             <div className="bg-white/90 border border-[#81B29A]/40 rounded-xl p-4 flex flex-col items-center w-56">
-              <img src="/Pictures/WhatsApp Bild 2025-06-15 um 19.04.26_0e38abfb.jpg" alt="Stuttgart" className="w-32 h-32 object-cover rounded-lg mb-2 transition-all duration-300" />
+              <Image src="/Pictures/WhatsApp Bild 2025-06-15 um 19.04.26_0e38abfb.jpg" alt="Stuttgart" width={128} height={128} className="w-32 h-32 object-cover rounded-lg mb-2 transition-all duration-300" />
               <div className="font-bold text-[#3D405B] mb-1">Stuttgart, Deutschland</div>
               <a
                 href="https://www.google.com/maps?q=Gutenbergstraße+16A,+70176+Stuttgart,+Deutschland"

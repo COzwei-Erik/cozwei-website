@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import { useState, useRef, lazy, Suspense } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
 import { useLanguage } from "./LanguageContext";
@@ -55,7 +56,7 @@ export default function Header() {
   return (
     <nav className="w-full flex items-center justify-between px-6 py-1 shadow-sm bg-white sticky top-0 z-50">
       <div className="flex items-center gap-2">
-        <a href="/" className="cursor-pointer">
+        <Link href="/" className="cursor-pointer">
           <Image 
             src="/Pictures/cozwei.png" 
             alt="COzwei Logo" 
@@ -65,7 +66,7 @@ export default function Header() {
             placeholder="blur"
             blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
           />
-        </a>
+        </Link>
       </div>
       {/* Desktop Nav */}
       <ul className="hidden md:flex gap-8 items-center text-base font-medium">
