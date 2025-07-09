@@ -1,13 +1,12 @@
 "use client";
 import Image from "next/image";
 import Header from "./Header";
-import { useState, useRef } from "react";
+import { useRef } from "react";
 import { useLanguage, translations } from "./LanguageContext";
 
 export default function Home() {
   const { language } = useLanguage();
   const t = translations[language] || translations.de;
-  const dropdownTimeout = useRef<NodeJS.Timeout | null>(null);
 
   return (
     <div className="min-h-screen flex flex-col font-sans bg-white text-gray-900">
