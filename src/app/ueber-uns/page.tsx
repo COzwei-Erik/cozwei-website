@@ -71,69 +71,69 @@ export default function UeberUns() {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-center place-items-stretch h-full">
               {/* Card 1 */}
-              <div className="flex flex-col sm:flex-row items-center bg-white rounded-2xl border border-[#81B29A]/30 p-4 sm:p-6 gap-4 sm:gap-6 min-h-[220px] transition-all duration-300 hover:scale-105 hover:border-2 hover:border-[#81B29A] hover:ring-2 hover:ring-[#81B29A]/30 overflow-hidden group w-full max-w-full">
-                <Image src="/Pictures/Christian.png" alt="Christian Philippen" width={120} height={120} className="rounded-xl object-cover flex-shrink-0 w-28 h-28 sm:w-[180px] sm:h-[180px]" />
-                <div className="flex flex-col justify-center flex-1 w-full">
-                  <div className="text-lg sm:text-xl font-bold mb-1 text-[#3D405B] break-words">Christian Philippen</div>
-                  <div className="text-sm sm:text-base font-semibold mb-2 text-[#81B29A] tracking-wide break-words">{t.teamRoleChristian}</div>
-                  <div className="text-xs sm:text-sm text-[#3D405B] mb-1 break-words">christian.philippen@cozwei.de</div>
-                  <div className="text-xs sm:text-sm text-[#3D405B] mb-3 break-words">+49 176 45830572</div>
-                  <a href="https://www.linkedin.com/in/christian-philippen/" target="_blank" rel="noopener noreferrer" className="inline-block"><Image src="/Pictures/image copy 3.png" alt="LinkedIn" width={24} height={24} className="rounded w-6 h-6 sm:w-7 sm:h-7" /></a>
+              <div className="flex flex-col md:flex-row items-center bg-white rounded-2xl border border-[#81B29A]/30 p-6 gap-6 min-h-[220px] transition-all duration-300 hover:scale-105 hover:border-2 hover:border-[#81B29A] hover:ring-2 hover:ring-[#81B29A]/30 overflow-hidden group">
+                <Image src="/Pictures/Christian.png" alt="Christian Philippen" width={180} height={180} className="rounded-xl object-cover flex-shrink-0 mb-4 md:mb-0" />
+                <div className="flex flex-col justify-center flex-1 items-center md:items-start text-center md:text-left">
+                  <div className="text-xl font-bold mb-1 text-[#3D405B]">Christian Philippen</div>
+                  <div className="text-base font-semibold mb-2 text-[#81B29A] tracking-wide">{t.teamRoleChristian}</div>
+                  <div className="text-sm text-[#3D405B] mb-1">christian.philippen@cozwei.de</div>
+                  <div className="text-sm text-[#3D405B] mb-3">+49 176 45830572</div>
+                  <a href="https://www.linkedin.com/in/christian-philippen/" target="_blank" rel="noopener noreferrer" className="inline-block"><Image src="/Pictures/image copy 3.png" alt="LinkedIn" width={28} height={28} className="rounded" /></a>
                 </div>
               </div>
               {/* Card 2 */}
-              <div className="flex flex-col sm:flex-row items-center bg-white rounded-2xl border border-[#81B29A]/30 p-4 sm:p-6 gap-4 sm:gap-6 min-h-[220px] transition-all duration-300 hover:scale-105 hover:border-2 hover:border-[#81B29A] hover:ring-2 hover:ring-[#81B29A]/30 overflow-hidden group w-full max-w-full">
-                <Image src="/Pictures/Erik.png" alt="Erik Jakob" width={120} height={120} className="rounded-xl object-cover flex-shrink-0 w-28 h-28 sm:w-[180px] sm:h-[180px]" />
-                <div className="flex flex-col justify-center flex-1 w-full">
-                  <div className="text-lg sm:text-xl font-bold mb-1 text-[#3D405B] break-words">Erik Jakob</div>
-                  <div className="text-sm sm:text-base font-semibold mb-2 text-[#81B29A] tracking-wide break-words">{t.teamRoleErik}</div>
-                  <div className="text-xs sm:text-sm text-[#3D405B] mb-1 break-words">erik.jakob@cozwei.de</div>
-                  <div className="text-xs sm:text-sm text-[#3D405B] mb-3 break-words">+49 176 30886017</div>
-                  <a href="https://www.linkedin.com/in/erik-jakob-9a81b5152/" target="_blank" rel="noopener noreferrer" className="inline-block"><Image src="/Pictures/image copy 3.png" alt="LinkedIn" width={24} height={24} className="rounded w-6 h-6 sm:w-7 sm:h-7" /></a>
+              <div className="flex flex-col md:flex-row items-center bg-white rounded-2xl border border-[#81B29A]/30 p-6 gap-6 min-h-[220px] transition-all duration-300 hover:scale-105 hover:border-2 hover:border-[#81B29A] hover:ring-2 hover:ring-[#81B29A]/30 overflow-hidden group">
+                <Image src="/Pictures/Erik.png" alt="Erik Jakob" width={180} height={180} className="rounded-xl object-cover flex-shrink-0 mb-4 md:mb-0" />
+                <div className="flex flex-col justify-center flex-1 items-center md:items-start text-center md:text-left">
+                  <div className="text-xl font-bold mb-1 text-[#3D405B]">Erik Jakob</div>
+                  <div className="text-base font-semibold mb-2 text-[#81B29A] tracking-wide">{t.teamRoleErik}</div>
+                  <div className="text-sm text-[#3D405B] mb-1">erik.jakob@cozwei.de</div>
+                  <div className="text-sm text-[#3D405B] mb-3">+49 176 30886017</div>
+                  <a href="https://www.linkedin.com/in/erik-jakob-9a81b5152/" target="_blank" rel="noopener noreferrer" className="inline-block"><Image src="/Pictures/image copy 3.png" alt="LinkedIn" width={28} height={28} className="rounded" /></a>
                 </div>
               </div>
               {/* Card 3: Alina Krut */}
-              <div className="flex flex-col sm:flex-row items-center bg-white rounded-2xl border border-[#81B29A]/30 p-4 sm:p-6 gap-4 sm:gap-6 min-h-[220px] transition-all duration-300 hover:scale-105 hover:border-2 hover:border-[#81B29A] hover:ring-2 hover:ring-[#81B29A]/30 overflow-hidden group w-full max-w-full">
-                <Image src="/Pictures/Alina_V2.png" alt="Alina Krut" width={120} height={120} className="rounded-xl object-cover flex-shrink-0 w-28 h-28 sm:w-[180px] sm:h-[180px]" />
-                <div className="flex flex-col justify-center flex-1 w-full">
-                  <div className="text-lg sm:text-xl font-bold mb-1 text-[#3D405B] break-words">Alina Krut</div>
-                  <div className="text-sm sm:text-base font-semibold mb-2 text-[#81B29A] tracking-wide break-words">{t.teamRoleAlina}</div>
-                  <div className="text-xs sm:text-sm text-[#3D405B] mb-1 break-words">alina.krut@cozwei.de</div>
-                  <div className="text-xs sm:text-sm text-[#3D405B] mb-3 break-words">&nbsp;</div>
-                  <a href="https://www.linkedin.com/in/alina-krut/" target="_blank" rel="noopener noreferrer" className="inline-block"><Image src="/Pictures/image copy 3.png" alt="LinkedIn" width={24} height={24} className="rounded w-6 h-6 sm:w-7 sm:h-7" /></a>
+              <div className="flex flex-col md:flex-row items-center bg-white rounded-2xl border border-[#81B29A]/30 p-6 gap-6 min-h-[220px] transition-all duration-300 hover:scale-105 hover:border-2 hover:border-[#81B29A] hover:ring-2 hover:ring-[#81B29A]/30 overflow-hidden group">
+                <Image src="/Pictures/Alina_V2.png" alt="Alina Krut" width={180} height={180} className="rounded-xl object-cover flex-shrink-0 mb-4 md:mb-0" />
+                <div className="flex flex-col justify-center flex-1 items-center md:items-start text-center md:text-left">
+                  <div className="text-xl font-bold mb-1 text-[#3D405B]">Alina Krut</div>
+                  <div className="text-base font-semibold mb-2 text-[#81B29A] tracking-wide">{t.teamRoleAlina}</div>
+                  <div className="text-sm text-[#3D405B] mb-1">alina.krut@cozwei.de</div>
+                  <div className="text-sm text-[#3D405B] mb-3">&nbsp;</div>
+                  <a href="https://www.linkedin.com/in/alina-krut/" target="_blank" rel="noopener noreferrer" className="inline-block"><Image src="/Pictures/image copy 3.png" alt="LinkedIn" width={28} height={28} className="rounded" /></a>
                 </div>
               </div>
               {/* Card 4: Dominik Enger */}
-              <div className="flex flex-col sm:flex-row items-center bg-white rounded-2xl border border-[#81B29A]/30 p-4 sm:p-6 gap-4 sm:gap-6 min-h-[220px] transition-all duration-300 hover:scale-105 hover:border-2 hover:border-[#81B29A] hover:ring-2 hover:ring-[#81B29A]/30 overflow-hidden group w-full max-w-full">
-                <Image src="/Pictures/Dominik_V2.png" alt="Dominik Enger" width={120} height={120} className="rounded-xl object-cover flex-shrink-0 w-28 h-28 sm:w-[180px] sm:h-[180px]" />
-                <div className="flex flex-col justify-center flex-1 w-full">
-                  <div className="text-lg sm:text-xl font-bold mb-1 text-[#3D405B] break-words">Dominik Enger</div>
-                  <div className="text-sm sm:text-base font-semibold mb-2 text-[#81B29A] tracking-wide break-words">{t.teamRoleDominik}</div>
-                  <div className="text-xs sm:text-sm text-[#3D405B] mb-1 break-words">dominik.enger@cozwei.de</div>
-                  <div className="text-xs sm:text-sm text-[#3D405B] mb-3 break-words">&nbsp;</div>
-                  <a href="https://www.linkedin.com/in/dominik-enger/" target="_blank" rel="noopener noreferrer" className="inline-block"><Image src="/Pictures/image copy 3.png" alt="LinkedIn" width={24} height={24} className="rounded w-6 h-6 sm:w-7 sm:h-7" /></a>
+              <div className="flex flex-col md:flex-row items-center bg-white rounded-2xl border border-[#81B29A]/30 p-6 gap-6 min-h-[220px] transition-all duration-300 hover:scale-105 hover:border-2 hover:border-[#81B29A] hover:ring-2 hover:ring-[#81B29A]/30 overflow-hidden group">
+                <Image src="/Pictures/Dominik_V2.png" alt="Dominik Enger" width={180} height={180} className="rounded-xl object-cover flex-shrink-0 mb-4 md:mb-0" />
+                <div className="flex flex-col justify-center flex-1 items-center md:items-start text-center md:text-left">
+                  <div className="text-xl font-bold mb-1 text-[#3D405B]">Dominik Enger</div>
+                  <div className="text-base font-semibold mb-2 text-[#81B29A] tracking-wide">{t.teamRoleDominik}</div>
+                  <div className="text-sm text-[#3D405B] mb-1">dominik.enger@cozwei.de</div>
+                  <div className="text-sm text-[#3D405B] mb-3">&nbsp;</div>
+                  <a href="https://www.linkedin.com/in/dominik-enger/" target="_blank" rel="noopener noreferrer" className="inline-block"><Image src="/Pictures/image copy 3.png" alt="LinkedIn" width={28} height={28} className="rounded" /></a>
                 </div>
               </div>
               {/* Card 5: Louis Noel Tallner */}
-              <div className="flex flex-col sm:flex-row items-center bg-white rounded-2xl border border-[#81B29A]/30 p-4 sm:p-6 gap-4 sm:gap-6 min-h-[220px] transition-all duration-300 hover:scale-105 hover:border-2 hover:border-[#81B29A] hover:ring-2 hover:ring-[#81B29A]/30 overflow-hidden group w-full max-w-full">
-                <Image src="/Pictures/Louis_V2 (1).png" alt="Louis Noel Tallner" width={120} height={120} className="rounded-xl object-cover flex-shrink-0 w-28 h-28 sm:w-[180px] sm:h-[180px]" />
-                <div className="flex flex-col justify-center flex-1 w-full">
-                  <div className="text-lg sm:text-xl font-bold mb-1 text-[#3D405B] break-words">Louis Noel Tallner</div>
-                  <div className="text-sm sm:text-base font-semibold mb-2 text-[#81B29A] tracking-wide break-words">{t.teamRoleLouis}</div>
-                  <div className="text-xs sm:text-sm text-[#3D405B] mb-1 break-words">louis.tallner@cozwei.de</div>
-                  <div className="text-xs sm:text-sm text-[#3D405B] mb-3 break-words">&nbsp;</div>
-                  <a href="https://www.linkedin.com/in/louis-noel-tallner-025936296/" target="_blank" rel="noopener noreferrer" className="inline-block"><Image src="/Pictures/image copy 3.png" alt="LinkedIn" width={24} height={24} className="rounded w-6 h-6 sm:w-7 sm:h-7" /></a>
+              <div className="flex flex-col md:flex-row items-center bg-white rounded-2xl border border-[#81B29A]/30 p-6 gap-6 min-h-[220px] transition-all duration-300 hover:scale-105 hover:border-2 hover:border-[#81B29A] hover:ring-2 hover:ring-[#81B29A]/30 overflow-hidden group">
+                <Image src="/Pictures/Louis_V2 (1).png" alt="Louis Noel Tallner" width={180} height={180} className="rounded-xl object-cover flex-shrink-0 mb-4 md:mb-0" />
+                <div className="flex flex-col justify-center flex-1 items-center md:items-start text-center md:text-left">
+                  <div className="text-xl font-bold mb-1 text-[#3D405B]">Louis Noel Tallner</div>
+                  <div className="text-base font-semibold mb-2 text-[#81B29A] tracking-wide">{t.teamRoleLouis}</div>
+                  <div className="text-sm text-[#3D405B] mb-1">louis.tallner@cozwei.de</div>
+                  <div className="text-sm text-[#3D405B] mb-3">&nbsp;</div>
+                  <a href="https://www.linkedin.com/in/louis-noel-tallner-025936296/" target="_blank" rel="noopener noreferrer" className="inline-block"><Image src="/Pictures/image copy 3.png" alt="LinkedIn" width={28} height={28} className="rounded" /></a>
                 </div>
               </div>
               {/* Card 6: Ronan Maier */}
-              <div className="flex flex-col sm:flex-row items-center bg-white rounded-2xl border border-[#81B29A]/30 p-4 sm:p-6 gap-4 sm:gap-6 min-h-[220px] transition-all duration-300 hover:scale-105 hover:border-2 hover:border-[#81B29A] hover:ring-2 hover:ring-[#81B29A]/30 overflow-hidden group w-full max-w-full">
-                <Image src="/Pictures/65f96a3129c25914fbad539c_2024-03-14__DSC8933-NEF_2024-03-10_DXO.png" alt="Ronan Maier" width={120} height={120} className="rounded-xl object-cover flex-shrink-0 w-28 h-28 sm:w-[180px] sm:h-[180px]" />
-                <div className="flex flex-col justify-center flex-1 w-full">
-                  <div className="text-lg sm:text-xl font-bold mb-1 text-[#3D405B] break-words">Ronan Maier</div>
-                  <div className="text-sm sm:text-base font-semibold mb-2 text-[#81B29A] tracking-wide break-words">{t.teamRoleRonan}</div>
-                  <div className="text-xs sm:text-sm text-[#3D405B] mb-1 break-words">&nbsp;</div>
-                  <div className="text-xs sm:text-sm text-[#3D405B] mb-3 break-words">&nbsp;</div>
-                  <a href="https://www.linkedin.com/in/ronan-maier-852764207/" target="_blank" rel="noopener noreferrer" className="inline-block"><Image src="/Pictures/image copy 3.png" alt="LinkedIn" width={24} height={24} className="rounded w-6 h-6 sm:w-7 sm:h-7" /></a>
+              <div className="flex flex-col md:flex-row items-center bg-white rounded-2xl border border-[#81B29A]/30 p-6 gap-6 min-h-[220px] transition-all duration-300 hover:scale-105 hover:border-2 hover:border-[#81B29A] hover:ring-2 hover:ring-[#81B29A]/30 overflow-hidden group">
+                <Image src="/Pictures/65f96a3129c25914fbad539c_2024-03-14__DSC8933-NEF_2024-03-10_DXO.png" alt="Ronan Maier" width={180} height={180} className="rounded-xl object-cover flex-shrink-0 mb-4 md:mb-0" />
+                <div className="flex flex-col justify-center flex-1 items-center md:items-start text-center md:text-left">
+                  <div className="text-xl font-bold mb-1 text-[#3D405B]">Ronan Maier</div>
+                  <div className="text-base font-semibold mb-2 text-[#81B29A] tracking-wide">{t.teamRoleRonan}</div>
+                  <div className="text-sm text-[#3D405B] mb-1">&nbsp;</div>
+                  <div className="text-sm text-[#3D405B] mb-3">&nbsp;</div>
+                  <a href="https://www.linkedin.com/in/ronan-maier-852764207/" target="_blank" rel="noopener noreferrer" className="inline-block"><Image src="/Pictures/image copy 3.png" alt="LinkedIn" width={28} height={28} className="rounded" /></a>
                 </div>
               </div>
             </div>
