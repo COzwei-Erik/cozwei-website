@@ -15,15 +15,14 @@ export default function Home() {
       {/* Hero Section with Background Image */}
       <header className="relative flex flex-col items-center justify-center min-h-screen w-full text-center">
         <Image 
-          src="/Pictures/Bild+Logo_V2+Farbe.webp" 
+          src="/Pictures/16_9_Bildschrim_Gemälde+COzwei+Kreis.jpg" 
           alt="COzwei Hero Background" 
           fill 
-          style={{objectFit: 'cover', objectPosition: 'center 72%'}}
+          style={{objectFit: 'cover', objectPosition: 'center'}}
           className="z-0 opacity-90"
           priority
           quality={85}
           placeholder="blur"
-          blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
         />
         <div className="absolute inset-0 bg-black/30 z-10" />
         <div className="relative z-20 flex flex-col items-center justify-center w-full h-full">
