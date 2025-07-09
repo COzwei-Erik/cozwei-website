@@ -186,15 +186,15 @@ export default function Massnahmen() {
             <p className="text-lg text-center mb-10" style={{ color: '#3D405B' }}>
               {t.climateFundingSubtitle}
             </p>
-            <div className="flex justify-center items-center w-full">
-              <iframe
-                src="/Documents/Förderkatalog_Deutschland_COzwei_6_2025.pdf#toolbar=0&navpanes=0&view=FitH"
-                title="Klima-Förderkatalog PDF"
-                className="w-full h-[480px] rounded-2xl border border-[#81B29A]/30"
-                style={{ background: 'white' }}
-                allowFullScreen
-                loading="lazy"
-              />
+            <div className="flex justify-center items-center w-full mb-6">
+              <a
+                href="/Documents/Förderkatalog_Deutschland_COzwei_6_2025.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-[#e0eafc] text-[#3D405B] font-bold px-6 py-3 rounded-lg shadow hover:bg-[#cfdef3] transition text-lg border border-[#81B29A]/30"
+              >
+                PDF im neuen Tab öffnen
+              </a>
             </div>
             <form className="flex flex-col items-center gap-4 mt-8 mb-2 w-full max-w-md mx-auto">
               <input
