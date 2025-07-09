@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Header from "./Header";
 import { useLanguage, translations } from "./LanguageContext";
+import Link from "next/link";
 
 export default function Home() {
   const { language } = useLanguage();
@@ -66,46 +67,47 @@ export default function Home() {
             <p className="mb-12 text-lg text-center" style={{ color: '#3D405B' }}>{t.solutionsDesc}</p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
               {/* Nachhaltigkeit Card */}
-              <div className="flex flex-col rounded-3xl bg-white/60 border border-[#81B29A]/20 backdrop-blur-xl transition-all duration-300 hover:scale-105 hover:border-2 hover:border-[#81B29A] hover:ring-2 hover:ring-[#81B29A]/30 overflow-hidden group">
-                <Image src="/Pictures/pexels-akilmazumder-1072824.jpg" alt="Nachhaltigkeit" className="w-full h-64 object-cover rounded-t-2xl transition-all duration-300" />
+              <div className="flex flex-col rounded-3xl bg-white/60 border border-[#81B29A]/20 backdrop-blur-xl transition-transform duration-300 hover:scale-105 hover:shadow-2xl will-change-transform overflow-hidden group">
+                <Image src="/Pictures/pexels-akilmazumder-1072824.jpg" alt="Nachhaltigkeit" width={600} height={256} placeholder="blur" className="w-full h-64 object-cover rounded-t-2xl transition-all duration-300" />
                 <div className="flex flex-col p-8 flex-1">
                   <h3 className="text-2xl font-extrabold mb-2" style={{ color: '#23243a' }}>{t.sustainability}</h3>
                   <p className="mb-6 text-base" style={{ color: '#23243a' }}>{t.sustainabilityDesc}</p>
-                  <a href="/nachhaltigkeit" className="mt-auto text-[#81B29A] font-bold flex items-center group/link hover:underline transition">
+                  <Link href="/nachhaltigkeit" className="mt-auto text-[#81B29A] font-bold flex items-center group/link hover:underline transition">
                     {t.learnMore}
                     <svg className="ml-2 w-5 h-5 text-[#81B29A] group-hover/link:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"/></svg>
-                  </a>
+                  </Link>
                 </div>
               </div>
               {/* Dekarbonisierung Card */}
-              <div className="flex flex-col rounded-3xl bg-white/60 border border-[#81B29A]/20 backdrop-blur-xl transition-all duration-300 hover:scale-105 hover:border-2 hover:border-[#81B29A] hover:ring-2 hover:ring-[#81B29A]/30 overflow-hidden group">
+              <div className="flex flex-col rounded-3xl bg-white/60 border border-[#81B29A]/20 backdrop-blur-xl transition-transform duration-300 hover:scale-105 hover:shadow-2xl will-change-transform overflow-hidden group">
                 <Image 
                   src="/Pictures/pexels-pixabay-60575.jpg" 
                   alt="Dekarbonisierung" 
                   width={600} 
                   height={256} 
                   quality={75}
+                  placeholder="blur"
                   className="w-full h-64 object-cover rounded-t-2xl transition-all duration-300" 
                 />
                 <div className="flex flex-col p-8 flex-1">
                   <h3 className="text-2xl font-extrabold mb-2" style={{ color: '#23243a' }}>{t.decarbonization}</h3>
                   <p className="mb-6 text-base" style={{ color: '#23243a' }}>{t.decarbonizationDesc}</p>
-                  <a href="/dekarbonisierung" className="mt-auto text-[#81B29A] font-bold flex items-center group/link hover:underline transition">
+                  <Link href="/dekarbonisierung" className="mt-auto text-[#81B29A] font-bold flex items-center group/link hover:underline transition">
                     {t.learnMore}
                     <svg className="ml-2 w-5 h-5 text-[#81B29A] group-hover/link:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"/></svg>
-                  </a>
+                  </Link>
                 </div>
               </div>
               {/* Maßnahmen Card */}
-              <div className="flex flex-col rounded-3xl bg-white/60 border border-[#81B29A]/20 backdrop-blur-xl transition-all duration-300 hover:scale-105 hover:border-2 hover:border-[#81B29A] hover:ring-2 hover:ring-[#81B29A]/30 overflow-hidden group">
-                <Image src="/Pictures/pexels-tomfisk-9893729.jpg" alt="Maßnahmen" width={600} height={256} quality={40} className="w-full h-64 object-cover rounded-t-2xl transition-all duration-300" />
+              <div className="flex flex-col rounded-3xl bg-white/60 border border-[#81B29A]/20 backdrop-blur-xl transition-transform duration-300 hover:scale-105 hover:shadow-2xl will-change-transform overflow-hidden group">
+                <Image src="/Pictures/pexels-tomfisk-9893729.jpg" alt="Maßnahmen" width={600} height={256} quality={40} placeholder="blur" className="w-full h-64 object-cover rounded-t-2xl transition-all duration-300" />
                 <div className="flex flex-col p-8 flex-1">
                   <h3 className="text-2xl font-extrabold mb-2" style={{ color: '#23243a' }}>{t.measures}</h3>
                   <p className="mb-6 text-base" style={{ color: '#23243a' }}>{t.measuresDesc}</p>
-                  <a href="/massnahmen" className="mt-auto text-[#81B29A] font-bold flex items-center group/link hover:underline transition">
+                  <Link href="/massnahmen" className="mt-auto text-[#81B29A] font-bold flex items-center group/link hover:underline transition">
                     {t.learnMore}
                     <svg className="ml-2 w-5 h-5 text-[#81B29A] group-hover/link:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"/></svg>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
