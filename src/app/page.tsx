@@ -67,7 +67,7 @@ export default function Home() {
             <p className="mb-12 text-lg text-center" style={{ color: '#3D405B' }}>{t.solutionsDesc}</p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
               {/* Nachhaltigkeit Card */}
-              <div className="flex flex-col rounded-3xl bg-white/60 border border-[#81B29A]/20 backdrop-blur-xl transition-transform duration-300 hover:scale-105 hover:shadow-2xl will-change-transform overflow-hidden group">
+              <div className="flex flex-col rounded-3xl bg-white/60 border-2 border-[#81B29A]/20 backdrop-blur-xl transition-transform duration-300 hover:scale-105 hover:border-[#81B29A] hover:ring-2 hover:ring-[#81B29A]/30 will-change-transform overflow-hidden group">
                 <Image src="/Pictures/pexels-akilmazumder-1072824.jpg" alt="Nachhaltigkeit" width={600} height={256} placeholder="blur" className="w-full h-64 object-cover rounded-t-2xl transition-all duration-300" />
                 <div className="flex flex-col p-8 flex-1">
                   <h3 className="text-2xl font-extrabold mb-2" style={{ color: '#23243a' }}>{t.sustainability}</h3>
@@ -79,7 +79,7 @@ export default function Home() {
                 </div>
               </div>
               {/* Dekarbonisierung Card */}
-              <div className="flex flex-col rounded-3xl bg-white/60 border border-[#81B29A]/20 backdrop-blur-xl transition-transform duration-300 hover:scale-105 hover:shadow-2xl will-change-transform overflow-hidden group">
+              <div className="flex flex-col rounded-3xl bg-white/60 border-2 border-[#81B29A]/20 backdrop-blur-xl transition-transform duration-300 hover:scale-105 hover:border-[#81B29A] hover:ring-2 hover:ring-[#81B29A]/30 will-change-transform overflow-hidden group">
                 <Image 
                   src="/Pictures/pexels-pixabay-60575.jpg" 
                   alt="Dekarbonisierung" 
@@ -99,7 +99,7 @@ export default function Home() {
                 </div>
               </div>
               {/* Maßnahmen Card */}
-              <div className="flex flex-col rounded-3xl bg-white/60 border border-[#81B29A]/20 backdrop-blur-xl transition-transform duration-300 hover:scale-105 hover:shadow-2xl will-change-transform overflow-hidden group">
+              <div className="flex flex-col rounded-3xl bg-white/60 border-2 border-[#81B29A]/20 backdrop-blur-xl transition-transform duration-300 hover:scale-105 hover:border-[#81B29A] hover:ring-2 hover:ring-[#81B29A]/30 will-change-transform overflow-hidden group">
                 <Image src="/Pictures/pexels-tomfisk-9893729.jpg" alt="Maßnahmen" width={600} height={256} quality={40} placeholder="blur" className="w-full h-64 object-cover rounded-t-2xl transition-all duration-300" />
                 <div className="flex flex-col p-8 flex-1">
                   <h3 className="text-2xl font-extrabold mb-2" style={{ color: '#23243a' }}>{t.measures}</h3>
