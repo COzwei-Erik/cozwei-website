@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
 import Header from "./Header";
-import { useRef } from "react";
 import { useLanguage, translations } from "./LanguageContext";
 
 export default function Home() {
