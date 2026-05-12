@@ -14,8 +14,10 @@ const headerTranslations = {
     sustainability: "Nachhaltigkeit",
     decarbonization: "Dekarbonisierung",
     measures: "Maßnahmen",
+    verification: "Verifizierung",
     references: "Referenzen",
     about: "Über uns",
+    insights: "Insights",
     contact: "Kontakt",
   },
   en: {
@@ -23,8 +25,10 @@ const headerTranslations = {
     sustainability: "Sustainability",
     decarbonization: "Decarbonization",
     measures: "Measures",
+    verification: "Verification",
     references: "References",
     about: "About us",
+    insights: "Insights",
     contact: "Contact",
   },
   pt: {
@@ -32,8 +36,10 @@ const headerTranslations = {
     sustainability: "Sustentabilidade",
     decarbonization: "Descarbonização",
     measures: "Medidas",
+    verification: "Verificação",
     references: "Referências",
     about: "Sobre nós",
+    insights: "Insights",
     contact: "Contato",
   },
 };
@@ -88,10 +94,12 @@ export default function Header() {
             <li><a href="/nachhaltigkeit" className="block px-6 py-3 hover:bg-[#81B29A]/10 text-[#3D405B] text-base font-semibold">{t.sustainability}</a></li>
             <li><a href="/dekarbonisierung" className="block px-6 py-3 hover:bg-[#81B29A]/10 text-[#3D405B] text-base font-semibold">{t.decarbonization}</a></li>
             <li><a href="/massnahmen" className="block px-6 py-3 hover:bg-[#81B29A]/10 text-[#3D405B] text-base font-semibold">{t.measures}</a></li>
+            <li><a href="/verifizierung" className="block px-6 py-3 hover:bg-[#81B29A]/10 text-[#3D405B] text-base font-semibold">{t.verification}</a></li>
           </ul>
         </li>
         <li><a href="/referenzen" className="hover:text-green-700 transition text-lg font-bold" style={{ color: '#3D405B' }}>{t.references}</a></li>
         <li><a href="/ueber-uns" className="hover:text-green-700 transition text-lg font-bold" style={{ color: '#3D405B' }}>{t.about}</a></li>
+        <li><a href="/insights" className="hover:text-green-700 transition text-lg font-bold" style={{ color: '#3D405B' }}>{t.insights}</a></li>
         <li><a href="#kontakt" className="hover:text-green-700 transition text-lg font-bold" style={{ color: '#3D405B' }}>{t.contact}</a></li>
         <li className="ml-4">
           <div className="flex items-center gap-1 border rounded px-2 py-1 bg-white">

@@ -58,11 +58,13 @@ export default function MobileMenu({
                 <Link href="/nachhaltigkeit" className="block px-6 py-3 hover:bg-[#81B29A]/10 text-[#3D405B] text-base font-semibold" onClick={onClose}>{t.sustainability}</Link>
                 <Link href="/dekarbonisierung" className="block px-6 py-3 hover:bg-[#81B29A]/10 text-[#3D405B] text-base font-semibold" onClick={onClose}>{t.decarbonization}</Link>
                 <Link href="/massnahmen" className="block px-6 py-3 hover:bg-[#81B29A]/10 text-[#3D405B] text-base font-semibold" onClick={onClose}>{t.measures}</Link>
+                <Link href="/verifizierung" className="block px-6 py-3 hover:bg-[#81B29A]/10 text-[#3D405B] text-base font-semibold" onClick={onClose}>{t.verification}</Link>
               </div>
             )}
           </div>
           <Link href="/referenzen" className="hover:text-green-700 transition text-[#3D405B] font-bold text-2xl pl-1" onClick={onClose}>{t.references}</Link>
           <Link href="/ueber-uns" className="hover:text-green-700 transition text-[#3D405B] font-bold text-2xl pl-1" onClick={onClose}>{t.about}</Link>
+          <Link href="/insights" className="hover:text-green-700 transition text-[#3D405B] font-bold text-2xl pl-1" onClick={onClose}>{t.insights}</Link>
           <a href="#kontakt" className="hover:text-green-700 transition text-[#3D405B] font-bold text-2xl pl-1" onClick={onClose}>{t.contact}</a>
         </div>
         <div className="mt-8 flex items-center gap-1 border rounded px-2 py-1 bg-white self-start">
