@@ -5,10 +5,12 @@ import Link from "next/link";
 import { useLanguage, translations } from "../../LanguageContext";
 import ContactForm from "../../components/ContactForm";
 import { StatCallout, PullQuote, CtaBox } from "../../components/InsightCallouts";
+import { content } from "./content";
 
 export default function BuchverlageDekarbonisierung() {
   const { language } = useLanguage();
   const t = translations[language] || translations.de;
+  const c = content[language] || content.de;
 
   return (
     <div className="min-h-screen flex flex-col font-sans bg-white text-gray-900">
@@ -31,11 +33,11 @@ export default function BuchverlageDekarbonisierung() {
           <div className="bg-white/85 rounded-2xl shadow-xl px-8 py-10 max-w-4xl mx-auto border border-white/60 backdrop-blur-sm">
             <div className="flex items-center justify-center gap-3 mb-4 flex-wrap">
               <span className="inline-block px-3 py-1 bg-[#81B29A]/20 text-[#3D405B] text-xs font-semibold rounded-full uppercase tracking-wider">
-                Praxisbeobachtung · Buchverlage / Dekarbonisierung
+                {c.heroKicker}
               </span>
             </div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4 leading-tight" style={{ color: "#3D405B" }}>
-              Eine Tonne Papier aus Frischfasern, eine Tonne Primärstahl: gleicher Energieverbrauch, ganz andere Geschichte
+              {c.heroTitle}
             </h1>
             <div className="flex items-center justify-center gap-4 text-sm" style={{ color: "#3D405B", opacity: 0.75 }}>
               <span>{t.insightsPost1Date}</span>
@@ -59,63 +61,31 @@ export default function BuchverlageDekarbonisierung() {
         </div>
 
         <article className="prose-article">
-          <p className="text-lg leading-relaxed mb-6" style={{ color: "#23243a" }}>
-            Wenn die meisten an energieintensive Industrien denken, kommen ihnen Stahl- und Chemiewerke in den Sinn. Nur wenige würden vermuten, dass das Papier auf ihrem Schreibtisch oder das Buch in ihrem Regal eine ähnliche Energiebilanz aufweist. Für Verlage, die Nachhaltigkeitsvorschriften und Kundenerwartungen ernst nehmen, ist das mehr als eine Randnotiz. Es ist ein strategischer Weckruf.
-          </p>
+          <p className="text-lg leading-relaxed mb-6" style={{ color: "#23243a" }}>{c.intro}</p>
 
-          <h2 className="text-2xl sm:text-3xl font-extrabold mt-12 mb-4" style={{ color: "#3D405B" }}>
-            Eine Branche, die sich vor aller Augen verbirgt
-          </h2>
-          <p className="text-lg leading-relaxed mb-6" style={{ color: "#23243a" }}>
-            Deutschland ist mit einer Jahresproduktion von rund 21,6&nbsp;Millionen Tonnen der viertgrößte Papierproduzent der Welt. Hinter dieser Produktionsleistung verbirgt sich ein erheblicher ökologischer Fußabdruck. Die deutsche Papier- und Zellstoffindustrie verursachte 2022 etwa 11,8&nbsp;Millionen Tonnen CO₂-Äquivalente. Das entspricht rund 7&nbsp;Prozent der Emissionen des Industriesektors, der wiederum etwa 22&nbsp;Prozent der gesamten Treibhausgasemissionen Deutschlands ausmacht.
-          </p>
-          <p className="text-lg leading-relaxed mb-6" style={{ color: "#23243a" }}>
-            Was den Energieverbrauch angeht, rangiert die Papierindustrie als fünftgrößter industrieller Energieverbraucher weltweit. Damit gehört Papier neben Stahl, Zement und Chemie eindeutig zur Kategorie der energieintensiven Grundstoffindustrien.
-          </p>
+          <h2 className="text-2xl sm:text-3xl font-extrabold mt-12 mb-4" style={{ color: "#3D405B" }}>{c.section1Title}</h2>
+          <p className="text-lg leading-relaxed mb-6" style={{ color: "#23243a" }}>{c.section1P1}</p>
+          <p className="text-lg leading-relaxed mb-6" style={{ color: "#23243a" }}>{c.section1P2}</p>
 
-          <StatCallout number="45 %">
-            Emissionsreduktion bei einem unserer Verlagskunden zwischen 2022 und 2025. Erreicht durch konsequent angewandte Dekarbonisierungs-Hebel und Bilanzierung Jahr für Jahr.
-          </StatCallout>
+          <StatCallout number={c.statNumber}>{c.statText}</StatCallout>
 
-          <h2 className="text-2xl sm:text-3xl font-extrabold mt-12 mb-4" style={{ color: "#3D405B" }}>
-            Die Dekarbonisierung ist in greifbarer Nähe
-          </h2>
-          <p className="text-lg leading-relaxed mb-6" style={{ color: "#23243a" }}>
-            Die gute Nachricht: Die Verlags- und Druckindustrie verfügt über praktikable und bewährte Wege, ihren CO₂-Fußabdruck zu verringern, ohne Abstriche bei Qualität oder Produktionsmenge. Zwei Hebel stechen dabei besonders hervor.
-          </p>
-          <p className="text-lg leading-relaxed mb-6" style={{ color: "#23243a" }}>
-            Die Umstellung von Frischfaser auf Recyclingpapier ist die Maßnahme mit der größten Wirkung. Die Verwendung von 100&nbsp;Prozent Recyclingpapier spart im Vergleich zur Frischfaserproduktion 78&nbsp;Prozent Wasser, 68&nbsp;Prozent Energie und 15&nbsp;Prozent CO₂-Emissionen ein. Für Verlage, die große Druckauflagen verwalten, bedeutet das eine direkte und messbare Reduzierung der Emissionen im Scope&nbsp;3.
-          </p>
-          <p className="text-lg leading-relaxed mb-6" style={{ color: "#23243a" }}>
-            Auch die Investitionen in energieeffiziente Druckmaschinen senken den Energiebedarf in jeder Produktionsphase und reduzieren somit die Scope-1- und Scope-2-Emissionen auf Druckereiebene.
-          </p>
+          <h2 className="text-2xl sm:text-3xl font-extrabold mt-12 mb-4" style={{ color: "#3D405B" }}>{c.section2Title}</h2>
+          <p className="text-lg leading-relaxed mb-6" style={{ color: "#23243a" }}>{c.section2P1}</p>
+          <p className="text-lg leading-relaxed mb-6" style={{ color: "#23243a" }}>{c.section2P2}</p>
+          <p className="text-lg leading-relaxed mb-6" style={{ color: "#23243a" }}>{c.section2P3}</p>
 
-          <h2 className="text-2xl sm:text-3xl font-extrabold mt-12 mb-4" style={{ color: "#3D405B" }}>
-            Von Tonnen zum Bücherregal
-          </h2>
-          <p className="text-lg leading-relaxed mb-6" style={{ color: "#23243a" }}>
-            Abstrakte Tonnenzahlen sind oft schwer zu begreifen. Laut Öko-Institut entstehen bei der Produktion eines 200-Seiten-Buchs aus Frischfaserpapier rund 1,1&nbsp;Kilogramm CO₂-Äquivalente. Wird stattdessen Recyclingpapier eingesetzt, sind es nur noch etwa 0,9&nbsp;Kilogramm CO₂-Äquivalente pro Buch.
-          </p>
-          <p className="text-lg leading-relaxed mb-6" style={{ color: "#23243a" }}>
-            Auch unsere eigenen Berechnungen bestätigen diesen Bereich. Für einen Verlagskunden haben wir auf Basis der Gesamtemissionen (market-based) und der Gesamtanzahl der verkauften Bücher gerechnet. Das Ergebnis: 1,32&nbsp;Kilogramm CO₂-Äquivalente pro durchschnittliches Buch im ersten bilanzierten Jahr. Durch die Umsetzung gezielter Dekarbonisierungs-Maßnahmen liegen die aktuellen Emissionen bei 0,97&nbsp;Kilogramm CO₂-Äquivalenten pro Buch.
-          </p>
+          <h2 className="text-2xl sm:text-3xl font-extrabold mt-12 mb-4" style={{ color: "#3D405B" }}>{c.section3Title}</h2>
+          <p className="text-lg leading-relaxed mb-6" style={{ color: "#23243a" }}>{c.section3P1}</p>
+          <p className="text-lg leading-relaxed mb-6" style={{ color: "#23243a" }}>{c.section3P2}</p>
 
-          <PullQuote>
-            Aus 1,32&nbsp;Kilogramm CO₂ pro Buch wurden in drei Jahren 0,97&nbsp;Kilogramm. Das sind 26&nbsp;Prozent weniger pro Buch und 45&nbsp;Prozent weniger an Gesamtemissionen.
-          </PullQuote>
+          <PullQuote>{c.pullQuote}</PullQuote>
 
-          <h2 className="text-2xl sm:text-3xl font-extrabold mt-12 mb-4" style={{ color: "#3D405B" }}>
-            Gemeinsam dekarbonisieren für eine zukunftsfähige Verlagsbranche
-          </h2>
-          <p className="text-lg leading-relaxed mb-6" style={{ color: "#23243a" }}>
-            Wir unterstützen Buchverlage dabei, ihre Emissionen systematisch und nachhaltig zu reduzieren. Bei einem unserer Kunden konnten wir eine Emissionsreduktion von 45&nbsp;Prozent zwischen der ersten Bilanz für das Jahr 2022 und der aktuellsten Bilanz für 2025 erreichen. Möglich war das, weil wir die Bilanz nicht als Pflicht, sondern als strategisches Steuerungsinstrument verstehen.
-          </p>
-          <p className="text-lg leading-relaxed mb-6" style={{ color: "#23243a" }}>
-            Unsere Ergebnisse zeigen: Wir haben das Know-how, um die Verlagsdekarbonisierung praktisch und messbar voranzubringen. Sprechen Sie uns an. Wir zeigen Ihnen, was in Ihrem Unternehmen möglich ist.
-          </p>
+          <h2 className="text-2xl sm:text-3xl font-extrabold mt-12 mb-4" style={{ color: "#3D405B" }}>{c.section4Title}</h2>
+          <p className="text-lg leading-relaxed mb-6" style={{ color: "#23243a" }}>{c.section4P1}</p>
+          <p className="text-lg leading-relaxed mb-6" style={{ color: "#23243a" }}>{c.section4P2}</p>
 
-          <CtaBox title="30-Minuten-Erstgespräch. Unverbindlich.">
-            Wir gehen Ihre Verlags-Klimabilanz gemeinsam durch und identifizieren, wo die größten Hebel für Reduktion in Ihrem Fall liegen.
+          <CtaBox title={c.ctaTitle} buttonLabel={c.ctaButtonLabel}>
+            {c.ctaBody}
           </CtaBox>
 
           {/* Author Box */}
@@ -134,61 +104,28 @@ export default function BuchverlageDekarbonisierung() {
                 {t.insightsAuthorBoxLabel}
               </div>
               <h3 className="text-xl font-extrabold mb-2" style={{ color: "#3D405B" }}>Erik Jakob</h3>
-              <p className="text-base leading-relaxed" style={{ color: "#23243a" }}>
-                Erik Jakob ist einer der beiden Geschäftsführer der COzwei GmbH, einer auf Klimaschutzthemen spezialisierten Unternehmensberatung. Er begleitet Buchverlage seit mehreren Jahren bei der Erstellung von Klimabilanzen und der konkreten Umsetzung von Dekarbonisierungs-Maßnahmen.
-              </p>
+              <p className="text-base leading-relaxed" style={{ color: "#23243a" }}>{c.authorBio}</p>
             </div>
           </aside>
 
           {/* FAQ */}
-          <h2 className="text-2xl sm:text-3xl font-extrabold mt-16 mb-2" style={{ color: "#3D405B" }}>
-            {t.insightsFaqTitle}
-          </h2>
-          <p className="text-base mb-6" style={{ color: "#23243a", opacity: 0.8 }}>
-            Antworten auf die Fragen, die uns in Verlagsgesprächen am häufigsten gestellt werden.
-          </p>
+          <h2 className="text-2xl sm:text-3xl font-extrabold mt-16 mb-2" style={{ color: "#3D405B" }}>{t.insightsFaqTitle}</h2>
+          <p className="text-base mb-6" style={{ color: "#23243a", opacity: 0.8 }}>{c.faqIntro}</p>
           <div className="space-y-3">
-            <details className="group rounded-xl border border-[#81B29A]/20 bg-white/60 px-5 py-4">
-              <summary className="cursor-pointer font-bold flex items-center justify-between" style={{ color: "#3D405B" }}>
-                <span>Wie viel CO₂ verursacht ein einzelnes Buch wirklich?</span>
-                <svg className="w-5 h-5 flex-shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7"/></svg>
-              </summary>
-              <p className="text-base leading-relaxed mt-3" style={{ color: "#23243a" }}>
-                Die Größenordnung liegt bei rund 1&nbsp;Kilogramm CO₂-Äquivalenten pro 200-Seiten-Buch aus Frischfaserpapier (Öko-Institut). Mit Recyclingpapier sinkt der Wert auf etwa 0,9&nbsp;Kilogramm. In unseren eigenen Berechnungen für einen Verlagskunden lagen die Werte zwischen 1,32&nbsp;Kilogramm (Ausgangsbilanz) und 0,97&nbsp;Kilogramm (aktuelle Bilanz) pro Buch. Die exakte Zahl hängt von Papierqualität, Druckverfahren, Auflagenhöhe und Vertriebsweg ab.
-              </p>
-            </details>
-            <details className="group rounded-xl border border-[#81B29A]/20 bg-white/60 px-5 py-4">
-              <summary className="cursor-pointer font-bold flex items-center justify-between" style={{ color: "#3D405B" }}>
-                <span>Welche Hebel haben den größten Effekt für Buchverlage?</span>
-                <svg className="w-5 h-5 flex-shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7"/></svg>
-              </summary>
-              <p className="text-base leading-relaxed mt-3" style={{ color: "#23243a" }}>
-                Den größten Effekt hat die Umstellung von Frischfaser- auf Recyclingpapier (Scope&nbsp;3.1). Sie spart rund 78&nbsp;Prozent Wasser, 68&nbsp;Prozent Energie und 15&nbsp;Prozent CO₂-Emissionen pro Tonne. An zweiter Stelle stehen energieeffiziente Druckmaschinen und Prozessoptimierungen auf Druckereiebene (Scope&nbsp;1 und 2). Weitere Hebel ergeben sich aus Auflagen-, Lager- und Logistikoptimierung.
-              </p>
-            </details>
-            <details className="group rounded-xl border border-[#81B29A]/20 bg-white/60 px-5 py-4">
-              <summary className="cursor-pointer font-bold flex items-center justify-between" style={{ color: "#3D405B" }}>
-                <span>Lohnt sich ein Klimabilanz-Aufbau auch für mittelgroße Verlage?</span>
-                <svg className="w-5 h-5 flex-shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7"/></svg>
-              </summary>
-              <p className="text-base leading-relaxed mt-3" style={{ color: "#23243a" }}>
-                Ja. Auch wenn ein Verlag nicht direkt CSRD-pflichtig ist, fordern Vertriebspartner, Buchhandelsketten und institutionelle Kunden zunehmend belastbare Emissionsangaben entlang der Lieferkette. Eine saubere Klimabilanz schafft die Grundlage, um diese Anforderungen zu bedienen und die eigene Marktposition gegenüber nachhaltigkeitsorientierten Kunden zu stärken.
-              </p>
-            </details>
-            <details className="group rounded-xl border border-[#81B29A]/20 bg-white/60 px-5 py-4">
-              <summary className="cursor-pointer font-bold flex items-center justify-between" style={{ color: "#3D405B" }}>
-                <span>Was sind realistische Reduktionspfade in den ersten Jahren?</span>
-                <svg className="w-5 h-5 flex-shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7"/></svg>
-              </summary>
-              <p className="text-base leading-relaxed mt-3" style={{ color: "#23243a" }}>
-                Bei unserem oben genannten Verlagskunden konnten wir innerhalb von drei Jahren rund 45&nbsp;Prozent Reduktion bei den Gesamtemissionen erreichen. Solche Werte sind kein Selbstläufer, aber bei konsequenter Umsetzung der zwei Haupthebel realistisch. Eine Festpreis-Indikation und einen Vorschlag für den Reduktionspfad in Ihrem Unternehmen erhalten Sie nach dem 30-Minuten-Erstgespräch.
-              </p>
-            </details>
+            {c.faqs.map((faq, i) => (
+              <details key={i} className="group rounded-xl border border-[#81B29A]/20 bg-white/60 px-5 py-4">
+                <summary className="cursor-pointer font-bold flex items-center justify-between" style={{ color: "#3D405B" }}>
+                  <span>{faq.q}</span>
+                  <svg className="w-5 h-5 flex-shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </summary>
+                <p className="text-base leading-relaxed mt-3" style={{ color: "#23243a" }}>{faq.a}</p>
+              </details>
+            ))}
           </div>
 
-          <p className="text-sm italic mt-12" style={{ color: "#23243a", opacity: 0.7 }}>
-            Hinweis: Die Kunden-Werte (1,32&nbsp;/&nbsp;0,97&nbsp;Kilogramm CO₂ pro Buch, 45&nbsp;Prozent Reduktion) stammen aus unseren eigenen Berechnungen auf Basis market-based Scope-2-Emissionen und gelten projektspezifisch.
-          </p>
+          <p className="text-sm italic mt-12" style={{ color: "#23243a", opacity: 0.7 }}>{c.disclaimer}</p>
         </article>
       </main>
 
