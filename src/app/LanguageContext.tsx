@@ -1,0 +1,1326 @@
+'use client';
+
+import React, { createContext, useContext, useState, useEffect } from "react";
+
+type Language = "de" | "en" | "pt";
+
+interface LanguageContextProps {
+  language: Language;
+  setLanguage: (lang: Language) => void;
+}
+
+const LanguageContext = createContext<LanguageContextProps>({
+  language: "de",
+  setLanguage: () => {},
+});
+
+export const LanguageProvider = ({ children }: { children: React.ReactNode }) => {
+  const [language, setLanguageState] = useState<Language>("de");
+
+  useEffect(() => {
+    // On mount, check localStorage or browser language
+    const stored = typeof window !== 'undefined' ? localStorage.getItem("lang") : null;
+    if (stored === "de" || stored === "en" || stored === "pt") {
+      setLanguageState(stored);
+    } else {
+      const browserLang = (navigator.language || navigator.languages[0] || "de").slice(0,2).toLowerCase();
+      if (["de","en","pt"].includes(browserLang)) {
+        setLanguageState(browserLang as Language);
+      }
+    }
+  }, []);
+
+  const setLanguage = (lang: Language) => {
+    setLanguageState(lang);
+    if (typeof window !== 'undefined') {
+      localStorage.setItem("lang", lang);
+    }
+  };
+
+  return (
+    <LanguageContext.Provider value={{ language, setLanguage }}>
+      {children}
+    </LanguageContext.Provider>
+  );
+};
+
+export const useLanguage = () => useContext(LanguageContext);
+
+// Centralized translations for the whole app
+export const translations = {
+  de: {
+    // Example keys, to be expanded for all pages
+    heroTitle: "Wir machen Klimaziele möglich",
+    heroSubtitle: "Unser Ziel ist es Unternehmen und Institutionen zu befähigen nachhaltiger zu wirtschaften und Klimaziele zu erreichen",
+    learnMore: "Mehr erfahren",
+    solutions: "Lösungen",
+    solutionsDesc: "Wir als Umweltdienstleister, bieten unseren Kunden diverse Beratungs- und Implementierungslösungen an, um Nachhaltigkeits- und Klimastrategien erfolgreich umzusetzen.",
+    sustainability: "Nachhaltigkeit",
+    sustainabilityDesc: "Implementierung von Nachhaltigkeitsstrategien auf Unternehmensebene",
+    decarbonization: "Dekarbonisierung",
+    decarbonizationDesc: "Ermöglichung von CO₂-Reduktion entlang der gesamten Wertschöpfungskette",
+    measures: "Maßnahmen",
+    measuresDesc: "Umsetzung von Dekarbonisierungszielen von PV-Anlagen bis hin zu Gebäudesanierungen",
+    about: "Über uns",
+    contact: "Kontakt",
+    customers: "Unsere Kunden",
+    andManyMore: "... und viele mehr!",
+    referenzenMoreText: "Weitere Referenzen auf Anfrage: christian.philippen@cozwei.de",
+    contactUs: "Kontaktieren Sie uns",
+    name: "Name",
+    namePlaceholder: "Ihr Name",
+    email: "E-Mail",
+    emailPlaceholder: "Ihre E-Mail-Adresse",
+    company: "Unternehmen (optional)",
+    companyPlaceholder: "Ihr Unternehmen",
+    message: "Nachricht",
+    messagePlaceholder: "Ihre Nachricht",
+    send: "Absenden",
+    privacy: "Datenschutz",
+    imprint: "Impressum",
+    linkedin: "LinkedIn",
+    sustainabilityHeroTitle: "Nachhaltigkeit",
+    sustainabilityHeroSubtitle: "Wir unterstützen bei der Implementierung des Nachhaltigkeitsmanagements von Strategieentwicklung über Nachhaltigkeitsinitiativen bis zu Reporting und ESG-Ratings.",
+    sustainabilitySectionTitle: "Zukunftsgerichtet und nachhaltig",
+    sustainabilitySectionSubtitle: "Von Sustainable Development Goals bis zur ESG-Strategie helfen wir Ihnen Ihr Unternehmen nachhaltig, glaubhaft und transparent auszurichten.",
+    nachhaltigkeitsstrategieTitle: "Nachhaltigkeitsstrategie",
+    nachhaltigkeitsstrategieDesc: "Die Entwicklung oder Aktualisierung von Nachhaltigkeits- oder auch ESG-Strategien ist eine komplexe Herausforderung über die gesamte Wertschöpfungskette von Unternehmen. Wir unterstützen bei der Entwicklung passender Lösungen mit Fokus auf die Automobil- und Zulieferindustrie",
+    esgRatingsTitle: "ESG Ratings & SAQ 5.0",
+    esgRatingsDesc: "Die Beantwortung von Lieferantenanfragen (z.B. SAQ 5.0) oder ESG Ratings (z.B. Ecovadis) erfordert Expertenwissen und kann zeitaufwendig sein. Wir entlasten Unternehmen bei Rückmeldungen von Lieferantenanfragen zu Nachhaltigkeit.",
+    csrdGriTitle: "CSRD, GRI Berichte",
+    csrdGriDesc: "Für ausgewählte Bestandteile der CSRD z.B. E1 Klimaschutz oder Elemente von GRI mit Fokus auf Umwelt unterstützen wir bei der Datenerhebung und Berichterstattung. Kleinere Unternehmen führen wir an die erste Berichterstattung heran.",
+    esgSoftwareTitle: "ESG Software",
+    esgSoftwareDesc: "Die Steuerung und Sammlung von Daten kann durch geeignete Software erleichtert werden. Wir unterstützen Sie bei der Auswahl und Implementierung geeigneter Lösungen z.B. von Envoria oder Code Gaia.",
+    decarbonHeroTitle: "Dekarbonisierung",
+    decarbonHeroSubtitle: "Wir ermöglichen die CO₂-Reduktion von Unternehmen & Institutionen zur Erreichung der globalen 1,5-Grad-Klimaziele. Dazu zählt die Berechnung, Planung, Reduktion und das Reporting.",
+    decarbonSectionTitle: "Klimaziele erreichen",
+    decarbonSectionSubtitle: "Durch unserem bewährten und zertifizierbaren vier Schritte Plan, erreichen Sie Ihre Klimaziele. Von der Berechnung der Ist-Emissionen bis hin zum Produktionsplan und Kommunikation decken wir alles ab.",
+    decarbonCard1Title: "Transformationskonzept",
+    decarbonCard1Desc: "Je deutschen Standort bis zu 90.000€ Förderung zur Erstellung eines Transformationskonzeptes zur erreichung der Klimaneutralität",
+    decarbonCard2Title: "Klimaschutzkonzept",
+    decarbonCard2Desc: "Unterstützung für Institutionen zur Erstellung eines durch die nationale Klimaschutzinitiative gefördertes Klimaschutzkonzept",
+    decarbonCard3Title: "ESRS E1",
+    decarbonCard3Desc: "Wir unterstützen bei der Erhebung, Berechnung und Vorbereitung der Berichterstattung",
+    decarbonStepsTitle: "In 4 Schritten zur Klimaneutralität",
+    decarbonStep1Title: "Gesamtunternehmensklimabilanz (CCF THG-Bilanz)",
+    decarbonStep1Desc: "Die Berechnung der Emissionen bildet die Basis aller Dekarbonisierungsvorhaben. Wir berechnen Ihnen nach der wissenschaftlich anerkannten Methoden des GHG-Protokolls Ihre direkten und indirekten Emissionen (Scope 1, 2 & 3). Von einzelnen Produkten bis zu Ihrem Gesamtunternehmen decken wir alle Emissionsbilanzierungen ab.",
+    decarbonStep2Title: "Dekarbonisierungsmaßnahmen ableiten",
+    decarbonStep2Desc: "Auf Basis der Bilanz können unternehmens- oder produktspezifische Dekarbonisierungsmaßnahmen abgeleitet werden. Dies kann Maßnahmen in Bezug auf Gebäude, Fuhrparks, Produktionen oder Produkte umfassen. Dabei wird nach Kosten, Emissionshebel und Umsetzungszeitraum unterschieden. Dieses Vorgehen erlaubt Ihnen, Ihre Entscheidungen nachhaltig und kostenorientiert zu treffen.",
+    decarbonStep3Title: "Zieljahr zur Klimaneutralität",
+    decarbonStep3Desc: "Aus der Summe aller realistisch umsetzbaren Maßnahmen kann ein Zieljahr zur Klimaneutralität abgeleitet werden. Dabei werden die Gesamtkosten, die Emissionsreduzierung und die Kompensationskosten herausgestellt.",
+    decarbonStep4Title: "Ziele kommunizieren und reporten",
+    decarbonStep4Desc: "Wir unterstützen Sie bei der Zertifizierung und Kommunikation Ihrer Erfolge. Beispielsweise bei der Aufbereitung von Klimadaten für ESG-Ratings oder Nachhaltigkeitsberichte, beim jährlichen CDP-Reporting und der Einreichung von SBTi Zielen oder bei der Beantwortung von Kundenanfragen (B2B) zum Klimaschutz.",
+    measuresHeroTitle: "Implementierung von Maßnahmen",
+    measuresHeroSubtitle: "Bei uns gilt das Motto: Wir sind erst fertig, wenn die Handwerker das Gelände verlassen.",
+    measuresSectionTitle: "Maßnahmen",
+    measuresSectionSubtitle: "Wir sind Experten in der Ableitung von Dekarbonisierungsmaßnahmen, aber wir wollen auch weiter denken. Die weltweiten Klimaziele können nur erreicht werden, wenn Theorie und Praxis Hand in Hand gehen. Deshalb betreuen wir mit unserem starken Netzwerk von Partner Ihre Vorhaben bis zur finalen Umsetzung.",
+    measuresCard1Title: "Förderungen",
+    measuresCard1Desc: "Förderungen sind essenziell, um Investitionen in klimafreundliche Technologien wirtschaftlich attraktiv zu machen. Sie helfen insbesondere kleinen und mittleren Unternehmen, notwendige Maßnahmen schneller umzusetzen.",
+    measuresCard2Title: "Unsere Partner",
+    measuresCard2Desc: "Mit unseren Partnern setzen wir Klimaschutzmaßnahmen europaweit erfolgreich um. So ermöglichen wir es unseren Kunden, ihre Klimaziele effizient und nachhaltig zu erreichen.",
+    measuresLearnMore: "Mehr erfahren",
+    climateFundingTitle: "Klima-Förderungen",
+    climateFundingSubtitle: "Gemeinsam mit unseren Umsetzungspartnern haben wir einen Klima-Förderkatalog entwickelt, welcher die deutsche Förderlandschaft für Klimaförderungen aufzeigt und die Umsetzung kostengünstiger gestaltet.",
+    acceptPrivacy: "Ich akzeptiere die ",
+    privacyPolicy: "Datenschutzerklärung",
+    // PDF Download Form translations
+    pdfFormName: "Name *",
+    pdfFormNamePlaceholder: "Ihr vollständiger Name",
+    pdfFormEmail: "E-Mail-Adresse *",
+    pdfFormEmailPlaceholder: "ihre.email@beispiel.de",
+    pdfFormCompany: "Unternehmen",
+    pdfFormCompanyPlaceholder: "Ihr Unternehmen (optional)",
+    pdfFormPrivacyText: "Ich akzeptiere die ",
+    pdfFormPrivacyLink: "Datenschutzerklärung",
+    pdfFormPrivacySuffix: ". *",
+    pdfFormSubmitButton: "PDF anfordern",
+    pdfFormSubmitting: "Wird gesendet...",
+    pdfFormSuccessTitle: "Vielen Dank für Ihr Interesse!",
+    pdfFormSuccessMessage: "Sie können jetzt den Klima-Förderkatalog einsehen.",
+    pdfFormOpenPDFButton: "PDF im neuen Tab öffnen",
+    pdfFormErrorTitle: "Fehler beim Senden der Anfrage",
+    pdfFormErrorMessage: "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.",
+    partnersSectionTitle: "Unsere Partner",
+    partnerSoleraTitle: "Solera Stuttgart GmbH",
+    partnerSoleraDesc: "Unsere Partner von Solera Stuttgart GmbH planen und installieren schlüsselfertige Photovoltaikanlagen mit einem klaren Fokus auf Wirtschaftlichkeit und nachhaltiger Wertschöpfung, mit dem Ziel, die Energiewende voranzutreiben.",
+    partnerEffizienzTitle: "Effizienzpioniere",
+    partnerEffizienzDesc: "Mit ihrem Expertenteam zertifizierter KfW Energieberater helfen die Effizienzpioniere dabei, Immobilien klimaeffizient zu sanieren – maximale Förderung inklusive. Gemeinsam treten wir an, einen messbaren Beitrag zum Klimawandel zu leisten.",
+    partnerGrundsteineTitle: "Grundsteine GmbH",
+    partnerGrundsteineDesc: "Die Grundsteine GmbH ist als Softwareunternehmen auf die Digitalisierung von Förderprozessen spezialisiert. Mit ihren Softwareprodukten digitalisieren und beschleunigen sie die Energiewende. Ob Energieberatung oder digitale Förderanträge – mit ihren Werkzeugen werden Prozesse effizienter und einfacher.",
+    partnerEnvoriaTitle: "Envoria",
+    partnerEnvoriaDesc: "Envoria ist ein Softwareanbieter für die Vereinfachung von ESG-Reportings. Von vorkonfigurierten Reporting-KPIs und Vorlagen bis hin zur Verwaltung von Benutzerfunktionen, Rechten und Aufgaben – Envoria bietet die Funktionen, die Sie brauchen.",
+    partnerFinmatchTitle: "Finmatch",
+    partnerFinmatchDesc: "Als Finanzierungsunternehmen unterstützt Finmatch Unternehmen bei der Finanzierung und Verwirklichung von Klimazielen. Mit mehr als 800 Finanzierungspartnern haben sie das größte Finanzierungsnetzwerk für Mittelständler in der DACH-Region.",
+    partnerRemzeroTitle: "REM ZERO GmbH",
+    partnerRemzeroDesc: "Die REM ZERO GmbH ist unser Joint-Venture, das die Welt der Finanzen und Nachhaltigkeit zusammenbringt, um die Transformation real werden zu lassen.",
+    partnerMicrosoftTitle: "Microsoft",
+    partnerMicrosoftDesc: "Als Teil des Microsoft Startup Founder Hubs, können wir mit Hilfe von Microsoft, deren Anwendungen und dem Netzwerk Software aufbauen, welches das Ableiten von realistischen Klimamaßnahmen und die Dekarbonisierung bei unseren Kunden vereinfacht und automatisiert.",
+    aboutHeroTitle: "Wer sind wir",
+    aboutHeroDesc: "Bei COzwei fokussieren wir uns auf Lösungen und die Umsetzung von Klimastrategien, denn es mangelt aktuell weniger an Klimazielen, sondern eher an der konkreten und vermeidungskostenoptimierten Reduktion von Emissionen bei Unternehmen und Institutionen.",
+    aboutHeroButton: "Mehr erfahren",
+    aboutMapTitle: "Mit uns Klimaziele möglich machen",
+    aboutMapSubtitle: "Zwei Standorte in Stuttgart und Lissabon - ein Team für mehr unternehmerische Nachhaltigkeit",
+    aboutTeamTitle: "Ein starkes Team für mehr Klimaschutz",
+    teamRoleChristian: "GESCHÄFTSFÜHRER",
+    teamRoleErik: "GESCHÄFTSFÜHRER",
+    teamRoleAlina: "VERWALTUNG",
+    teamRoleDominik: "PROJEKTLEITER KLIMAMANAGEMENT",
+    teamRoleLouis: "KLIMAMANAGEMENT",
+    teamRoleRonan: "ENERGIEBERATUNG",
+    teamRoleMarie: "BERATUNG",
+    teamRoleHannah: "KLIMAANPASSUNG",
+    teamRoleRicardo: "LEITUNG VERTRIEB & MARKETING",
+    aboutBenefitsTitle: "Mit uns Klimaziele möglich machen",
+    aboutBenefit1: "Start-up-Atmosphäre",
+    aboutBenefit2: "Urban Sports Club",
+    aboutBenefit3: "Kostenlose Snacks und Getränke",
+    aboutBenefit4: "Flexible und mobile Arbeit",
+    aboutBenefit5: "Teamevents",
+    aboutBenefit6: "Internationales Umfeld",
+    aboutApplyButton: "JETZT BEWERBEN",
+    aboutHeroImageAlt: "Über uns Hintergrundbild",
+    aboutPartnersTitle: "Unsere Partner",
+    aboutPartnersPreviousAria: "Vorherige Partner",
+    aboutPartnersNextAria: "Nächste Partner",
+    aboutMapImageAlt: "Karte von Europa",
+    aboutMapSintraLabel: "Sintra, Portugal",
+    aboutMapSintraAddress: "AV Heliodoro Salgado 48A",
+    aboutMapStuttgartLabel: "Stuttgart, Deutschland",
+    aboutMapStuttgartAddress: "Gutenbergstraße 16A",
+    footerContactLine: "COzwei GmbH • Gutenbergstraße 16A, 70176 Stuttgart • Telefon: +49 711 12171034 • E-Mail: mail@cozwei.de",
+    transfHeroTitle: "Klima Transformationspläne – BAFA Modul 5",
+    transfHeroDesc: "Je deutschen Standort bis zu 90.000€ Förderung für Dienstleistungen zur Unterstützung bei der Planung und Umsetzung einer Transformation hin zur Treibhausgasneutralität von Unternehmen.",
+    transfInfoTitle: "Mit geförderten Klima-Transformationsplänen Kosten senken",
+    transfInfoDesc: "Transparenzanforderungen zum Corporate Carbon Footprint (THG-Bilanz) von Kunden oder künftig auch zunehmend von Gesetzgebern in Europa (CSRD Nachhaltigkeitsberichtserstattung) werden steigen.\n\nDas Förderprogram der BAFA (Modul 5) zur Energie- und Ressourceneffizienz in der Wirtschaft setzt hier an und fördert bis zu 70% der Dienstleistungskosten für einen standortbezogenen Transformationsplan hin zur Treibhausgasneutralität.\n\nFür unsere Dienstleistungen können Sie die Förderung erhalten und erreichen damit Ihre Klimaziele.",
+    transfStepsTitle: "Vier Schritte zur nachhaltigen Transformation",
+    transfStep1Title: "BAFA 5 Antragstellung",
+    transfStep1Desc: "Aufbereitung aller Unterlagen und Unterstützung bei der Antragseinreichung, für den Erhalt der gesamten Fördersumme. Die Umsetzung erfolgt nach der Förderungsbewilligung, für die optimale Erkennbarkeit der realen Kosten.",
+    transfStep2Title: "Erstellung CO₂-Bilanz",
+    transfStep2Desc: "Die Basis aller Transformation zur CO₂-Neutralität ist die Erstellung der CO₂-Bilanz (CCF). Alle CO₂-Emissionen, welche im Unternehmen entlang der Wertschöpfungskette entstehen, werden erfasst und gemäß international Standards (ISO 14064) bilanziert.",
+    transfStep3Title: "Maßnahmenableitung",
+    transfStep3Desc: "Auf Basis der CO₂-Bilanz werden die größten Emissionstreiber identifiziert und Reduktionsmaßnahmen abgeleitet. Diese weisen auf, wie viele Emissionen eingespart werden, was die Kosten zur Umsetzung sein werden, welche Finanzierungen und Förderungen möglich sind und wann eine realistische Umsetzung an geplant werden kann.",
+    transfStep4Title: "Zielsetzung und Strategie",
+    transfStep4Desc: "Durch die Summe aller umsetzbarer Maßnahmen kann ein Zieljahr zur Klimaneutralität abgeleitet werden und verschiedenste Szenarien zur Erreichung aufgezeigt werden. Diese Szenarien können je nach Ambitionslevel zur Maßnahmenumsetzung unterschiedlich ausfallen und befähigen dazu die wirtschaftlichste Option zu wählen.",
+    transfEligTitle: "Welche Unternehmen können gefördert werden?",
+    transfEligDesc: "Unternehmen mit Produktionsstandorten in Deutschland sind förderfähig je Standort nach der Bundesförderung für Energie- und Ressourceneffizienz in der Wirtschaft (EEW). Die Förderhöhe ist abhängig von der Unternehmensgröße. Gerne führen wir unverbindlich einen Schnellcheck zur möglichen Fördersumme durch. Generell gilt:",
+    transfEligList1: "Unternehmen ohne KMU-Status: 40-50 Prozent",
+    transfEligList2: "Mittlere Unternehmen (MU): 50-60 Prozent",
+    transfEligList3: "Kleine Unternehmen (KU): 60-70 Prozent",
+    transfEligMax: "Bis zu einer Höhe von maximal 90.000€",
+    transfEligSource: "Quelle: BAFA (Stand 04.06.2024)",
+    // Förderungen translations
+    foerderungenHeroTitle: "Förderungen",
+    foerderungenHeroSubtitle: "Wir unterstützen Sie bei der Identifikation und Beantragung von Klimaförderungen, um Ihre Nachhaltigkeitsziele wirtschaftlich zu erreichen.",
+    foerderungenSelectState: "Bundesland auswählen",
+    foerderungenBox1Title: "BAFA Modul 1-6 Förderung",
+    foerderungenBox1Desc: "Die Bundesregierung unterstützt Unternehmen mit Förderprogrammen für Digitalisierung, Energieeffizienz und Innovation. Ziel ist es, den Wirtschaftsstandort Deutschland zukunftsfähig zu machen.",
+    foerderungenBox1Focus: "Förderschwerpunkt: Energieeffiziente Produktionsanlagen",
+    foerderungenBox2Title: "GRW Förderung",
+    foerderungenBox2Desc: "Die GRW-Förderung (Gemeinschaftsaufgabe \"Verbesserung der regionalen Wirtschaftsstruktur\") stärkt strukturschwache Regionen durch Investitionszuschüsse für Unternehmen und Infrastrukturprojekte. Die Förderhöhen sind abhängig davon, in welchen Fördergebieten (C/D) sich das Unternehmen befindet.",
+    foerderungenBox2Focus: "Förderschwerpunkt: Standortentwicklung, neue Arbeitsplätze",
+    foerderungenBox3Title: "Regionale Förderungen",
+    foerderungenBox3Desc: "Bundesländer und Kommunen bieten eigene Programme, die gezielt auf regionale Bedürfnisse zugeschnitten sind – etwa für Innovation, Energie oder Ausbildung. Ein Beispiel hierfür ist das Energie & Klima 2023 Förderprogramm der SAB mit Fördersätzen von bis zu 70% für energieeffiziente Ersatzmaschinen.",
+    foerderungenBox3Focus: "Förderschwerpunkt: Modernisierung, neue Arbeitsplätze",
+    foerderungenSpecialTitle: "🔥 Zeitlich begrenzte Förderungen",
+    foerderungenSpecialSubtitle: "Diese Förderungen sind nur für kurze Zeit verfügbar - jetzt bewerben!",
+    foerderungenSpecialSachsenTitle: "70% Förderung auf Maschinenanschaffungen in Sachsen",
+    foerderungenSpecialSachsenDesc: "Die Sächsische AufbauBank (SAB) fördert mit der Richtlinie Energie und Klima Investitionen in energieeffiziente Maschinen und Anlagen mit bis zu 70% der förderfähigen Kosten.",
+    foerderungenSpecialSachsenDetails: "Förderung für kleine und mittlere Unternehmen (KMU) sowie große Unternehmen in Sachsen. Antragsfrist beachten!",
+    foerderungenSpecialSachsenButton: "Jetzt bewerben",
+    // Referenzen translations
+    referenzenHeroTitle: "Referenzen",
+    referenzenHeroSubtitle: "Entdecken Sie unsere erfolgreichen Projekte und zufriedenen Kunden aus verschiedenen Branchen.",
+    referenzenAllProjects: "Alle Projekte",
+    referenzenNachhaltigkeit: "Nachhaltigkeit",
+    referenzenKlimaschutz: "Klimaschutz",
+    referenzenMaßnahmen: "Maßnahmen",
+    referenzenProjectsTitle: "Unsere Referenzen",
+    referenzenProjectsSubtitle: "Hier werden unsere erfolgreichen Projekte und Kundenreferenzen präsentiert.",
+    // Project translations - Klimaschutz
+    project1Title: "Klett Cotta Verlag",
+    project1Desc: "Im Rahmen einer mehrjährigen Zusammenarbeit erstellten wir den Corporate Carbon Footprint für die Jahre 2021, 2023 und 2024 und entwickelten eine CO₂-Reduktionsstrategie in Einklang mit den konzernweiten Klimazielen.",
+    project2Title: "PONS Langenscheidt GmbH",
+    project2Desc: "Für PONS Langenscheidt begleiteten wir die Erstellung des Corporate Carbon Footprints über mehrere Jahre hinweg und leiteten daraus eine strategisch fundierte Reduktionsplanung ab.",
+    project3Title: "Junfermann Verlag",
+    project3Desc: "Zur Unterstützung der Klimaziele des Unternehmens analysierten wir im Zeitraum 2021 bis 2024 regelmäßig die CO₂-Bilanz und entwickelten eine entsprechende Minderungsstrategie.",
+    project4Title: "Bange Verlag",
+    project4Desc: "Die Erstellung des Corporate Carbon Footprints sowie die Ableitung gezielter Emissionsminderungsmaßnahmen erfolgten im Rahmen eines mehrjährigen Beratungsprozesses.",
+    project5Title: "Ernst Klett Sprachen GmbH",
+    project5Desc: "Wir ermittelten für die Jahre 2021 und 2022 den CO₂-Fußabdruck und leiteten darauf aufbauend eine konzernkonforme Klimastrategie zur Emissionsreduktion ab.",
+    project6Title: "Ernst Klett Aktiengesellschaft",
+    project6Desc: "Im Rahmen einer gruppenweiten Klimastrategie entwickelten wir ein einheitliches Bilanzierungshandbuch, konsolidierten die THG-Bilanzen aller Beteiligungen und definierten übergeordnete Klimaziele.",
+    project7Title: "Enpulse Ventures GmbH",
+    project7Desc: "Erstellung der Corporate Carbon Footprints für die Jahre 2022 bis 2024 sowie Entwicklung einer unternehmensspezifischen Reduktionsstrategie im Rahmen der konzernweiten Nachhaltigkeitsvorgaben der EnBW.",
+    project8Title: "ESKA-Welt GmbH",
+    project8Desc: "Konzeption und Umsetzung eines geförderten Transformationskonzepts gemäß BAFA Modul 5 inklusive Treibhausgasbilanz, Maßnahmenplanung und Definition eines Klimaziels.",
+    project9Title: "SFC Energy AG",
+    project9Desc: "Im Rahmen der THG-Bilanzierung analysierten wir die drei emissionsintensivsten Kategorien gemäß GHG Protocol, um fundierte Reduktionspotenziale entlang der Lieferkette zu identifizieren.",
+    project10Title: "Dr. Ing. h.c. F. Porsche AG",
+    project10Desc: "Aufbereitung einer Broschüre für die Fahrzeugökobilianz eines batterieelektrischen Fahrzeuges mit Schwerpunkt Treibhausgaspotenzial.",
+    project11Title: "Hochschule Furtwangen",
+    project11Desc: "Entwicklung eines förderfähigen Klimaschutzkonzepts inklusive Treibhausgasbilanz, Potenzialanalyse, Maßnahmenkatalog und Zukunftsszenarien – begleitet durch moderierte Fachworkshops.",
+    project12Title: "Hochschule Albstadt-Sigmaringen",
+    project12Desc: "Im Rahmen des geförderten Klimaschutzkonzepts analysierten wir Emissionen, erarbeiteten Maßnahmenvorschläge und entwickelten langfristige Dekarbonisierungsszenarien.",
+    project13Title: "Hochschule Konstanz",
+    project13Desc: "Ganzheitliche Erstellung eines geförderten Klimaschutzkonzepts mit fundierter Bilanzierung, Potenzialanalyse, Workshop-Moderation und Szenarienentwicklung zur Erreichung der Klimaziele.",
+    project14Title: "Lotus Cars",
+    project14Desc: "Berechnung des Product Carbon Footprints für ein Modell mit Verbrennungsmotor zur Identifikation emissionsintensiver Komponenten und zur Ableitung strategischer Handlungsfelder zur Reduktion von CO2-Emissionen.",
+    project15Title: "Klett Haus Stuttgart",
+    project15Desc: "Erstellung des Corporate Carbon Footprints für die Jahre 2023 und 2024 sowie Ableitung einer Reduktionsstrategie im Einklang mit den übergeordneten Gruppenzielen.",
+    // Nachhaltigkeit projects
+    project16Title: "Enpulse Ventures GmbH",
+    project16Desc: "Formulierung einer Nachhaltigkeitsstrategie zur externen Kommunikation unter Berücksichtigung der Berichtsanforderungen der EnBW Energie Baden-Württemberg.",
+    project17Title: "ESKA-Welt GmbH",
+    project17Desc: "Integration relevanter Sustainable Development Goals (SDGs) in das operative Geschäft sowie Aufbereitung der Ergebnisse für die externe Nachhaltigkeitskommunikation.",
+    project18Title: "Klett Cotta Verlag",
+    project18Desc: "Durchführung eines praxisorientierten Mitarbeitenden-Workshops zur Identifikation zentraler Handlungsfelder entlang der SDGs und Ableitung konkreter Maßnahmen.",
+    project19Title: "Dr. Ing. h.c. F. Porsche AG",
+    project19Desc: "Strategische Begleitung der Nachhaltigkeitsberichterstattung für die Geschäftsjahre 2022 und 2023 zur Umstellung auf CSRD, mit Fokus auf konsistente Darstellung wesentlicher Nachhaltigkeitsaspekte mit Schwerpunkt Umwelt.",
+    project20Title: "Lotus Tech Innovation Centre GmbH",
+    project20Desc: "Entwicklung einer internationalen Nachhaltigkeitsstrategie mit Fokus auf regulatorische Anforderungen, Stakeholder-Erwartungen und strategischer Ausrichtung.",
+    // Maßnahmen projects
+    project21Title: "Picto GmbH",
+    project21Desc: "Antragstellung auf Förderung für eine neue Druckmaschine über den Europäischen Fonds für regionale Entwicklung für eine Durst RHO 500 P5 in Höhe von €300.000.",
+    project22Title: "SAXOPRINT GmbH",
+    project22Desc: "Antragstellung auf Förderung für eine neue Druckmaschine über den Europäischen Fonds für regionale Entwicklung für eine Durst P5 500i in Höhe von €300.000.",
+    project23Title: "Posterlounge GmbH",
+    project23Desc: "Antragstellung auf Förderung für eine neue Druckmaschine über den Europäischen Fonds für regionale Entwicklung für einen Kudu-Flatbed-Drucker von SwissQPrint in Höhe von €300.000.",
+    project24Title: "MaXxPrint GmbH",
+    project24Desc: "Antragstellung auf Förderung für eine neue Druckmaschine über den Europäischen Fonds für regionale Entwicklung für eine Durst P5 500 in Höhe von €300.000.",
+    project25Title: "Werbetechnik Baden GmbH",
+    project25Desc: "Antragstellung auf Förderung für eine neue Druckmaschine über die \"Energie- und ressourcenbezogene Optimierung von Anlagen und Prozessen – Basisförderung\" für eine Durst P5X Flatbed in Höhe von €45.000.",
+    // Additional Klimaschutz projects
+    project26Title: "Deichmann SE",
+    project26Desc: "Verifizierung des Corporate Carbon Footprints des Unternehmens gemäß ISO 14046-3 und Beratung zu Optimierungsmaßnahmen.",
+    project27Title: "Laniqo Sp. z o.o.",
+    project27Desc: "Berechnung des jährlichen Corporate Carbon Footprints gemäß ISO 14046 und dem GHG Protocol.",
+    // Additional Klimaschutz projects
+    project28Title: "RWTH Aachen University",
+    project28Desc: "Entwicklung einer Klimaschutzstrategie mit Ableitung von Klimaschutzmaßnahmen, Berechnung von CO₂-Einsparungen und Vermeidungskosten (€/tCO₂) sowie Ableitung verschiedener Szenarien zur Erreichung der Klimaziele.",
+    project29Title: "Technische Hochschule Mannheim",
+    project29Desc: "Gesamtbetreuung des Klimaschutzkonzepts durch Ableitung von Klimaschutzmaßnahmen, Bewertung dieser nach €/t CO₂ und Entwicklung von Szenarien zur Erreichung der Klimaziele.",
+    // ... add more keys as needed
+    klimaHeroTitle: "Jetzt integriertes Klimakonzept erstellen",
+    klimaHeroDesc: "Wir unterstützen Institutionen ihr von der nationalen Klimaschutzinitiative (NKI) gefördertes Klimaschutzkonzept zu erstellen und realistische Klimaziele zu erreichen.",
+    klimaTags: [
+      "Bildungseinrichtungen",
+      "Gemeinnützige Vereine",
+      "Kommunale Unternehmen",
+      "Gesundheits-, Pflege- und Sozialeinrichtungen",
+      "Kinder- und Jugendhilfe",
+      "Kommunen/ Kommunale Zusammenschlüsse",
+      "Kultreinrichtung",
+      "Religionsgemeinschaft"
+    ],
+    klimaInfoTitle: "In 6 Schritten zum Klimaneutralitätsplan",
+    klimaInfoDesc: "Wir begleiten Sie von der ersten Analyse bis zur Verstetigungsstrategie – für ein nachhaltiges und gefördertes Klimaschutzkonzept.",
+    klimaStep1Title: "IST-Analyse sowie Energie und THG-Bilanz",
+    klimaStep1Desc: "Die Berechnung der Emissionen bildet die Basis aller Dekarbonisierungsvorhaben. Wir berechnen nach GHG-Protokoll Ihre direkten und indirekten Emissionen (Scope 1, 2 & 3).",
+    klimaStep2Title: "Maßnahmenkatalog",
+    klimaStep2Desc: "Auf Basis der Bilanz werden Maßnahmen abgeleitet und nach Kosten, Emissionshebel und Umsetzungszeitraum priorisiert.",
+    klimaStep3Title: "Beteiligung aller relevanten Akteure",
+    klimaStep3Desc: "Durch Workshops werden alle relevanten Parteien eingebunden, um das maximale Maßnahmenpotential auszuschöpfen.",
+    klimaStep4Title: "Potentialanalyse und priorisierte Handlungsfelder",
+    klimaStep4Desc: "Maßnahmen werden nach Umsetzbarkeit und Emissionshebel bewertet und in Handlungsfelder wie Mobilität, Infrastruktur, Beschaffung, etc. gruppiert.",
+    klimaStep5Title: "THG-Minderungsziele und Szenarien",
+    klimaStep5Desc: "Maßnahmen werden in Szenarien abgebildet (z.B. Referenz- und Klimaschutzszenario) zur Identifikation von Restemissionen und Kompensationskosten.",
+    klimaStep6Title: "Verstetigungsstrategie",
+    klimaStep6Desc: "Alle erarbeiteten Materialien werden übergeben und Schulungspakete angeboten, um die Inhalte nachhaltig zu verankern.",
+    esrsHeroTitle: "ESRS E1: Berichtsfähigkeit zum Klimawandel",
+    esrsHeroDesc: "Wir unterstützen bei der Erhebung, Berechnung und Vorbereitung der Berichterstattung der quantitativen Angaben zum Klimaschutz und Anpassung an den Klimawandel (ESRS E1-1 bis E1-9) nach den sektorunabhängigen Kernstandards der EFRAG.",
+    esrsInfoTitle: "Offenlegungspflichten zu Klimaschutz gemäß CSRD",
+    esrsInfoDesc: "Wir befähigen Ihr Unternehmen zur Berichterstattung der klimabezogenen Offenlegungspflichten nach CSRD für die Indikatoren ESRS E1-1 bis E1-9.",
+    esrsServicesTitle: "Unsere Leistungen",
+    esrsService1Title: "Datenerhebung",
+    esrsService1Desc: "Wir berechnen Unternehmensklimabilanzen (THG-Bilanz), Maßnahmenpläne zur Reduktion und Zieljahre",
+    esrsService2Title: "Aufbereiten",
+    esrsService2Desc: "Wir bereiten Ihre Klimadaten für ESG-Ratings oder Nachhaltigkeitsberichte auf",
+    esrsService3Title: "Beraten",
+    esrsService3Desc: "Wir beraten Sie vollumfänglich zum Thema Dekarbonisierung und Erreichung von Klimazielen",
+    esrsStepsTitle: "In 4 Schritten zum Klima-Transitionsplan nach CSRD ESRS E1-1",
+    esrsStep1Title: "THG-Bilanz",
+    esrsStep1Desc: "Zur Ermittlung der Emissionen bedarf es einer THG-Bilanz, welche die Umweltauswirkungen eines Unternehmens in Scope 1,2,3 erfasst. Auf ihrer Basis werden Maßnahmen abgeleitet.",
+    esrsStep2Title: "Ziele",
+    esrsStep2Desc: "Auf Basis der THG-Bilanz können wissenschaftlich basierte Klimaziele abgeleitet werden.",
+    esrsStep3Title: "Maßnahmen",
+    esrsStep3Desc: "Basierend auf der THG-Bilanz und den Zielen werden Maßnahmen zur Reduktion von Scope 1, 2, 3 Emissionen abgeleitet und monetär bewertet.",
+    esrsStep4Title: "Implementierung & Kommunikation",
+    esrsStep4Desc: "Entwicklung von Fortschritts-KPIs und Kommunikation der Aktivitäten an Stakeholder.",
+    privacyPageTitle: "Datenschutzerklärung",
+    privacyPageSections: [
+      {
+        title: "1. Verantwortlicher für die Datenverarbeitung",
+        content: [
+          "Verantwortlicher gemäß Art. 4 Abs. 7 DSGVO ist:",
+          "COzwei GmbH\nGutenbergstraße 16a 70176 Stuttgart\nDeutschland\nE-Mail: datenschutz@cozwei.de\nTelefon: 0711 12171034"
+        ]
+      },
+      {
+        title: "2. Datenschutzbeauftragter",
+        content: [
+          "Sie erreichen den Datenschutzbeauftragten der COzwei GmbH unter datenschutz@cozwei.de oder per Post unter der oben angegebenen Adresse mit dem Zusatz \"Datenschutzbeauftragter\"."
+        ]
+      },
+      {
+        title: "3. Welche Daten werden verarbeitet?",
+        content: [
+          "Wir verarbeiten personenbezogene Daten, die Sie uns bei der Nutzung unserer Website oder bei der Kommunikation mit uns übermitteln. Dazu gehören:",
+          "• Name und Kontaktdaten (z.B. E-Mail-Adresse, Telefonnummer)",
+          "• Daten zur Kommunikation (z.B. Nachrichten, E-Mails)",
+          "• Daten zur Nutzung unserer Website (z.B. IP-Adresse, Browser-Informationen, Zugriffszeiten)",
+          "• Daten zur Durchführung von Verträgen (z.B. Name, Adresse, Rechnungsnummer)",
+          "• Daten zur Zahlung (z.B. Zahlungsdaten, Bankverbindungsinformationen)"
+        ]
+      },
+      {
+        title: "4. Zwecke der Datenverarbeitung",
+        content: [
+          "Die Verarbeitung der Daten erfolgt ausschließlich für die folgenden Zwecke:",
+          "• Durchführung von Verträgen und Kundenbetreuung",
+          "• Kommunikation mit Kunden und Interessenten",
+          "• Verbesserung unserer Website und Online-Angebote",
+          "• Analyse des Nutzerverhaltens auf unserer Website",
+          "• Sicherstellung der Sicherheit unserer IT-Systeme"
+        ]
+      },
+      {
+        title: "5. Rechte der betroffenen Personen",
+        content: [
+          "Sie haben das Recht:",
+          "• Auskunft über die von uns verarbeiteten Daten zu verlangen",
+          "• Die Berichtigung unrichtiger Daten zu verlangen",
+          "• Die Löschung Ihrer Daten zu verlangen (sofern nicht weitere gesetzliche Aufbewahrungsfristen bestehen)",
+          "• Die Einschränkung der Verarbeitung zu verlangen",
+          "• Die Daten einem anderen Verantwortlichen zu übertragen",
+          "• Widerspruch gegen die Verarbeitung einzulegen"
+        ]
+      },
+      {
+        title: "6. Datensicherheit",
+        content: [
+          "Wir treffen technische und organisatorische Maßnahmen, um Ihre Daten gegen unbefugte Zugriffe, Verlust, Zerstörung oder gegen unbefugte Änderung zu schützen. Diese umfassen:",
+          "• Verschlüsselung der übertragenen Daten",
+          "• Sichere Speicherung von Passwörtern",
+          "• Regelmäßige Sicherheitsaudits"
+        ]
+      },
+      {
+        title: "7. Löschung von Daten",
+        content: [
+          "Daten werden gelöscht, sobald der Zweck der Verarbeitung entfällt oder die Aufbewahrungsfrist abläuft. Nach Ablauf der Aufbewahrungsfristen werden die Daten durch technische und organisatorische Maßnahmen unkenntlich gemacht.",
+          "• Daten zur Kommunikation (z.B. E-Mails) werden nach spätestens 30 Tagen gelöscht.",
+          "• Daten zur Durchführung von Verträgen (z.B. Rechnungen) werden nach spätestens 10 Jahren gelöscht.",
+          "• Daten zur Zahlung (z.B. Bankverbindungsinformationen) werden nach spätestens 7 Jahren gelöscht."
+        ]
+      },
+      {
+        title: "8. Änderungen dieser Datenschutzerklärung",
+        content: [
+          "Wir behalten uns vor, diese Datenschutzerklärung zu ändern, um sie an technische oder rechtliche Entwicklungen anzupassen. Die aktuelle Version finden Sie immer auf unserer Website."
+        ]
+      }
+    ],
+    impressumPageTitle: "Impressum",
+    impressumPageSections: [
+      {
+        title: "Angaben gemäß § 5 TMG",
+        content: [
+          "COzwei GmbH\nGutenbergstraße 16a\n70176 Stuttgart"
+        ]
+      },
+      {
+        title: "Kontakt",
+        content: [
+          "Telefon: 0711 12171034",
+          "E-Mail: info@cozwei.de"
+        ]
+      },
+      {
+        title: "Umsatzsteuer-ID",
+        content: [
+          "Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz: 000 000 00000"
+        ]
+      },
+      {
+        title: "Verantwortlicher für journalistische Inhalte",
+        content: [
+          "COzwei GmbH\nGutenbergstraße 16a\n70176 Stuttgart"
+        ]
+      },
+      {
+        title: "Haftungsausschluss",
+        content: [
+          "Die Inhalte dieser Website werden sorgfältig geprüft. Wir übernehmen jedoch keine Gewähr für deren Vollständigkeit, Richtigkeit und Aktualität. Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.",
+          "Unsere Verpflichtungen zur Entfernung von Informationen oder zur Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte unverzüglich entfernen.",
+          "Wir übernehmen keine Gewähr für die Richtigkeit, Vollständigkeit und Aktualität der bereitgestellten Links. Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich."
+        ]
+      },
+      {
+        title: "Urheberrecht",
+        content: [
+          "Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechts bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.",
+          "Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, sind die Urheberrechte Dritter zu beachten. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte unverzüglich entfernen.",
+          "Unsere Website enthält Links zu externen Webseiten Dritter. Auf diese sind die §§ 8 bis 10 TMG ohne besondere Hinweise nicht anwendbar. Wir haben keinen Einfluss auf die Zulassung und den Inhalt der verlinkten Seiten. Deshalb distanzieren wir uns ausdrücklich von allen Inhalten Dritter, die nach diesen Links oder Verknüpfungen gefunden werden. Diese Erklärung gilt für alle auf dieser Website angebotenen Links und Verknüpfungen."
+        ]
+      },
+      {
+        title: "Datenschutz",
+        content: [
+          "Die Nutzung unserer Website ist in der Regel ohne Angabe personenbezogener Daten möglich. Soweit auf unseren Seiten personenbezogene Daten (wie Name, Anschrift, E-Mail-Adresse, etc.) erhoben werden, erfolgt dies, soweit möglich, stets auf freiwilliger Basis. Diese Daten werden ohne Ihre ausdrückliche Zustimmung nicht an Dritte weitergegeben.",
+          "Wir weisen darauf hin, dass die Datenübertragung im Internet (z.B. bei der Kommunikation per E-Mail) Sicherheitslücken aufweisen kann. Ein lückenloses Schützen der Daten vor dem Zugriff durch Dritte ist nicht möglich. Der Nutzer übernimmt daher das Risiko, dass seine Daten durch Dritte unbeabsichtigt oder absichtlich verändert, zufällig gelöscht oder unter Umständen nicht zugänglich gemacht werden.",
+          "Wir behalten uns vor, die Nutzungsbedingungen zu ändern, zu ergänzen oder zu aktualisieren, auch ohne vorherige Ankündigung. Die Nutzungsbedingungen gelten ab dem Zeitpunkt der erstmaligen Nutzung der Website. Es empfiehlt sich, die Nutzungsbedingungen regelmäßig zu überprüfen."
+        ]
+      }
+    ],
+  },
+  en: {
+    heroTitle: "We make climate goals possible",
+    heroSubtitle: "Our goal is to enable companies and institutions to operate more sustainably and achieve climate goals",
+    learnMore: "Learn more",
+    solutions: "Solutions",
+    solutionsDesc: "As an environmental service provider, we offer our clients a range of consulting and implementation solutions to successfully realize sustainability and climate strategies.",
+    sustainability: "Sustainability",
+    sustainabilityDesc: "Implementation of sustainability strategies at company level",
+    decarbonization: "Decarbonization",
+    decarbonizationDesc: "Enabling CO₂ reduction along the entire value chain",
+    measures: "Measures",
+    measuresDesc: "Implementation of decarbonization targets from PV systems to building renovations",
+    about: "About us",
+    contact: "Contact",
+    customers: "Our Customers",
+    andManyMore: "... and many more!",
+    referenzenMoreText: "Further references on request: christian.philippen@cozwei.de",
+    contactUs: "Contact us",
+    name: "Name",
+    namePlaceholder: "Your name",
+    email: "Email",
+    emailPlaceholder: "Your email address",
+    company: "Company (optional)",
+    companyPlaceholder: "Your company",
+    message: "Message",
+    messagePlaceholder: "Your message",
+    send: "Send",
+    privacy: "Privacy Policy",
+    imprint: "Imprint",
+    linkedin: "LinkedIn",
+    sustainabilityHeroTitle: "Sustainability",
+    sustainabilityHeroSubtitle: "We support the implementation of sustainability management from strategy development through sustainability initiatives to reporting and ESG ratings.",
+    sustainabilitySectionTitle: "Forward-looking and sustainable",
+    sustainabilitySectionSubtitle: "From Sustainable Development Goals to ESG strategy, we help you align your company sustainably, credibly and transparently.",
+    nachhaltigkeitsstrategieTitle: "Sustainability Strategy",
+    nachhaltigkeitsstrategieDesc: "The development or updating of sustainability or ESG strategies is a complex challenge across the entire value chain of companies. We support the development of suitable solutions with a focus on the automotive and supplier industry.",
+    esgRatingsTitle: "ESG Ratings & SAQ 5.0",
+    esgRatingsDesc: "Answering supplier inquiries (e.g., SAQ 5.0) or ESG ratings (e.g., Ecovadis) requires expert knowledge and can be time-consuming. We relieve companies of responding to supplier inquiries about sustainability.",
+    csrdGriTitle: "CSRD, GRI Reports",
+    csrdGriDesc: "For selected components of CSRD, e.g., E1 Climate Protection or elements of GRI with a focus on the environment, we support data collection and reporting. We guide smaller companies to their first reporting.",
+    esgSoftwareTitle: "ESG Software",
+    esgSoftwareDesc: "The management and collection of data can be facilitated by suitable software. We support you in selecting and implementing suitable solutions, e.g., from Envoria or Code Gaia.",
+    decarbonHeroTitle: "Decarbonization",
+    decarbonHeroSubtitle: "We enable CO₂ reduction for companies & institutions to achieve the global 1.5-degree climate targets. This includes calculation, planning, reduction, and reporting.",
+    decarbonSectionTitle: "Achieving climate goals",
+    decarbonSectionSubtitle: "With our proven and certifiable four-step plan, you will achieve your climate goals. From calculating actual emissions to the production plan and communication, we cover everything.",
+    decarbonCard1Title: "Transformation concept",
+    decarbonCard1Desc: "Up to €90,000 funding per German site for creating a transformation concept to achieve climate neutrality",
+    decarbonCard2Title: "Climate protection concept",
+    decarbonCard2Desc: "Support for institutions in creating a climate protection concept funded by the national climate protection initiative",
+    decarbonCard3Title: "ESRS E1",
+    decarbonCard3Desc: "We support data collection, calculation, and preparation for reporting",
+    decarbonStepsTitle: "In 4 steps to climate neutrality",
+    decarbonStep1Title: "Corporate carbon footprint (CCF GHG balance)",
+    decarbonStep1Desc: "The calculation of emissions forms the basis of all decarbonization projects. We calculate your direct and indirect emissions (Scope 1, 2 & 3) according to the scientifically recognized GHG Protocol. From individual products to your entire company, we cover all emission balances.",
+    decarbonStep2Title: "Deriving decarbonization measures",
+    decarbonStep2Desc: "Based on the balance, company- or product-specific decarbonization measures can be derived. This may include measures relating to buildings, fleets, production, or products. Costs, emission leverage, and implementation period are differentiated. This approach allows you to make sustainable and cost-oriented decisions.",
+    decarbonStep3Title: "Target year for climate neutrality",
+    decarbonStep3Desc: "From the sum of all realistically feasible measures, a target year for climate neutrality can be derived. The total costs, emission reduction, and compensation costs are highlighted.",
+    decarbonStep4Title: "Communicate and report goals",
+    decarbonStep4Desc: "We support you in certifying and communicating your achievements. For example, in preparing climate data for ESG ratings or sustainability reports, annual CDP reporting, submitting SBTi targets, or answering customer (B2B) climate protection inquiries.",
+    measuresHeroTitle: "Implementation of measures",
+    measuresHeroSubtitle: "Our motto: We are only finished when the craftsmen leave the site.",
+    measuresSectionTitle: "Measures",
+    measuresSectionSubtitle: "We are experts in deriving decarbonization measures, but we also want to think further. Global climate goals can only be achieved if theory and practice go hand in hand. That is why we support your projects with our strong network of partners until final implementation.",
+    measuresCard1Title: "Funding",
+    measuresCard1Desc: "Funding is essential to make investments in climate-friendly technologies economically attractive. They help especially small and medium-sized enterprises to implement necessary measures more quickly.",
+    measuresCard2Title: "Our partners",
+    measuresCard2Desc: "With our partners, we successfully implement climate protection measures throughout Europe. This enables our customers to achieve their climate goals efficiently and sustainably.",
+    measuresLearnMore: "Learn more",
+    climateFundingTitle: "Climate funding",
+    climateFundingSubtitle: "Together with our implementation partners, we have developed a climate funding catalog that shows the German funding landscape for climate funding and makes implementation more cost-effective.",
+    acceptPrivacy: "I accept the ",
+    privacyPolicy: "privacy policy",
+    // PDF Download Form translations
+    pdfFormName: "Name *",
+    pdfFormNamePlaceholder: "Your full name",
+    pdfFormEmail: "Email address *",
+    pdfFormEmailPlaceholder: "your.email@example.com",
+    pdfFormCompany: "Company",
+    pdfFormCompanyPlaceholder: "Your company (optional)",
+    pdfFormPrivacyText: "I accept the ",
+    pdfFormPrivacyLink: "privacy policy",
+    pdfFormPrivacySuffix: ". *",
+    pdfFormSubmitButton: "Request PDF",
+    pdfFormSubmitting: "Sending...",
+    pdfFormSuccessTitle: "Thank you for your interest!",
+    pdfFormSuccessMessage: "You can now view the climate funding catalog.",
+    pdfFormOpenPDFButton: "Open PDF in new tab",
+    pdfFormErrorTitle: "Error sending request",
+    pdfFormErrorMessage: "An error occurred. Please try again.",
+    partnersSectionTitle: "Our Partners",
+    partnerSoleraTitle: "Solera Stuttgart GmbH",
+    partnerSoleraDesc: "Our partners at Solera Stuttgart GmbH plan and install turnkey photovoltaic systems with a clear focus on economic efficiency and sustainable value creation, with the aim of advancing the energy transition.",
+    partnerEffizienzTitle: "Effizienzpioniere",
+    partnerEffizienzDesc: "With their team of certified KfW energy consultants, Effizienzpioniere help to renovate buildings in a climate-efficient manner – maximum funding included. Together, we aim to make a measurable contribution to combating climate change.",
+    partnerGrundsteineTitle: "Grundsteine GmbH",
+    partnerGrundsteineDesc: "Grundsteine GmbH is a software company specializing in the digitalization of funding processes. With their software products, they digitalize and accelerate the energy transition. Whether energy consulting or digital funding applications – their tools make processes more efficient and easier.",
+    partnerEnvoriaTitle: "Envoria",
+    partnerEnvoriaDesc: "Envoria is a software provider for simplifying ESG reporting. From preconfigured reporting KPIs and templates to user function, rights, and task management – Envoria offers the features you need.",
+    partnerFinmatchTitle: "Finmatch",
+    partnerFinmatchDesc: "As a financing company, Finmatch supports companies in financing and realizing climate goals. With more than 800 financing partners, they have the largest financing network for medium-sized companies in the DACH region.",
+    partnerRemzeroTitle: "REM ZERO GmbH",
+    partnerRemzeroDesc: "REM ZERO GmbH is our joint venture that brings together the worlds of finance and sustainability to make transformation a reality.",
+    partnerMicrosoftTitle: "Microsoft",
+    partnerMicrosoftDesc: "As part of the Microsoft Startup Founder Hub, we can use Microsoft, their applications, and network to build software that makes deriving realistic climate actions and decarbonization for our clients easier and more automated.",
+    aboutHeroTitle: "Who we are",
+    aboutHeroDesc: "At COzwei, we focus on solutions and the implementation of climate strategies, because the current challenge is less about setting climate targets and more about the concrete and cost-effective reduction of emissions for companies and institutions.",
+    aboutHeroButton: "Learn more",
+    aboutMapTitle: "Achieve climate goals with us",
+    aboutMapSubtitle: "Two locations in Stuttgart and Lisbon – one team for greater corporate sustainability",
+    aboutTeamTitle: "A strong team for more climate protection",
+    teamRoleChristian: "Managing Director",
+    teamRoleErik: "Managing Director",
+    teamRoleAlina: "Administration",
+    teamRoleDominik: "Project Manager Climate Management",
+    teamRoleLouis: "Climate Management",
+    teamRoleRonan: "Energy Consulting",
+    teamRoleMarie: "Consulting",
+    teamRoleHannah: "Climate Adaptation",
+    teamRoleRicardo: "Head of Sales & Marketing",
+    aboutBenefitsTitle: "Achieve climate goals with us",
+    aboutBenefit1: "Start-up atmosphere",
+    aboutBenefit2: "Urban Sports Club",
+    aboutBenefit3: "Free snacks and drinks",
+    aboutBenefit4: "Flexible and remote work",
+    aboutBenefit5: "Team events",
+    aboutBenefit6: "International environment",
+    aboutApplyButton: "APPLY NOW",
+    aboutHeroImageAlt: "About us background image",
+    aboutPartnersTitle: "Our partners",
+    aboutPartnersPreviousAria: "Previous partners",
+    aboutPartnersNextAria: "Next partners",
+    aboutMapImageAlt: "Map of Europe",
+    aboutMapSintraLabel: "Sintra, Portugal",
+    aboutMapSintraAddress: "AV Heliodoro Salgado 48A",
+    aboutMapStuttgartLabel: "Stuttgart, Germany",
+    aboutMapStuttgartAddress: "Gutenbergstrasse 16A",
+    footerContactLine: "COzwei GmbH • Gutenbergstrasse 16A, 70176 Stuttgart • Phone: +49 711 12171034 • E-mail: mail@cozwei.de",
+    transfHeroTitle: "Climate transformation plans – BAFA Module 5",
+    transfHeroDesc: "Up to €90,000 funding per German site for services supporting the planning and implementation of a transformation towards greenhouse gas neutrality for companies.",
+    transfInfoTitle: "Reduce costs with subsidized climate transformation plans",
+    transfInfoDesc: "Transparency requirements for the corporate carbon footprint (GHG balance) from customers or, increasingly, from legislators in Europe (CSRD sustainability reporting) will rise.\n\nThe BAFA (Module 5) funding program for energy and resource efficiency in business addresses this and funds up to 70% of service costs for a site-specific transformation plan towards greenhouse gas neutrality.\n\nYou can receive funding for our services and thus achieve your climate goals.",
+    transfStepsTitle: "Four steps to sustainable transformation",
+    transfStep1Title: "BAFA 5 application",
+    transfStep1Desc: "Preparation of all documents and support with the application submission to receive the full funding amount. Implementation takes place after funding approval for optimal transparency of actual costs.",
+    transfStep2Title: "Preparation of CO₂ balance",
+    transfStep2Desc: "The basis of all transformation towards CO₂ neutrality is the preparation of the CO₂ balance (CCF). All CO₂ emissions generated in the company along the value chain are recorded and accounted for in accordance with international standards (ISO 14064).",
+    transfStep3Title: "Derivation of measures",
+    transfStep3Desc: "Based on the CO₂ balance, the main emission drivers are identified and reduction measures are derived. These show how many emissions can be saved, what the implementation costs will be, what financing and funding are possible, and when realistic implementation can be planned.",
+    transfStep4Title: "Target setting and strategy",
+    transfStep4Desc: "By summing all feasible measures, a target year for climate neutrality can be derived and various scenarios for achieving it can be shown. These scenarios may differ depending on the level of ambition for implementing measures and enable you to choose the most economical option.",
+    transfEligTitle: "Which companies are eligible for funding?",
+    transfEligDesc: "Companies with production sites in Germany are eligible for funding per site under the Federal Funding for Energy and Resource Efficiency in Business (EEW). The amount of funding depends on the size of the company. We are happy to carry out a quick check for the possible funding amount without obligation. In general:",
+    transfEligList1: "Companies without SME status: 40-50 percent",
+    transfEligList2: "Medium-sized companies (MU): 50-60 percent",
+    transfEligList3: "Small companies (KU): 60-70 percent",
+    transfEligMax: "Up to a maximum of €90,000",
+    transfEligSource: "Source: BAFA (as of 04.06.2024)",
+    // Förderungen translations
+    foerderungenHeroTitle: "Funding",
+    foerderungenHeroSubtitle: "We support you in identifying and applying for climate funding to achieve your sustainability goals economically.",
+    foerderungenSelectState: "Select Federal State",
+    foerderungenBox1Title: "BAFA Module 1-6 Funding",
+    foerderungenBox1Desc: "The Federal Government supports companies with funding programs for digitalization, energy efficiency and innovation. The goal is to make Germany's business location future-proof.",
+    foerderungenBox1Focus: "Funding focus: Energy-efficient production facilities",
+    foerderungenBox2Title: "GRW Funding",
+    foerderungenBox2Desc: "GRW funding (Joint Task \"Improvement of Regional Economic Structure\") strengthens structurally weak regions through investment grants for companies and infrastructure projects. The funding amounts depend on which funding areas (C/D) the company is located in.",
+    foerderungenBox2Focus: "Funding focus: Location development, new jobs",
+    foerderungenBox3Title: "Regional Funding",
+    foerderungenBox3Desc: "Federal states and municipalities offer their own programs that are specifically tailored to regional needs - such as for innovation, energy or training. An example of this is the SAB's Energy & Climate 2023 funding program with funding rates of up to 70% for energy-efficient replacement machines.",
+    foerderungenBox3Focus: "Funding focus: Modernization, new jobs",
+    foerderungenSpecialTitle: "🔥 Time-limited Funding",
+    foerderungenSpecialSubtitle: "These funding opportunities are only available for a limited time - apply now!",
+    foerderungenSpecialSachsenTitle: "70% Funding for Machinery Purchases in Saxony",
+    foerderungenSpecialSachsenDesc: "The Saxon Development Bank (SAB) promotes investments in energy-efficient machinery and equipment with up to 70% of eligible costs under the Energy and Climate Directive.",
+    foerderungenSpecialSachsenDetails: "Funding for small and medium-sized enterprises (SMEs) as well as large companies in Saxony. Application deadline applies!",
+    foerderungenSpecialSachsenButton: "Apply now",
+    // Referenzen translations
+    referenzenHeroTitle: "References",
+    referenzenHeroSubtitle: "Discover our successful projects and satisfied customers from various industries.",
+    referenzenAllProjects: "All Projects",
+    referenzenNachhaltigkeit: "Sustainability",
+    referenzenKlimaschutz: "Climate Protection",
+    referenzenMaßnahmen: "Measures",
+    referenzenProjectsTitle: "Our References",
+    referenzenProjectsSubtitle: "Here our successful projects and customer references are presented.",
+    // Project translations - Klimaschutz
+    project1Title: "Klett Cotta Verlag",
+    project1Desc: "As part of a multi-year collaboration, we created the Corporate Carbon Footprint for the years 2021, 2023 and 2024 and developed a CO₂ reduction strategy in line with group-wide climate targets.",
+    project2Title: "PONS Langenscheidt GmbH",
+    project2Desc: "For PONS Langenscheidt, we accompanied the creation of the Corporate Carbon Footprint over several years and derived a strategically sound reduction planning from it.",
+    project3Title: "Junfermann Verlag",
+    project3Desc: "To support the company's climate goals, we regularly analyzed the CO₂ balance between 2021 and 2024 and developed a corresponding mitigation strategy.",
+    project4Title: "Bange Verlag",
+    project4Desc: "The creation of the Corporate Carbon Footprint and the derivation of targeted emission reduction measures took place as part of a multi-year consulting process.",
+    project5Title: "Ernst Klett Sprachen GmbH",
+    project5Desc: "We determined the CO₂ footprint for the years 2021 and 2022 and derived a group-compliant climate strategy for emission reduction based on this.",
+    project6Title: "Ernst Klett Aktiengesellschaft",
+    project6Desc: "As part of a group-wide climate strategy, we developed a uniform accounting manual, consolidated the GHG balances of all participations and defined overarching climate targets.",
+    project7Title: "Enpulse Ventures GmbH",
+    project7Desc: "Creation of Corporate Carbon Footprints for the years 2022 to 2024 as well as development of a company-specific reduction strategy within the framework of EnBW's group-wide sustainability requirements.",
+    project8Title: "ESKA-Welt GmbH",
+    project8Desc: "Concept and implementation of a funded transformation concept according to BAFA Module 5 including greenhouse gas balance, action planning and definition of a climate target.",
+    project9Title: "SFC Energy AG",
+    project9Desc: "As part of the GHG balance, we analyzed the three most emission-intensive categories according to the GHG Protocol to identify sound reduction potentials along the supply chain.",
+    project10Title: "Dr. Ing. h.c. F. Porsche AG",
+    project10Desc: "Preparation of a brochure for the vehicle life cycle assessment of a battery-electric vehicle with focus on greenhouse gas potential.",
+    project11Title: "Hochschule Furtwangen",
+    project11Desc: "Development of an eligible climate protection concept including greenhouse gas balance, potential analysis, catalog of measures and future scenarios - accompanied by moderated specialist workshops.",
+    project12Title: "Hochschule Albstadt-Sigmaringen",
+    project12Desc: "As part of the funded climate protection concept, we analyzed emissions, developed proposals for measures and developed long-term decarbonization scenarios.",
+    project13Title: "Hochschule Konstanz",
+    project13Desc: "Holistic creation of a funded climate protection concept with sound accounting, potential analysis, workshop moderation and scenario development to achieve climate targets.",
+    project14Title: "Lotus Cars",
+    project14Desc: "Calculation of the Product Carbon Footprint for a combustion engine model to identify emission-intensive components and derive strategic fields of action for CO2 emission reduction.",
+    project15Title: "Klett Haus Stuttgart",
+    project15Desc: "Creation of the Corporate Carbon Footprint for the years 2023 and 2024 as well as derivation of a reduction strategy in line with the overarching group goals.",
+    // Nachhaltigkeit projects
+    project16Title: "Enpulse Ventures GmbH",
+    project16Desc: "Formulation of a sustainability strategy for external communication taking into account the reporting requirements of EnBW Energie Baden-Württemberg.",
+    project17Title: "ESKA-Welt GmbH",
+    project17Desc: "Integration of relevant Sustainable Development Goals (SDGs) into operational business as well as preparation of results for external sustainability communication.",
+    project18Title: "Klett Cotta Verlag",
+    project18Desc: "Conducting a practice-oriented employee workshop to identify central fields of action along the SDGs and derive concrete measures.",
+    project19Title: "Dr. Ing. h.c. F. Porsche AG",
+    project19Desc: "Strategic support of sustainability reporting for the financial years 2022 and 2023 for the transition to CSRD, with focus on consistent presentation of essential sustainability aspects with emphasis on environment.",
+    project20Title: "Lotus Tech Innovation Centre GmbH",
+    project20Desc: "Development of an international sustainability strategy with focus on regulatory requirements, stakeholder expectations and strategic alignment.",
+    // Measures projects
+    project21Title: "Picto GmbH",
+    project21Desc: "Application for funding for a new printing machine through the European Regional Development Fund for a Durst RHO 500 P5 in the amount of €300,000.",
+    project22Title: "SAXOPRINT GmbH",
+    project22Desc: "Application for funding for a new printing machine through the European Regional Development Fund for a Durst P5 500i in the amount of €300,000.",
+    project23Title: "Posterlounge GmbH",
+    project23Desc: "Application for funding for a new printing machine through the European Regional Development Fund for a Kudu-Flatbed printer from SwissQPrint in the amount of €300,000.",
+    project24Title: "MaXxPrint GmbH",
+    project24Desc: "Application for funding for a new printing machine through the European Regional Development Fund for a Durst P5 500 in the amount of €300,000.",
+    project25Title: "Werbetechnik Baden GmbH",
+    project25Desc: "Application for funding for a new printing machine through the \"Energy and resource-related optimization of plants and processes - basic funding\" for a Durst P5X Flatbed in the amount of €45,000.",
+    // Additional Climate Protection projects
+    project26Title: "Deichmann SE",
+    project26Desc: "Verification of the company's carbon footprint in accordance with ISO 14046-3 and advice on optimization measures.",
+    project27Title: "Laniqo Sp. z o.o.",
+    project27Desc: "Calculating the annual corporate carbon footprint in accordance with ISO 14046 and the GHG Protocol.",
+    // Additional Climate Protection projects
+    project28Title: "RWTH Aachen University",
+    project28Desc: "Development of a climate protection strategy with derivation of climate protection measures, calculation of CO2 savings and avoidance costs (€/tCO2) and derivation of various scenarios for achieving climate targets.",
+    project29Title: "Technische Hochschule Mannheim",
+    project29Desc: "Overall support for the climate protection concept by deriving climate protection measures, evaluating these according to €/t CO2 and developing scenarios for achieving the climate targets.",
+    // ... add more keys as needed
+    klimaHeroTitle: "Create an integrated climate concept now",
+    klimaHeroDesc: "We support institutions in creating their climate protection concept funded by the National Climate Initiative (NKI) and achieving realistic climate goals.",
+    klimaTags: [
+      "Educational institutions",
+      "Non-profit associations",
+      "Municipal companies",
+      "Health, care and social institutions",
+      "Child and youth welfare",
+      "Municípios/municipal associations",
+      "Cultural institution",
+      "Religious community"
+    ],
+    klimaInfoTitle: "6 steps to a climate neutrality plan",
+    klimaInfoDesc: "We accompany you from the first analysis to the consolidation strategy – for a sustainable and subsidized climate protection concept.",
+    klimaStep1Title: "Status analysis as well as energy and GHG balance",
+    klimaStep1Desc: "The calculation of emissions forms the basis of all decarbonization projects. We calculate your direct and indirect emissions (Scope 1, 2 & 3) according to the GHG Protocol.",
+    klimaStep2Title: "Catalogue of measures",
+    klimaStep2Desc: "Based on the balance, measures are derived and prioritized according to cost, emission leverage and implementation period.",
+    klimaStep3Title: "Involvement of all relevant stakeholders",
+    klimaStep3Desc: "Through workshops, all relevant parties are involved to exploit the maximum potential of measures.",
+    klimaStep4Title: "Potential analysis and prioritized fields of action",
+    klimaStep4Desc: "Measures are evaluated according to feasibility and emission leverage and grouped into fields of action such as mobility, infrastructure, procurement, etc.",
+    klimaStep5Title: "GHG reduction targets and scenarios",
+    klimaStep5Desc: "Measures are mapped in scenarios (e.g. reference and climate protection scenario) to identify residual emissions and compensation costs.",
+    klimaStep6Title: "Consolidation strategy",
+    klimaStep6Desc: "All developed materials are handed over and training packages are offered to anchor the content sustainably.",
+    esrsHeroTitle: "ESRS E1: Climate Change Reporting Capability",
+    esrsHeroDesc: "We support the collection, calculation, and preparation of reporting quantitative information on climate protection and adaptation to climate change (ESRS E1-1 to E1-9) according to the sector-agnostic core standards of EFRAG.",
+    esrsInfoTitle: "Disclosure requirements for climate protection under CSRD",
+    esrsInfoDesc: "We enable your company to report on climate-related disclosure requirements under CSRD for the ESRS E1-1 to E1-9 indicators.",
+    esrsServicesTitle: "Our Services",
+    esrsService1Title: "Data Collection",
+    esrsService1Desc: "We calculate corporate climate balances (GHG balance), reduction action plans, and target years",
+    esrsService2Title: "Preparation",
+    esrsService2Desc: "We prepare your climate data for ESG ratings or sustainability reports",
+    esrsService3Title: "Consulting",
+    esrsService3Desc: "We provide comprehensive advice on decarbonization and achieving climate goals",
+    esrsStepsTitle: "In 4 steps to a climate transition plan according to CSRD ESRS E1-1",
+    esrsStep1Title: "GHG Balance",
+    esrsStep1Desc: "To determine emissions, a GHG balance is required, which records a company's environmental impact in Scope 1, 2, 3. Measures are derived based on this.",
+    esrsStep2Title: "Targets",
+    esrsStep2Desc: "Based on the GHG balance, science-based climate targets can be derived.",
+    esrsStep3Title: "Measures",
+    esrsStep3Desc: "Based on the GHG balance and the targets, measures to reduce Scope 1, 2, 3 emissions are derived and monetarily evaluated.",
+    esrsStep4Title: "Implementation & Communication",
+    esrsStep4Desc: "Development of progress KPIs and communication of activities to stakeholders.",
+    privacyPageTitle: "Privacy Policy",
+    privacyPageSections: [
+      {
+        title: "1. Controller for Data Processing",
+        content: [
+          "Controller according to Art. 4 para. 7 GDPR:",
+          "COzwei GmbH\nGutenbergstraße 16a 70176 Stuttgart\nGermany\nE-Mail: datenschutz@cozwei.de\nPhone: 0711 12171034"
+        ]
+      },
+      {
+        title: "2. Data Protection Officer",
+        content: [
+          "You can reach the data protection officer of COzwei GmbH at datenschutz@cozwei.de or by post at the above address with the addition 'Data Protection Officer'."
+        ]
+      },
+      {
+        title: "3. What data are processed?",
+        content: [
+          "We process personal data that you provide to us when using our website or when communicating with us. This includes:",
+          "• Name and contact details (e.g., email address, telephone number)",
+          "• Communication data (e.g., messages, emails)",
+          "• Data relating to the use of our website (e.g., IP address, browser information, access times)",
+          "• Data relating to the performance of contracts (e.g., name, address, invoice number)",
+          "• Data relating to payment (e.g., payment data, bank connection information)"
+        ]
+      },
+      {
+        title: "4. Purposes of data processing",
+        content: [
+          "The processing of data is carried out exclusively for the following purposes:",
+          "• Performance of contracts and customer service",
+          "• Communication with customers and interested parties",
+          "• Improvement of our website and online offerings",
+          "• Analysis of user behavior on our website",
+          "• Ensuring the security of our IT systems"
+        ]
+      },
+      {
+        title: "5. Rights of the data subject",
+        content: [
+          "You have the right to:",
+          "• Request information about the personal data processed by us",
+          "• Request correction of incorrect data",
+          "• Request deletion of your data (unless further statutory retention periods apply)",
+          "• Request restriction of processing",
+          "• Request transfer to another controller",
+          "• Lodge a complaint"
+        ]
+      },
+      {
+        title: "6. Data security",
+        content: [
+          "We take technical and organizational measures to protect your data against unauthorized access, loss, destruction, or against unauthorized modification. These include:",
+          "• Encryption of transmitted data",
+          "• Secure storage of passwords",
+          "• Regular security audits"
+        ]
+      },
+      {
+        title: "7. Deletion of data",
+        content: [
+          "Data will be deleted as soon as the purpose of processing ceases or the retention period expires. After the retention periods, the data are anonymized by technical and organizational measures.",
+          "• Communication data (e.g., emails) will be deleted after a maximum of 30 days.",
+          "• Data relating to contract performance (e.g., invoices) will be deleted after a maximum of 10 years.",
+          "• Payment data (e.g., bank connection information) will be deleted after a maximum of 7 years."
+        ]
+      },
+      {
+        title: "8. Changes to this privacy policy",
+        content: [
+          "We reserve the right to change this privacy policy to adapt it to technical or legal developments. The current version is always available on our website."
+        ]
+      }
+    ],
+    impressumPageTitle: "Legal Notice",
+    impressumPageSections: [
+      {
+        title: "Information according to § 5 TMG",
+        content: [
+          "COzwei GmbH\nGutenbergstraße 16a\n70176 Stuttgart"
+        ]
+      },
+      {
+        title: "Contact",
+        content: [
+          "Phone: 0711 12171034",
+          "E-Mail: info@cozwei.de"
+        ]
+      },
+      {
+        title: "Sales tax identification number",
+        content: [
+          "Sales tax identification number according to § 27 a UStG: 000 000 00000"
+        ]
+      },
+      {
+        title: "Responsible for journalistic content",
+        content: [
+          "COzwei GmbH\nGutenbergstraße 16a\n70176 Stuttgart"
+        ]
+      },
+      {
+        title: "Disclaimer",
+        content: [
+          "The content of this website is carefully checked. However, we do not guarantee its completeness, accuracy, and currency. As a service provider, we are responsible for our own content on these pages in accordance with § 7 para. 1 TMG. According to §§ 8 to 10 TMG, we are not obliged to monitor transmitted or stored third-party information or to investigate circumstances that indicate a criminal offense.",
+          "Our obligations to remove information or to block the use of information under general laws remain unaffected by this. However, liability for such violations is only possible from the point in time at which the violation became known. Upon becoming aware of such violations, we will immediately remove such content.",
+          "We assume no liability for the accuracy, completeness, and currency of the information provided. The use of any information on this website is at your own risk."
+        ]
+      },
+      {
+        title: "Copyright",
+        content: [
+          "The content created by the website operators on these pages is subject to German copyright law. The reproduction, editing, distribution, and any kind of use outside the limits of copyright require the written consent of the respective author or creator. Downloads and copies of this page are only permitted for private, non-commercial use.",
+          "Insofar as the content on this page was not created by the operator, copyrights of third parties must be observed. In particular, the content of third parties is marked as such. Should you nevertheless become aware of a copyright infringement, please inform us accordingly. Upon becoming aware of violations of copyright, we will immediately remove such content.",
+          "Our website contains links to external websites of third parties. To these, §§ 8 to 10 TMG are not applicable without special notice. We have no influence on the admission and content of the linked pages. Therefore, we expressly distance ourselves from all content of third parties found via these links or links.",
+          "This declaration applies to all links and links offered on this website."
+        ]
+      },
+      {
+        title: "Data protection",
+        content: [
+          "The use of our website is generally possible without providing personal data. Where personal data (e.g., name, address, email address, etc.) is collected, this is done as far as possible on a voluntary basis. This data will not be passed on to third parties without your explicit consent.",
+          "We would like to point out that the data transmission over the Internet (e.g., when communicating by email) may have security gaps. A complete protection of the data against unauthorized access by third parties is not possible. The user assumes the risk that his data may be changed, deleted, or made inaccessible by third parties unintentionally or intentionally.",
+          "We reserve the right to change the terms of use, to supplement or update them, even without prior notice. The terms of use apply from the point in time of the first use of the website. It is recommended to check the terms of use regularly."
+        ]
+      }
+    ],
+  },
+  pt: {
+    heroTitle: "Tornamos possíveis as metas climáticas",
+    heroSubtitle: "Nosso objetivo é capacitar empresas e instituições a operar de forma mais sustentável e alcançar metas climáticas",
+    learnMore: "Saiba mais",
+    solutions: "Soluções",
+    solutionsDesc: "Como prestador de serviços ambientais, oferecemos aos nossos clientes diversas soluções de consultoria e implementação para implementar com sucesso estratégias de sustentabilidade e clima.",
+    sustainability: "Sustentabilidade",
+    sustainabilityDesc: "Implementação de estratégias de sustentabilidade a nível empresarial",
+    decarbonization: "Descarbonização",
+    decarbonizationDesc: "Possibilitar a redução de CO₂ ao longo de toda a cadeia de valor",
+    measures: "Medidas",
+    measuresDesc: "Implementação de metas de descarbonização desde sistemas fotovoltaicos até reformas de edifícios",
+    about: "Sobre nós",
+    contact: "Contato",
+    customers: "Nossos Clientes",
+    andManyMore: "... e muitos mais!",
+    referenzenMoreText: "Mais referências mediante pedido: christian.philippen@cozwei.de",
+    contactUs: "Contate-nos",
+    name: "Nome",
+    namePlaceholder: "Seu nome",
+    email: "E-mail",
+    emailPlaceholder: "Seu endereço de e-mail",
+    company: "Empresa (opcional)",
+    companyPlaceholder: "Sua empresa",
+    message: "Mensagem",
+    messagePlaceholder: "Sua mensagem",
+    send: "Enviar",
+    privacy: "Política de Privacidade",
+    imprint: "Impressum",
+    linkedin: "LinkedIn",
+    sustainabilityHeroTitle: "Sustentabilidade",
+    sustainabilityHeroSubtitle: "Apoiamos a implementação da gestão da sustentabilidade desde o desenvolvimento da estratégia até iniciativas de sustentabilidade, relatórios e classificações ESG.",
+    sustainabilitySectionTitle: "Orientado para o futuro e sustentável",
+    sustainabilitySectionSubtitle: "Dos Objetivos de Desenvolvimento Sustentável à estratégia ESG, ajudamos a alinhar a sua empresa de forma sustentável, credível e transparente.",
+    nachhaltigkeitsstrategieTitle: "Estratégia de Sustentabilidade",
+    nachhaltigkeitsstrategieDesc: "O desenvolvimento ou atualização de estratégias de sustentabilidade ou ESG é um desafio complexo em toda a cadeia de valor das empresas. Apoiamos o desenvolvimento de soluções adequadas com foco na indústria automotiva e de fornecedores.",
+    esgRatingsTitle: "Classificações ESG & SAQ 5.0",
+    esgRatingsDesc: "Responder a consultas de fornecedores (ex: SAQ 5.0) ou classificações ESG (ex: Ecovadis) requer conhecimento especializado e pode ser demorado. Aliviamos as empresas de responder a consultas de fornecedores sobre sustentabilidade.",
+    csrdGriTitle: "CSRD, Relatórios GRI",
+    csrdGriDesc: "Para componentes selecionados do CSRD, ex: E1 Proteção Climática ou elementos do GRI com foco no ambiente, apoiamos a coleta de dados e relatórios. Guiamos empresas menores para seu primeiro relatório.",
+    esgSoftwareTitle: "Software ESG",
+    esgSoftwareDesc: "A gestão e coleta de dados pode ser facilitada por software adequado. Apoiamos você na seleção e implementação de soluções adequadas, ex: da Envoria ou Code Gaia.",
+    decarbonHeroTitle: "Descarbonização",
+    decarbonHeroSubtitle: "Possibilitamos a redução de CO₂ para empresas e instituições para atingir as metas climáticas globais de 1,5 grau. Isso inclui cálculo, planejamento, redução e relatórios.",
+    decarbonSectionTitle: "Alcançando metas climáticas",
+    decarbonSectionSubtitle: "Com nosso plano comprovado e certificável de quatro etapas, você alcançará suas metas climáticas. Desde o cálculo das emissões reais até o plano de produção e comunicação, cobrimos tudo.",
+    decarbonCard1Title: "Conceito de transformação",
+    decarbonCard1Desc: "Até €90,000 de financiamento por local na Alemanha para criar um conceito de transformação para alcançar a neutralidade climática",
+    decarbonCard2Title: "Conceito de proteção climática",
+    decarbonCard2Desc: "Apoio a instituições na criação de um conceito de proteção climática financiado pela iniciativa nacional de proteção climática",
+    decarbonCard3Title: "ESRS E1",
+    decarbonCard3Desc: "Apoiamos a coleta de dados, cálculo e preparação para relatórios",
+    decarbonStepsTitle: "Em 4 etapas para a neutralidade climática",
+    decarbonStep1Title: "Balanço de carbono corporativo (CCF GEE)",
+    decarbonStep1Desc: "O cálculo das emissões é a base de todos os projetos de descarbonização. Calculamos suas emissões diretas e indiretas (Escopo 1, 2 e 3) de acordo com o Protocolo GEE reconhecido cientificamente. De produtos individuais à sua empresa como um todo, cobrimos todos os balanços de emissões.",
+    decarbonStep2Title: "Derivação de medidas de descarbonização",
+    decarbonStep2Desc: "Com base no balanço, podem ser derivadas medidas de descarbonização específicas da empresa ou do produto. Isso pode incluir medidas relacionadas a edifícios, frotas, produção ou produtos. Custos, alavancagem de emissões e período de implementação são diferenciados. Essa abordagem permite que você tome decisões sustentáveis e orientadas para custos.",
+    decarbonStep3Title: "Ano-alvo para neutralidade climática",
+    decarbonStep3Desc: "A partir da soma de todas as medidas realisticamente viáveis, pode-se derivar um ano-alvo para a neutralidade climática. Os custos totais, a redução de emissões e os custos de compensação são destacados.",
+    decarbonStep4Title: "Comunicar e relatar metas",
+    decarbonStep4Desc: "Apoiamos você na certificação e comunicação de suas conquistas. Por exemplo, na preparação de dados climáticos para classificações ESG ou relatórios de sustentabilidade, relatórios anuais do CDP, envio de metas SBTi ou resposta a consultas de clientes (B2B) sobre proteção climática.",
+    measuresHeroTitle: "Implementação de medidas",
+    measuresHeroSubtitle: "Nosso lema: Só terminamos quando os trabalhadores deixam o local.",
+    measuresSectionTitle: "Medidas",
+    measuresSectionSubtitle: "Somos especialistas na definição de medidas de descarbonização, mas também queremos ir além. As metas climáticas globais só podem ser alcançadas se teoria e prática andarem de mãos dadas. Por isso, acompanhamos seus projetos com nossa forte rede de parceiros até a implementação final.",
+    measuresCard1Title: "Incentivos",
+    measuresCard1Desc: "Os incentivos são essenciais para tornar os investimentos em tecnologias amigas do clima economicamente atrativos. Eles ajudam especialmente pequenas e médias empresas a implementar as medidas necessárias mais rapidamente.",
+    measuresCard2Title: "Nossos parceiros",
+    measuresCard2Desc: "Com nossos parceiros, implementamos com sucesso medidas de proteção climática em toda a Europa. Isso permite que nossos clientes atinjam suas metas climáticas de forma eficiente e sustentável.",
+    measuresLearnMore: "Saiba mais",
+    climateFundingTitle: "Financiamento climático",
+    climateFundingSubtitle: "Juntamente com nossos parceiros de implementação, desenvolvemos um catálogo de financiamento climático que mostra o panorama alemão de financiamento climático e torna a implementação mais econômica.",
+    acceptPrivacy: "Eu aceito a ",
+    privacyPolicy: "política de privacidade",
+    // PDF Download Form translations
+    pdfFormName: "Nome *",
+    pdfFormNamePlaceholder: "Seu nome completo",
+    pdfFormEmail: "Endereço de e-mail *",
+    pdfFormEmailPlaceholder: "seu.email@exemplo.com",
+    pdfFormCompany: "Empresa",
+    pdfFormCompanyPlaceholder: "Sua empresa (opcional)",
+    pdfFormPrivacyText: "Eu aceito a ",
+    pdfFormPrivacyLink: "política de privacidade",
+    pdfFormPrivacySuffix: ". *",
+    pdfFormSubmitButton: "Solicitar PDF",
+    pdfFormSubmitting: "Enviando...",
+    pdfFormSuccessTitle: "Obrigado pelo seu interesse!",
+    pdfFormSuccessMessage: "Agora pode visualizar o catálogo de financiamento climático.",
+    pdfFormOpenPDFButton: "Abrir PDF em nova aba",
+    pdfFormErrorTitle: "Erro ao enviar pedido",
+    pdfFormErrorMessage: "Ocorreu um erro. Por favor, tente novamente.",
+    partnersSectionTitle: "Nossos Parceiros",
+    partnerSoleraTitle: "Solera Stuttgart GmbH",
+    partnerSoleraDesc: "Nossos parceiros da Solera Stuttgart GmbH planejam e instalam sistemas fotovoltaicos turnkey com foco claro em eficiência econômica e criação de valor sustentável, com o objetivo de impulsionar a transição energética.",
+    partnerEffizienzTitle: "Effizienzpioniere",
+    partnerEffizienzDesc: "Com sua equipe de especialistas certificados em energia KfW, a Effizienzpioniere ajuda a renovar edifícios de forma eficiente em termos climáticos – com financiamento máximo incluído. Juntos, pretendemos dar uma contribuição mensurável para combater as mudanças climáticas.",
+    partnerGrundsteineTitle: "Grundsteine GmbH",
+    partnerGrundsteineDesc: "A Grundsteine GmbH é uma empresa de software especializada na digitalização de processos de financiamento. Com seus produtos de software, digitalizam e aceleram a transição energética. Seja consultoria energética ou pedidos de financiamento digital – suas ferramentas tornam os processos mais eficientes e fáceis.",
+    partnerEnvoriaTitle: "Envoria",
+    partnerEnvoriaDesc: "A Envoria é uma fornecedora de software para simplificar relatórios ESG. De KPIs de relatórios pré-configurados e modelos até a gestão de funções de usuários, direitos e tarefas – a Envoria oferece os recursos de que você precisa.",
+    partnerFinmatchTitle: "Finmatch",
+    partnerFinmatchDesc: "Como empresa de financiamento, a Finmatch apoia empresas no financiamento e na realização de metas climáticas. Com mais de 800 parceiros de financiamento, eles têm a maior rede de financiamento para empresas de médio porte na região DACH.",
+    partnerRemzeroTitle: "REM ZERO GmbH",
+    partnerRemzeroDesc: "A REM ZERO GmbH é nossa joint venture que une o mundo das finanças e da sustentabilidade para tornar a transformação uma realidade.",
+    partnerMicrosoftTitle: "Microsoft",
+    partnerMicrosoftDesc: "Como parte do Microsoft Startup Founder Hub, podemos usar a Microsoft, suas aplicações e rede para construir software que facilita e automatiza a definição de ações climáticas realistas e a descarbonização para nossos clientes.",
+    aboutHeroTitle: "Quem somos",
+    aboutHeroDesc: "Na COzwei, focamo-nos em soluções e na implementação de estratégias climáticas, pois atualmente o desafio não é tanto definir metas climáticas, mas sim a redução concreta e otimizada de emissões para empresas e instituições.",
+    aboutHeroButton: "Saiba mais",
+    aboutMapTitle: "Conosco, metas climáticas são possíveis",
+    aboutMapSubtitle: "Dois locais em Stuttgart e Lisboa – uma equipa para mais sustentabilidade empresarial",
+    aboutTeamTitle: "Uma equipa forte para mais proteção climática",
+    teamRoleChristian: "DIRETOR GERAL",
+    teamRoleErik: "DIRETOR GERAL",
+    teamRoleAlina: "Administração",
+    teamRoleDominik: "Gestor de Projeto Gestão Climática",
+    teamRoleLouis: "Gestão Climática",
+    teamRoleRonan: "Consultoria Energética",
+    teamRoleMarie: "Consultoria",
+    teamRoleHannah: "Adaptação Climática",
+    teamRoleRicardo: "Diretor de Vendas e Marketing",
+    aboutBenefitsTitle: "Conosco, metas climáticas são possíveis",
+    aboutBenefit1: "Ambiente de start-up",
+    aboutBenefit2: "Urban Sports Club",
+    aboutBenefit3: "Snacks e bebidas gratuitos",
+    aboutBenefit4: "Trabalho flexível e remoto",
+    aboutBenefit5: "Eventos de equipa",
+    aboutBenefit6: "Ambiente internacional",
+    aboutApplyButton: "CANDIDATAR AGORA",
+    aboutHeroImageAlt: "Imagem de fundo da secção quem somos",
+    aboutPartnersTitle: "Os nossos parceiros",
+    aboutPartnersPreviousAria: "Parceiros anteriores",
+    aboutPartnersNextAria: "Próximos parceiros",
+    aboutMapImageAlt: "Mapa da Europa",
+    aboutMapSintraLabel: "Sintra, Portugal",
+    aboutMapSintraAddress: "AV Heliodoro Salgado 48A",
+    aboutMapStuttgartLabel: "Estugarda, Alemanha",
+    aboutMapStuttgartAddress: "Gutenbergstraße 16A",
+    footerContactLine: "COzwei GmbH • Gutenbergstraße 16A, 70176 Stuttgart • Telefone: +49 711 12171034 • E-mail: mail@cozwei.de",
+    transfHeroTitle: "Planos de transformação climática – BAFA Módulo 5",
+    transfHeroDesc: "Até 90.000€ de financiamento por local na Alemanha para serviços de apoio ao planeamento e implementação de uma transformação para a neutralidade dos gases com efeito de estufa das empresas.",
+    transfInfoTitle: "Reduza custos com planos de transformação climática subsidiados",
+    transfInfoDesc: "Os requisitos de transparência para a pegada de carbono corporativa (balanço de GEE) de clientes ou, cada vez mais, de legisladores na Europa (relatórios de sustentabilidade CSRD) vão aumentar.\n\nO programa de financiamento BAFA (Módulo 5) para eficiência energética e de recursos nas empresas aborda esta questão e financia até 70% dos custos dos serviços para um plano de transformação específico do local para a neutralidade dos gases com efeito de estufa.\n\nPode receber financiamento para os nossos serviços e assim atingir os seus objetivos climáticos.",
+    transfStepsTitle: "Quatro passos para uma transformação sustentável",
+    transfStep1Title: "Candidatura BAFA 5",
+    transfStep1Desc: "Preparação de todos os documentos e apoio na submissão da candidatura para receber o valor total do financiamento. A implementação ocorre após a aprovação do financiamento, para a máxima transparência dos custos reais.",
+    transfStep2Title: "Elaboração do balanço de CO₂",
+    transfStep2Desc: "A base de toda a transformação para a neutralidade de CO₂ é a elaboração do balanço de CO₂ (CCF). Todas as emissões de CO₂ geradas na empresa ao longo da cadeia de valor são registadas e contabilizadas de acordo com as normas internacionais (ISO 14064).",
+    transfStep3Title: "Derivação de medidas",
+    transfStep3Desc: "Com base no balanço de CO₂, são identificados os principais emissores e definidas medidas de redução. Estas mostram quantas emissões podem ser poupadas, quais serão os custos de implementação, que financiamentos e subsídios são possíveis e quando a implementação realista pode ser planeada.",
+    transfStep4Title: "Definição de metas e estratégia",
+    transfStep4Desc: "A soma de todas as medidas exequíveis permite definir um ano-alvo para a neutralidade climática e apresentar vários cenários para a sua concretização. Estes cenários podem variar consoante o nível de ambição na implementação das medidas e permitem escolher a opção mais económica.",
+    transfEligTitle: "Que empresas podem ser financiadas?",
+    transfEligDesc: "Empresas com unidades de produção na Alemanha são elegíveis para financiamento por unidade ao abrigo do Financiamento Federal para Eficiência Energética e de Recursos nas Empresas (EEW). O montante do financiamento depende do tamanho da empresa. Teremos todo o gosto em realizar uma verificação rápida do montante de financiamento possível, sem compromisso. Em geral:",
+    transfEligList1: "Empresas sem estatuto de PME: 40-50 por cento",
+    transfEligList2: "Empresas de média dimensão (MU): 50-60 por cento",
+    transfEligList3: "Pequenas empresas (KU): 60-70 por cento",
+    transfEligMax: "Até um máximo de 90.000€",
+    transfEligSource: "Fonte: BAFA (em 04.06.2024)",
+    // Förderungen translations
+    foerderungenHeroTitle: "Financiamento",
+    foerderungenHeroSubtitle: "Apoiamo-lo na identificação e candidatura a financiamentos climáticos para atingir os seus objetivos de sustentabilidade de forma económica.",
+    foerderungenSelectState: "Selecionar Estado Federal",
+    foerderungenBox1Title: "Financiamento BAFA Módulo 1-6",
+    foerderungenBox1Desc: "O Governo Federal apoia empresas com programas de financiamento para digitalização, eficiência energética e inovação. O objetivo é tornar a localização empresarial da Alemanha preparada para o futuro.",
+    foerderungenBox1Focus: "Foco do financiamento: Instalações de produção energeticamente eficientes",
+    foerderungenBox2Title: "Financiamento GRW",
+    foerderungenBox2Desc: "O financiamento GRW (Tarefa Conjunta \"Melhoria da Estrutura Económica Regional\") fortalece regiões estruturalmente fracas através de subsídios de investimento para empresas e projetos de infraestrutura. Os montantes de financiamento dependem de quais áreas de financiamento (C/D) a empresa está localizada.",
+    foerderungenBox2Focus: "Foco do financiamento: Desenvolvimento de localização, novos empregos",
+    foerderungenBox3Title: "Financiamentos Regionais",
+    foerderungenBox3Desc: "Estados federais e municípios oferecem seus próprios programas que são especificamente adaptados às necessidades regionais - como para inovação, energia ou formação. Um exemplo disso é o programa de financiamento Energia & Clima 2023 da SAB com taxas de financiamento de até 70% para máquinas de substituição energeticamente eficientes.",
+    foerderungenBox3Focus: "Foco do financiamento: Modernização, novos empregos",
+    foerderungenSpecialTitle: "🔥 Financiamentos com Prazo Limitado",
+    foerderungenSpecialSubtitle: "Estas oportunidades de financiamento estão disponíveis apenas por tempo limitado - candidate-se agora!",
+    foerderungenSpecialSachsenTitle: "70% de Financiamento para Aquisição de Máquinas na Saxónia",
+    foerderungenSpecialSachsenDesc: "O Banco de Desenvolvimento Saxónico (SAB) promove investimentos em máquinas e equipamentos energeticamente eficientes com até 70% dos custos elegíveis sob a Diretiva de Energia e Clima.",
+    foerderungenSpecialSachsenDetails: "Financiamento para pequenas e médias empresas (PME) bem como grandes empresas na Saxónia. Prazo de candidatura aplicável!",
+    foerderungenSpecialSachsenButton: "Candidatar agora",
+    // Referenzen translations
+    referenzenHeroTitle: "Referências",
+    referenzenHeroSubtitle: "Descubra nossos projetos bem-sucedidos e clientes satisfeitos de várias indústrias.",
+    referenzenAllProjects: "Todos os Projetos",
+    referenzenNachhaltigkeit: "Sustentabilidade",
+    referenzenKlimaschutz: "Proteção Climática",
+    referenzenMaßnahmen: "Medidas",
+    referenzenProjectsTitle: "Nossas Referências",
+    referenzenProjectsSubtitle: "Aqui são apresentados nossos projetos bem-sucedidos e referências de clientes.",
+    // Project translations - Klimaschutz
+    project1Title: "Klett Cotta Verlag",
+    project1Desc: "No âmbito de uma colaboração plurianual, criámos a Pegada de Carbono Corporativa para os anos 2021, 2023 e 2024 e desenvolvemos uma estratégia de redução de CO₂ em conformidade com os objetivos climáticos do grupo.",
+    project2Title: "PONS Langenscheidt GmbH",
+    project2Desc: "Para a PONS Langenscheidt, acompanhámos a criação da Pegada de Carbono Corporativa ao longo de vários anos e derivámos dela um planeamento de redução estrategicamente fundamentado.",
+    project3Title: "Junfermann Verlag",
+    project3Desc: "Para apoiar os objetivos climáticos da empresa, analisámos regularmente o balanço de CO₂ no período de 2021 a 2024 e desenvolvemos uma estratégia de mitigação correspondente.",
+    project4Title: "Bange Verlag",
+    project4Desc: "A criação da Pegada de Carbono Corporativa e a derivação de medidas específicas de redução de emissões tiveram lugar no âmbito de um processo de consultoria plurianual.",
+    project5Title: "Ernst Klett Sprachen GmbH",
+    project5Desc: "Determinámos a pegada de CO₂ para os anos 2021 e 2022 e derivámos uma estratégia climática compatível com o grupo para redução de emissões com base nisso.",
+    project6Title: "Ernst Klett Aktiengesellschaft",
+    project6Desc: "No âmbito de uma estratégia climática de grupo, desenvolvemos um manual de contabilização uniforme, consolidámos os balanços de GEE de todas as participações e definimos objetivos climáticos abrangentes.",
+    project7Title: "Enpulse Ventures GmbH",
+    project7Desc: "Criação das Pegadas de Carbono Corporativas para os anos 2022 a 2024, bem como desenvolvimento de uma estratégia de redução específica da empresa no âmbito dos requisitos de sustentabilidade do grupo da EnBW.",
+    project8Title: "ESKA-Welt GmbH",
+    project8Desc: "Conceção e implementação de um conceito de transformação financiado de acordo com o Módulo 5 BAFA, incluindo balanço de gases com efeito de estufa, planeamento de medidas e definição de um objetivo climático.",
+    project9Title: "SFC Energy AG",
+    project9Desc: "No âmbito do balanço de GEE, analisámos as três categorias mais intensivas em emissões de acordo com o Protocolo GEE para identificar potenciais de redução fundamentados ao longo da cadeia de abastecimento.",
+    project10Title: "Dr. Ing. h.c. F. Porsche AG",
+    project10Desc: "Preparação de uma brochura para a avaliação do ciclo de vida do veículo de um veículo elétrico a bateria com foco no potencial de gases com efeito de estufa.",
+    project11Title: "Hochschule Furtwangen",
+    project11Desc: "Desenvolvimento de um conceito de proteção climática elegível, incluindo balanço de gases com efeito de estufa, análise de potencial, catálogo de medidas e cenários futuros - acompanhado por workshops especializados moderados.",
+    project12Title: "Hochschule Albstadt-Sigmaringen",
+    project12Desc: "No âmbito do conceito de proteção climática financiado, analisámos emissões, elaborámos propostas de medidas e desenvolvemos cenários de descarbonização a longo prazo.",
+    project13Title: "Hochschule Konstanz",
+    project13Desc: "Criação holística de um conceito de proteção climática financiado com contabilização fundamentada, análise de potencial, moderação de workshops e desenvolvimento de cenários para atingir objetivos climáticos.",
+    project14Title: "Lotus Cars",
+    project14Desc: "Cálculo da Pegada de Carbono do Produto para um modelo com motor de combustão para identificar componentes intensivos em emissões e derivar campos de ação estratégicos para redução de emissões de CO2.",
+    project15Title: "Klett Haus Stuttgart",
+    project15Desc: "Criação da Pegada de Carbono Corporativa para os anos 2023 e 2024, bem como derivação de uma estratégia de redução em conformidade com os objetivos de grupo abrangentes.",
+    // Nachhaltigkeit projects
+    project16Title: "Enpulse Ventures GmbH",
+    project16Desc: "Formulação de uma estratégia de sustentabilidade para comunicação externa, tendo em conta os requisitos de relatório da EnBW Energie Baden-Württemberg.",
+    project17Title: "ESKA-Welt GmbH",
+    project17Desc: "Integração de Objetivos de Desenvolvimento Sustentável (ODS) relevantes no negócio operacional, bem como preparação dos resultados para comunicação externa de sustentabilidade.",
+    project18Title: "Klett Cotta Verlag",
+    project18Desc: "Realização de um workshop prático para funcionários para identificar campos de ação centrais ao longo dos ODS e derivar medidas concretas.",
+    project19Title: "Dr. Ing. h.c. F. Porsche AG",
+    project19Desc: "Acompanhamento estratégico da comunicação de sustentabilidade para os exercícios de 2022 e 2023 para a transição para CSRD, com foco na apresentação consistente de aspetos essenciais de sustentabilidade com ênfase no ambiente.",
+    project20Title: "Lotus Tech Innovation Centre GmbH",
+    project20Desc: "Desenvolvimento de uma estratégia de sustentabilidade internacional com foco em requisitos regulamentares, expectativas das partes interessadas e alinhamento estratégico.",
+    // Projetos de Medidas
+    project21Title: "Picto GmbH",
+    project21Desc: "Candidatura a financiamento para uma nova máquina de impressão através do Fundo Europeu de Desenvolvimento Regional para uma Durst RHO 500 P5 no valor de €300.000.",
+    project22Title: "SAXOPRINT GmbH",
+    project22Desc: "Candidatura a financiamento para uma nova máquina de impressão através do Fundo Europeu de Desenvolvimento Regional para uma Durst P5 500i no valor de €300.000.",
+    project23Title: "Posterlounge GmbH",
+    project23Desc: "Candidatura a financiamento para uma nova máquina de impressão através do Fundo Europeu de Desenvolvimento Regional para uma impressora Kudu-Flatbed da SwissQPrint no valor de €300.000.",
+    project24Title: "MaXxPrint GmbH",
+    project24Desc: "Candidatura a financiamento para uma nova máquina de impressão através do Fundo Europeu de Desenvolvimento Regional para uma Durst P5 500 no valor de €300.000.",
+    project25Title: "Werbetechnik Baden GmbH",
+    project25Desc: "Candidatura a financiamento para uma nova máquina de impressão através da \"Otimização energética e de recursos de instalações e processos - financiamento básico\" para uma Durst P5X Flatbed no valor de €45.000.",
+    // Projetos adicionais de Proteção Climática
+    project26Title: "Deichmann SE",
+    project26Desc: "Verificação da pegada de carbono da empresa de acordo com a ISO 14046-3 e aconselhamento sobre medidas de otimização.",
+    project27Title: "Laniqo Sp. z o.o.",
+    project27Desc: "Cálculo da pegada de carbono corporativa anual de acordo com a ISO 14046 e o Protocolo GHG.",
+    // Projetos adicionais de Proteção Climática
+    project28Title: "RWTH Aachen University",
+    project28Desc: "Desenvolvimento de uma estratégia de proteção climática com derivação de medidas de proteção climática, cálculo de poupanças de CO₂ e custos de evitamento (€/tCO₂) e derivação de vários cenários para alcançar os objetivos climáticos.",
+    project29Title: "Technische Hochschule Mannheim",
+    project29Desc: "Apoio global ao conceito de proteção climática através da derivação de medidas de proteção climática, avaliação destas de acordo com €/t CO₂ e desenvolvimento de cenários para alcançar os objetivos climáticos.",
+    // ... add more keys as needed
+    klimaHeroTitle: "Elabore agora um conceito climático integrado",
+    klimaHeroDesc: "Apoiamos instituições na elaboração do seu conceito de proteção climática financiado pela Iniciativa Nacional de Proteção Climática (NKI) e na consecução de metas climáticas realistas.",
+    klimaTags: [
+      "Instituições de ensino",
+      "Associações sem fins lucrativos",
+      "Empresas municipais",
+      "Instituições de saúde, assistência e sociais",
+      "Apoio à infância e juventude",
+      "Municípios/associações municipais",
+      "Instituição cultural",
+      "Comunidade religiosa"
+    ],
+    klimaInfoTitle: "6 passos para o plano de neutralidade climática",
+    klimaInfoDesc: "Acompanhamos você desde a primeira análise até a estratégia de consolidação – para um conceito de proteção climática sustentável e financiado.",
+    klimaStep1Title: "Análise de status, energia e balanço de GEE",
+    klimaStep1Desc: "O cálculo das emissões é a base de todos os projetos de descarbonização. Calculamos suas emissões diretas e indiretas (Escopo 1, 2 e 3) de acordo com o Protocolo GEE.",
+    klimaStep2Title: "Catálogo de medidas",
+    klimaStep2Desc: "Com base no balanço, as medidas são derivadas e priorizadas de acordo com o custo, potencial de redução de emissões e período de implementação.",
+    klimaStep3Title: "Envolvimento de todas as partes interessadas relevantes",
+    klimaStep3Desc: "Por meio de workshops, todas as partes relevantes são envolvidas para explorar o máximo potencial das medidas.",
+    klimaStep4Title: "Análise de potencial e campos de ação priorizados",
+    klimaStep4Desc: "As medidas são avaliadas quanto à viabilidade e potencial de redução de emissões e agrupadas em campos de ação como mobilidade, infraestrutura, compras, etc.",
+    klimaStep5Title: "Metas de redução de GEE e cenários",
+    klimaStep5Desc: "As medidas são mapeadas em cenários (por exemplo, cenário de referência e de proteção climática) para identificar emissões residuais e custos de compensação.",
+    klimaStep6Title: "Estratégia de consolidação",
+    klimaStep6Desc: "Todo o material desenvolvido é entregue e pacotes de treinamento são oferecidos para ancorar o conteúdo de forma sustentável.",
+    esrsHeroTitle: "ESRS E1: Capacidade de Relato sobre Alterações Climáticas",
+    esrsHeroDesc: "Apoiamos a recolha, cálculo e preparação do relatório de informações quantitativas sobre proteção climática e adaptação às alterações climáticas (ESRS E1-1 a E1-9) de acordo com as normas principais setoriais da EFRAG.",
+    esrsInfoTitle: "Requisitos de divulgação para proteção climática segundo a CSRD",
+    esrsInfoDesc: "Capacitamos a sua empresa para relatar os requisitos de divulgação relacionados ao clima segundo a CSRD para os indicadores ESRS E1-1 a E1-9.",
+    esrsServicesTitle: "Nossos Serviços",
+    esrsService1Title: "Coleta de Dados",
+    esrsService1Desc: "Calculamos balanços climáticos corporativos (balanço de GEE), planos de ação de redução e anos-alvo",
+    esrsService2Title: "Preparação",
+    esrsService2Desc: "Preparamos seus dados climáticos para classificações ESG ou relatórios de sustentabilidade",
+    esrsService3Title: "Consultoria",
+    esrsService3Desc: "Aconselhamos de forma abrangente sobre descarbonização e alcance de metas climáticas",
+    esrsStepsTitle: "Em 4 passos para o plano de transição climática segundo CSRD ESRS E1-1",
+    esrsStep1Title: "Balanço de GEE",
+    esrsStep1Desc: "Para determinar as emissões, é necessário um balanço de GEE, que regista o impacto ambiental de uma empresa nos Escopos 1, 2, 3. As medidas são derivadas com base nisso.",
+    esrsStep2Title: "Metas",
+    esrsStep2Desc: "Com base no balanço de GEE, podem ser definidas metas climáticas baseadas na ciência.",
+    esrsStep3Title: "Medidas",
+    esrsStep3Desc: "Com base no balanço de GEE e nas metas, são definidas medidas para reduzir as emissões dos Escopos 1, 2, 3 e avaliadas monetariamente.",
+    esrsStep4Title: "Implementação & Comunicação",
+    esrsStep4Desc: "Desenvolvimento de KPIs de progresso e comunicação das atividades às partes interessadas.",
+    privacyPageTitle: "Política de Privacidade",
+    privacyPageSections: [
+      {
+        title: "1. Responsável pelo tratamento de dados",
+        content: [
+          "Responsável nos termos do Art. 4º, nº 7 do RGPD:",
+          "COzwei GmbH\nGutenbergstraße 16a 70176 Stuttgart\nAlemanha\nE-Mail: datenschutz@cozwei.de\nTelefone: 0711 12171034"
+        ]
+      },
+      {
+        title: "2. Encarregado de Proteção de Dados",
+        content: [
+          "Pode contactar o encarregado de proteção de dados da COzwei GmbH através do e-mail datenschutz@cozwei.de ou por correio para o endereço acima indicado com a menção 'Encarregado de Proteção de Dados'."
+        ]
+      },
+      {
+        title: "3. What data are processed?",
+        content: [
+          "We process personal data that you provide to us when using our website or when communicating with us. This includes:",
+          "• Name and contact details (e.g., email address, telephone number)",
+          "• Communication data (e.g., messages, emails)",
+          "• Data relating to the use of our website (e.g., IP address, browser information, access times)",
+          "• Data relating to the performance of contracts (e.g., name, address, invoice number)",
+          "• Data relating to payment (e.g., payment data, bank connection information)"
+        ]
+      },
+      {
+        title: "4. Purposes of data processing",
+        content: [
+          "The processing of data is carried out exclusively for the following purposes:",
+          "• Performance of contracts and customer service",
+          "• Communication with customers and interested parties",
+          "• Improvement of our website and online offerings",
+          "• Analysis of user behavior on our website",
+          "• Ensuring the security of our IT systems"
+        ]
+      },
+      {
+        title: "5. Rights of the data subject",
+        content: [
+          "You have the right to:",
+          "• Request information about the personal data processed by us",
+          "• Request correction of incorrect data",
+          "• Request deletion of your data (unless further statutory retention periods apply)",
+          "• Request restriction of processing",
+          "• Request transfer to another controller",
+          "• Lodge a complaint"
+        ]
+      },
+      {
+        title: "6. Data security",
+        content: [
+          "We take technical and organizational measures to protect your data against unauthorized access, loss, destruction, or against unauthorized modification. These include:",
+          "• Encryption of transmitted data",
+          "• Secure storage of passwords",
+          "• Regular security audits"
+        ]
+      },
+      {
+        title: "7. Deletion of data",
+        content: [
+          "Data will be deleted as soon as the purpose of processing ceases or the retention period expires. After the retention periods, the data are anonymized by technical and organizational measures.",
+          "• Communication data (e.g., emails) will be deleted after a maximum of 30 days.",
+          "• Data relating to contract performance (e.g., invoices) will be deleted after a maximum of 10 years.",
+          "• Payment data (e.g., bank connection information) will be deleted after a maximum of 7 years."
+        ]
+      },
+      {
+        title: "8. Changes to this privacy policy",
+        content: [
+          "We reserve the right to change this privacy policy to adapt it to technical or legal developments. The current version is always available on our website."
+        ]
+      }
+    ],
+    impressumPageTitle: "Impressum (Nota Legal)",
+    impressumPageSections: [
+      {
+        title: "Informações de acordo com § 5 TMG",
+        content: [
+          "COzwei GmbH\nGutenbergstraße 16a\n70176 Stuttgart"
+        ]
+      },
+      {
+        title: "Contact",
+        content: [
+          "Phone: 0711 12171034",
+          "E-Mail: info@cozwei.de"
+        ]
+      },
+      {
+        title: "Sales tax identification number",
+        content: [
+          "Sales tax identification number according to § 27 a UStG: 000 000 00000"
+        ]
+      },
+      {
+        title: "Responsible for journalistic content",
+        content: [
+          "COzwei GmbH\nGutenbergstraße 16a\n70176 Stuttgart"
+        ]
+      },
+      {
+        title: "Disclaimer",
+        content: [
+          "The content of this website is carefully checked. However, we do not guarantee its completeness, accuracy, and currency. As a service provider, we are responsible for our own content on these pages in accordance with § 7 para. 1 TMG. According to §§ 8 to 10 TMG, we are not obliged to monitor transmitted or stored third-party information or to investigate circumstances that indicate a criminal offense.",
+          "Our obligations to remove information or to block the use of information under general laws remain unaffected by this. However, liability for such violations is only possible from the point in time at which the violation became known. Upon becoming aware of such violations, we will immediately remove such content.",
+          "We assume no liability for the accuracy, completeness, and currency of the information provided. The use of any information on this website is at your own risk."
+        ]
+      },
+      {
+        title: "Copyright",
+        content: [
+          "The content created by the website operators on these pages is subject to German copyright law. The reproduction, editing, distribution, and any kind of use outside the limits of copyright require the written consent of the respective author or creator. Downloads and copies of this page are only permitted for private, non-commercial use.",
+          "Insofar as the content on this page was not created by the operator, copyrights of third parties must be observed. In particular, the content of third parties is marked as such. Should you nevertheless become aware of a copyright infringement, please inform us accordingly. Upon becoming aware of violations of copyright, we will immediately remove such content.",
+          "Our website contains links to external websites of third parties. To these, §§ 8 to 10 TMG are not applicable without special notice. We have no influence on the admission and content of the linked pages. Therefore, we expressly distance ourselves from all content of third parties found via these links or links.",
+          "This declaration applies to all links and links offered on this website."
+        ]
+      },
+      {
+        title: "Data protection",
+        content: [
+          "The use of our website is generally possible without providing personal data. Where personal data (e.g., name, address, email address, etc.) is collected, this is done as far as possible on a voluntary basis. This data will not be passed on to third parties without your explicit consent.",
+          "We would like to point out that the data transmission over the Internet (e.g., when communicating by email) may have security gaps. A complete protection of the data against unauthorized access by third parties is not possible. The user assumes the risk that his data may be changed, deleted, or made inaccessible by third parties unintentionally or intentionally.",
+          "We reserve the right to change the terms of use, to supplement or update them, even without prior notice. The terms of use apply from the point in time of the first use of the website. It is recommended to check the terms of use regularly."
+        ]
+      }
+    ],
+  },
+}; 
