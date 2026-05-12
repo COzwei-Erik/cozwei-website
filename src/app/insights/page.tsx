@@ -17,6 +17,15 @@ type Post = {
 
 const POSTS: Post[] = [
   {
+    slug: "ccf-verifizierung",
+    image: "/Pictures/pexels-rdne-7948058.jpg",
+    imageAlt: "Datenanalyse am Schreibtisch",
+    dateKey: "insightsPost3Date",
+    categoryKey: "insightsPost3Category",
+    titleKey: "insightsPost3Title",
+    descKey: "insightsPost3Desc",
+  },
+  {
     slug: "buchverlage-dekarbonisierung",
     image: "/Pictures/pexels-marcin-jozwiak-199600-3641377.jpg",
     imageAlt: "Industrieanlage",
@@ -27,21 +36,12 @@ const POSTS: Post[] = [
   },
   {
     slug: "nki-foerderung",
-    image: "/Pictures/pexels-fauxels-3184292.jpg",
-    imageAlt: "Team in Besprechung",
+    image: "/Pictures/image copy 6.png",
+    imageAlt: "Klimaschutzkonzept Hochschule",
     dateKey: "insightsPost2Date",
     categoryKey: "insightsPost2Category",
     titleKey: "insightsPost2Title",
     descKey: "insightsPost2Desc",
-  },
-  {
-    slug: "ccf-verifizierung",
-    image: "/Pictures/pexels-rdne-7948058.jpg",
-    imageAlt: "Datenanalyse am Schreibtisch",
-    dateKey: "insightsPost3Date",
-    categoryKey: "insightsPost3Category",
-    titleKey: "insightsPost3Title",
-    descKey: "insightsPost3Desc",
   },
 ];
 
@@ -57,7 +57,7 @@ export default function Insights() {
       <section className="relative flex flex-col items-center justify-center min-h-screen w-full text-center overflow-hidden">
         <div className="absolute inset-0 w-full h-full z-0">
           <Image
-            src="/Pictures/pexels-tomfisk-9893729_low_low.jpg"
+            src="/Pictures/2024-04-02__DSC0693-NEF_2024-03-24_DXO.jpg"
             alt="Insights Hero Background"
             fill
             style={{ objectFit: "cover", objectPosition: "center" }}

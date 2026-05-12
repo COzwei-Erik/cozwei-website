@@ -18,8 +18,8 @@ export default function NkiFoerderung() {
       <section className="relative flex flex-col items-center justify-center min-h-[70vh] w-full text-center overflow-hidden">
         <div className="absolute inset-0 w-full h-full z-0">
           <Image
-            src="/Pictures/pexels-fauxels-3184292.jpg"
-            alt="Team in Besprechung"
+            src="/Pictures/image copy 6.png"
+            alt="Klimaschutzkonzept Hochschule"
             fill
             style={{ objectFit: "cover", objectPosition: "center" }}
             className="opacity-90"
