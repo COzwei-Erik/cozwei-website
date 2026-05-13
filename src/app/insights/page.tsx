@@ -68,7 +68,7 @@ export default function Insights() {
         </div>
         <div className="relative z-20 flex flex-col items-center justify-center w-full h-full py-16 px-4">
           <div className="bg-white/80 rounded-2xl shadow-xl px-8 py-10 max-w-3xl mx-auto flex flex-col items-center border border-white/60 backdrop-blur-sm">
-            <h1 className="text-4xl sm:text-5xl font-extrabold mb-4 leading-tight" style={{ color: "#3D405B" }}>
+            <h1 className="text-4xl sm:text-5xl font-extrabold mb-4 leading-tight" style={{ color: "#dc2626" }}>
               {t.insightsHeroTitle}
             </h1>
             <p className="text-lg sm:text-xl max-w-2xl mb-6" style={{ color: "#3D405B" }}>
