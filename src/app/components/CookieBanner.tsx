@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useConsent } from "../ConsentContext";
 import { useLanguage, translations } from "../LanguageContext";
+import { trackEvent, Events } from "../analytics";
 
 export default function CookieBanner() {
   const {
@@ -36,16 +37,28 @@ export default function CookieBanner() {
   const handleSave = () => {
     setConsent({ analytics: analyticsToggle });
     setShowDetails(false);
+    // Erst nach setConsent feuern, sonst ist gtag evtl. noch nicht da.
+    // setTimeout 0 verschiebt das Event ans Ende des Tick.
+    setTimeout(() => {
+      trackEvent(Events.CookieConsent, {
+        choice: analyticsToggle ? "custom_analytics_yes" : "custom_analytics_no",
+      });
+    }, 0);
   };
 
   const handleAcceptAll = () => {
     acceptAll();
     setShowDetails(false);
+    setTimeout(() => {
+      trackEvent(Events.CookieConsent, { choice: "accept_all" });
+    }, 0);
   };
 
   const handleRejectAll = () => {
     rejectAll();
     setShowDetails(false);
+    // Bei Ablehnung wird GA NICHT geladen — das Event geht ins Leere
+    // (kein Tracking ohne Consent). Das ist gewollt: DSGVO-konform.
   };
 
   return (

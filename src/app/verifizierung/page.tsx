@@ -3,6 +3,7 @@ import Header from "../Header";
 import Image from "next/image";
 import { useLanguage, translations } from "../LanguageContext";
 import ContactForm from "../components/ContactForm";
+import { trackEvent, Events } from "../analytics";
 
 const BOOKING_URL =
   "https://outlook.office.com/bookwithme/user/4e00978e7e7f42e38133622070d543b9@cozwei.de/meetingtype/vbiOdceuK0-As0tl2Bxhvg2?anonymous&ep=mCardFromTile";
@@ -188,6 +189,7 @@ export default function Verifizierung() {
                     href={BOOKING_URL}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() => trackEvent(Events.BookingClick, { location: `verif_tier_${tier.level.toLowerCase()}` })}
                     className="block w-full rounded-lg px-5 py-3 text-center text-sm font-bold transition"
                     style={{ backgroundColor: "#81B29A", color: "white", boxShadow: "0 4px 24px 0 rgba(61, 64, 91, 0.18)" }}
                     onMouseOver={(e) => (e.currentTarget.style.backgroundColor = "#6fa18a")}
@@ -280,6 +282,7 @@ export default function Verifizierung() {
               href={BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackEvent(Events.BookingClick, { location: 'verif_final_cta' })}
               className="inline-flex items-center gap-2 rounded-lg px-8 py-4 text-sm font-bold transition"
               style={{ backgroundColor: "#81B29A", color: "white", boxShadow: "0 4px 24px 0 rgba(61, 64, 91, 0.25)" }}
               onMouseOver={(e) => (e.currentTarget.style.backgroundColor = "#6fa18a")}

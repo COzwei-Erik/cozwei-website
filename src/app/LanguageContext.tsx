@@ -1,6 +1,7 @@
 'use client';
 
 import React, { createContext, useContext, useState, useEffect } from "react";
+import { setUserProperties } from "./analytics";
 
 type Language = "de" | "en" | "pt";
 
@@ -35,7 +36,14 @@ export const LanguageProvider = ({ children }: { children: React.ReactNode }) =>
     if (typeof window !== 'undefined') {
       localStorage.setItem("lang", lang);
     }
+    // Sprache als User-Property an GA melden (no-op falls GA nicht geladen).
+    setUserProperties({ language: lang });
   };
+
+  // Beim ersten Mounten die ermittelte Sprache an GA melden, sobald gtag bereit ist.
+  useEffect(() => {
+    setUserProperties({ language });
+  }, [language]);
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage }}>

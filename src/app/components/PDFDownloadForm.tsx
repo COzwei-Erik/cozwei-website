@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { useLanguage, translations } from "../LanguageContext";
+import { trackEvent, Events } from "../analytics";
 
 export default function PDFDownloadForm() {
   const { language } = useLanguage();
@@ -47,6 +48,7 @@ export default function PDFDownloadForm() {
 
       if (response.ok) {
         setSubmitStatus("success");
+        trackEvent(Events.PdfRequestSuccess, { resource: "foerderkatalog" });
       } else {
         const errorData = await response.json();
         setSubmitStatus("error");

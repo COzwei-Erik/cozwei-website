@@ -5,6 +5,7 @@ import { useState, useRef, lazy, Suspense } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
 import { useLanguage } from "./LanguageContext";
 import { HUBSPOT_FORM_URL } from "./links";
+import { trackEvent, Events } from "./analytics";
 
 // Type for timeout ref (works in both JS and TS)
 type Timeout = ReturnType<typeof setTimeout>;
@@ -101,7 +102,7 @@ export default function Header() {
         <li><a href="/referenzen" className="hover:text-green-700 transition text-lg font-bold" style={{ color: '#3D405B' }}>{t.references}</a></li>
         <li><a href="/ueber-uns" className="hover:text-green-700 transition text-lg font-bold" style={{ color: '#3D405B' }}>{t.about}</a></li>
         <li><a href="/insights" className="hover:text-green-700 transition text-lg font-bold" style={{ color: '#3D405B' }}>{t.insights}</a></li>
-        <li><a href={HUBSPOT_FORM_URL} target="_blank" rel="noopener noreferrer" className="hover:text-green-700 transition text-lg font-bold" style={{ color: '#3D405B' }}>{t.contact}</a></li>
+        <li><a href={HUBSPOT_FORM_URL} target="_blank" rel="noopener noreferrer" onClick={() => trackEvent(Events.ContactFormClick, { location: 'header' })} className="hover:text-green-700 transition text-lg font-bold" style={{ color: '#3D405B' }}>{t.contact}</a></li>
         <li className="ml-4">
           <div className="flex items-center gap-1 border rounded px-2 py-1 bg-white">
             <button

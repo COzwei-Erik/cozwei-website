@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import { trackEvent, Events } from "../analytics";
 
 // Big-number stat callout (e.g. "45 %" + explanation)
 export function StatCallout({
@@ -100,12 +101,14 @@ export function CtaBox({
   children,
   buttonLabel = "30-Minuten-Erstgespräch buchen",
   buttonHref = "#kontakt",
+  trackingLocation,
 }: {
   eyebrow?: string;
   title: string;
   children: React.ReactNode;
   buttonLabel?: string;
   buttonHref?: string;
+  trackingLocation?: string;
 }) {
   return (
     <aside className="my-12 rounded-3xl border-2 border-[#81B29A] bg-[#81B29A]/10 p-8 sm:p-10 text-center">
@@ -129,6 +132,12 @@ export function CtaBox({
       </div>
       <a
         href={buttonHref}
+        onClick={() =>
+          trackEvent(Events.BookingClick, {
+            location: trackingLocation || "cta_box",
+            label: buttonLabel,
+          })
+        }
         className="inline-block px-8 py-4 rounded-lg font-bold transition text-lg"
         style={{
           backgroundColor: "#81B29A",

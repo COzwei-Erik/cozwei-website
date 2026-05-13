@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useLanguage, translations } from "../LanguageContext";
 import ContactForm from "../components/ContactForm";
+import { trackEvent, Events } from "../analytics";
 
 type Post = {
   slug: string;
@@ -112,6 +113,7 @@ export default function Insights() {
                 <Link
                   key={post.slug}
                   href={`/insights/${post.slug}`}
+                  onClick={() => trackEvent(Events.InsightOpen, { slug: post.slug })}
                   className="block group"
                 >
                   <article className="flex flex-col rounded-3xl bg-white/60 border border-[#81B29A]/20 backdrop-blur-xl transition-all duration-300 group-hover:scale-105 group-hover:border-2 group-hover:border-[#81B29A] group-hover:ring-2 group-hover:ring-[#81B29A]/30 overflow-hidden h-full">

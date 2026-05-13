@@ -99,7 +99,7 @@ export default function NkiFoerderung() {
           <p className="text-lg leading-relaxed mb-6" style={{ color: "#23243a" }}>{c.section4P2}</p>
           <p className="text-lg leading-relaxed mb-6" style={{ color: "#23243a" }}>{c.section4P3}</p>
 
-          <CtaBox title={c.ctaTitle} buttonLabel={c.ctaButtonLabel}>
+          <CtaBox title={c.ctaTitle} buttonLabel={c.ctaButtonLabel} trackingLocation="blog_nki">
             {c.ctaBody}
           </CtaBox>
 

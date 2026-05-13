@@ -104,7 +104,7 @@ export default function CcfVerifizierung() {
           <h2 className="text-2xl sm:text-3xl font-extrabold mt-12 mb-4" style={{ color: "#3D405B" }}>{c.section7Title}</h2>
           <p className="text-lg leading-relaxed mb-6" style={{ color: "#23243a" }}>{c.section7P}</p>
 
-          <CtaBox eyebrow={c.ctaEyebrow} title={c.ctaTitle} buttonLabel={c.ctaButtonLabel}>
+          <CtaBox eyebrow={c.ctaEyebrow} title={c.ctaTitle} buttonLabel={c.ctaButtonLabel} trackingLocation="blog_ccf">
             {c.ctaBody}
           </CtaBox>
 

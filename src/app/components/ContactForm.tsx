@@ -1,6 +1,7 @@
 "use client";
 import { useLanguage, translations } from "../LanguageContext";
 import { HUBSPOT_FORM_URL } from "../links";
+import { trackEvent, Events } from "../analytics";
 
 export default function ContactForm() {
   const { language } = useLanguage();
@@ -29,6 +30,7 @@ export default function ContactForm() {
             href={HUBSPOT_FORM_URL}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackEvent(Events.ContactFormClick, { location: 'contact_section' })}
             className="inline-flex items-center gap-2 px-8 py-4 rounded-lg font-bold text-lg transition shadow-lg"
             style={{
               backgroundColor: "#81B29A",
