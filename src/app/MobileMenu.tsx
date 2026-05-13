@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { HiX } from "react-icons/hi";
+import { HUBSPOT_FORM_URL } from "./links";
 
 type Language = "de" | "en" | "pt";
 
@@ -65,7 +66,7 @@ export default function MobileMenu({
           <Link href="/referenzen" className="hover:text-green-700 transition text-[#3D405B] font-bold text-2xl pl-1" onClick={onClose}>{t.references}</Link>
           <Link href="/ueber-uns" className="hover:text-green-700 transition text-[#3D405B] font-bold text-2xl pl-1" onClick={onClose}>{t.about}</Link>
           <Link href="/insights" className="hover:text-green-700 transition text-[#3D405B] font-bold text-2xl pl-1" onClick={onClose}>{t.insights}</Link>
-          <a href="#kontakt" className="hover:text-green-700 transition text-[#3D405B] font-bold text-2xl pl-1" onClick={onClose}>{t.contact}</a>
+          <a href={HUBSPOT_FORM_URL} target="_blank" rel="noopener noreferrer" className="hover:text-green-700 transition text-[#3D405B] font-bold text-2xl pl-1" onClick={onClose}>{t.contact}</a>
         </div>
         <div className="mt-8 flex items-center gap-1 border rounded px-2 py-1 bg-white self-start">
           <button

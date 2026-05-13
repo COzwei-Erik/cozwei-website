@@ -1,8 +1,6 @@
 "use client";
 import { useLanguage, translations } from "../LanguageContext";
-
-const HUBSPOT_FORM_URL =
-  "https://2eerdy.share-eu1.hsforms.com/2MMJVkiBrQ1ajqWlb-x43rg";
+import { HUBSPOT_FORM_URL } from "../links";
 
 export default function ContactForm() {
   const { language } = useLanguage();
