@@ -195,12 +195,58 @@ export default function Massnahmen() {
         </section>
         {/* Klima-Förderungen Section */}
         <section className="w-full py-8 sm:py-16 flex flex-col items-center justify-center bg-white">
-          <div className="max-w-4xl w-full mx-auto px-4">
+          <div className="max-w-6xl w-full mx-auto px-4">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-4 sm:mb-6 text-center break-words" style={{ color: '#3D405B' }}>{t.climateFundingTitle}</h2>
-            <p className="text-base sm:text-lg text-center mb-6 sm:mb-10 break-words" style={{ color: '#3D405B' }}>
+            <p className="text-base sm:text-lg text-center mb-8 sm:mb-12 break-words max-w-3xl mx-auto" style={{ color: '#3D405B' }}>
               {t.climateFundingSubtitle}
             </p>
-            <PDFDownloadForm />
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+              {/* Formular links */}
+              <div className="lg:order-1 order-2">
+                <PDFDownloadForm />
+              </div>
+              {/* Förderkatalog-Vorschau rechts */}
+              <div className="lg:order-2 order-1 flex justify-center">
+                <div className="relative">
+                  {/* Hintergrund-Seite (leicht versetzt) */}
+                  <div
+                    className="absolute -top-2 -right-2 w-56 sm:w-64 aspect-[3/4] rounded-xl shadow-lg rotate-[4deg]"
+                    style={{
+                      background: 'linear-gradient(135deg, #5a7a6a 0%, #3d5747 100%)',
+                    }}
+                    aria-hidden
+                  />
+                  {/* Haupt-Cover */}
+                  <div
+                    className="relative w-56 sm:w-64 aspect-[3/4] rounded-xl shadow-2xl overflow-hidden p-6 flex flex-col text-white"
+                    style={{
+                      background: 'linear-gradient(135deg, #4a6855 0%, #2f4636 100%)',
+                    }}
+                  >
+                    {/* Dekorative weiße Kreise (angelehnt an das Cover-Design) */}
+                    <div className="absolute -top-6 -right-6 w-32 h-32 rounded-full bg-white/15" aria-hidden />
+                    <div className="absolute -top-2 right-10 w-12 h-12 rounded-full bg-white/20" aria-hidden />
+                    <div className="absolute top-14 right-2 w-8 h-8 rounded-full bg-white/15" aria-hidden />
+
+                    <div className="relative flex-1 flex flex-col justify-end">
+                      <div className="text-[10px] font-bold uppercase tracking-[0.18em] opacity-80 mb-2">
+                        COzwei
+                      </div>
+                      <div className="text-xl sm:text-2xl font-extrabold leading-tight mb-1">
+                        Förderkatalog
+                      </div>
+                      <div className="text-sm sm:text-base font-semibold opacity-95 leading-snug">
+                        für Klimaförderungen
+                      </div>
+                    </div>
+                    <div className="relative mt-6 pt-3 border-t border-white/20 text-[10px] opacity-80 flex justify-between">
+                      <span>Stand 10/2025</span>
+                      <span>35 Seiten</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
         {/* Unsere Partner Section */}
@@ -233,9 +279,11 @@ export default function Massnahmen() {
                             height: isMobile ? 240 : 280 
                           }}>
                             <div className="w-20 h-16 sm:w-28 sm:h-20 mb-3 sm:mb-4 flex items-center justify-center">
-                              <Image 
-                                src={partner.logo} 
-                                alt={partner.name + ' Logo'} 
+                              <Image
+                                src={partner.logo}
+                                alt={partner.name + ' Logo'}
+                                width={120}
+                                height={80}
                                 className="object-contain max-h-12 sm:max-h-16"
                                 loading="lazy"
                               />
