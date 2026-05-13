@@ -207,44 +207,14 @@ export default function Massnahmen() {
               </div>
               {/* Förderkatalog-Vorschau rechts */}
               <div className="lg:order-2 order-1 flex justify-center">
-                <div className="relative">
-                  {/* Hintergrund-Seite (leicht versetzt) */}
-                  <div
-                    className="absolute -top-2 -right-2 w-56 sm:w-64 aspect-[3/4] rounded-xl shadow-lg rotate-[4deg]"
-                    style={{
-                      background: 'linear-gradient(135deg, #5a7a6a 0%, #3d5747 100%)',
-                    }}
-                    aria-hidden
-                  />
-                  {/* Haupt-Cover */}
-                  <div
-                    className="relative w-56 sm:w-64 aspect-[3/4] rounded-xl shadow-2xl overflow-hidden p-6 flex flex-col text-white"
-                    style={{
-                      background: 'linear-gradient(135deg, #4a6855 0%, #2f4636 100%)',
-                    }}
-                  >
-                    {/* Dekorative weiße Kreise (angelehnt an das Cover-Design) */}
-                    <div className="absolute -top-6 -right-6 w-32 h-32 rounded-full bg-white/15" aria-hidden />
-                    <div className="absolute -top-2 right-10 w-12 h-12 rounded-full bg-white/20" aria-hidden />
-                    <div className="absolute top-14 right-2 w-8 h-8 rounded-full bg-white/15" aria-hidden />
-
-                    <div className="relative flex-1 flex flex-col justify-end">
-                      <div className="text-[10px] font-bold uppercase tracking-[0.18em] opacity-80 mb-2">
-                        COzwei
-                      </div>
-                      <div className="text-xl sm:text-2xl font-extrabold leading-tight mb-1">
-                        Förderkatalog
-                      </div>
-                      <div className="text-sm sm:text-base font-semibold opacity-95 leading-snug">
-                        für Klimaförderungen
-                      </div>
-                    </div>
-                    <div className="relative mt-6 pt-3 border-t border-white/20 text-[10px] opacity-80 flex justify-between">
-                      <span>Stand 10/2025</span>
-                      <span>35 Seiten</span>
-                    </div>
-                  </div>
-                </div>
+                <Image
+                  src="/Pictures/foerderkatalog-preview.png"
+                  alt="COzwei Förderkatalog für Klimaförderungen — Cover, Inhaltsverzeichnis und Beispielseiten"
+                  width={1200}
+                  height={1080}
+                  className="w-full max-w-md h-auto"
+                  priority
+                />
               </div>
             </div>
           </div>
