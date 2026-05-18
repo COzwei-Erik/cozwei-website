@@ -17,6 +17,7 @@ const headerTranslations = {
     decarbonization: "Dekarbonisierung",
     measures: "Maßnahmen",
     verification: "Verifizierung",
+    nki: "NKI",
     references: "Referenzen",
     about: "Über uns",
     insights: "Insights",
@@ -28,6 +29,7 @@ const headerTranslations = {
     decarbonization: "Decarbonization",
     measures: "Measures",
     verification: "Verification",
+    nki: "NKI",
     references: "References",
     about: "About us",
     insights: "Insights",
@@ -39,6 +41,7 @@ const headerTranslations = {
     decarbonization: "Descarbonização",
     measures: "Medidas",
     verification: "Verificação",
+    nki: "NKI",
     references: "Referências",
     about: "Sobre nós",
     insights: "Insights",
@@ -97,6 +100,7 @@ export default function Header() {
             <li><a href="/dekarbonisierung" className="block px-6 py-3 hover:bg-[#81B29A]/10 text-[#3D405B] text-base font-semibold">{t.decarbonization}</a></li>
             <li><a href="/massnahmen" className="block px-6 py-3 hover:bg-[#81B29A]/10 text-[#3D405B] text-base font-semibold">{t.measures}</a></li>
             <li><a href="/verifizierung" className="block px-6 py-3 hover:bg-[#81B29A]/10 text-[#3D405B] text-base font-semibold">{t.verification}</a></li>
+            <li><a href="/klimaschutzkonzepte" className="block px-6 py-3 hover:bg-[#81B29A]/10 text-[#3D405B] text-base font-semibold">{t.nki}</a></li>
           </ul>
         </li>
         <li><a href="/referenzen" className="hover:text-green-700 transition text-lg font-bold" style={{ color: '#3D405B' }}>{t.references}</a></li>
