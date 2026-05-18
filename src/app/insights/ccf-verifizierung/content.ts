@@ -58,7 +58,7 @@ export const content: Record<"de" | "en" | "pt", Content> = {
     heroKicker: "Praxisbeobachtung · CCF-Verifizierung nach ISO 14064",
     heroTitle: "Was 50 verifizierte CO₂-Bilanzen über die Grenzen von Software verraten",
     intro:
-      "Im letzten Jahr habe ich als Bilanzierungsexperte mehr CO₂-Bilanzen validiert als selbst erstellt. Über 50 Bilanzen in 12 Monaten, aus etlichen Sektoren wie Konsumgüter, Bildung und öffentlicher Sektor. Die Abweichungen folgen fast immer demselben Muster.",
+      "Im letzten Jahr habe ich als Bilanzierungsexperte mehr CO₂-Bilanzen verifiziert als selbst erstellt. Über 50 Bilanzen in 12 Monaten, aus etlichen Sektoren wie Konsumgüter, Bildung und öffentlicher Sektor. Die Abweichungen folgen fast immer demselben Muster.",
 
     section1Title: "Eine Beobachtung aus der Praxis",
     section1P1:
@@ -68,7 +68,7 @@ export const content: Record<"de" | "en" | "pt", Content> = {
 
     statNumber: "50+",
     statText:
-      "validierte CCFs in 12 Monaten, aus Sektoren wie Industrie, Konsumgüter, Bildung und öffentlicher Sektor. In nahezu jeder Bilanz habe ich methodische Abweichungen mit Auswirkung auf das Bilanzergebnis gefunden.",
+      "verifizierte CCFs in 12 Monaten, aus Sektoren wie Industrie, Konsumgüter, Bildung und öffentlicher Sektor. In nahezu jeder Bilanz habe ich methodische Abweichungen mit Auswirkung auf das Bilanzergebnis gefunden.",
 
     section2Title: "Warum diese Schwächen jetzt sichtbar werden",
     section2P:
@@ -140,7 +140,7 @@ export const content: Record<"de" | "en" | "pt", Content> = {
       {
         title: "Grünstrom marktbasiert vs. standortbasiert (Scope 2)",
         body:
-          "In rund einem Drittel der validierten Bilanzen wurde Scope 2 ausschließlich marktbasiert ausgewiesen, mit pauschal angesetztem Grünstrom-Bezug auch für Standorte, deren Herkunftsnachweise nicht im Geltungsjahr lagen oder nicht eindeutig zuordenbar waren. Die parallel erforderliche standortbasierte Sicht (location-based) fehlte vollständig oder war unsauber ermittelt; der Residual-Mix für Standorte ohne Nachweise blieb unberücksichtigt. Die Position lag häufig im zweistelligen Prozentbereich zu niedrig, und mit ihr die Belastbarkeit.",
+          "In rund einem Drittel der verifizierten Bilanzen wurde Scope 2 ausschließlich marktbasiert ausgewiesen, mit pauschal angesetztem Grünstrom-Bezug auch für Standorte, deren Herkunftsnachweise nicht im Geltungsjahr lagen oder nicht eindeutig zuordenbar waren. Die parallel erforderliche standortbasierte Sicht (location-based) fehlte vollständig oder war unsauber ermittelt; der Residual-Mix für Standorte ohne Nachweise blieb unberücksichtigt. Die Position lag häufig im zweistelligen Prozentbereich zu niedrig, und mit ihr die Belastbarkeit.",
       },
       {
         title: "Pauschale Spend-Based-Methodik (Scope 3.1)",
@@ -368,7 +368,7 @@ export const content: Record<"de" | "en" | "pt", Content> = {
 
     statNumber: "50+",
     statText:
-      "CCFs validados em 12 meses, em setores como indústria, bens de consumo, educação e setor público. Em praticamente todos os inventários encontrei desvios metodológicos com impacto no resultado.",
+      "CCFs verificados em 12 meses, em setores como indústria, bens de consumo, educação e setor público. Em praticamente todos os inventários encontrei desvios metodológicos com impacto no resultado.",
 
     section2Title: "Por que estas fragilidades se tornam visíveis agora",
     section2P:
@@ -440,7 +440,7 @@ export const content: Record<"de" | "en" | "pt", Content> = {
       {
         title: "Eletricidade verde market-based vs. location-based (Escopo 2)",
         body:
-          "Em cerca de um terço dos inventários validados, o Escopo 2 foi reportado exclusivamente em market-based, com aquisição de eletricidade verde assumida de forma global, mesmo para locais cujas garantias de origem não se situavam no ano de relato ou não eram claramente atribuíveis. A perspetiva location-based, paralelamente exigida, faltava totalmente ou estava mal apurada; o residual mix para locais sem garantias ficava por considerar. A posição estava frequentemente subavaliada em dois dígitos percentuais, e com ela a robustez.",
+          "Em cerca de um terço dos inventários verificados, o Escopo 2 foi reportado exclusivamente em market-based, com aquisição de eletricidade verde assumida de forma global, mesmo para locais cujas garantias de origem não se situavam no ano de relato ou não eram claramente atribuíveis. A perspetiva location-based, paralelamente exigida, faltava totalmente ou estava mal apurada; o residual mix para locais sem garantias ficava por considerar. A posição estava frequentemente subavaliada em dois dígitos percentuais, e com ela a robustez.",
       },
       {
         title: "Metodologia spend-based generalizada (Escopo 3.1)",
