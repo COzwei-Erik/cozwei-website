@@ -62,6 +62,7 @@ export default function MobileMenu({
                 <Link href="/massnahmen" className="block px-6 py-3 hover:bg-[#81B29A]/10 text-[#3D405B] text-base font-semibold" onClick={onClose}>{t.measures}</Link>
                 <Link href="/verifizierung" className="block px-6 py-3 hover:bg-[#81B29A]/10 text-[#3D405B] text-base font-semibold" onClick={onClose}>{t.verification}</Link>
                 <Link href="/klimaschutzkonzepte" className="block px-6 py-3 hover:bg-[#81B29A]/10 text-[#3D405B] text-base font-semibold" onClick={onClose}>{t.nki}</Link>
+                <Link href="/cdp-klimaberichterstattung" className="block px-6 py-3 hover:bg-[#81B29A]/10 text-[#3D405B] text-base font-semibold" onClick={onClose}>{t.cdp}</Link>
               </div>
             )}
           </div>

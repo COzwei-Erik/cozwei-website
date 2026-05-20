@@ -18,6 +18,7 @@ const headerTranslations = {
     measures: "Maßnahmen",
     verification: "Verifizierung",
     nki: "Klimaschutzkonzepte",
+    cdp: "CDP Klima-Reporting",
     references: "Referenzen",
     about: "Über uns",
     insights: "Insights",
@@ -30,6 +31,7 @@ const headerTranslations = {
     measures: "Measures",
     verification: "Verification",
     nki: "Climate concepts",
+    cdp: "CDP climate reporting",
     references: "References",
     about: "About us",
     insights: "Insights",
@@ -42,6 +44,7 @@ const headerTranslations = {
     measures: "Medidas",
     verification: "Verificação",
     nki: "Conceitos climáticos",
+    cdp: "Relato climático CDP",
     references: "Referências",
     about: "Sobre nós",
     insights: "Insights",
@@ -101,6 +104,7 @@ export default function Header() {
             <li><a href="/massnahmen" className="block px-6 py-3 hover:bg-[#81B29A]/10 text-[#3D405B] text-base font-semibold">{t.measures}</a></li>
             <li><a href="/verifizierung" className="block px-6 py-3 hover:bg-[#81B29A]/10 text-[#3D405B] text-base font-semibold">{t.verification}</a></li>
             <li><a href="/klimaschutzkonzepte" className="block px-6 py-3 hover:bg-[#81B29A]/10 text-[#3D405B] text-base font-semibold">{t.nki}</a></li>
+            <li><a href="/cdp-klimaberichterstattung" className="block px-6 py-3 hover:bg-[#81B29A]/10 text-[#3D405B] text-base font-semibold">{t.cdp}</a></li>
           </ul>
         </li>
         <li><a href="/referenzen" className="hover:text-green-700 transition text-lg font-bold" style={{ color: '#3D405B' }}>{t.references}</a></li>
