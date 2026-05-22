@@ -186,74 +186,31 @@ export default function Foerderungen() {
           </div>
         </section>
 
-        {/* Special Time-limited Funding Section */}
-        <section className="w-full py-16 relative overflow-x-hidden">
-          <div className="absolute inset-0 -z-10 animate-gradient-x" style={{background: 'linear-gradient(135deg, #81B29A 0%, #6fa18a 50%, #5a8f7a 100%)', opacity: 0.1}} />
+        {/* Klima-Förderungen Deutschland — interaktives Dashboard */}
+        <section className="w-full py-12 sm:py-16">
           <div className="max-w-7xl mx-auto px-4">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl font-extrabold mb-4" style={{ color: '#3D405B' }}>
-                {t.foerderungenSpecialTitle}
+            <div className="text-center mb-8 sm:mb-10">
+              <h2 className="text-3xl sm:text-4xl font-extrabold mb-3" style={{ color: '#3D405B' }}>
+                Klima-Förderungen Deutschland
               </h2>
-              <p className="text-xl mb-8" style={{ color: '#3D405B' }}>
-                {t.foerderungenSpecialSubtitle}
+              <p className="text-base sm:text-lg max-w-3xl mx-auto" style={{ color: '#3D405B' }}>
+                Übersicht aller Bundes- und Landesförderungen rund um Klima, Energie und Effizienz. Inklusive interaktivem Förder-Finder, der in wenigen Fragen die passenden Programme für Ihr Unternehmen ermittelt.
               </p>
             </div>
 
-            {/* Special Funding Card */}
-            <div className="max-w-4xl mx-auto">
-              <div className="relative rounded-3xl bg-gradient-to-br from-green-50 to-emerald-50 border-2 border-[#81B29A] overflow-hidden">
-                <div className="relative p-8 md:p-12">
-                  <div className="flex flex-col lg:flex-row items-start gap-8">
-                    {/* Content */}
-                    <div className="flex-1">
-                      <h3 className="text-3xl font-extrabold mb-4" style={{ color: '#81B29A' }}>
-                        {t.foerderungenSpecialSachsenTitle}
-                      </h3>
-                      <p className="text-lg mb-6" style={{ color: '#3D405B' }}>
-                        {t.foerderungenSpecialSachsenDesc}
-                      </p>
-                      <div className="bg-white/60 rounded-xl p-6 mb-6 border border-[#81B29A]/30">
-                        <h4 className="font-bold text-lg mb-3" style={{ color: '#81B29A' }}>📋 Förderdetails:</h4>
-                        <ul className="space-y-2 text-sm" style={{ color: '#3D405B' }}>
-                          <li className="flex items-start">
-                            <span style={{ color: '#81B29A' }} className="mr-2">•</span>
-                            <span>Bis zu <strong>70% Förderung</strong> auf förderfähige Kosten</span>
-                          </li>
-                          <li className="flex items-start">
-                            <span style={{ color: '#81B29A' }} className="mr-2">•</span>
-                            <span>Förderung für energieeffiziente Maschinen und Anlagen</span>
-                          </li>
-                          <li className="flex items-start">
-                            <span style={{ color: '#81B29A' }} className="mr-2">•</span>
-                            <span>Für KMU und große Unternehmen in Sachsen</span>
-                          </li>
-                          <li className="flex items-start">
-                            <span style={{ color: '#81B29A' }} className="mr-2">•</span>
-                            <span>Antragsfrist beachten - nur für begrenzte Zeit verfügbar</span>
-                          </li>
-                        </ul>
-                      </div>
-                      <p className="text-sm italic" style={{ color: '#3D405B' }}>
-                        {t.foerderungenSpecialSachsenDetails}
-                      </p>
-                    </div>
-
-                    {/* Action Button */}
-                    <div className="lg:w-48 flex-shrink-0">
-                      <a
-                        href="https://www.sab.sachsen.de/f%C3%B6rderrichtlinie-energie-und-klima/20231"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="block w-full bg-[#81B29A] text-white font-bold py-4 px-6 rounded-xl text-center"
-                      >
-                        <div className="text-lg mb-1">{t.foerderungenSpecialSachsenButton}</div>
-                        <div className="text-sm opacity-90">→ Direkt zur SAB</div>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div className="rounded-2xl overflow-hidden border border-[#81B29A]/30 shadow-lg bg-white">
+              <iframe
+                src="/foerderungen-dashboard.html"
+                title="Klima-Förderungen Deutschland — interaktives Dashboard"
+                loading="lazy"
+                className="w-full block"
+                style={{ height: '1400px', border: 'none' }}
+              />
             </div>
+
+            <p className="text-xs italic text-center mt-4" style={{ color: '#3D405B', opacity: 0.7 }}>
+              Hinweis: Das Dashboard wird in einem eingebetteten Fenster angezeigt. Für die beste Bedienung empfehlen wir, das Dashboard auf einem Desktop-Bildschirm zu nutzen.
+            </p>
           </div>
         </section>
       </main>
