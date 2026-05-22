@@ -185,35 +185,35 @@ export default function Foerderungen() {
             )}
           </div>
         </section>
-
-        {/* Klima-Förderungen Deutschland — interaktives Dashboard */}
-        <section className="w-full py-12 sm:py-16">
-          <div className="max-w-7xl mx-auto px-4">
-            <div className="text-center mb-8 sm:mb-10">
-              <h2 className="text-3xl sm:text-4xl font-extrabold mb-3" style={{ color: '#3D405B' }}>
-                Klima-Förderungen Deutschland
-              </h2>
-              <p className="text-base sm:text-lg max-w-3xl mx-auto" style={{ color: '#3D405B' }}>
-                Übersicht aller Bundes- und Landesförderungen rund um Klima, Energie und Effizienz. Inklusive interaktivem Förder-Finder, der in wenigen Fragen die passenden Programme für Ihr Unternehmen ermittelt.
-              </p>
-            </div>
-
-            <div className="rounded-2xl overflow-hidden border border-[#81B29A]/30 shadow-lg bg-white">
-              <iframe
-                src="/foerderungen-dashboard.html"
-                title="Klima-Förderungen Deutschland — interaktives Dashboard"
-                loading="lazy"
-                className="w-full block"
-                style={{ height: '1400px', border: 'none' }}
-              />
-            </div>
-
-            <p className="text-xs italic text-center mt-4" style={{ color: '#3D405B', opacity: 0.7 }}>
-              Hinweis: Das Dashboard wird in einem eingebetteten Fenster angezeigt. Für die beste Bedienung empfehlen wir, das Dashboard auf einem Desktop-Bildschirm zu nutzen.
-            </p>
-          </div>
-        </section>
       </main>
+
+      {/* Klima-Förderungen Deutschland — interaktives Dashboard (full-width, außerhalb von <main>) */}
+      <section className="w-full py-12 sm:py-16 bg-white">
+        <div className="text-center mb-8 sm:mb-10 px-4">
+          <h2 className="text-3xl sm:text-4xl font-extrabold mb-3" style={{ color: '#3D405B' }}>
+            Klima-Förderungen Deutschland
+          </h2>
+          <p className="text-base sm:text-lg max-w-3xl mx-auto" style={{ color: '#3D405B' }}>
+            Übersicht aller Bundes- und Landesförderungen rund um Klima, Energie und Effizienz. Inklusive interaktivem Förder-Finder, der in wenigen Fragen die passenden Programme für Ihr Unternehmen ermittelt.
+          </p>
+        </div>
+
+        <div className="w-full px-4">
+          <div className="rounded-2xl overflow-hidden border border-[#81B29A]/30 shadow-lg bg-white">
+            <iframe
+              src="/foerderungen-dashboard.html"
+              title="Klima-Förderungen Deutschland — interaktives Dashboard"
+              loading="lazy"
+              className="w-full block"
+              style={{ height: '1400px', border: 'none' }}
+            />
+          </div>
+        </div>
+
+        <p className="text-xs italic text-center mt-4 px-4" style={{ color: '#3D405B', opacity: 0.7 }}>
+          Hinweis: Auf schmalen Bildschirmen stapeln sich Karte und Liste vertikal. Für die volle Side-by-Side-Ansicht ein Desktop-Format nutzen.
+        </p>
+      </section>
       
       {/* Contact Form Section */}
       <ContactForm />
