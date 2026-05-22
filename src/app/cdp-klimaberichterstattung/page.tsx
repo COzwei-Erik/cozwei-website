@@ -7,11 +7,9 @@ import ContactForm from "../components/ContactForm";
 import { trackEvent, Events } from "../analytics";
 import { content } from "./content";
 
-// Outlook-Booking-URL für Christian (20-Min-Erstgespräch CDP).
-// Aktuell der gleiche Booking-Link wie für Verifizierung — sobald ein
-// dedizierter 20-Min-Slot bei Christian eingerichtet ist, hier ersetzen.
+// Outlook-Booking-URL: 20-Min-Erstgespräch CDP mit Christian Philippen.
 const BOOKING_URL =
-  "https://outlook.office.com/bookwithme/user/4e00978e7e7f42e38133622070d543b9@cozwei.de/meetingtype/vbiOdceuK0-As0tl2Bxhvg2?anonymous&ep=mCardFromTile";
+  "https://outlook.office.com/bookwithme/user/3694425c783b44e5bcf0d6e259d842e2@cozwei.de/meetingtype/wYIFzzYbTEKz-RLZ18drfA2?anonymous&ep=mcard";
 
 export default function CdpKlimaberichterstattung() {
   const { language } = useLanguage();
