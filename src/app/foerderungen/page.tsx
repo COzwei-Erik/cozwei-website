@@ -3,36 +3,11 @@ import Header from "../Header";
 import Image from "next/image";
 import { useLanguage, translations } from "../LanguageContext";
 import ContactForm from "../components/ContactForm";
-import { useState } from "react";
 
 export default function Foerderungen() {
   const { language } = useLanguage();
   const t = translations[language] || translations.de;
-  const [selectedState, setSelectedState] = useState<string>("");
 
-  // Bundesländer data with their available funding boxes
-  const bundeslaenderData = {
-    "Baden-Württemberg": { box1: true, box2: false, box3: true },
-    "Bayern": { box1: true, box2: true, box3: true },
-    "Berlin": { box1: true, box2: true, box3: true },
-    "Brandenburg": { box1: true, box2: true, box3: true },
-    "Bremen": { box1: true, box2: true, box3: true },
-    "Hamburg": { box1: true, box2: false, box3: true },
-    "Hessen": { box1: true, box2: true, box3: true },
-    "Mecklenburg-Vorpommern": { box1: true, box2: true, box3: true },
-    "Niedersachsen": { box1: true, box2: true, box3: true },
-    "Nordrhein-Westfalen": { box1: true, box2: true, box3: true },
-    "Rheinland-Pfalz": { box1: true, box2: true, box3: true },
-    "Saarland": { box1: true, box2: true, box3: true },
-    "Sachsen": { box1: true, box2: true, box3: true },
-    "Sachsen-Anhalt": { box1: true, box2: true, box3: true },
-    "Schleswig-Holstein": { box1: true, box2: true, box3: true },
-    "Thüringen": { box1: true, box2: true, box3: true }
-  };
-
-  const bundeslaender = Object.keys(bundeslaenderData);
-  const selectedStateData = selectedState ? bundeslaenderData[selectedState as keyof typeof bundeslaenderData] : null;
-  
   return (
     <div className="min-h-screen flex flex-col font-sans bg-white text-gray-900">
       <Header />
@@ -63,7 +38,7 @@ export default function Foerderungen() {
               onMouseOver={e => e.currentTarget.style.backgroundColor = '#6fa18a'}
               onMouseOut={e => e.currentTarget.style.backgroundColor = '#81B29A'}
               onClick={() => {
-                const target = document.getElementById('content-section');
+                const target = document.getElementById('dashboard-section');
                 if (target) {
                   const header = document.querySelector('nav');
                   const headerHeight = header ? (header as HTMLElement).offsetHeight : 80;
@@ -78,117 +53,8 @@ export default function Foerderungen() {
         </div>
       </section>
       
-      <main className="flex-1 px-4 py-8 max-w-5xl mx-auto">
-        {/* Funding Selection Section */}
-        <section id="content-section" className="w-full py-16 relative overflow-x-hidden">
-          <div className="max-w-7xl mx-auto px-4">
-            <h2 className="text-4xl font-extrabold text-center mb-8" style={{ color: '#3D405B' }}>
-              Verfügbare Förderungen nach Bundesland
-            </h2>
-            
-            {/* Bundesland Selection */}
-            <div className="max-w-md mx-auto mb-12">
-              <label htmlFor="bundesland-select" className="block mb-3 font-semibold text-lg text-center" style={{ color: '#3D405B' }}>
-                {t.foerderungenSelectState}
-              </label>
-              <select
-                id="bundesland-select"
-                value={selectedState}
-                onChange={(e) => setSelectedState(e.target.value)}
-                className="w-full p-4 rounded-lg border-2 border-[#81B29A]/30 focus:border-[#81B29A] focus:ring-2 focus:ring-[#81B29A]/20 outline-none transition text-lg font-medium"
-                style={{ color: '#3D405B' }}
-              >
-                <option value="">{t.foerderungenSelectState}</option>
-                {bundeslaender.map((bundesland) => (
-                  <option key={bundesland} value={bundesland}>
-                    {bundesland}
-                  </option>
-                ))}
-              </select>
-            </div>
-
-            {/* Funding Boxes */}
-            {selectedState && selectedStateData && (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {/* Box 1: BAFA Modul 1-6 Förderung */}
-                {selectedStateData.box1 && (
-                  <div className="flex flex-col rounded-3xl bg-white/60 border border-[#81B29A]/20 backdrop-blur-xl transition-all duration-300 hover:scale-105 hover:border-2 hover:border-[#81B29A] hover:ring-2 hover:ring-[#81B29A]/30 overflow-hidden group">
-                    <div className="flex flex-col p-8 flex-1">
-                      <h3 className="text-2xl font-extrabold mb-4" style={{ color: '#23243a' }}>
-                        {t.foerderungenBox1Title}
-                      </h3>
-                      <p className="mb-6 text-base leading-relaxed" style={{ color: '#23243a' }}>
-                        {t.foerderungenBox1Desc}
-                      </p>
-                      <div className="mt-auto">
-                        <div className="bg-[#81B29A]/10 rounded-lg p-4 border border-[#81B29A]/20">
-                          <p className="text-sm font-semibold" style={{ color: '#81B29A' }}>
-                            {t.foerderungenBox1Focus}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                )}
-
-                {/* Box 2: GRW Förderung */}
-                {selectedStateData.box2 && (
-                  <div className="flex flex-col rounded-3xl bg-white/60 border border-[#81B29A]/20 backdrop-blur-xl transition-all duration-300 hover:scale-105 hover:border-2 hover:border-[#81B29A] hover:ring-2 hover:ring-[#81B29A]/30 overflow-hidden group">
-                    <div className="flex flex-col p-8 flex-1">
-                      <h3 className="text-2xl font-extrabold mb-4" style={{ color: '#23243a' }}>
-                        {t.foerderungenBox2Title}
-                      </h3>
-                      <p className="mb-6 text-base leading-relaxed" style={{ color: '#23243a' }}>
-                        {t.foerderungenBox2Desc}
-                      </p>
-                      <div className="mt-auto">
-                        <div className="bg-[#81B29A]/10 rounded-lg p-4 border border-[#81B29A]/20">
-                          <p className="text-sm font-semibold" style={{ color: '#81B29A' }}>
-                            {t.foerderungenBox2Focus}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                )}
-
-                {/* Box 3: Regionale Förderungen */}
-                {selectedStateData.box3 && (
-                  <div className="flex flex-col rounded-3xl bg-white/60 border border-[#81B29A]/20 backdrop-blur-xl transition-all duration-300 hover:scale-105 hover:border-2 hover:border-[#81B29A] hover:ring-2 hover:ring-[#81B29A]/30 overflow-hidden group">
-                    <div className="flex flex-col p-8 flex-1">
-                      <h3 className="text-2xl font-extrabold mb-4" style={{ color: '#23243a' }}>
-                        {t.foerderungenBox3Title}
-                      </h3>
-                      <p className="mb-6 text-base leading-relaxed" style={{ color: '#23243a' }}>
-                        {t.foerderungenBox3Desc}
-                      </p>
-                      <div className="mt-auto">
-                        <div className="bg-[#81B29A]/10 rounded-lg p-4 border border-[#81B29A]/20">
-                          <p className="text-sm font-semibold" style={{ color: '#81B29A' }}>
-                            {t.foerderungenBox3Focus}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                )}
-              </div>
-            )}
-
-            {/* No selection message */}
-            {!selectedState && (
-              <div className="text-center py-12">
-                <p className="text-lg" style={{ color: '#3D405B' }}>
-                  Bitte wählen Sie ein Bundesland aus, um die verfügbaren Förderungen anzuzeigen.
-                </p>
-              </div>
-            )}
-          </div>
-        </section>
-      </main>
-
-      {/* Klima-Förderungen Deutschland — interaktives Dashboard (full-width, außerhalb von <main>) */}
-      <section className="w-full py-12 sm:py-16 bg-white">
+      {/* Klima-Förderungen Deutschland — interaktives Dashboard (full-width) */}
+      <section id="dashboard-section" className="w-full py-12 sm:py-16 bg-white">
         <div className="text-center mb-8 sm:mb-10 px-4">
           <h2 className="text-3xl sm:text-4xl font-extrabold mb-3" style={{ color: '#3D405B' }}>
             Klima-Förderungen Deutschland
