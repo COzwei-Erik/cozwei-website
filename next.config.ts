@@ -35,8 +35,11 @@ const nextConfig: NextConfig = {
             value: 'nosniff',
           },
           {
+            // SAMEORIGIN statt DENY: damit kann die Website eigene
+            // Inhalte iframen (z.B. /foerderungen-dashboard.html),
+            // Drittseiten können die Website weiterhin nicht einbetten.
             key: 'X-Frame-Options',
-            value: 'DENY',
+            value: 'SAMEORIGIN',
           },
           {
             key: 'X-XSS-Protection',
