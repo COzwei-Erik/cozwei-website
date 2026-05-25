@@ -5,6 +5,21 @@ import React from "react";
 import { useLanguage, translations } from "../LanguageContext";
 import { useState, useMemo, useEffect } from "react";
 
+// Inline LinkedIn-Icon (ersetzt /Pictures/image copy 3.png).
+// Verhindert rechtsseitiges Clipping in Karten mit overflow-hidden + rounded-2xl.
+function LinkedInIcon({ className = "w-6 h-6 sm:w-7 sm:h-7" }: { className?: string }) {
+  return (
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+      fill="#0A66C2"
+    >
+      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.852 3.37-1.852 3.601 0 4.267 2.37 4.267 5.455v6.288zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.063 2.063 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+    </svg>
+  );
+}
 
 export default function UeberUns() {
   const { language } = useLanguage();
@@ -71,11 +86,6 @@ export default function UeberUns() {
       logo: '/Pictures/Logos Partner/image copy 5.png',
       name: t.partnerRemzeroTitle,
       text: t.partnerRemzeroDesc
-    },
-    {
-      logo: '/Pictures/Logos Kunden/image copy 9.png',
-      name: t.partnerMicrosoftTitle,
-      text: t.partnerMicrosoftDesc
     }
   ], [t]);
   const max = partners.length;
@@ -154,10 +164,11 @@ export default function UeberUns() {
                 <Image src="/Pictures/Christian.png" alt="Christian Philippen" width={120} height={120} className="rounded-xl object-cover flex-shrink-0 mb-4 md:mb-0 w-24 h-24 sm:w-32 sm:h-32 md:w-36 md:h-36 lg:w-44 lg:h-44" />
                 <div className="flex flex-col justify-center flex-1 items-center md:items-start text-center md:text-left">
                   <div className="text-lg sm:text-xl font-bold mb-1 text-[#3D405B] break-words">Christian Philippen</div>
-                  <div className="text-sm sm:text-base font-semibold mb-2 text-[#81B29A] tracking-wide break-words">{t.teamRoleChristian}</div>
+                  <div className="text-sm sm:text-base text-[#23243a] mb-1 break-words">{t.teamFocusChristian}</div>
+                  <div className="text-sm font-semibold mb-2 text-[#81B29A] break-words">{t.teamRoleChristian}</div>
                   <div className="text-xs sm:text-sm text-[#3D405B] mb-1 break-all">christian.philippen@cozwei.de</div>
                   <div className="text-xs sm:text-sm text-[#3D405B] mb-3">+49 176 45830572</div>
-                  <a href="https://www.linkedin.com/in/christian-philippen/" target="_blank" rel="noopener noreferrer" className="inline-block"><Image src="/Pictures/image copy 3.png" alt="LinkedIn" width={24} height={24} className="rounded w-6 h-6 sm:w-7 sm:h-7" /></a>
+                  <a href="https://www.linkedin.com/in/christian-philippen/" target="_blank" rel="noopener noreferrer" className="inline-block"><LinkedInIcon /></a>
                 </div>
               </div>
               {/* Card 2 */}
@@ -165,10 +176,11 @@ export default function UeberUns() {
                 <Image src="/Pictures/Erik.png" alt="Erik Jakob" width={120} height={120} className="rounded-xl object-cover flex-shrink-0 mb-4 md:mb-0 w-24 h-24 sm:w-32 sm:h-32 md:w-36 md:h-36 lg:w-44 lg:h-44" />
                 <div className="flex flex-col justify-center flex-1 items-center md:items-start text-center md:text-left">
                   <div className="text-lg sm:text-xl font-bold mb-1 text-[#3D405B] break-words">Erik Jakob</div>
-                  <div className="text-sm sm:text-base font-semibold mb-2 text-[#81B29A] tracking-wide break-words">{t.teamRoleErik}</div>
+                  <div className="text-sm sm:text-base text-[#23243a] mb-1 break-words">{t.teamFocusErik}</div>
+                  <div className="text-sm font-semibold mb-2 text-[#81B29A] break-words">{t.teamRoleErik}</div>
                   <div className="text-xs sm:text-sm text-[#3D405B] mb-1 break-all">erik.jakob@cozwei.de</div>
                   <div className="text-xs sm:text-sm text-[#3D405B] mb-3">+49 176 30886017</div>
-                  <a href="https://www.linkedin.com/in/erik-jakob-9a81b5152/" target="_blank" rel="noopener noreferrer" className="inline-block"><Image src="/Pictures/image copy 3.png" alt="LinkedIn" width={24} height={24} className="rounded w-6 h-6 sm:w-7 sm:h-7" /></a>
+                  <a href="https://www.linkedin.com/in/erik-jakob-9a81b5152/" target="_blank" rel="noopener noreferrer" className="inline-block"><LinkedInIcon /></a>
                 </div>
               </div>
               {/* Card 3: Dominik Enger */}
@@ -179,7 +191,7 @@ export default function UeberUns() {
                   <div className="text-sm sm:text-base font-semibold mb-2 text-[#81B29A] tracking-wide break-words">{t.teamRoleDominik}</div>
                   <div className="text-xs sm:text-sm text-[#3D405B] mb-1 break-all">dominik.enger@cozwei.de</div>
                   <div className="text-xs sm:text-sm text-[#3D405B] mb-3">&nbsp;</div>
-                  <a href="https://www.linkedin.com/in/dominik-enger/" target="_blank" rel="noopener noreferrer" className="inline-block"><Image src="/Pictures/image copy 3.png" alt="LinkedIn" width={24} height={24} className="rounded w-6 h-6 sm:w-7 sm:h-7" /></a>
+                  <a href="https://www.linkedin.com/in/dominik-enger/" target="_blank" rel="noopener noreferrer" className="inline-block"><LinkedInIcon /></a>
                 </div>
               </div>
               {/* Card 4: Ronan Maier */}
@@ -190,7 +202,7 @@ export default function UeberUns() {
                   <div className="text-sm sm:text-base font-semibold mb-2 text-[#81B29A] tracking-wide break-words">{t.teamRoleRonan}</div>
                   <div className="text-xs sm:text-sm text-[#3D405B] mb-1 break-all">mail@cozwei.de</div>
                   <div className="text-xs sm:text-sm text-[#3D405B] mb-3">&nbsp;</div>
-                  <a href="https://www.linkedin.com/in/ronan-maier-852764207/" target="_blank" rel="noopener noreferrer" className="inline-block"><Image src="/Pictures/image copy 3.png" alt="LinkedIn" width={24} height={24} className="rounded w-6 h-6 sm:w-7 sm:h-7" /></a>
+                  <a href="https://www.linkedin.com/in/ronan-maier-852764207/" target="_blank" rel="noopener noreferrer" className="inline-block"><LinkedInIcon /></a>
                 </div>
               </div>
               {/* Card 7: Marie Bruns */}
@@ -201,7 +213,7 @@ export default function UeberUns() {
                   <div className="text-sm sm:text-base font-semibold mb-2 text-[#81B29A] tracking-wide break-words">{t.teamRoleMarie}</div>
                   <div className="text-xs sm:text-sm text-[#3D405B] mb-1 break-all">marie.bruns@cozwei.de</div>
                   <div className="text-xs sm:text-sm text-[#3D405B] mb-3">&nbsp;</div>
-                  <a href="https://www.linkedin.com/in/marie-bruns-9384481b5/" target="_blank" rel="noopener noreferrer" className="inline-block"><Image src="/Pictures/image copy 3.png" alt="LinkedIn" width={24} height={24} className="rounded w-6 h-6 sm:w-7 sm:h-7" /></a>
+                  <a href="https://www.linkedin.com/in/marie-bruns-9384481b5/" target="_blank" rel="noopener noreferrer" className="inline-block"><LinkedInIcon /></a>
                 </div>
               </div>
               {/* Card 8: Hannah Schmitt */}
@@ -222,13 +234,58 @@ export default function UeberUns() {
                   <div className="text-sm sm:text-base font-semibold mb-2 text-[#81B29A] tracking-wide break-words">{t.teamRoleRicardo}</div>
                   <div className="text-xs sm:text-sm text-[#3D405B] mb-1 break-all">ricardo.furtado@cozwei.de</div>
                   <div className="text-xs sm:text-sm text-[#3D405B] mb-3">&nbsp;</div>
-                  <a href="https://www.linkedin.com/in/ricardo-furtado-7a36b2100" target="_blank" rel="noopener noreferrer" className="inline-block"><Image src="/Pictures/image copy 3.png" alt="LinkedIn" width={24} height={24} className="rounded w-6 h-6 sm:w-7 sm:h-7" /></a>
+                  <a href="https://www.linkedin.com/in/ricardo-furtado-7a36b2100" target="_blank" rel="noopener noreferrer" className="inline-block"><LinkedInIcon /></a>
                 </div>
               </div>
             </div>
           </div>
         </section>
         
+        {/* Historie & Motivation Section */}
+        <section className="w-full py-8 sm:py-16 bg-white">
+          <div className="max-w-4xl mx-auto px-4">
+            <h2
+              className="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-8 sm:mb-10 text-center break-words"
+              style={{ color: '#3D405B' }}
+            >
+              {t.aboutHistoryTitle}
+            </h2>
+            <div className="space-y-5 sm:space-y-6 text-base sm:text-lg leading-relaxed" style={{ color: '#23243a' }}>
+              <p>
+                <span className="font-bold" style={{ color: '#3D405B' }}>{t.aboutHistoryP1Lead}</span>{' '}
+                {t.aboutHistoryP1Body}
+              </p>
+              <p>
+                <span className="font-bold" style={{ color: '#3D405B' }}>{t.aboutHistoryP2Lead}</span>{' '}
+                {t.aboutHistoryP2Body}
+              </p>
+              <p>
+                <span className="font-bold" style={{ color: '#3D405B' }}>{t.aboutHistoryP3Lead}</span>{' '}
+                {t.aboutHistoryP3Body}
+              </p>
+              <p>
+                <span className="font-bold" style={{ color: '#3D405B' }}>{t.aboutHistoryP4Lead}</span>{' '}
+                {t.aboutHistoryP4Body}
+              </p>
+            </div>
+
+            <figure className="mt-8 sm:mt-10">
+              <div className="relative w-full overflow-hidden rounded-2xl border border-[#81B29A]/30 bg-[#f8fafc]" style={{ aspectRatio: '16 / 9' }}>
+                <Image
+                  src="/Pictures/Gruendungsteam_COzwei_November_2022.jpg"
+                  alt={t.aboutHistoryImageAlt}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 800px"
+                  style={{ objectFit: 'cover', objectPosition: 'center' }}
+                />
+              </div>
+              <figcaption className="mt-3 text-center text-xs sm:text-sm italic" style={{ color: '#3D405B', opacity: 0.75 }}>
+                {t.aboutHistoryImageCaption}
+              </figcaption>
+            </figure>
+          </div>
+        </section>
+
         {/* Partner Section */}
         <section className="w-full py-8 sm:py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4">
@@ -249,7 +306,7 @@ export default function UeberUns() {
                 >
                   {partners.map((partner, i) => {
                                           const Card = (
-                        <div key={i} className="flex-shrink-0 w-full sm:w-[280px] mx-1 sm:mx-2 flex flex-col items-center bg-white/80 rounded-2xl border border-[#81B29A]/20 p-4 sm:p-6 transition hover:scale-105 hover:border-[#81B29A]" style={{ 
+                        <div key={i} className="flex-shrink-0 w-full sm:w-[280px] mx-1 sm:mx-2 flex flex-col items-center bg-white/80 rounded-2xl border border-[#81B29A]/20 p-4 sm:p-6" style={{
                           maxWidth: isMobile ? 'calc(100vw - 6rem)' : '280px', 
                           minWidth: isMobile ? 'calc(100vw - 6rem)' : '280px', 
                           minHeight: isMobile ? 240 : 280, 
