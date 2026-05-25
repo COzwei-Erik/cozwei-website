@@ -4,7 +4,6 @@ import Header from "../Header";
 import Image from "next/image";
 import Link from "next/link";
 import { useLanguage, translations } from "../LanguageContext";
-import ContactForm from "../components/ContactForm";
 import { trackEvent, Events } from "../analytics";
 import { content } from "./content";
 
@@ -201,7 +200,7 @@ export default function CdpClient() {
             {c.whatIsCdpTitle}
           </h2>
           <p className="text-base sm:text-lg leading-relaxed" style={{ color: "#23243a" }}>
-            {c.whatIsCdpBody}{" "}
+            {c.whatIsCdpBody} {c.whatIsCdpLinkPrefix}{" "}
             <a
               href="https://www.cdp.net"
               target="_blank"
@@ -211,6 +210,7 @@ export default function CdpClient() {
             >
               cdp.net
             </a>
+            .
           </p>
         </div>
       </section>
@@ -345,12 +345,12 @@ export default function CdpClient() {
       <section className="w-full py-12 sm:py-16 bg-white">
         <div className="max-w-5xl mx-auto px-4">
           <div className="rounded-3xl p-8 sm:p-10" style={{ backgroundColor: "#3D405B", color: "white" }}>
-            <div className="flex items-center gap-3 mb-4">
-              <span className="text-2xl">⚡</span>
-              <p className="text-xs font-bold uppercase tracking-[0.2em]" style={{ color: "#81B29A" }}>
-                {c.integrationBannerEyebrow}
-              </p>
-            </div>
+            <h2
+              className="text-2xl sm:text-3xl font-extrabold uppercase tracking-wide mb-4 leading-tight"
+              style={{ color: "#81B29A" }}
+            >
+              {c.integrationBannerEyebrow}
+            </h2>
             <p className="text-base sm:text-lg leading-relaxed mb-6" style={{ color: "rgba(255, 255, 255, 0.95)" }}>
               {c.integrationBannerBody}
             </p>
@@ -477,62 +477,6 @@ export default function CdpClient() {
         </div>
       </section>
 
-      {/* 06b, COMPARISON TABLE (P2.1) */}
-      <section className="w-full py-12 bg-white">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="text-center mb-8">
-            <h2 className="text-2xl sm:text-3xl font-extrabold mb-2" style={{ color: "#3D405B" }}>
-              {c.comparisonTitle}
-            </h2>
-            <p className="text-base leading-relaxed max-w-3xl mx-auto" style={{ color: "#23243a", opacity: 0.85 }}>
-              {c.comparisonIntro}
-            </p>
-          </div>
-          <div className="overflow-x-auto">
-            <table className="min-w-full border-collapse text-sm">
-              <thead>
-                <tr>
-                  <th className="text-left p-4 font-semibold align-bottom" style={{ color: "#81B29A" }}></th>
-                  {c.serviceTiers.map((tier) => (
-                    <th key={tier.level} className="text-left p-4 align-bottom" style={{ color: "#3D405B" }}>
-                      <div className="flex items-center gap-2 mb-1">
-                        <span className="flex h-7 w-7 items-center justify-center rounded-full text-xs font-bold" style={{ backgroundColor: "#81B29A", color: "white" }}>
-                          {tier.level}
-                        </span>
-                        <span className="font-extrabold">{tier.title}</span>
-                      </div>
-                      <span className="block text-xs font-normal" style={{ color: "#3D405B", opacity: 0.7 }}>
-                        {tier.subtitle}
-                      </span>
-                    </th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody style={{ color: "#23243a" }}>
-                {[
-                  { label: c.compareLabelAudience, val: (t: typeof c.serviceTiers[number]) => t.audience },
-                  { label: c.compareLabelPrerequisite, val: (t: typeof c.serviceTiers[number]) => t.prerequisite },
-                  { label: c.compareLabelDuration, val: (t: typeof c.serviceTiers[number]) => t.duration },
-                  { label: c.compareLabelScoreFocus, val: (t: typeof c.serviceTiers[number]) => t.scoreFocus },
-                  { label: c.compareLabelAddon, val: (t: typeof c.serviceTiers[number]) => t.addon },
-                ].map((row, i) => (
-                  <tr key={i} className="border-t border-[#81B29A]/20">
-                    <td className="p-4 text-xs uppercase tracking-wider font-semibold align-top" style={{ color: "#81B29A" }}>
-                      {row.label}
-                    </td>
-                    {c.serviceTiers.map((tier) => (
-                      <td key={tier.level} className="p-4 align-top leading-relaxed">
-                        {row.val(tier)}
-                      </td>
-                    ))}
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
       {/* 06c, MINI CASE STUDY (P3.3 — anonymisiertes Praxisbeispiel) */}
       <section className="w-full py-16 bg-[#81B29A]/5">
         <div className="max-w-4xl mx-auto px-4">
@@ -602,7 +546,7 @@ export default function CdpClient() {
           </div>
 
           <div className="rounded-3xl border border-[#81B29A]/30 bg-[#81B29A]/5 p-8 sm:p-10 flex flex-col md:flex-row items-start gap-8">
-            <div className="relative w-32 h-32 sm:w-40 sm:h-40 flex-shrink-0 rounded-2xl overflow-hidden border-2 border-[#81B29A]/30 mx-auto md:mx-0">
+            <div className="relative w-32 h-32 sm:w-40 sm:h-40 flex-shrink-0 rounded-full overflow-hidden border-2 border-[#81B29A]/30 mx-auto md:mx-0">
               <Image
                 src="/Pictures/Christian.png"
                 alt={`${c.authorName}, ${c.authorRole} bei COzwei`}
@@ -705,36 +649,6 @@ export default function CdpClient() {
         </div>
       </section>
 
-      {/* 08c, GLOSSAR (P2.6 — Fachbegriffe als Accordion) */}
-      <section className="w-full py-12 bg-white">
-        <div className="max-w-3xl mx-auto px-4">
-          <div className="text-center mb-8">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] mb-3" style={{ color: "#81B29A" }}>
-              {c.glossarySectionLabel}
-            </p>
-            <h2 className="text-2xl sm:text-3xl font-extrabold mb-3" style={{ color: "#3D405B" }}>
-              {c.glossarySectionTitle}
-            </h2>
-            <p className="text-base leading-relaxed" style={{ color: "#23243a", opacity: 0.85 }}>
-              {c.glossarySectionIntro}
-            </p>
-          </div>
-          <div className="space-y-2">
-            {c.glossary.map((entry, i) => (
-              <details key={i} className="group rounded-xl border border-[#81B29A]/20 bg-white px-4 py-3">
-                <summary className="cursor-pointer font-bold text-sm flex items-center justify-between gap-3" style={{ color: "#3D405B" }}>
-                  <span>{entry.term}</span>
-                  <svg className="w-4 h-4 flex-shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                  </svg>
-                </summary>
-                <p className="text-sm leading-relaxed mt-2" style={{ color: "#23243a" }}>{entry.definition}</p>
-              </details>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* 09, FINAL CTA */}
       <section className="w-full py-16 bg-[#81B29A]/10">
         <div className="max-w-3xl mx-auto px-4 text-center">
@@ -759,25 +673,16 @@ export default function CdpClient() {
               <span aria-hidden>→</span>
             </a>
           </div>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-6 text-sm" style={{ color: "#3D405B" }}>
+          <div className="flex items-center justify-center text-sm" style={{ color: "#3D405B" }}>
             <div>
               <span className="font-semibold">{c.finalCtaSecondaryEmailLabel}:</span>{" "}
               <a href={`mailto:${c.finalCtaSecondaryEmail}`} className="underline hover:no-underline">
                 {c.finalCtaSecondaryEmail}
               </a>
             </div>
-            <span className="hidden sm:inline">·</span>
-            <div>
-              <span className="font-semibold">{c.finalCtaSecondaryPhoneLabel}:</span>{" "}
-              <a href={`tel:${c.finalCtaSecondaryPhone.replace(/\s/g, "")}`} className="underline hover:no-underline">
-                {c.finalCtaSecondaryPhone}
-              </a>
-            </div>
           </div>
         </div>
       </section>
-
-      <ContactForm />
 
       <footer className="bg-gray-100 py-8 px-4 mt-8 text-center text-sm text-gray-600">
         <div className="mb-2">COzwei GmbH &bull; Gutenbergstraße 16A, 70176 Stuttgart &bull; Telefon: +49 711 12171034 &bull; E-Mail: mail@cozwei.de</div>

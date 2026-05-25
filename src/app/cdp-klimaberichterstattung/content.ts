@@ -27,6 +27,7 @@ type Content = {
   glanceBody: string;
   whatIsCdpTitle: string;
   whatIsCdpBody: string;
+  whatIsCdpLinkPrefix: string;
   statSourceLabel: string;
   internalLinkCcfLabel: string;
   internalLinkVerifLabel: string;
@@ -135,6 +136,7 @@ export const content: Record<"de" | "en" | "pt", Content> = {
     whatIsCdpTitle: "Was ist CDP?",
     whatIsCdpBody:
       "CDP ist eine 2000 in London gegründete Non-Profit-Organisation, die das weltweit größte System zur Offenlegung von Umweltdaten betreibt. Der CDP-Klimafragebogen ist auf das GHG Protocol, TCFD und ISSB abgestimmt und gilt als De-facto-Standard für externe Klimaberichterstattung im B2B-Kontext.",
+    whatIsCdpLinkPrefix: "Mehr Informationen auf",
     statSourceLabel: "Quelle",
     internalLinkCcfLabel: "unsere Dekarbonisierungsberatung",
     internalLinkVerifLabel: "ISO-14064-3-Verifizierung",
@@ -285,7 +287,7 @@ export const content: Record<"de" | "en" | "pt", Content> = {
           "Vorgelagerte Erstellung der CO₂-Bilanz nach GHG Protocol durch uns ist als separates Modul beauftragbar.",
         duration: "ca. 2 – 3 Wochen",
         scoreFocus: "Disclosure (D / D−)",
-        ctaLabel: "Erstgespräch zum SME-Pfad buchen",
+        ctaLabel: "Erstgespräch vereinbaren",
       },
       {
         level: "M",
@@ -306,7 +308,7 @@ export const content: Record<"de" | "en" | "pt", Content> = {
           "Vorgelagerte CO₂-Bilanz-Erstellung und / oder Entwicklung eines wissenschaftsbasierten Dekarbonisierungsplans (z. B. SBTi-kompatibel).",
         duration: "ca. 2 – 8 Wochen",
         scoreFocus: "Awareness / Management (C / B)",
-        ctaLabel: "Erstgespräch zum Full-Fragebogen buchen",
+        ctaLabel: "Erstgespräch vereinbaren",
       },
       {
         level: "L",
@@ -327,7 +329,7 @@ export const content: Record<"de" | "en" | "pt", Content> = {
           "Auffrischung der CCF-Datenbasis oder Erweiterung um zusätzliche Scope-3-Kategorien zur Score-Hebelung.",
         duration: "ca. 1 – 8 Wochen",
         scoreFocus: "Management / Leadership (B / A−)",
-        ctaLabel: "Score-Review anfragen",
+        ctaLabel: "Erstgespräch vereinbaren",
       },
     ],
     audienceLabel: "Zielgruppe",
@@ -339,7 +341,7 @@ export const content: Record<"de" | "en" | "pt", Content> = {
     authorSectionLabel: "Ihr Ansprechpartner",
     authorSectionTitle: "Im Erstgespräch klären wir Ihre Ausgangslage",
     authorName: "Christian Philippen",
-    authorRole: "Lead Consultant CDP & Klimaberichterstattung",
+    authorRole: "Ihr Ansprechpartner für CDP",
     authorBio:
       "Christian begleitet Unternehmen durch das gesamte CDP Climate Change Questionnaire, von der Datenerhebung über die Modulredaktion bis zur Score-Auswertung. Sein Fokus: pragmatische Lösungen für Erstteilnehmer und gezielte Score-Hebelung für etablierte CDP-Reporter.",
     authorCtaLabel: "20-Minuten-Erstgespräch buchen",
@@ -433,6 +435,7 @@ export const content: Record<"de" | "en" | "pt", Content> = {
     whatIsCdpTitle: "What is CDP?",
     whatIsCdpBody:
       "CDP is a non-profit organisation founded in London in 2000, operating the world's largest environmental disclosure system. The CDP climate questionnaire is aligned with the GHG Protocol, TCFD and ISSB and is considered the de-facto standard for external climate disclosure in B2B contexts.",
+    whatIsCdpLinkPrefix: "More information at",
     statSourceLabel: "Source",
     internalLinkCcfLabel: "our decarbonisation advisory",
     internalLinkVerifLabel: "ISO 14064-3 verification",
@@ -583,7 +586,7 @@ export const content: Record<"de" | "en" | "pt", Content> = {
           "We can deliver the preceding CCF per the GHG Protocol as a separate module.",
         duration: "approx. 2 – 3 weeks",
         scoreFocus: "Disclosure (D / D−)",
-        ctaLabel: "Book intro call on the SME path",
+        ctaLabel: "Book intro call",
       },
       {
         level: "M",
@@ -604,7 +607,7 @@ export const content: Record<"de" | "en" | "pt", Content> = {
           "Preceding CCF creation and / or development of a science-based decarbonisation plan (e.g. SBTi-aligned).",
         duration: "approx. 2 – 8 weeks",
         scoreFocus: "Awareness / Management (C / B)",
-        ctaLabel: "Book intro call on the full questionnaire",
+        ctaLabel: "Book intro call",
       },
       {
         level: "L",
@@ -624,7 +627,7 @@ export const content: Record<"de" | "en" | "pt", Content> = {
           "Refresh of the CCF data base or extension by further Scope 3 categories as score leverage.",
         duration: "approx. 1 – 8 weeks",
         scoreFocus: "Management / Leadership (B / A−)",
-        ctaLabel: "Request a score review",
+        ctaLabel: "Book intro call",
       },
     ],
     audienceLabel: "Target group",
@@ -636,7 +639,7 @@ export const content: Record<"de" | "en" | "pt", Content> = {
     authorSectionLabel: "Your contact",
     authorSectionTitle: "We clarify your starting position in the intro call",
     authorName: "Christian Philippen",
-    authorRole: "Lead Consultant CDP & climate reporting",
+    authorRole: "Your CDP contact",
     authorBio:
       "Christian guides companies through the entire CDP Climate Change Questionnaire, from data collection through module drafting to score evaluation. His focus: pragmatic solutions for first-time participants and targeted score improvement for established CDP reporters.",
     authorCtaLabel: "Book a 20-minute intro call",
@@ -730,6 +733,7 @@ export const content: Record<"de" | "en" | "pt", Content> = {
     whatIsCdpTitle: "O que é o CDP?",
     whatIsCdpBody:
       "O CDP é uma organização sem fins lucrativos fundada em Londres em 2000, que opera o maior sistema mundial de divulgação de dados ambientais. O questionário climático do CDP está alinhado com o GHG Protocol, TCFD e ISSB e é considerado o padrão de facto para divulgação climática externa em contextos B2B.",
+    whatIsCdpLinkPrefix: "Mais informações em",
     statSourceLabel: "Fonte",
     internalLinkCcfLabel: "a nossa consultoria de descarbonização",
     internalLinkVerifLabel: "verificação ISO 14064-3",
@@ -880,7 +884,7 @@ export const content: Record<"de" | "en" | "pt", Content> = {
           "A elaboração prévia do CCF segundo o GHG Protocol é adjudicável como módulo separado.",
         duration: "aprox. 2 – 3 semanas",
         scoreFocus: "Disclosure (D / D−)",
-        ctaLabel: "Agendar conversa inicial sobre o caminho SME",
+        ctaLabel: "Agendar conversa inicial",
       },
       {
         level: "M",
@@ -901,7 +905,7 @@ export const content: Record<"de" | "en" | "pt", Content> = {
           "Elaboração prévia do CCF e/ou desenvolvimento de um plano de descarbonização baseado na ciência (por exemplo, alinhado com SBTi).",
         duration: "aprox. 2 – 8 semanas",
         scoreFocus: "Awareness / Management (C / B)",
-        ctaLabel: "Agendar conversa inicial sobre o questionário completo",
+        ctaLabel: "Agendar conversa inicial",
       },
       {
         level: "L",
@@ -921,7 +925,7 @@ export const content: Record<"de" | "en" | "pt", Content> = {
           "Atualização da base de dados CCF ou extensão a categorias adicionais do Escopo 3 como alavanca de score.",
         duration: "aprox. 1 – 8 semanas",
         scoreFocus: "Management / Leadership (B / A−)",
-        ctaLabel: "Solicitar revisão do score",
+        ctaLabel: "Agendar conversa inicial",
       },
     ],
     audienceLabel: "Público-alvo",
@@ -933,7 +937,7 @@ export const content: Record<"de" | "en" | "pt", Content> = {
     authorSectionLabel: "O seu contacto",
     authorSectionTitle: "Na conversa inicial clarificamos a sua situação de partida",
     authorName: "Christian Philippen",
-    authorRole: "Lead Consultant CDP & relato climático",
+    authorRole: "O seu ponto de contacto CDP",
     authorBio:
       "O Christian acompanha empresas ao longo de todo o CDP Climate Change Questionnaire, da recolha de dados à redação dos módulos e à avaliação do score. O seu foco: soluções pragmáticas para os primeiros participantes e melhoria orientada de score para reportadores CDP estabelecidos.",
     authorCtaLabel: "Agendar conversa inicial de 20 min",
