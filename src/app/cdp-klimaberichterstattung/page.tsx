@@ -1,446 +1,215 @@
-"use client";
-import Header from "../Header";
-import Image from "next/image";
-import Link from "next/link";
-import { useLanguage, translations } from "../LanguageContext";
-import ContactForm from "../components/ContactForm";
-import { trackEvent, Events } from "../analytics";
+import type { Metadata } from "next";
+import CdpClient from "./CdpClient";
 import { content } from "./content";
 
-// Outlook-Booking-URL: 20-Min-Erstgespräch CDP mit Christian Philippen.
-const BOOKING_URL =
-  "https://outlook.office.com/bookwithme/user/3694425c783b44e5bcf0d6e259d842e2@cozwei.de/meetingtype/wYIFzzYbTEKz-RLZ18drfA2?anonymous&ep=mcard";
+const PAGE_URL = "https://www.cozwei.de/cdp-klimaberichterstattung";
 
-export default function CdpKlimaberichterstattung() {
-  const { language } = useLanguage();
-  const t = translations[language] || translations.de;
-  const c = content[language] || content.de;
+// Page-spezifische Metadaten — überschreiben den Default aus app/layout.tsx
+export const metadata: Metadata = {
+  title: "CDP Klima-Reporting & Climate Change Questionnaire | COzwei",
+  description:
+    "Begleitung beim CDP Climate Change Questionnaire: von THG-Bilanz und Modul-Redaktion bis zur fristgerechten Einreichung. Drei Pakete (SME, Full, Optimierung) für KMU und Konzerne.",
+  keywords: [
+    "CDP",
+    "Carbon Disclosure Project",
+    "CDP Klimafragebogen",
+    "Climate Change Questionnaire",
+    "CDP Score",
+    "CDP Supply Chain",
+    "Klima-Reporting",
+    "THG-Bilanz",
+    "GHG Protocol",
+    "ESG-Rating",
+    "CSRD",
+    "ESRS E1",
+  ],
+  alternates: {
+    canonical: PAGE_URL,
+  },
+  openGraph: {
+    title: "CDP Klima-Reporting: von der Datenbasis bis zum A-Score | COzwei",
+    description:
+      "Wir begleiten Sie durch den vollständigen CDP-Klimafragebogen — von der THG-Bilanz bis zur Einreichung im CDP-Portal. Pragmatisch für KMU, gründlich für Konzerne.",
+    url: PAGE_URL,
+    siteName: "COzwei",
+    locale: "de_DE",
+    type: "website",
+    images: [
+      {
+        // TODO: dediziertes 1200x630-OG-Bild für CDP-Seite designen lassen.
+        // Aktuell Fallback auf das bestehende COzwei-Logo-Render.
+        url: "https://www.cozwei.de/Pictures/Artboard 1.png",
+        width: 1200,
+        height: 630,
+        alt: "CDP Klima-Reporting Beratung durch COzwei",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "CDP Klima-Reporting: von der Datenbasis bis zum A-Score | COzwei",
+    description:
+      "Begleitung durch den CDP Climate Change Questionnaire — von THG-Bilanz bis Einreichung.",
+    images: ["https://www.cozwei.de/Pictures/Artboard 1.png"],
+  },
+  robots: { index: true, follow: true },
+};
 
-  const scrollToProcess = () => {
-    const target = document.getElementById("process-section");
-    if (!target) return;
-    const header = document.querySelector("nav");
-    const headerHeight = header ? (header as HTMLElement).offsetHeight : 80;
-    const y = target.getBoundingClientRect().top + window.scrollY - headerHeight - 16;
-    window.scrollTo({ top: y, behavior: "smooth" });
-  };
+// JSON-LD Schemas — Service, HowTo, FAQPage, BreadcrumbList, Organization.
+// In Deutsch, weil die kanonische URL und der Primärinhalt deutsch sind.
+const c = content.de;
 
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  serviceType: "CDP Klima-Reporting Beratung",
+  name: "CDP Climate Change Questionnaire Begleitung",
+  description:
+    "Vollständige Begleitung beim CDP Climate Change Questionnaire — von der THG-Bilanzierung über die Modul-Redaktion bis zur fristgerechten Einreichung im CDP-Portal.",
+  provider: {
+    "@type": "Organization",
+    name: "COzwei GmbH",
+    url: "https://www.cozwei.de",
+    logo: "https://www.cozwei.de/Pictures/cozwei.png",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Gutenbergstraße 16A",
+      postalCode: "70176",
+      addressLocality: "Stuttgart",
+      addressCountry: "DE",
+    },
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: "+49-711-12171034",
+      email: "mail@cozwei.de",
+      contactType: "sales",
+    },
+  },
+  areaServed: [
+    { "@type": "Country", name: "Germany" },
+    { "@type": "Country", name: "Austria" },
+    { "@type": "Country", name: "Switzerland" },
+    { "@type": "Country", name: "Portugal" },
+  ],
+  audience: {
+    "@type": "BusinessAudience",
+    audienceType:
+      "B2B-Unternehmen mit Klimaberichtspflicht oder Lieferkettenanfragen",
+  },
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "CDP-Beratungspakete",
+    itemListElement: c.serviceTiers.map((tier) => ({
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: tier.title,
+        description: tier.audience,
+      },
+    })),
+  },
+};
+
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  name: "In vier Schritten zum belastbaren CDP-Klima-Score",
+  description:
+    "Strukturiertes Vorgehen zur Beantwortung des CDP Climate Change Questionnaire — von der Gap-Analyse bis zur Score-Auswertung.",
+  totalTime: "P8W",
+  step: c.processSteps.map((step) => ({
+    "@type": "HowToStep",
+    position: step.number,
+    name: step.title,
+    text: step.body,
+  })),
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: c.faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.a,
+    },
+  })),
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: c.breadcrumbHome,
+      item: "https://www.cozwei.de",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: c.breadcrumbSolutions,
+      item: "https://www.cozwei.de/nachhaltigkeit",
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: c.breadcrumbCurrent,
+      item: PAGE_URL,
+    },
+  ],
+};
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "COzwei GmbH",
+  url: "https://www.cozwei.de",
+  logo: "https://www.cozwei.de/Pictures/cozwei.png",
+  sameAs: ["https://www.linkedin.com/company/cozwei"],
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Gutenbergstraße 16A",
+    postalCode: "70176",
+    addressLocality: "Stuttgart",
+    addressCountry: "DE",
+  },
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: "+49-711-12171034",
+    email: "mail@cozwei.de",
+    contactType: "customer service",
+    availableLanguage: ["de", "en", "pt"],
+  },
+};
+
+export default function CdpKlimaberichterstattungPage() {
   return (
-    <div className="min-h-screen flex flex-col font-sans bg-white text-gray-900">
-      <Header />
-
-      {/* 01 — HERO */}
-      <section className="relative flex flex-col items-center justify-center min-h-screen w-full text-center overflow-hidden">
-        <div className="absolute inset-0 w-full h-full z-0">
-          <Image
-            src="/Pictures/pexels-goumbik-590020.jpg"
-            alt="CDP Klima-Reporting Hero"
-            fill
-            style={{ objectFit: "cover", objectPosition: "center" }}
-            className="opacity-90"
-            priority
-          />
-          <div className="absolute inset-0 bg-black/40" />
-        </div>
-        <div className="relative z-20 flex flex-col items-center justify-center w-full h-full py-16 px-4">
-          <div className="bg-white/85 rounded-2xl shadow-xl px-8 py-10 max-w-3xl mx-auto border border-white/60 backdrop-blur-sm">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] mb-4" style={{ color: "#81B29A" }}>
-              {c.heroEyebrow}
-            </p>
-            <h1 className="text-4xl sm:text-5xl font-extrabold mb-4 leading-tight" style={{ color: "#3D405B" }}>
-              {c.heroTitle}
-            </h1>
-            <p className="text-lg sm:text-xl max-w-2xl mx-auto mb-8" style={{ color: "#3D405B" }}>
-              {c.heroSubtitle}
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <a
-                href={BOOKING_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => trackEvent(Events.BookingClick, { location: "cdp_hero" })}
-                className="inline-block px-8 py-4 rounded-lg font-bold transition text-lg"
-                style={{ backgroundColor: "#81B29A", color: "white", boxShadow: "0 4px 24px 0 rgba(61, 64, 91, 0.25)" }}
-                onMouseOver={(e) => (e.currentTarget.style.backgroundColor = "#6fa18a")}
-                onMouseOut={(e) => (e.currentTarget.style.backgroundColor = "#81B29A")}
-              >
-                {c.heroPrimaryCta}
-              </a>
-              <button
-                type="button"
-                onClick={scrollToProcess}
-                className="inline-block px-8 py-4 rounded-lg font-bold transition text-lg border-2 border-[#81B29A] bg-white"
-                style={{ color: "#3D405B" }}
-                onMouseOver={(e) => { e.currentTarget.style.backgroundColor = "#81B29A"; e.currentTarget.style.color = "white"; }}
-                onMouseOut={(e) => { e.currentTarget.style.backgroundColor = "white"; e.currentTarget.style.color = "#3D405B"; }}
-              >
-                {c.heroSecondaryCta}
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 02 — TRUST BAR */}
-      <section className="w-full py-10 bg-white border-y border-[#81B29A]/20">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
-            {c.trustBadges.map((b) => (
-              <div
-                key={b}
-                className="flex items-center justify-center gap-2 text-sm font-semibold py-2"
-                style={{ color: "#3D405B" }}
-              >
-                <svg className="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24" style={{ color: "#81B29A" }}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                </svg>
-                <span>{b}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 03 — WHY CDP */}
-      <section className="w-full py-16 bg-white">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center mb-12">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] mb-3" style={{ color: "#81B29A" }}>
-              {c.whySectionLabel}
-            </p>
-            <h2 className="text-3xl sm:text-4xl font-extrabold mb-4" style={{ color: "#3D405B" }}>
-              {c.whySectionTitle}
-            </h2>
-            <p className="text-base sm:text-lg leading-relaxed" style={{ color: "#23243a" }}>
-              {c.whySectionIntro}
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {c.trustCards.map((card, i) => (
-              <article
-                key={i}
-                className="rounded-3xl bg-white/80 border border-[#81B29A]/30 p-6 sm:p-8 transition-shadow hover:shadow-lg"
-              >
-                <h3 className="text-xl font-extrabold mb-3" style={{ color: "#3D405B" }}>
-                  {card.title}
-                </h3>
-                <p className="text-base leading-relaxed mb-4" style={{ color: "#23243a" }}>
-                  {card.body}
-                </p>
-                <span className="inline-block px-3 py-1 bg-[#81B29A]/20 text-[#3D405B] text-xs font-semibold rounded-full">
-                  {card.tag}
-                </span>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 04 — PROZESS */}
-      <section id="process-section" className="w-full py-16 bg-[#81B29A]/5">
-        <div className="max-w-4xl mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-extrabold mb-4" style={{ color: "#3D405B" }}>
-              {c.processSectionTitle}
-            </h2>
-            <p className="text-base sm:text-lg leading-relaxed max-w-3xl mx-auto" style={{ color: "#23243a" }}>
-              {c.processSectionIntro}
-            </p>
-          </div>
-          <div className="space-y-5">
-            {c.processSteps.map((step) => (
-              <div
-                key={step.number}
-                className="rounded-2xl border border-[#81B29A]/30 bg-white/80 backdrop-blur-sm overflow-hidden"
-              >
-                <div className="flex items-start gap-4 sm:gap-6 p-6 sm:p-8">
-                  <div
-                    className="flex-shrink-0 w-12 h-12 rounded-full font-extrabold text-xl flex items-center justify-center"
-                    style={{ backgroundColor: "#81B29A", color: "white" }}
-                  >
-                    {step.number}
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <h3 className="text-lg sm:text-xl font-extrabold mb-2" style={{ color: "#3D405B" }}>
-                      {step.title}
-                    </h3>
-                    <p className="text-base leading-relaxed mb-3" style={{ color: "#23243a" }}>
-                      {step.body}
-                    </p>
-                    <span className="inline-block px-3 py-1 bg-[#81B29A]/20 text-[#3D405B] text-xs font-semibold rounded-full">
-                      {step.tags}
-                    </span>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 05 — INTEGRATION BANNER */}
-      <section className="w-full py-12 sm:py-16 bg-white">
-        <div className="max-w-5xl mx-auto px-4">
-          <div className="rounded-3xl p-8 sm:p-10" style={{ backgroundColor: "#3D405B", color: "white" }}>
-            <div className="flex items-center gap-3 mb-4">
-              <span className="text-2xl">⚡</span>
-              <p className="text-xs font-bold uppercase tracking-[0.2em]" style={{ color: "#81B29A" }}>
-                {c.integrationBannerEyebrow}
-              </p>
-            </div>
-            <p className="text-base sm:text-lg leading-relaxed" style={{ color: "rgba(255,255,255,0.95)" }}>
-              {c.integrationBannerBody}
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* 06 — SERVICE TIERS */}
-      <section className="w-full py-16 bg-[#81B29A]/5">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="max-w-2xl mx-auto text-center mb-12">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] mb-3" style={{ color: "#81B29A" }}>
-              {c.tiersSectionLabel}
-            </p>
-            <h2 className="text-3xl sm:text-4xl font-extrabold mb-4" style={{ color: "#3D405B" }}>
-              {c.tiersSectionTitle}
-            </h2>
-            <p className="text-base sm:text-lg leading-relaxed" style={{ color: "#23243a" }}>
-              {c.tiersSectionIntro}
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            {c.serviceTiers.map((tier) => (
-              <article
-                key={tier.level}
-                className="flex flex-col rounded-3xl bg-white/80 border border-[#81B29A]/30 backdrop-blur-sm overflow-hidden p-8 transition-all duration-300 hover:shadow-lg hover:border-[#81B29A]"
-              >
-                <div className="flex items-center gap-3 mb-4">
-                  <span
-                    className="flex h-10 w-10 items-center justify-center rounded-full text-base font-bold"
-                    style={{ backgroundColor: "#81B29A", color: "white" }}
-                  >
-                    {tier.level}
-                  </span>
-                </div>
-
-                <h3 className="text-xl font-extrabold leading-snug" style={{ color: "#3D405B" }}>
-                  {tier.title}
-                </h3>
-                <p className="text-sm font-semibold mt-1 mb-4" style={{ color: "#3D405B", opacity: 0.7 }}>
-                  {tier.subtitle}
-                </p>
-
-                <div className="border-t border-[#81B29A]/20 pt-4 mb-4">
-                  <div className="text-xs uppercase tracking-wider mb-2 font-semibold" style={{ color: "#81B29A" }}>
-                    {c.audienceLabel}
-                  </div>
-                  <p className="text-sm leading-relaxed" style={{ color: "#23243a" }}>
-                    {tier.audience}
-                  </p>
-                </div>
-
-                <div className="border-t border-[#81B29A]/20 pt-4 mb-4">
-                  <div className="text-xs uppercase tracking-wider mb-2 font-semibold" style={{ color: "#81B29A" }}>
-                    {c.servicesLabel}
-                  </div>
-                  <ul className="space-y-2">
-                    {tier.services.map((s, i) => (
-                      <li key={i} className="flex gap-2.5 text-sm leading-relaxed" style={{ color: "#23243a" }}>
-                        <span className="mt-2 inline-block h-1.5 w-1.5 flex-shrink-0 rounded-full" style={{ backgroundColor: "#81B29A" }} />
-                        <span>{s}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="border-t border-[#81B29A]/20 pt-4 mb-4">
-                  <div className="text-xs uppercase tracking-wider mb-2 font-semibold" style={{ color: "#81B29A" }}>
-                    {c.prerequisiteLabel}
-                  </div>
-                  <p className="text-sm leading-relaxed" style={{ color: "#23243a" }}>
-                    {tier.prerequisite}
-                  </p>
-                </div>
-
-                <div className="border-t border-[#81B29A]/20 pt-4 mb-4">
-                  <div className="text-xs uppercase tracking-wider mb-2 font-semibold" style={{ color: "#81B29A" }}>
-                    {c.addonLabel}
-                  </div>
-                  <p className="text-sm leading-relaxed italic" style={{ color: "#23243a", opacity: 0.85 }}>
-                    {tier.addon}
-                  </p>
-                </div>
-
-                <div className="border-t border-[#81B29A]/20 pt-4 mb-6">
-                  <div className="text-xs uppercase tracking-wider mb-1 font-semibold" style={{ color: "#81B29A" }}>
-                    {c.durationLabel}
-                  </div>
-                  <p className="text-sm font-semibold" style={{ color: "#3D405B" }}>
-                    {tier.duration}
-                  </p>
-                </div>
-
-                <div className="mt-auto">
-                  <a
-                    href={BOOKING_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={() => trackEvent(Events.BookingClick, { location: `cdp_tier_${tier.level.toLowerCase()}` })}
-                    className="block w-full rounded-lg px-5 py-3 text-center text-sm font-bold transition"
-                    style={{ backgroundColor: "#81B29A", color: "white", boxShadow: "0 4px 24px 0 rgba(61, 64, 91, 0.18)" }}
-                    onMouseOver={(e) => (e.currentTarget.style.backgroundColor = "#6fa18a")}
-                    onMouseOut={(e) => (e.currentTarget.style.backgroundColor = "#81B29A")}
-                  >
-                    {tier.ctaLabel} →
-                  </a>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 07 — ANSPRECHPARTNER */}
-      <section className="w-full py-16 bg-white">
-        <div className="max-w-5xl mx-auto px-4">
-          <div className="text-center mb-10">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] mb-3" style={{ color: "#81B29A" }}>
-              {c.authorSectionLabel}
-            </p>
-            <h2 className="text-3xl sm:text-4xl font-extrabold" style={{ color: "#3D405B" }}>
-              {c.authorSectionTitle}
-            </h2>
-          </div>
-
-          <div className="rounded-3xl border border-[#81B29A]/30 bg-[#81B29A]/5 p-8 sm:p-10 flex flex-col md:flex-row items-start gap-8">
-            <div className="relative w-32 h-32 sm:w-40 sm:h-40 flex-shrink-0 rounded-2xl overflow-hidden border-2 border-[#81B29A]/30 mx-auto md:mx-0">
-              <Image
-                src="/Pictures/Christian.png"
-                alt={c.authorName}
-                fill
-                sizes="160px"
-                style={{ objectFit: "cover" }}
-              />
-            </div>
-            <div className="flex-1">
-              <h3 className="text-2xl font-extrabold mb-1" style={{ color: "#3D405B" }}>
-                {c.authorName}
-              </h3>
-              <p className="text-sm font-semibold mb-4" style={{ color: "#81B29A" }}>
-                {c.authorRole}
-              </p>
-              <p className="text-base leading-relaxed mb-6" style={{ color: "#23243a" }}>
-                {c.authorBio}
-              </p>
-              <a
-                href={BOOKING_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => trackEvent(Events.BookingClick, { location: "cdp_author" })}
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-bold transition text-base"
-                style={{ backgroundColor: "#81B29A", color: "white", boxShadow: "0 4px 24px 0 rgba(61, 64, 91, 0.25)" }}
-                onMouseOver={(e) => (e.currentTarget.style.backgroundColor = "#6fa18a")}
-                onMouseOut={(e) => (e.currentTarget.style.backgroundColor = "#81B29A")}
-              >
-                {c.authorCtaLabel} →
-              </a>
-              <p className="text-sm mt-3 italic" style={{ color: "#23243a", opacity: 0.7 }}>
-                {c.authorCtaDesc}
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 08 — INSIGHTS TEASER */}
-      <section className="w-full py-12 bg-white">
-        <div className="max-w-5xl mx-auto px-4">
-          <div className="rounded-3xl border border-[#81B29A]/30 bg-[#81B29A]/10 p-8 md:p-10">
-            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-              <div className="max-w-2xl">
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] mb-3" style={{ color: "#81B29A" }}>
-                  {c.insightsSectionLabel}
-                </p>
-                <h3 className="text-2xl sm:text-3xl font-extrabold leading-snug mb-3" style={{ color: "#3D405B" }}>
-                  {c.insightsSectionTitle}
-                </h3>
-                <p className="text-sm sm:text-base leading-relaxed mb-2" style={{ color: "#23243a" }}>
-                  {c.insightsTeaser}
-                </p>
-                <p className="text-xs italic" style={{ color: "#23243a", opacity: 0.7 }}>
-                  {c.insightsTeaserNote}
-                </p>
-              </div>
-              <Link
-                href="/insights"
-                className="inline-flex flex-shrink-0 items-center gap-2 rounded-lg border-2 border-[#81B29A] bg-white px-6 py-3 text-sm font-bold transition"
-                style={{ color: "#3D405B" }}
-                onMouseOver={(e) => { e.currentTarget.style.backgroundColor = "#81B29A"; e.currentTarget.style.color = "white"; }}
-                onMouseOut={(e) => { e.currentTarget.style.backgroundColor = "white"; e.currentTarget.style.color = "#3D405B"; }}
-              >
-                Insights ansehen
-                <span aria-hidden>→</span>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 09 — FINAL CTA */}
-      <section className="w-full py-16 bg-[#81B29A]/10">
-        <div className="max-w-3xl mx-auto px-4 text-center">
-          <h2 className="text-3xl sm:text-4xl font-extrabold mb-4" style={{ color: "#3D405B" }}>
-            {c.finalCtaTitle}
-          </h2>
-          <p className="text-base sm:text-lg leading-relaxed max-w-xl mx-auto mb-8" style={{ color: "#23243a" }}>
-            {c.finalCtaSubtitle}
-          </p>
-          <div className="flex flex-col items-center justify-center gap-3 sm:flex-row mb-8">
-            <a
-              href={BOOKING_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => trackEvent(Events.BookingClick, { location: "cdp_final_cta" })}
-              className="inline-flex items-center gap-2 rounded-lg px-8 py-4 text-sm font-bold transition"
-              style={{ backgroundColor: "#81B29A", color: "white", boxShadow: "0 4px 24px 0 rgba(61, 64, 91, 0.25)" }}
-              onMouseOver={(e) => (e.currentTarget.style.backgroundColor = "#6fa18a")}
-              onMouseOut={(e) => (e.currentTarget.style.backgroundColor = "#81B29A")}
-            >
-              {c.finalCtaPrimary}
-              <span aria-hidden>→</span>
-            </a>
-          </div>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-6 text-sm" style={{ color: "#3D405B" }}>
-            <div>
-              <span className="font-semibold">{c.finalCtaSecondaryEmailLabel}:</span>{" "}
-              <a href={`mailto:${c.finalCtaSecondaryEmail}`} className="underline hover:no-underline">
-                {c.finalCtaSecondaryEmail}
-              </a>
-            </div>
-            <span className="hidden sm:inline">·</span>
-            <div>
-              <span className="font-semibold">{c.finalCtaSecondaryPhoneLabel}:</span>{" "}
-              <a href={`tel:${c.finalCtaSecondaryPhone.replace(/\s/g, "")}`} className="underline hover:no-underline">
-                {c.finalCtaSecondaryPhone}
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <ContactForm />
-
-      <footer className="bg-gray-100 py-8 px-4 mt-8 text-center text-sm text-gray-600">
-        <div className="mb-2">COzwei GmbH &bull; Gutenbergstraße 16A, 70176 Stuttgart &bull; Telefon: +49 711 12171034 &bull; E-Mail: mail@cozwei.de</div>
-        <div className="flex justify-center gap-4 mb-2">
-          <a href="/datenschutz" className="hover:underline">{t.privacy}</a>
-          <a href="/impressum" className="hover:underline">{t.imprint}</a>
-          <a href="https://www.linkedin.com/company/cozwei" target="_blank" rel="noopener noreferrer" className="hover:underline">{t.linkedin}</a>
-        </div>
-        <div>© {new Date().getFullYear()} COzwei GmbH</div>
-      </footer>
-    </div>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      />
+      <CdpClient />
+    </>
   );
 }

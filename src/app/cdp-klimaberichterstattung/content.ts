@@ -11,8 +11,26 @@ type ServiceTier = {
   duration: string;
   ctaLabel: string;
 };
+export type FaqItem = { q: string; a: string };
 
 type Content = {
+  breadcrumbHome: string;
+  breadcrumbSolutions: string;
+  breadcrumbCurrent: string;
+  lastUpdatedLabel: string;
+  lastUpdatedDate: string;
+  glanceLabel: string;
+  glanceBody: string;
+  whatIsCdpTitle: string;
+  whatIsCdpBody: string;
+  statSourceLabel: string;
+  internalLinkCcfLabel: string;
+  internalLinkVerifLabel: string;
+  internalLinkKlimaLabel: string;
+  faqSectionLabel: string;
+  faqSectionTitle: string;
+  faqSectionIntro: string;
+  faqs: FaqItem[];
   heroEyebrow: string;
   heroTitle: string;
   heroSubtitle: string;
@@ -67,6 +85,59 @@ type Content = {
 
 export const content: Record<"de" | "en" | "pt", Content> = {
   de: {
+    breadcrumbHome: "Start",
+    breadcrumbSolutions: "Lösungen",
+    breadcrumbCurrent: "CDP Klima-Reporting",
+    lastUpdatedLabel: "Stand",
+    lastUpdatedDate: "Mai 2026",
+    glanceLabel: "Auf einen Blick",
+    glanceBody:
+      "CDP Klima-Reporting bedeutet die jährliche, standardisierte Offenlegung von Klimadaten über das Climate Change Questionnaire der Non-Profit-Organisation CDP. COzwei begleitet Unternehmen vollständig — von der THG-Bilanz nach GHG Protocol über die Beantwortung aller Module bis zur fristgerechten Einreichung und Score-Auswertung. Wir bieten drei Pakete für KMU, Konzerne und Wiederholungsteilnehmer.",
+    whatIsCdpTitle: "Was ist CDP?",
+    whatIsCdpBody:
+      "CDP ist eine 2000 in London gegründete Non-Profit-Organisation, die das weltweit größte System zur Offenlegung von Umweltdaten betreibt. Der CDP-Klimafragebogen ist auf das GHG Protocol, TCFD und ISSB abgestimmt und gilt als De-facto-Standard für externe Klimaberichterstattung im B2B-Kontext.",
+    statSourceLabel: "Quelle",
+    internalLinkCcfLabel: "unsere Dekarbonisierungsberatung",
+    internalLinkVerifLabel: "ISO-14064-3-Verifizierung",
+    internalLinkKlimaLabel: "Klimaschutzkonzepte",
+    faqSectionLabel: "FAQ",
+    faqSectionTitle: "Häufige Fragen zum CDP Klima-Reporting",
+    faqSectionIntro:
+      "Antworten auf die Fragen, die uns in CDP-Erstgesprächen am häufigsten gestellt werden.",
+    faqs: [
+      {
+        q: "Was ist das CDP Climate Change Questionnaire?",
+        a: "Das CDP Climate Change Questionnaire ist ein jährlicher Klimafragebogen der Non-Profit-Organisation CDP (ehemals Carbon Disclosure Project). Unternehmen offenlegen darin standardisiert ihre Klimadaten, Strategie, Risiken und Reduktionsziele. Weltweit nutzen über 24.000 Unternehmen den Fragebogen — auf Anforderung von Investoren, Großkunden oder freiwillig.",
+      },
+      {
+        q: "Wann öffnet und schließt das CDP-Portal jährlich?",
+        a: "Das CDP-Portal öffnet typischerweise Mitte Juni und schließt Mitte September. Die genauen Termine veröffentlicht CDP jährlich auf cdp.net. Für eine sorgfältige Beantwortung des Full Corporate Questionnaire sollten Sie 2 bis 8 Wochen Bearbeitungszeit einplanen, idealerweise mit Projektstart im April oder Mai.",
+      },
+      {
+        q: "Welcher CDP-Fragebogen ist für mein Unternehmen relevant — SME oder Full?",
+        a: "Kleine und mittlere Unternehmen mit weniger als 500 Mitarbeitenden können den vereinfachten SME Climate Change Questionnaire nutzen. Mittelständische und große Unternehmen sowie Unternehmen mit konkreter Anfrage über das CDP Supply Chain Modul beantworten den Full Corporate Climate Change Questionnaire.",
+      },
+      {
+        q: "Wie funktioniert das CDP-Scoring?",
+        a: "CDP bewertet die eingereichten Antworten auf einer Skala von D− bis A. Das Scoring umfasst vier Stufen: Disclosure (D), Awareness (C), Management (B) und Leadership (A). Höhere Scores erfordern unter anderem belastbare Scope-3-Daten, einen wissenschaftsbasierten Reduktionspfad (z. B. SBTi-validiert) und Drittparteien-Verifizierung der Emissionen.",
+      },
+      {
+        q: "Was ist das CDP Supply Chain Modul?",
+        a: "Das CDP Supply Chain Modul ist ein Programm, über das über 280 Großunternehmen ihre Lieferanten zur Offenlegung von Klimadaten auffordern. Wer als Lieferant angefragt wird, riskiert bei Nicht-Antwort Punktabzüge in Lieferantenbewertungen oder den Verlust von Aufträgen. Die Anfrage erfolgt typischerweise per E-Mail mit individuellem Link zum CDP-Portal.",
+      },
+      {
+        q: "Wie verhalten sich CDP und CSRD zueinander?",
+        a: "Das CDP-Klimamodul ist methodisch auf ESRS E1, ISSB, TCFD und das GHG Protocol abgestimmt. Eine sauber aufbereitete CDP-Antwort liefert daher den Großteil der Klimaangaben für den CSRD-Nachhaltigkeitsbericht. Doppelarbeit lässt sich vermeiden, wenn beide Reportings auf derselben THG-Bilanz und demselben Übergangsplan aufsetzen.",
+      },
+      {
+        q: "Was kostet eine CDP-Beratung bei COzwei?",
+        a: "Die Kosten hängen von Fragebogen-Typ (SME oder Full), vorhandener Datengrundlage und gewünschter Tiefe ab. SME-Erstteilnahmen sind in 2 bis 3 Wochen umsetzbar, Full-Fragebögen in 2 bis 8 Wochen. Im kostenlosen 20-Minuten-Erstgespräch klären wir Umfang und Aufwand auf Basis Ihrer konkreten Ausgangslage.",
+      },
+      {
+        q: "Brauche ich eine CO₂-Bilanz, bevor ich CDP beantworten kann?",
+        a: "Ja, ein belastbarer Corporate Carbon Footprint nach GHG Protocol ist die Grundvoraussetzung. Für den SME-Fragebogen genügen Scope 1 und Scope 2, für den Full-Fragebogen werden auch die wesentlichen Scope-3-Kategorien benötigt. Falls noch keine CCF vorliegt, übernimmt COzwei diese als vorgelagertes Modul.",
+      },
+    ],
     heroEyebrow: "Nachhaltigkeit · CDP Climate Change",
     heroTitle: "CDP Klima-Reporting: von der Datenbasis bis zum A-Score",
     heroSubtitle:
@@ -250,6 +321,59 @@ export const content: Record<"de" | "en" | "pt", Content> = {
   },
 
   en: {
+    breadcrumbHome: "Home",
+    breadcrumbSolutions: "Solutions",
+    breadcrumbCurrent: "CDP climate reporting",
+    lastUpdatedLabel: "Last updated",
+    lastUpdatedDate: "May 2026",
+    glanceLabel: "At a glance",
+    glanceBody:
+      "CDP climate reporting means the annual, standardised disclosure of climate data via the Climate Change Questionnaire of the non-profit organisation CDP. COzwei guides companies end to end — from the GHG inventory per GHG Protocol through all questionnaire modules to a timely submission and score evaluation. We offer three packages for SMEs, corporates and repeat reporters.",
+    whatIsCdpTitle: "What is CDP?",
+    whatIsCdpBody:
+      "CDP is a non-profit organisation founded in London in 2000, operating the world's largest environmental disclosure system. The CDP climate questionnaire is aligned with the GHG Protocol, TCFD and ISSB and is considered the de-facto standard for external climate disclosure in B2B contexts.",
+    statSourceLabel: "Source",
+    internalLinkCcfLabel: "our decarbonisation advisory",
+    internalLinkVerifLabel: "ISO 14064-3 verification",
+    internalLinkKlimaLabel: "climate protection concepts",
+    faqSectionLabel: "FAQ",
+    faqSectionTitle: "Frequently asked questions about CDP climate reporting",
+    faqSectionIntro:
+      "Answers to the questions we are most often asked in CDP intro calls.",
+    faqs: [
+      {
+        q: "What is the CDP Climate Change Questionnaire?",
+        a: "The CDP Climate Change Questionnaire is an annual climate questionnaire of the non-profit organisation CDP (formerly Carbon Disclosure Project). Companies use it to disclose their climate data, strategy, risks and reduction targets in a standardised way. More than 24,000 companies worldwide use the questionnaire — at the request of investors, large customers or on a voluntary basis.",
+      },
+      {
+        q: "When does the CDP portal open and close each year?",
+        a: "The CDP portal typically opens in mid-June and closes in mid-September. CDP publishes the exact dates annually on cdp.net. For a thorough response to the Full Corporate Questionnaire you should plan two to eight weeks of work, ideally with a project start in April or May.",
+      },
+      {
+        q: "Which CDP questionnaire is relevant for my company — SME or Full?",
+        a: "Small and medium-sized enterprises with fewer than 500 employees can use the simplified SME Climate Change Questionnaire. Mid-sized and large companies, as well as companies with a concrete request via the CDP Supply Chain module, answer the Full Corporate Climate Change Questionnaire.",
+      },
+      {
+        q: "How does the CDP scoring work?",
+        a: "CDP rates submitted responses on a scale from D− to A. The scoring covers four levels: Disclosure (D), Awareness (C), Management (B) and Leadership (A). Higher scores require, among other things, robust Scope 3 data, a science-based reduction pathway (e.g. SBTi-validated) and third-party verification of emissions.",
+      },
+      {
+        q: "What is the CDP Supply Chain module?",
+        a: "The CDP Supply Chain module is a programme through which more than 280 large corporations request climate disclosure from their suppliers. Suppliers who do not respond risk point deductions in supplier ratings or losing contracts. The request typically arrives by email with an individual link to the CDP portal.",
+      },
+      {
+        q: "How do CDP and CSRD relate to each other?",
+        a: "The CDP climate module is methodologically aligned with ESRS E1, ISSB, TCFD and the GHG Protocol. A well-prepared CDP response therefore delivers most of the climate disclosures for your CSRD sustainability report. Duplicate work can be avoided when both reports build on the same GHG inventory and transition plan.",
+      },
+      {
+        q: "How much does a CDP advisory engagement at COzwei cost?",
+        a: "Costs depend on the questionnaire type (SME or Full), the existing data foundation and the desired depth. SME first-time submissions can be delivered in two to three weeks, Full questionnaires in two to eight weeks. In a free 20-minute intro call we clarify scope and effort based on your specific situation.",
+      },
+      {
+        q: "Do I need a CO₂ inventory before I can answer CDP?",
+        a: "Yes, a robust Corporate Carbon Footprint per the GHG Protocol is the basic prerequisite. For the SME questionnaire, Scope 1 and Scope 2 are sufficient; for the Full questionnaire the material Scope 3 categories are also needed. If there is no CCF yet, COzwei delivers it as a preceding module.",
+      },
+    ],
     heroEyebrow: "Sustainability · CDP Climate Change",
     heroTitle: "CDP climate reporting: from data baseline to A score",
     heroSubtitle:
@@ -432,6 +556,59 @@ export const content: Record<"de" | "en" | "pt", Content> = {
   },
 
   pt: {
+    breadcrumbHome: "Início",
+    breadcrumbSolutions: "Soluções",
+    breadcrumbCurrent: "Relato climático CDP",
+    lastUpdatedLabel: "Atualizado em",
+    lastUpdatedDate: "Maio de 2026",
+    glanceLabel: "Em resumo",
+    glanceBody:
+      "Relato climático CDP significa a divulgação anual e padronizada de dados climáticos através do Climate Change Questionnaire da organização sem fins lucrativos CDP. A COzwei acompanha as empresas de ponta a ponta — desde o inventário GEE segundo o GHG Protocol, passando pelos módulos do questionário, até à submissão atempada e à avaliação do score. Oferecemos três pacotes para PME, grandes empresas e participantes recorrentes.",
+    whatIsCdpTitle: "O que é o CDP?",
+    whatIsCdpBody:
+      "O CDP é uma organização sem fins lucrativos fundada em Londres em 2000, que opera o maior sistema mundial de divulgação de dados ambientais. O questionário climático do CDP está alinhado com o GHG Protocol, TCFD e ISSB e é considerado o padrão de facto para divulgação climática externa em contextos B2B.",
+    statSourceLabel: "Fonte",
+    internalLinkCcfLabel: "a nossa consultoria de descarbonização",
+    internalLinkVerifLabel: "verificação ISO 14064-3",
+    internalLinkKlimaLabel: "conceitos de proteção climática",
+    faqSectionLabel: "FAQ",
+    faqSectionTitle: "Perguntas frequentes sobre o relato climático CDP",
+    faqSectionIntro:
+      "Respostas às perguntas que mais nos colocam nas conversas iniciais sobre CDP.",
+    faqs: [
+      {
+        q: "O que é o CDP Climate Change Questionnaire?",
+        a: "O CDP Climate Change Questionnaire é um questionário climático anual da organização sem fins lucrativos CDP (anteriormente Carbon Disclosure Project). As empresas divulgam nele, de forma padronizada, os seus dados climáticos, estratégia, riscos e metas de redução. Mais de 24.000 empresas em todo o mundo utilizam o questionário — a pedido de investidores, grandes clientes ou voluntariamente.",
+      },
+      {
+        q: "Quando abre e fecha o portal CDP todos os anos?",
+        a: "O portal CDP abre tipicamente em meados de junho e fecha em meados de setembro. O CDP publica as datas exatas anualmente em cdp.net. Para uma resposta cuidadosa ao Full Corporate Questionnaire, deve planear entre duas a oito semanas de trabalho, idealmente com início do projeto em abril ou maio.",
+      },
+      {
+        q: "Qual o questionário CDP relevante para a minha empresa — SME ou Full?",
+        a: "Pequenas e médias empresas com menos de 500 colaboradores podem utilizar o SME Climate Change Questionnaire simplificado. Médias e grandes empresas, bem como empresas com um pedido concreto via módulo CDP Supply Chain, respondem ao Full Corporate Climate Change Questionnaire.",
+      },
+      {
+        q: "Como funciona o scoring do CDP?",
+        a: "O CDP avalia as respostas submetidas numa escala de D− até A. O scoring abrange quatro níveis: Disclosure (D), Awareness (C), Management (B) e Leadership (A). Scores mais elevados exigem, entre outros, dados robustos de Escopo 3, uma trajetória de redução baseada na ciência (por exemplo, validada SBTi) e verificação de emissões por terceiros.",
+      },
+      {
+        q: "O que é o módulo CDP Supply Chain?",
+        a: "O módulo CDP Supply Chain é um programa através do qual mais de 280 grandes empresas pedem aos seus fornecedores a divulgação de dados climáticos. Fornecedores que não respondam arriscam-se a deduções de pontos nas avaliações de fornecedor ou à perda de contratos. O pedido chega tipicamente por e-mail com um link individual para o portal CDP.",
+      },
+      {
+        q: "Como se relacionam o CDP e a CSRD?",
+        a: "O módulo climático do CDP está metodologicamente alinhado com ESRS E1, ISSB, TCFD e o GHG Protocol. Uma resposta CDP bem preparada fornece, portanto, a maior parte das divulgações climáticas para o seu relatório de sustentabilidade CSRD. Pode evitar trabalho duplo quando ambos os relatos assentam no mesmo inventário GEE e plano de transição.",
+      },
+      {
+        q: "Quanto custa uma consultoria CDP da COzwei?",
+        a: "Os custos dependem do tipo de questionário (SME ou Full), da base de dados existente e da profundidade desejada. Primeiras participações SME podem ser entregues em duas a três semanas, questionários Full em duas a oito semanas. Na conversa inicial gratuita de 20 minutos clarificamos o âmbito e o esforço com base na sua situação concreta.",
+      },
+      {
+        q: "Preciso de um inventário de CO₂ antes de poder responder ao CDP?",
+        a: "Sim, um Corporate Carbon Footprint robusto segundo o GHG Protocol é o pré-requisito básico. Para o questionário SME bastam Escopo 1 e Escopo 2; para o questionário Full são também necessárias as categorias materiais do Escopo 3. Se ainda não existir um CCF, a COzwei entrega-o como módulo prévio.",
+      },
+    ],
     heroEyebrow: "Sustentabilidade · CDP Climate Change",
     heroTitle: "Relato climático CDP: da base de dados ao A-score",
     heroSubtitle:
