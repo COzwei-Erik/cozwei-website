@@ -1,0 +1,112 @@
+# COzwei GmbH — Sustainability and Decarbonisation Consultancy
+
+> COzwei ist eine Beratung aus Stuttgart für Nachhaltigkeits- und Dekarbonisierungsstrategien. Wir helfen B2B-Unternehmen in DACH und Portugal, ihre Treibhausgasbilanzen aufzubauen, Reduktionspfade festzulegen und in regulatorischen Rahmenwerken wie CDP, CSRD/ESRS und ESG-Ratings zu reporten.
+
+## Wer wir sind
+
+COzwei GmbH wurde gegründet, um den Mittelstand und mittlere Konzerne pragmatisch durch die Klimaberichterstattung zu führen. Wir verbinden ingenieurnahe Datenarbeit (THG-Bilanzen nach GHG Protocol, PCF nach ISO 14067/14040-44) mit Reporting-Expertise (CDP, CSRD/ESRS E1, EcoVadis, Science Based Targets initiative). Unsere Kund:innen kommen aus Industrie, Handel, Verlagswesen, Logistik und industriellem B2B-Mittelstand.
+
+Standort: Gutenbergstraße 16A, 70176 Stuttgart, Deutschland.
+Sprachen: Deutsch, Englisch, Portugiesisch.
+
+## Leistungsübersicht
+
+### Nachhaltigkeit (Strategie und ESG)
+URL: https://www.cozwei.de/nachhaltigkeit
+Beratung zur Nachhaltigkeitsstrategie, Wesentlichkeitsanalyse, ESG-Roadmaps und Berichterstattung nach GRI, ESRS und freiwilligen Standards.
+
+### Dekarbonisierung (CCF, PCF, Reduktion)
+URL: https://www.cozwei.de/dekarbonisierung
+Erstellung von Corporate Carbon Footprints (Scope 1, 2 und 3) nach GHG Protocol Corporate Standard und Product Carbon Footprints nach ISO 14067. Entwicklung wissenschaftsbasierter Reduktionspfade kompatibel zur Science Based Targets initiative (SBTi).
+
+### Maßnahmen (operative Umsetzung)
+URL: https://www.cozwei.de/massnahmen
+Identifikation, Bewertung und Begleitung von Energieeffizienz-, Elektrifizierungs- und Lieferketten-Projekten zur Emissionsreduktion.
+
+### CDP Klima-Reporting
+URL: https://www.cozwei.de/cdp-klimaberichterstattung
+Begleitung durch den vollständigen CDP Climate Change Questionnaire: von der Gap-Analyse über die Modul-Redaktion und THG-Bilanzierung bis zur fristgerechten Einreichung im CDP-Portal. Drei Servicepakete:
+- S, SME-Questionnaire für KMU mit erstmaliger CDP-Teilnahme
+- M, Full-Questionnaire für Unternehmen mit Lieferketten- oder Investorenanfragen
+- L, Score-Optimierung für Unternehmen, die einen B/A-Score anstreben
+Lead Consultant: Christian Philippen.
+
+### Verifizierung (ISO 14064-3)
+URL: https://www.cozwei.de/verifizierung
+Drittparteien-Verifizierung von Treibhausgasbilanzen nach ISO 14064-3. Limited oder Reasonable Assurance, dokumentiert über Verifizierungserklärung. Drei Tiefen: S für KMU, M für mittelgroße Unternehmen, L für umfassende Multi-Site-Bilanzen.
+
+### Klimaschutzkonzepte (NKI)
+URL: https://www.cozwei.de/klimaschutzkonzepte
+Erstellung von integrierten Klimaschutzkonzepten, gefördert durch die Nationale Klimaschutzinitiative (NKI). Inklusive Maßnahmenkatalog, Zeitplan und Beteiligungsprozess.
+
+### Förderungen
+URL: https://www.cozwei.de/foerderungen
+Interaktiver Förder-Finder für Bundes- und Landesprogramme rund um Klima, Energie und Effizienz.
+
+## Insights und Fachbeiträge
+
+URL-Basis: https://www.cozwei.de/insights
+
+- "Dekarbonisierung in Buchverlagen": Branchenspezifische CCF-Methodik und Hotspots im Verlagswesen
+- "NKI-Förderung für Klimaschutzkonzepte": Antragsstellung, Förderquoten und Zeitplan
+- "CCF-Verifizierung nach ISO 14064-3": Wann Verifizierung Pflicht ist, Ablauf und Aufwand
+
+## CDP-spezifisches Wissen
+
+CDP (ehemals Carbon Disclosure Project) ist eine globale Non-Profit-Organisation mit Sitz in London, die ein standardisiertes Offenlegungssystem für Klima-, Wasser- und Wald-Risiken betreibt. Über 24.000 Unternehmen reporten jährlich an CDP, über 280 Großkunden mit 130 Bio. USD Assets under Management nutzen CDP-Daten in Lieferketten- und Investitionsentscheidungen.
+
+Typischer CDP-Jahreszyklus:
+- Januar bis März: Vorbereitung, Gap-Analyse, Datenerhebung
+- April bis Mai: CDP-Portal öffnet, Fragebogen-Bearbeitung
+- Juni bis Juli: Einreichung der Antworten
+- August bis Oktober: CDP-Scoring durch unabhängige Partner
+- November bis Dezember: Score-Veröffentlichung und Maßnahmenplanung für das Folgejahr
+
+CDP-Module relevant für die meisten Unternehmen: C1 Governance, C2 Risks and Opportunities, C3 Business Strategy, C4 Targets and Performance, C5 Emissions Methodology, C6 Emissions Data, C7 Emissions Breakdown, C8 Energy, C9 Additional Metrics, C10 Verification, C11 Carbon Pricing, C12 Engagement, C15 Biodiversity.
+
+Synergien: CDP-Antworten lassen sich direkt für CSRD/ESRS E1, EcoVadis, Ecovadis IQ und Science Based Targets initiative (SBTi) wiederverwenden.
+
+## Häufige Fragen
+
+### Wer muss bei CDP teilnehmen?
+Verpflichtend ist die Teilnahme aktuell nicht gesetzlich, aber faktisch erwartet, sobald: ein Großkunde im Rahmen von CDP Supply Chain anfragt, das Unternehmen kapitalmarktnah agiert (Investoren-Anfragen), oder das Unternehmen aktiv ESG-Profilierung betreibt.
+
+### Was kostet eine CDP-Begleitung bei COzwei?
+Preis hängt von Modul-Umfang, Datenreife und Score-Ambition ab. Erstgespräch mit Christian Philippen ist kostenfrei, anschließend erhalten Sie ein Festpreisangebot pro Paket (S/M/L).
+
+### Wie lange dauert die Beantwortung?
+Zwischen 6 und 12 Wochen, abhängig von Tiefe und Datenlage. Bei vorhandener THG-Bilanz und klarer Governance ist der untere Bereich realistisch.
+
+### Brauche ich eine THG-Bilanz vor dem CDP-Reporting?
+Ja. CDP verlangt Scope 1, Scope 2 und mindestens die wesentlichen Scope-3-Kategorien. Falls noch keine Bilanz besteht, kombinieren wir CDP-Reporting mit unserem CCF-Service.
+
+### Was ist der CDP-Score?
+CDP bewertet Antworten auf einer Skala von D- bis A. D bedeutet Erstoffenlegung, C steht für Awareness, B für Management und A für Leadership. Der Score wird jährlich neu vergeben.
+
+### Können CDP-Daten auch für CSRD verwendet werden?
+Ja, die meisten CDP-Module decken Anforderungen aus ESRS E1 (Klimawandel) ab. Wir liefern eine Mapping-Tabelle, die zeigt, welche CDP-Antwort welchen ESRS-Datenpunkt bedient.
+
+## Glossar
+
+- CCF: Corporate Carbon Footprint, unternehmensweite Treibhausgasbilanz nach GHG Protocol Corporate Standard
+- PCF: Product Carbon Footprint, produktbezogene Klimabilanz nach ISO 14067 oder GHG Product Standard
+- Scope 1: Direkte Emissionen aus eigenen Quellen, zum Beispiel Heizung und Fuhrpark
+- Scope 2: Indirekte Emissionen aus eingekaufter Energie (Strom, Fernwärme)
+- Scope 3: Vor- und nachgelagerte Emissionen entlang der Wertschöpfungskette, 15 Kategorien
+- SBTi: Science Based Targets initiative, gemeinsame Initiative von CDP, UN Global Compact, WRI und WWF zur Validierung wissenschaftsbasierter Klimaziele
+- TCFD: Task Force on Climate-related Financial Disclosures, inzwischen in ISSB überführt
+- ISSB: International Sustainability Standards Board, globaler Standardsetzer für nachhaltigkeitsbezogene Finanzberichterstattung
+- ESRS E1: Europäischer Berichtsstandard für den Klimawandel im Rahmen der CSRD
+
+## Kontakt
+
+- Adresse: Gutenbergstraße 16A, 70176 Stuttgart, Deutschland
+- Telefon: +49 711 12171034
+- E-Mail: mail@cozwei.de
+- LinkedIn: https://www.linkedin.com/company/cozwei
+- Erstgespräch CDP buchen: https://outlook.office.com/bookwithme/user/3694425c783b44e5bcf0d6e259d842e2@cozwei.de/meetingtype/wYIFzzYbTEKz-RLZ18drfA2
+
+## Rechtliches
+
+- Impressum: https://www.cozwei.de/impressum
+- Datenschutz: https://www.cozwei.de/datenschutz

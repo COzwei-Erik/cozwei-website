@@ -4,7 +4,7 @@ import { content } from "./content";
 
 const PAGE_URL = "https://www.cozwei.de/cdp-klimaberichterstattung";
 
-// Page-spezifische Metadaten — überschreiben den Default aus app/layout.tsx
+// Page-spezifische Metadaten, überschreiben den Default aus app/layout.tsx
 export const metadata: Metadata = {
   title: "CDP Klima-Reporting & Climate Change Questionnaire | COzwei",
   description:
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "CDP Klima-Reporting: von der Datenbasis bis zum A-Score | COzwei",
     description:
-      "Wir begleiten Sie durch den vollständigen CDP-Klimafragebogen — von der THG-Bilanz bis zur Einreichung im CDP-Portal. Pragmatisch für KMU, gründlich für Konzerne.",
+      "Wir begleiten Sie durch den vollständigen CDP-Klimafragebogen, von der THG-Bilanz bis zur Einreichung im CDP-Portal. Pragmatisch für KMU, gründlich für Konzerne.",
     url: PAGE_URL,
     siteName: "COzwei",
     locale: "de_DE",
@@ -49,13 +49,13 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "CDP Klima-Reporting: von der Datenbasis bis zum A-Score | COzwei",
     description:
-      "Begleitung durch den CDP Climate Change Questionnaire — von THG-Bilanz bis Einreichung.",
+      "Begleitung durch den CDP Climate Change Questionnaire, von THG-Bilanz bis Einreichung.",
     images: ["https://www.cozwei.de/Pictures/Artboard 1.png"],
   },
   robots: { index: true, follow: true },
 };
 
-// JSON-LD Schemas — Service, HowTo, FAQPage, BreadcrumbList, Organization.
+// JSON-LD Schemas, Service, HowTo, FAQPage, BreadcrumbList, Organization.
 // In Deutsch, weil die kanonische URL und der Primärinhalt deutsch sind.
 const c = content.de;
 
@@ -65,7 +65,7 @@ const serviceSchema = {
   serviceType: "CDP Klima-Reporting Beratung",
   name: "CDP Climate Change Questionnaire Begleitung",
   description:
-    "Vollständige Begleitung beim CDP Climate Change Questionnaire — von der THG-Bilanzierung über die Modul-Redaktion bis zur fristgerechten Einreichung im CDP-Portal.",
+    "Vollständige Begleitung beim CDP Climate Change Questionnaire, von der THG-Bilanzierung über die Modul-Redaktion bis zur fristgerechten Einreichung im CDP-Portal.",
   provider: {
     "@type": "Organization",
     name: "COzwei GmbH",
@@ -115,7 +115,7 @@ const howToSchema = {
   "@type": "HowTo",
   name: "In vier Schritten zum belastbaren CDP-Klima-Score",
   description:
-    "Strukturiertes Vorgehen zur Beantwortung des CDP Climate Change Questionnaire — von der Gap-Analyse bis zur Score-Auswertung.",
+    "Strukturiertes Vorgehen zur Beantwortung des CDP Climate Change Questionnaire, von der Gap-Analyse bis zur Score-Auswertung.",
   totalTime: "P8W",
   step: c.processSteps.map((step) => ({
     "@type": "HowToStep",
