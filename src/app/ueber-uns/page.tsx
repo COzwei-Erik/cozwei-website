@@ -165,7 +165,7 @@ export default function UeberUns() {
                 <div className="flex flex-col justify-center flex-1 items-center md:items-start text-center md:text-left">
                   <div className="text-lg sm:text-xl font-bold mb-1 text-[#3D405B] break-words">Christian Philippen</div>
                   <div className="text-sm sm:text-base text-[#23243a] mb-1 break-words">{t.teamFocusChristian}</div>
-                  <div className="text-sm font-semibold mb-2 text-[#81B29A] break-words">{t.teamRoleChristian}</div>
+                  <div className="text-sm sm:text-base font-semibold mb-2 text-[#81B29A] tracking-wide break-words">{t.teamRoleChristian}</div>
                   <div className="text-xs sm:text-sm text-[#3D405B] mb-1 break-all">christian.philippen@cozwei.de</div>
                   <div className="text-xs sm:text-sm text-[#3D405B] mb-3">+49 176 45830572</div>
                   <a href="https://www.linkedin.com/in/christian-philippen/" target="_blank" rel="noopener noreferrer" className="inline-block"><LinkedInIcon /></a>
@@ -177,7 +177,7 @@ export default function UeberUns() {
                 <div className="flex flex-col justify-center flex-1 items-center md:items-start text-center md:text-left">
                   <div className="text-lg sm:text-xl font-bold mb-1 text-[#3D405B] break-words">Erik Jakob</div>
                   <div className="text-sm sm:text-base text-[#23243a] mb-1 break-words">{t.teamFocusErik}</div>
-                  <div className="text-sm font-semibold mb-2 text-[#81B29A] break-words">{t.teamRoleErik}</div>
+                  <div className="text-sm sm:text-base font-semibold mb-2 text-[#81B29A] tracking-wide break-words">{t.teamRoleErik}</div>
                   <div className="text-xs sm:text-sm text-[#3D405B] mb-1 break-all">erik.jakob@cozwei.de</div>
                   <div className="text-xs sm:text-sm text-[#3D405B] mb-3">+49 176 30886017</div>
                   <a href="https://www.linkedin.com/in/erik-jakob-9a81b5152/" target="_blank" rel="noopener noreferrer" className="inline-block"><LinkedInIcon /></a>
