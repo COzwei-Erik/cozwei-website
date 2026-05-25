@@ -237,6 +237,32 @@ export default function UeberUns() {
                   <a href="https://www.linkedin.com/in/ricardo-furtado-7a36b2100" target="_blank" rel="noopener noreferrer" className="inline-block"><LinkedInIcon /></a>
                 </div>
               </div>
+              {/* Card: Join Us — imaginärer Mitarbeiter / Recruiting-Slot */}
+              <a
+                href={`https://cozwei-gmbh.jobs.personio.de/?language=${jobsLanguage}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex flex-col md:flex-row items-center bg-white rounded-2xl border-2 border-dashed border-[#81B29A]/50 p-4 sm:p-6 gap-4 sm:gap-6 min-h-[200px] sm:min-h-[220px] transition-all duration-300 hover:scale-105 hover:border-solid hover:border-[#81B29A] hover:ring-2 hover:ring-[#81B29A]/30 overflow-hidden group no-underline text-inherit"
+                aria-label={t.teamJoinUsTitle}
+              >
+                <div
+                  className="rounded-xl flex-shrink-0 mb-4 md:mb-0 w-24 h-24 sm:w-32 sm:h-32 md:w-36 md:h-36 lg:w-44 lg:h-44 flex items-center justify-center bg-[#81B29A]/15 border-2 border-dashed border-[#81B29A]/60"
+                  aria-label={t.teamJoinUsPhotoAlt}
+                  role="img"
+                >
+                  <span className="text-6xl sm:text-7xl md:text-8xl font-extrabold leading-none" style={{ color: '#81B29A' }}>?</span>
+                </div>
+                <div className="flex flex-col justify-center flex-1 items-center md:items-start text-center md:text-left">
+                  <div className="text-lg sm:text-xl font-bold mb-1 text-[#3D405B] break-words">{t.teamJoinUsTitle}</div>
+                  <div className="text-sm sm:text-base font-semibold mb-4 text-[#81B29A] tracking-wide break-words">{t.teamJoinUsRole}</div>
+                  <span
+                    className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-lg font-bold text-xs sm:text-sm transition group-hover:bg-[#6fa18a]"
+                    style={{ backgroundColor: '#81B29A', color: 'white', boxShadow: '0 4px 16px 0 rgba(61, 64, 91, 0.18)' }}
+                  >
+                    {t.teamJoinUsCta} →
+                  </span>
+                </div>
+              </a>
             </div>
           </div>
         </section>
