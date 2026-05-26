@@ -52,8 +52,8 @@ export default function CdpClient() {
       <section className="relative flex flex-col items-center justify-center min-h-screen w-full text-center overflow-hidden">
         <div className="absolute inset-0 w-full h-full z-0">
           <Image
-            src="/Pictures/pexels-goumbik-590020.jpg"
-            alt="Geschäftsleute analysieren Klimadaten am Laptop, Symbolbild für CDP Climate Change Questionnaire"
+            src="/Pictures/cdp-hero-truck-forest.png"
+            alt="LKW auf einer Straße durch dichten Wald, Vogelperspektive — Symbolbild für Lieferketten-Emissionen und CDP Klima-Reporting"
             fill
             style={{ objectFit: "cover", objectPosition: "center" }}
             className="opacity-90"
