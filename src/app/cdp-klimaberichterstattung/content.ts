@@ -148,7 +148,7 @@ export const content: Record<"de" | "en" | "pt", Content> = {
     faqs: [
       {
         q: "Was ist das CDP Climate Change Questionnaire?",
-        a: "Das CDP Climate Change Questionnaire ist ein jährlicher Klimafragebogen der Non-Profit-Organisation CDP (ehemals Carbon Disclosure Project). Unternehmen offenlegen darin standardisiert ihre Klimadaten, Strategie, Risiken und Reduktionsziele. Weltweit nutzen über 24.000 Unternehmen den Fragebogen, auf Anforderung von Investoren, Großkunden oder freiwillig.",
+        a: "Das CDP Climate Change Questionnaire ist ein jährlicher Klimafragebogen der Non-Profit-Organisation CDP (ehemals Carbon Disclosure Project). Unternehmen offenlegen darin standardisiert ihre Klimadaten, Strategie, Risiken und Reduktionsziele. Im Reporting-Zyklus 2025 nutzten rund 22.100 Unternehmen den Fragebogen, auf Anforderung von Investoren, Großkunden oder freiwillig.",
       },
       {
         q: "Wann öffnet und schließt das CDP-Portal jährlich?",
@@ -164,11 +164,11 @@ export const content: Record<"de" | "en" | "pt", Content> = {
       },
       {
         q: "Was ist das CDP Supply Chain Modul?",
-        a: "Das CDP Supply Chain Modul ist ein Programm, über das über 280 Großunternehmen ihre Lieferanten zur Offenlegung von Klimadaten auffordern. Wer als Lieferant angefragt wird, riskiert bei Nicht-Antwort Punktabzüge in Lieferantenbewertungen oder den Verlust von Aufträgen. Die Anfrage erfolgt typischerweise per E-Mail mit individuellem Link zum CDP-Portal.",
+        a: "Das CDP Supply Chain Programm ist ein Programm, über das über 270 Großeinkäufer (kombiniertes Beschaffungsvolumen rund 6,4 Billionen US-Dollar) ihre Lieferanten zur Offenlegung umweltbezogener Daten auffordern. Wer als Lieferant angefragt wird, riskiert bei Nicht-Antwort Punktabzüge in Lieferantenbewertungen oder den Verlust von Aufträgen. Die Anfrage erfolgt typischerweise per E-Mail mit individuellem Link zum CDP-Portal.",
       },
       {
         q: "Wie verhalten sich CDP und CSRD zueinander?",
-        a: "Das CDP-Klimamodul ist methodisch auf ESRS E1, ISSB, TCFD und das GHG Protocol abgestimmt. Eine sauber aufbereitete CDP-Antwort liefert daher den Großteil der Klimaangaben für den CSRD-Nachhaltigkeitsbericht. Doppelarbeit lässt sich vermeiden, wenn beide Reportings auf derselben THG-Bilanz und demselben Übergangsplan aufsetzen.",
+        a: "Das CDP-Klimamodul ist methodisch auf ESRS E1 (CSRD), IFRS S2 des ISSB und das GHG Protocol abgestimmt; die Empfehlungen der TCFD wurden mit deren Auflösung im Oktober 2023 vollständig in IFRS S2 überführt. Eine sauber aufbereitete CDP-Antwort liefert daher den Großteil der Klimaangaben für den CSRD-Nachhaltigkeitsbericht. Doppelarbeit lässt sich vermeiden, wenn beide Reportings auf derselben THG-Bilanz und demselben Übergangsplan aufsetzen.",
       },
       {
         q: "Was kostet eine CDP-Beratung bei COzwei?",
@@ -198,30 +198,30 @@ export const content: Record<"de" | "en" | "pt", Content> = {
     whySectionLabel: "Warum am freiwilligen CDP für Klima teilnehmen?",
     whySectionTitle: "Klimadaten, die Investoren und Einkäufer verlangen",
     whySectionIntro:
-      "Über 24.000 Unternehmen weltweit melden ihre Klimadaten an CDP, das macht den Klimafragebogen zum De-facto-Standard für eine externe Offenlegung. Immer mehr Kunden machen ihn zur Voraussetzung für die Aufnahme oder den Verbleib im Lieferantenpool oder ESG-Ratings vergeben zusätzliche Punkte, wenn ein CDP-Rating vorliegt.",
+      "Im Reporting-Zyklus 2025 haben rund 22.100 Unternehmen ihre Klimadaten über CDP offengelegt, gemeinsam mit über 1.000 Städten, Bundesstaaten und Regionen. Damit hat sich der CDP-Klimafragebogen als faktischer Marktstandard für die externe Offenlegung klima- und nachhaltigkeitsbezogener Daten etabliert. Zunehmend setzen Großkunden eine CDP-Offenlegung als Voraussetzung für die Aufnahme oder den Verbleib im Lieferantenpool, gängige ESG-Ratings honorieren ein vorliegendes CDP-Rating mit zusätzlichen Punkten.",
     trustCards: [
       {
         title: "Lieferkettenanfragen",
         body:
-          "Über 280 Großunternehmen fordern ihre Lieferanten über das CDP Supply Chain Modul zur Offenlegung von Klimadaten auf. Wer nicht antwortet, riskiert Punktabzüge in Lieferantenbewertungen oder den Verlust des Auftrags.",
+          "Über 270 Großeinkäufer mit einem kombinierten Beschaffungsvolumen von rund 6,4 Billionen US-Dollar fordern ihre Lieferanten über das CDP Supply Chain Programm zur Offenlegung umweltbezogener Daten auf. Eine ausbleibende oder unvollständige Antwort führt regelmäßig zu Punktabzügen in Lieferantenbewertungen und kann mittelfristig die Lieferanten-Beziehung selbst gefährden.",
         tag: "Supply Chain · Großkundenanfrage",
       },
       {
         title: "Investor Relations",
         body:
-          "Institutionelle Investoren mit über 130 Billionen USD verwaltetem Vermögen nutzen CDP-Daten zur Portfoliobewertung. Ein belastbarer Klima-Score stärkt Ihre Position bei Banken, Kapitalgebern und Ratingagenturen.",
+          "Im Reporting-Zyklus 2025 haben 640 institutionelle Investoren mit kombinierten Assets under Management von rund 127 Billionen US-Dollar Unternehmen über CDP zur Offenlegung aufgefordert. Eine belastbare CDP-Offenlegung und ein nachvollziehbarer Klima-Score stärken die Position des Unternehmens gegenüber Banken, Kapitalgebern und Ratingagenturen.",
         tag: "Kapitalmarkt · ESG-Rating",
       },
       {
         title: "CSRD-Synergie",
         body:
-          "Das CDP-Klimamodul ist auf ESRS E1, ISSB, TCFD und das GHG Protocol abgestimmt. Eine sauber aufbereitete CDP-Antwort liefert gleichzeitig den Großteil der Klimaangaben für Ihren Nachhaltigkeitsbericht.",
-        tag: "ESRS E1 · TCFD · ISSB",
+          "Das CDP-Klimamodul ist auf die einschlägigen Rahmenwerke abgestimmt: ESRS E1 unter der CSRD, IFRS S2 des ISSB (in das die Empfehlungen der TCFD seit deren Auflösung im Oktober 2023 vollständig überführt wurden) sowie das GHG Protocol. Eine sauber aufbereitete CDP-Antwort liefert damit den Großteil der Klimaangaben für den Nachhaltigkeitsbericht und reduziert Doppelarbeit zwischen den Reporting-Strängen.",
+        tag: "ESRS E1 · IFRS S2 · GHG Protocol",
       },
       {
         title: "Strukturierter Jahresprozess",
         body:
-          "Das CDP-Portal öffnet jährlich von Mitte Juni bis Mitte September. Wir sorgen für eine fristgerechte und vollständige Einreichung, mit klaren Meilensteinen und einem Sanity-Check vor Abgabe.",
+          "Das CDP-Response-Fenster öffnet jährlich Mitte Juni. Die Scoring-Deadline liegt Mitte September; bis Ende Oktober können unscored Antworten und Korrekturen nachgereicht werden. Wir steuern Ihren Prozess entlang dieser Fristen, mit klaren Meilensteinen für Datenerhebung, Modulredaktion und Response Check vor der finalen Abgabe.",
         tag: "Jahreszyklus · Termintreue",
       },
     ],
@@ -255,7 +255,7 @@ export const content: Record<"de" | "en" | "pt", Content> = {
         number: 4,
         title: "Score-Auswertung & Folgejahre",
         body:
-          "Nach Veröffentlichung des Scores werten wir Ihre Bewertung systematisch aus, identifizieren konkrete Hebel für das Folgejahr und verankern CDP fest in Ihrem Klima-Reporting-Zyklus. Auf Wunsch begleiten wir die Einreichung von Science Based Targets als zentralen Hebel für Leadership-Niveau.",
+          "Nach Veröffentlichung des Scores werten wir Ihre Bewertung systematisch aus, identifizieren konkrete Hebel für das Folgejahr und verankern CDP fest in Ihrem Klima-Reporting-Zyklus. Auf Wunsch begleiten wir die Entwicklung und Validierung wissenschaftsbasierter Klimaziele gemäß SBTi-Standard als zentralen Hebel für die Leadership-Stufe im CDP-Scoring.",
         tags: "Score-Analyse · Jahresplanung · SBTi-Vorbereitung",
       },
     ],
@@ -274,7 +274,7 @@ export const content: Record<"de" | "en" | "pt", Content> = {
         title: "SME-Fragebogen Klima",
         subtitle: "Erstteilnahme für KMU",
         audience:
-          "Kleine und mittlere Unternehmen mit erstmaliger CDP-Teilnahme, typischerweise < 500 Mitarbeitende, die das vereinfachte SME-Modul nutzen können.",
+          "Kleine und mittlere Unternehmen, die die offiziellen CDP-SME-Schwellenwerte erfüllen (bis 1.000 Mitarbeitende und bis 250 Millionen US-Dollar Jahresumsatz) und das vereinfachte SME-Modul nutzen wollen. Erfahrungsgemäß profitieren insbesondere Erstteilnehmer und Unternehmen mit überschaubarer Scope-3-Komplexität von diesem Pfad. Liegt eines der Kriterien über der Schwelle, ist nur der Full Corporate Questionnaire möglich.",
         services: [
           "Befüllung des SME Climate Change Questionnaire",
           "Aufbereitung vorhandener Klimadaten (CCF)",
@@ -315,7 +315,7 @@ export const content: Record<"de" | "en" | "pt", Content> = {
         title: "Optimierung bestehender Fragebogen Klima",
         subtitle: "Score-Verbesserung für Wiederholungstäter",
         audience:
-          "Unternehmen mit bestehender CDP-Submission, die ihren Score gezielt verbessern wollen (z. B. von C/D auf B/A−) oder den Folgejahres-Prozess effizienter aufsetzen möchten.",
+          "Unternehmen mit bestehender CDP-Submission, die ihren Score in einem oder mehreren Folgezyklen systematisch verbessern wollen (typische realistische Größenordnung: ein bis zwei Stufen pro Zyklus, etwa von D auf C oder von C auf B) und den Folgejahres-Prozess effizienter aufsetzen möchten.",
         services: [
           "Review der Vorjahres-Submission inkl. Scoring-Feedback",
           "Gap-Analyse gegen aktuelle CDP-Scoring-Methodik",
@@ -447,7 +447,7 @@ export const content: Record<"de" | "en" | "pt", Content> = {
     faqs: [
       {
         q: "What is the CDP Climate Change Questionnaire?",
-        a: "The CDP Climate Change Questionnaire is an annual climate questionnaire of the non-profit organisation CDP (formerly Carbon Disclosure Project). Companies use it to disclose their climate data, strategy, risks and reduction targets in a standardised way. More than 24, 000 companies worldwide use the questionnaire, at the request of investors, large customers or on a voluntary basis.",
+        a: "The CDP Climate Change Questionnaire is an annual climate questionnaire of the non-profit organisation CDP (formerly Carbon Disclosure Project). Companies use it to disclose their climate data, strategy, risks and reduction targets in a standardised way. In the 2025 reporting cycle around 22,100 companies used the questionnaire, at the request of investors, large customers or on a voluntary basis.",
       },
       {
         q: "When does the CDP portal open and close each year?",
@@ -455,7 +455,7 @@ export const content: Record<"de" | "en" | "pt", Content> = {
       },
       {
         q: "Which CDP questionnaire is relevant for my company, SME or Full?",
-        a: "Small and medium-sized enterprises with fewer than 500 employees can use the simplified SME Climate Change Questionnaire. Mid-sized and large companies, as well as companies with a concrete request via the CDP Supply Chain module, answer the Full Corporate Climate Change Questionnaire.",
+        a: "Small and medium-sized enterprises that meet the official CDP SME thresholds (up to 1,000 employees and up to 250 million US dollars in annual revenue) can use the simplified SME Climate Change Questionnaire. Mid-sized and large companies, as well as companies with a concrete request via the CDP Supply Chain programme, answer the Full Corporate Climate Change Questionnaire.",
       },
       {
         q: "How does the CDP scoring work?",
@@ -463,11 +463,11 @@ export const content: Record<"de" | "en" | "pt", Content> = {
       },
       {
         q: "What is the CDP Supply Chain module?",
-        a: "The CDP Supply Chain module is a programme through which more than 280 large corporations request climate disclosure from their suppliers. Suppliers who do not respond risk point deductions in supplier ratings or losing contracts. The request typically arrives by email with an individual link to the CDP portal.",
+        a: "The CDP Supply Chain programme is a scheme through which more than 270 large purchasers (combined procurement spending of around 6.4 trillion US dollars) request environmental disclosure from their suppliers. Suppliers who do not respond risk point deductions in supplier ratings or losing contracts. The request typically arrives by email with an individual link to the CDP portal.",
       },
       {
         q: "How do CDP and CSRD relate to each other?",
-        a: "The CDP climate module is methodologically aligned with ESRS E1, ISSB, TCFD and the GHG Protocol. A well-prepared CDP response therefore delivers most of the climate disclosures for your CSRD sustainability report. Duplicate work can be avoided when both reports build on the same GHG inventory and transition plan.",
+        a: "The CDP climate module is methodologically aligned with ESRS E1 (CSRD), IFRS S2 from the ISSB and the GHG Protocol; the TCFD recommendations have been fully absorbed into IFRS S2 since the TCFD's disbandment in October 2023. A well-prepared CDP response therefore delivers most of the climate disclosures for your CSRD sustainability report. Duplicate work can be avoided when both reports build on the same GHG inventory and transition plan.",
       },
       {
         q: "How much does a CDP advisory engagement at COzwei cost?",
@@ -497,30 +497,30 @@ export const content: Record<"de" | "en" | "pt", Content> = {
     whySectionLabel: "Why take part in the voluntary CDP climate questionnaire?",
     whySectionTitle: "Climate data that investors and buyers expect",
     whySectionIntro:
-      "More than 24, 000 companies worldwide disclose climate data through CDP, which makes the climate questionnaire the de-facto standard for external disclosure. More and more customers make it a precondition for entry into or staying in their supplier pool, and ESG ratings award additional points where a CDP rating exists.",
+      "In the 2025 reporting cycle around 22,100 companies disclosed their climate data through CDP, together with more than 1,000 cities, states and regions. The CDP climate questionnaire has thus established itself as the de-facto market standard for the external disclosure of climate- and sustainability-related data. Large customers increasingly require a CDP disclosure as a precondition for inclusion in or retention in their supplier pool, and established ESG ratings reward an existing CDP rating with additional points.",
     trustCards: [
       {
         title: "Supply chain requests",
         body:
-          "More than 280 large corporations request climate disclosure from their suppliers via the CDP Supply Chain module. Anyone who does not respond risks point deductions in supplier ratings or losing the contract.",
+          "More than 270 large purchasers, with combined procurement spending of around 6.4 trillion US dollars, request environmental disclosure from their suppliers through the CDP Supply Chain programme. A missing or incomplete response regularly leads to point deductions in supplier ratings and can put the supplier relationship itself at risk over the medium term.",
         tag: "Supply Chain · large-customer request",
       },
       {
         title: "Investor relations",
         body:
-          "Institutional investors managing over 130 trillion USD use CDP data for portfolio assessments. A robust climate score strengthens your position with banks, capital providers and rating agencies.",
+          "In the 2025 reporting cycle, 640 institutional investors with combined assets under management of around 127 trillion US dollars requested companies to disclose through CDP. A robust CDP disclosure and a credible climate score strengthen the company's position with banks, capital providers and rating agencies.",
         tag: "Capital markets · ESG rating",
       },
       {
         title: "CSRD synergy",
         body:
-          "The CDP climate module is aligned with ESRS E1, ISSB, TCFD and the GHG Protocol. A well-prepared CDP response simultaneously delivers most of the climate disclosures for your sustainability report.",
-        tag: "ESRS E1 · TCFD · ISSB",
+          "The CDP climate module is aligned with the relevant frameworks: ESRS E1 under the CSRD, IFRS S2 from the ISSB (which has fully absorbed the TCFD recommendations since the TCFD's disbandment in October 2023) and the GHG Protocol. A well-prepared CDP response therefore delivers most of the climate disclosures for the sustainability report and reduces duplicate work between reporting tracks.",
+        tag: "ESRS E1 · IFRS S2 · GHG Protocol",
       },
       {
         title: "Structured annual process",
         body:
-          "The CDP portal opens annually from mid-June to mid-September. We ensure a timely and complete submission, with clear milestones and a sanity check before filing.",
+          "The CDP response window opens each year in mid-June. The scoring deadline is in mid-September; unscored responses and amendments can be filed until the end of October. We steer your process along these deadlines, with clear milestones for data collection, module drafting and response check before the final submission.",
         tag: "Annual cycle · on-time delivery",
       },
     ],
@@ -554,7 +554,7 @@ export const content: Record<"de" | "en" | "pt", Content> = {
         number: 4,
         title: "Score evaluation & follow-up years",
         body:
-          "Once the score is published we evaluate your rating systematically, identify concrete levers for the following year and anchor CDP firmly in your climate-reporting cycle. On request we also support the submission of Science Based Targets as a central lever towards leadership level.",
+          "Once the score is published we evaluate your rating systematically, identify concrete levers for the following year and anchor CDP firmly in your climate-reporting cycle. On request we also support the development and validation of science-based climate targets per the SBTi standard as a central lever towards the leadership level in the CDP scoring.",
         tags: "Score analysis · Annual planning · SBTi preparation",
       },
     ],
@@ -573,7 +573,7 @@ export const content: Record<"de" | "en" | "pt", Content> = {
         title: "SME climate questionnaire",
         subtitle: "First participation for SMEs",
         audience:
-          "Small and medium-sized enterprises participating in CDP for the first time, typically with fewer than 500 employees, eligible for the simplified SME module.",
+          "Small and medium-sized enterprises that meet the official CDP SME thresholds (up to 1,000 employees and up to 250 million US dollars in annual revenue) and want to use the simplified SME module. First-time reporters and companies with manageable Scope 3 complexity benefit most from this path. If either criterion is exceeded, only the Full Corporate Questionnaire is available.",
         services: [
           "Filling in the SME Climate Change Questionnaire",
           "Preparation of existing climate data (CCF)",
@@ -614,7 +614,7 @@ export const content: Record<"de" | "en" | "pt", Content> = {
         title: "Optimisation of existing climate questionnaire",
         subtitle: "Score improvement for repeat reporters",
         audience:
-          "Companies with an existing CDP submission who want to improve their score in a targeted way (e.g. from C/D to B/A−) or set up the follow-up year process more efficiently.",
+          "Companies with an existing CDP submission that want to improve their score systematically over one or several follow-up cycles (a typical realistic increment is one to two levels per cycle, e.g. from D to C or from C to B) and want to set up the follow-up year process more efficiently.",
         services: [
           "Review of prior-year submission including scoring feedback",
           "Gap analysis against the current CDP scoring methodology",
@@ -745,7 +745,7 @@ export const content: Record<"de" | "en" | "pt", Content> = {
     faqs: [
       {
         q: "O que é o CDP Climate Change Questionnaire?",
-        a: "O CDP Climate Change Questionnaire é um questionário climático anual da organização sem fins lucrativos CDP (anteriormente Carbon Disclosure Project). As empresas divulgam nele, de forma padronizada, os seus dados climáticos, estratégia, riscos e metas de redução. Mais de 24.000 empresas em todo o mundo utilizam o questionário, a pedido de investidores, grandes clientes ou voluntariamente.",
+        a: "O CDP Climate Change Questionnaire é um questionário climático anual da organização sem fins lucrativos CDP (anteriormente Carbon Disclosure Project). As empresas divulgam nele, de forma padronizada, os seus dados climáticos, estratégia, riscos e metas de redução. No ciclo de relato de 2025, cerca de 22.100 empresas utilizaram o questionário, a pedido de investidores, grandes clientes ou voluntariamente.",
       },
       {
         q: "Quando abre e fecha o portal CDP todos os anos?",
@@ -753,7 +753,7 @@ export const content: Record<"de" | "en" | "pt", Content> = {
       },
       {
         q: "Qual o questionário CDP relevante para a minha empresa, SME ou Full?",
-        a: "Pequenas e médias empresas com menos de 500 colaboradores podem utilizar o SME Climate Change Questionnaire simplificado. Médias e grandes empresas, bem como empresas com um pedido concreto via módulo CDP Supply Chain, respondem ao Full Corporate Climate Change Questionnaire.",
+        a: "Pequenas e médias empresas que cumprem os limites oficiais CDP SME (até 1.000 colaboradores e até 250 milhões de dólares americanos de volume de negócios anual) podem utilizar o SME Climate Change Questionnaire simplificado. Médias e grandes empresas, bem como empresas com um pedido concreto via programa CDP Supply Chain, respondem ao Full Corporate Climate Change Questionnaire.",
       },
       {
         q: "Como funciona o scoring do CDP?",
@@ -761,11 +761,11 @@ export const content: Record<"de" | "en" | "pt", Content> = {
       },
       {
         q: "O que é o módulo CDP Supply Chain?",
-        a: "O módulo CDP Supply Chain é um programa através do qual mais de 280 grandes empresas pedem aos seus fornecedores a divulgação de dados climáticos. Fornecedores que não respondam arriscam-se a deduções de pontos nas avaliações de fornecedor ou à perda de contratos. O pedido chega tipicamente por e-mail com um link individual para o portal CDP.",
+        a: "O programa CDP Supply Chain é um esquema através do qual mais de 270 grandes compradores (volume de compras combinado de cerca de 6,4 biliões de dólares americanos) pedem aos seus fornecedores a divulgação de dados ambientais. Fornecedores que não respondam arriscam-se a deduções de pontos nas avaliações de fornecedor ou à perda de contratos. O pedido chega tipicamente por e-mail com um link individual para o portal CDP.",
       },
       {
         q: "Como se relacionam o CDP e a CSRD?",
-        a: "O módulo climático do CDP está metodologicamente alinhado com ESRS E1, ISSB, TCFD e o GHG Protocol. Uma resposta CDP bem preparada fornece, portanto, a maior parte das divulgações climáticas para o seu relatório de sustentabilidade CSRD. Pode evitar trabalho duplo quando ambos os relatos assentam no mesmo inventário GEE e plano de transição.",
+        a: "O módulo climático do CDP está metodologicamente alinhado com ESRS E1 (CSRD), IFRS S2 do ISSB e o GHG Protocol; as recomendações da TCFD foram integralmente integradas no IFRS S2 desde a dissolução da TCFD em outubro de 2023. Uma resposta CDP bem preparada fornece, portanto, a maior parte das divulgações climáticas para o seu relatório de sustentabilidade CSRD. Pode evitar trabalho duplo quando ambos os relatos assentam no mesmo inventário GEE e plano de transição.",
       },
       {
         q: "Quanto custa uma consultoria CDP da COzwei?",
@@ -795,30 +795,30 @@ export const content: Record<"de" | "en" | "pt", Content> = {
     whySectionLabel: "Por que participar no CDP voluntário para o clima?",
     whySectionTitle: "Dados climáticos que investidores e compradores exigem",
     whySectionIntro:
-      "Mais de 24.000 empresas em todo o mundo reportam os seus dados climáticos ao CDP, o que torna o questionário climático no padrão de facto para divulgação externa. Cada vez mais clientes fazem dele um requisito para entrar ou permanecer no seu pool de fornecedores, e os ratings ESG atribuem pontos adicionais quando existe um rating CDP.",
+      "No ciclo de relato de 2025, cerca de 22.100 empresas divulgaram os seus dados climáticos através do CDP, juntamente com mais de 1.000 cidades, estados e regiões. Desta forma, o questionário climático do CDP afirmou-se como o padrão de facto do mercado para a divulgação externa de dados climáticos e de sustentabilidade. Cada vez mais grandes clientes exigem uma divulgação CDP como pré-condição para entrar ou permanecer no seu pool de fornecedores, e os ratings ESG estabelecidos atribuem pontos adicionais quando existe um rating CDP.",
     trustCards: [
       {
         title: "Pedidos da cadeia de fornecimento",
         body:
-          "Mais de 280 grandes empresas pedem aos seus fornecedores a divulgação de dados climáticos via módulo CDP Supply Chain. Quem não responde arrisca dedução de pontos nas avaliações de fornecedores ou a perda do contrato.",
+          "Mais de 270 grandes compradores, com um volume de compras combinado de cerca de 6,4 biliões de dólares americanos, pedem aos seus fornecedores a divulgação de dados ambientais através do programa CDP Supply Chain. Uma resposta em falta ou incompleta conduz regularmente a deduções de pontos nas avaliações de fornecedores e pode, a médio prazo, comprometer a própria relação comercial.",
         tag: "Cadeia de fornecimento · pedido de grande cliente",
       },
       {
         title: "Relações com investidores",
         body:
-          "Investidores institucionais com mais de 130 biliões USD sob gestão usam dados CDP para avaliar carteiras. Um score climático sólido reforça a sua posição junto de bancos, financiadores e agências de rating.",
+          "No ciclo de relato de 2025, 640 investidores institucionais com ativos sob gestão combinados de cerca de 127 biliões de dólares americanos pediram a empresas a divulgação através do CDP. Uma divulgação CDP sólida e um score climático credível reforçam a posição da empresa junto de bancos, financiadores e agências de rating.",
         tag: "Mercado de capitais · rating ESG",
       },
       {
         title: "Sinergia com a CSRD",
         body:
-          "O módulo climático do CDP está alinhado com ESRS E1, ISSB, TCFD e o GHG Protocol. Uma resposta CDP bem preparada fornece simultaneamente a maior parte das divulgações climáticas para o seu relatório de sustentabilidade.",
-        tag: "ESRS E1 · TCFD · ISSB",
+          "O módulo climático do CDP está alinhado com os quadros relevantes: ESRS E1 no âmbito da CSRD, IFRS S2 do ISSB (no qual as recomendações da TCFD foram integralmente integradas desde a sua dissolução em outubro de 2023) e o GHG Protocol. Uma resposta CDP bem preparada fornece assim a maior parte das divulgações climáticas para o relatório de sustentabilidade e reduz o trabalho duplo entre os diferentes relatos.",
+        tag: "ESRS E1 · IFRS S2 · GHG Protocol",
       },
       {
         title: "Processo anual estruturado",
         body:
-          "O portal CDP abre anualmente entre meados de junho e meados de setembro. Garantimos uma submissão atempada e completa, com marcos claros e uma verificação de sanidade antes da entrega.",
+          "A janela de resposta do CDP abre anualmente em meados de junho. O prazo de scoring é em meados de setembro; até ao final de outubro podem ser submetidas respostas não scored e correções. Conduzimos o seu processo ao longo destes prazos, com marcos claros para recolha de dados, redação dos módulos e response check antes da submissão final.",
         tag: "Ciclo anual · cumprimento de prazos",
       },
     ],
@@ -852,7 +852,7 @@ export const content: Record<"de" | "en" | "pt", Content> = {
         number: 4,
         title: "Avaliação do score & anos seguintes",
         body:
-          "Após a publicação do score, avaliamos a sua classificação de forma sistemática, identificamos alavancas concretas para o ano seguinte e ancoramos o CDP no seu ciclo de relato climático. A pedido, apoiamos também a submissão de Science Based Targets como alavanca central para o nível Leadership.",
+          "Após a publicação do score, avaliamos a sua classificação de forma sistemática, identificamos alavancas concretas para o ano seguinte e ancoramos o CDP no seu ciclo de relato climático. A pedido, apoiamos também o desenvolvimento e a validação de metas climáticas baseadas na ciência segundo o padrão SBTi como alavanca central para o nível Leadership no scoring CDP.",
         tags: "Análise do score · Planeamento anual · Preparação SBTi",
       },
     ],
@@ -871,7 +871,7 @@ export const content: Record<"de" | "en" | "pt", Content> = {
         title: "Questionário SME Clima",
         subtitle: "Primeira participação para PME",
         audience:
-          "Pequenas e médias empresas com primeira participação no CDP, tipicamente com menos de 500 colaboradores, elegíveis para o módulo SME simplificado.",
+          "Pequenas e médias empresas que cumprem os limites oficiais CDP SME (até 1.000 colaboradores e até 250 milhões de dólares americanos de volume de negócios anual) e que pretendem utilizar o módulo SME simplificado. Beneficiam particularmente os primeiros participantes e empresas com complexidade Scope 3 limitada. Se qualquer um dos critérios for excedido, apenas o Full Corporate Questionnaire está disponível.",
         services: [
           "Preenchimento do SME Climate Change Questionnaire",
           "Preparação dos dados climáticos existentes (CCF)",
@@ -912,7 +912,7 @@ export const content: Record<"de" | "en" | "pt", Content> = {
         title: "Otimização de questionário Clima existente",
         subtitle: "Melhoria de score para reportadores recorrentes",
         audience:
-          "Empresas com uma submissão CDP existente que pretendem melhorar o seu score de forma direcionada (por exemplo, de C/D para B/A−) ou estruturar o processo do ano seguinte de forma mais eficiente.",
+          "Empresas com uma submissão CDP existente que pretendem melhorar o seu score de forma sistemática ao longo de um ou vários ciclos seguintes (uma ordem de grandeza realista típica é de um a dois níveis por ciclo, por exemplo de D para C ou de C para B) e estruturar o processo do ano seguinte de forma mais eficiente.",
         services: [
           "Revisão da submissão do ano anterior, incluindo feedback de scoring",
           "Análise de lacunas face à metodologia de scoring CDP atual",

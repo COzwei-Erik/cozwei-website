@@ -53,13 +53,13 @@ URL-Basis: https://www.cozwei.de/insights
 
 ## CDP-spezifisches Wissen
 
-CDP (ehemals Carbon Disclosure Project) ist eine globale Non-Profit-Organisation mit Sitz in London, die ein standardisiertes Offenlegungssystem für Klima-, Wasser- und Wald-Risiken betreibt. Über 24.000 Unternehmen reporten jährlich an CDP, über 280 Großkunden mit 130 Bio. USD Assets under Management nutzen CDP-Daten in Lieferketten- und Investitionsentscheidungen.
+CDP (ehemals Carbon Disclosure Project) ist eine globale Non-Profit-Organisation mit Sitz in London, die ein standardisiertes Offenlegungssystem für Klima-, Wasser- und Wald-Risiken betreibt. Im Reporting-Zyklus 2025 haben rund 22.100 Unternehmen über CDP offengelegt. Über 270 Großeinkäufer mit kombinierten Beschaffungsvolumina von rund 6,4 Billionen US-Dollar fordern Lieferanten über das CDP Supply Chain Programm zur Offenlegung umweltbezogener Daten auf. 640 institutionelle Investoren mit rund 127 Billionen US-Dollar Assets under Management nutzen CDP-Daten in Investitionsentscheidungen.
 
 Typischer CDP-Jahreszyklus:
-- Januar bis März: Vorbereitung, Gap-Analyse, Datenerhebung
-- April bis Mai: CDP-Portal öffnet, Fragebogen-Bearbeitung
-- Juni bis Juli: Einreichung der Antworten
-- August bis Oktober: CDP-Scoring durch unabhängige Partner
+- Januar bis Mai: Vorbereitung, Gap-Analyse, Datenerhebung, THG-Bilanzierung
+- Mitte Juni: CDP-Response-Fenster öffnet, Fragebogen-Bearbeitung
+- Mitte September: Scoring-Deadline (Stichtag für scorebare Submissions)
+- Bis Ende Oktober: Möglichkeit zur Nachreichung unscored Submissions und Korrekturen
 - November bis Dezember: Score-Veröffentlichung und Maßnahmenplanung für das Folgejahr
 
 CDP-Module relevant für die meisten Unternehmen: C1 Governance, C2 Risks and Opportunities, C3 Business Strategy, C4 Targets and Performance, C5 Emissions Methodology, C6 Emissions Data, C7 Emissions Breakdown, C8 Energy, C9 Additional Metrics, C10 Verification, C11 Carbon Pricing, C12 Engagement, C15 Biodiversity.
