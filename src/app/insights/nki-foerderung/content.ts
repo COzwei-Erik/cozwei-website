@@ -47,6 +47,11 @@ type Content = {
   ctaButtonLabel: string;
 
   authorBio: string;
+  authorSectionLabel: string;
+  authorSectionTitle: string;
+  authorRole: string;
+  authorCtaLabel: string;
+  authorCtaDesc: string;
 
   faqIntro: string;
   faqs: Faq[];
@@ -125,6 +130,11 @@ export const content: Record<"de" | "en" | "pt", Content> = {
 
     authorBio:
       "Marie Bruns ist Energieberaterin und betreut bei der COzwei GmbH neben Unternehmenskunden schwerpunktmäßig Klimaschutzkonzepte der NKI. Sie trägt als Umweltingenieurin der RWTH Aachen zudem maßgeblich zur Bewertung von Maßnahmen zur CO₂-Reduktion bei.",
+    authorSectionLabel: "Ihre Ansprechpartnerin",
+    authorSectionTitle: "Im Erstgespräch klären wir Ihre NKI-Ausgangslage",
+    authorRole: "Energieberaterin · NKI-Klimaschutzkonzepte",
+    authorCtaLabel: "30-Minuten-Erstgespräch anfragen",
+    authorCtaDesc: "Kostenlos und unverbindlich. Wir klären Ihren Förderanspruch, die drei NKI-Erfolgsfaktoren und mögliche nächste Schritte.",
 
     faqIntro: "Antworten auf die Fragen, die uns in NKI-Erstgesprächen am häufigsten gestellt werden.",
     faqs: [
@@ -228,6 +238,11 @@ export const content: Record<"de" | "en" | "pt", Content> = {
 
     authorBio:
       "Marie Bruns is an energy consultant at COzwei GmbH and, alongside corporate clients, focuses on NKI climate protection concepts. As an environmental engineer graduating from RWTH Aachen, she also contributes substantially to the assessment of CO₂ reduction measures.",
+    authorSectionLabel: "Your contact",
+    authorSectionTitle: "In a first call we clarify your NKI starting point",
+    authorRole: "Energy consultant · NKI climate protection concepts",
+    authorCtaLabel: "Request a 30-minute intro call",
+    authorCtaDesc: "Free of charge, no obligation. We clarify your funding eligibility, the three NKI success factors and the next steps.",
 
     faqIntro: "Answers to the questions we are most often asked in NKI intro calls.",
     faqs: [
@@ -331,6 +346,11 @@ export const content: Record<"de" | "en" | "pt", Content> = {
 
     authorBio:
       "Marie Bruns é consultora de energia e, na COzwei GmbH, acompanha, além de clientes empresariais, sobretudo conceitos NKI de proteção climática. Como engenheira ambiental formada na RWTH Aachen, contribui decisivamente para a avaliação de medidas de redução de CO₂.",
+    authorSectionLabel: "A sua interlocutora",
+    authorSectionTitle: "Numa primeira conversa esclarecemos a sua situação inicial NKI",
+    authorRole: "Consultora de energia · conceitos NKI de proteção climática",
+    authorCtaLabel: "Solicitar conversa inicial de 30 minutos",
+    authorCtaDesc: "Gratuito e sem compromisso. Esclarecemos a sua elegibilidade, os três fatores de sucesso NKI e os próximos passos.",
 
     faqIntro: "Respostas às perguntas que mais nos colocam em conversas iniciais NKI.",
     faqs: [
