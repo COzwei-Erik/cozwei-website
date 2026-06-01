@@ -4,12 +4,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { useLanguage, translations } from "../../LanguageContext";
 import { StatCallout, PullQuote } from "../../components/InsightCallouts";
-import { OUTLOOK_BOOKING_URL } from "../../links";
 import { trackEvent, Events } from "../../analytics";
 import { content } from "./content";
 
-// Eriks Outlook-Kalender für 30-Min-Erstgespräche zur Verlags-Dekarbonisierung.
-const ERIK_BOOKING_URL = OUTLOOK_BOOKING_URL;
+// Eriks Microsoft-Bookings-Link für 30-Min-Erstgespräche zur Verlags-Dekarbonisierung.
+// Bewusst lokal überschrieben (nicht aus links.ts), damit CCF-Blog und Verifizierungsseite
+// weiterhin auf der zentralen OUTLOOK_BOOKING_URL bleiben.
+const ERIK_BOOKING_URL =
+  "https://bookings.cloud.microsoft/bookwithme/user/4e00978e7e7f42e38133622070d543b9%40cozwei.de/meetingtype/qU9M6O_eDUCzjh0p3QEG0g2?anonymous&ismsaljsauthenabled";
 
 export default function BuchverlageDekarbonisierung() {
   const { language } = useLanguage();
