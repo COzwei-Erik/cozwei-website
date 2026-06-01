@@ -440,6 +440,15 @@ export const translations = {
     // ... add more keys as needed
     klimaHeroTitle: "Jetzt integriertes Klimakonzept erstellen",
     klimaHeroDesc: "Wir unterstützen Institutionen ihr von der nationalen Klimaschutzinitiative (NKI) gefördertes Klimaschutzkonzept zu erstellen und realistische Klimaziele zu erreichen.",
+    klimaHeroPrimaryCta: "30-Minuten-Erstgespräch buchen",
+    klimaHeroSecondaryCta: "Unser Vorgehen",
+    klimaAuthorLabel: "Ihre Ansprechpartnerin",
+    klimaAuthorTitle: "Im Erstgespräch klären wir Ihre NKI-Ausgangslage",
+    klimaAuthorName: "Marie Bruns",
+    klimaAuthorRole: "Energieberaterin · NKI-Klimaschutzkonzepte",
+    klimaAuthorBio: "Marie Bruns ist Energieberaterin und betreut bei der COzwei GmbH neben Unternehmenskunden schwerpunktmäßig Klimaschutzkonzepte der NKI. Sie trägt als Umweltingenieurin der RWTH Aachen zudem maßgeblich zur Bewertung von Maßnahmen zur CO₂-Reduktion bei.",
+    klimaAuthorCtaLabel: "30-Minuten-Erstgespräch buchen",
+    klimaAuthorCtaDesc: "Kostenlos und unverbindlich. Wir klären Ihren Förderanspruch, die drei NKI-Erfolgsfaktoren und mögliche nächste Schritte.",
     klimaTags: [
       "Bildungseinrichtungen",
       "Gemeinnützige Vereine",
@@ -994,6 +1003,15 @@ export const translations = {
     // ... add more keys as needed
     klimaHeroTitle: "Create an integrated climate concept now",
     klimaHeroDesc: "We support institutions in creating their climate protection concept funded by the National Climate Initiative (NKI) and achieving realistic climate goals.",
+    klimaHeroPrimaryCta: "Book a 30-minute intro call",
+    klimaHeroSecondaryCta: "Our approach",
+    klimaAuthorLabel: "Your contact",
+    klimaAuthorTitle: "In a first call we clarify your NKI starting point",
+    klimaAuthorName: "Marie Bruns",
+    klimaAuthorRole: "Energy consultant · NKI climate protection concepts",
+    klimaAuthorBio: "Marie Bruns is an energy consultant at COzwei GmbH and, alongside corporate clients, focuses on NKI climate protection concepts. As an environmental engineer graduating from RWTH Aachen, she also contributes substantially to the assessment of CO₂ reduction measures.",
+    klimaAuthorCtaLabel: "Book a 30-minute intro call",
+    klimaAuthorCtaDesc: "Free of charge, no obligation. We clarify your funding eligibility, the three NKI success factors and the next steps.",
     klimaTags: [
       "Educational institutions",
       "Non-profit associations",
@@ -1549,6 +1567,15 @@ export const translations = {
     // ... add more keys as needed
     klimaHeroTitle: "Elabore agora um conceito climático integrado",
     klimaHeroDesc: "Apoiamos instituições na elaboração do seu conceito de proteção climática financiado pela Iniciativa Nacional de Proteção Climática (NKI) e na consecução de metas climáticas realistas.",
+    klimaHeroPrimaryCta: "Agendar conversa inicial de 30 minutos",
+    klimaHeroSecondaryCta: "A nossa abordagem",
+    klimaAuthorLabel: "A sua interlocutora",
+    klimaAuthorTitle: "Numa primeira conversa esclarecemos a sua situação inicial NKI",
+    klimaAuthorName: "Marie Bruns",
+    klimaAuthorRole: "Consultora de energia · conceitos NKI de proteção climática",
+    klimaAuthorBio: "Marie Bruns é consultora de energia e, na COzwei GmbH, acompanha, além de clientes empresariais, sobretudo conceitos NKI de proteção climática. Como engenheira ambiental formada na RWTH Aachen, contribui decisivamente para a avaliação de medidas de redução de CO₂.",
+    klimaAuthorCtaLabel: "Agendar conversa inicial de 30 minutos",
+    klimaAuthorCtaDesc: "Gratuito e sem compromisso. Esclarecemos a sua elegibilidade, os três fatores de sucesso NKI e os próximos passos.",
     klimaTags: [
       "Instituições de ensino",
       "Associações sem fins lucrativos",

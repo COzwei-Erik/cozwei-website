@@ -2,7 +2,11 @@
 import Header from "../Header";
 import Image from "next/image";
 import { useLanguage, translations } from "../LanguageContext";
-import ContactForm from "../components/ContactForm";
+import { trackEvent, Events } from "../analytics";
+
+// Maries Microsoft-Bookings-Link für 30-Min-Erstgespräche zu NKI-Klimaschutzkonzepten.
+const MARIE_BOOKING_URL =
+  "https://bookings.cloud.microsoft/bookwithme/user/8e5fcd9b00414e37ac068ba0cb79aa5e%40cozwei.de/meetingtype/e5_NXh7LX0C0o52_Nt2ChA2?anonymous&ismsaljsauthenabled";
 
 export default function Klimaschutzkonzepte() {
   const { language } = useLanguage();
@@ -26,27 +30,40 @@ export default function Klimaschutzkonzepte() {
         <div className="relative z-20 flex flex-col items-center justify-center w-full h-full py-16">
           <div className="bg-white/80 rounded-2xl px-8 py-10 max-w-2xl mx-auto flex flex-col items-center border border-[#81B29A]/20 backdrop-blur-sm">
             <h1 className="text-4xl sm:text-5xl font-extrabold mb-4 leading-tight" style={{ color: '#3D405B' }}>{t.klimaHeroTitle}</h1>
-            <p className="text-lg sm:text-xl max-w-2xl mb-6" style={{ color: '#3D405B' }}>
+            <p className="text-lg sm:text-xl max-w-2xl mb-8" style={{ color: '#3D405B' }}>
               {t.klimaHeroDesc}
             </p>
-            <button
-              type="button"
-              className="inline-block px-8 py-4 rounded-lg font-bold shadow-lg transition mb-2 text-xl"
-              style={{ backgroundColor: '#81B29A', color: 'white', boxShadow: '0 4px 24px 0 rgba(61, 64, 91, 0.25)' }}
-              onMouseOver={e => e.currentTarget.style.backgroundColor = '#6fa18a'}
-              onMouseOut={e => e.currentTarget.style.backgroundColor = '#81B29A'}
-              onClick={() => {
-                const target = document.getElementById('steps');
-                if (target) {
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <a
+                href={MARIE_BOOKING_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => trackEvent(Events.BookingClick, { location: "klima_hero" })}
+                className="inline-block px-8 py-4 rounded-lg font-bold transition text-lg"
+                style={{ backgroundColor: '#81B29A', color: 'white', boxShadow: '0 4px 24px 0 rgba(61, 64, 91, 0.25)' }}
+                onMouseOver={e => (e.currentTarget.style.backgroundColor = '#6fa18a')}
+                onMouseOut={e => (e.currentTarget.style.backgroundColor = '#81B29A')}
+              >
+                {t.klimaHeroPrimaryCta}
+              </a>
+              <button
+                type="button"
+                onClick={() => {
+                  const target = document.getElementById('steps');
+                  if (!target) return;
                   const header = document.querySelector('nav');
                   const headerHeight = header ? (header as HTMLElement).offsetHeight : 80;
                   const y = target.getBoundingClientRect().top + window.scrollY - headerHeight - 16;
                   window.scrollTo({ top: y, behavior: 'smooth' });
-                }
-              }}
-            >
-              {t.learnMore}
-            </button>
+                }}
+                className="inline-block px-8 py-4 rounded-lg font-bold transition text-lg border-2 border-[#81B29A] bg-white"
+                style={{ color: '#3D405B' }}
+                onMouseOver={e => { e.currentTarget.style.backgroundColor = '#81B29A'; e.currentTarget.style.color = 'white'; }}
+                onMouseOut={e => { e.currentTarget.style.backgroundColor = 'white'; e.currentTarget.style.color = '#3D405B'; }}
+              >
+                {t.klimaHeroSecondaryCta}
+              </button>
+            </div>
           </div>
         </div>
       </section>
@@ -111,9 +128,51 @@ export default function Klimaschutzkonzepte() {
             </div>
           </div>
         </section>
-        {/* Contact Form Section */}
-        <ContactForm />
       </main>
+
+      {/* Ihre Ansprechpartnerin — Marie Bruns (ersetzt die frühere ContactForm) */}
+      <section id="kontakt" className="w-full py-16 bg-white">
+        <div className="max-w-5xl mx-auto px-4">
+          <div className="text-center mb-10">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] mb-3" style={{ color: "#81B29A" }}>
+              {t.klimaAuthorLabel}
+            </p>
+            <h2 className="text-3xl sm:text-4xl font-extrabold" style={{ color: "#3D405B" }}>
+              {t.klimaAuthorTitle}
+            </h2>
+          </div>
+
+          <div className="rounded-3xl border border-[#81B29A]/30 bg-[#81B29A]/5 p-8 sm:p-10 flex flex-col md:flex-row items-start gap-8">
+            <div className="relative w-32 h-32 sm:w-40 sm:h-40 flex-shrink-0 rounded-full overflow-hidden border-2 border-[#81B29A]/30 mx-auto md:mx-0">
+              <Image
+                src="/Pictures/Marie_Bruns.png"
+                alt={`${t.klimaAuthorName}, ${t.klimaAuthorRole} bei COzwei`}
+                fill
+                sizes="160px"
+                style={{ objectFit: "cover" }}
+              />
+            </div>
+            <div className="flex-1">
+              <h3 className="text-2xl font-extrabold mb-1" style={{ color: "#3D405B" }}>{t.klimaAuthorName}</h3>
+              <p className="text-sm font-semibold mb-4" style={{ color: "#81B29A" }}>{t.klimaAuthorRole}</p>
+              <p className="text-base leading-relaxed mb-6" style={{ color: "#23243a" }}>{t.klimaAuthorBio}</p>
+              <a
+                href={MARIE_BOOKING_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => trackEvent(Events.BookingClick, { location: "klima_author" })}
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-bold transition text-base"
+                style={{ backgroundColor: "#81B29A", color: "white", boxShadow: "0 4px 24px 0 rgba(61, 64, 91, 0.25)" }}
+                onMouseOver={(e) => (e.currentTarget.style.backgroundColor = "#6fa18a")}
+                onMouseOut={(e) => (e.currentTarget.style.backgroundColor = "#81B29A")}
+              >
+                {t.klimaAuthorCtaLabel} →
+              </a>
+              <p className="text-sm mt-3 italic" style={{ color: "#23243a", opacity: 0.7 }}>{t.klimaAuthorCtaDesc}</p>
+            </div>
+          </div>
+        </div>
+      </section>
       <footer className="bg-gray-100 py-8 px-4 mt-8 text-center text-sm text-gray-600">
         <div className="mb-2">COzwei GmbH &bull; Gutenbergstraße 16A, 70176 Stuttgart &bull; Telefon: +49 711 12171034 &bull; E-Mail: mail@cozwei.de</div>
         <div className="flex justify-center gap-4 mb-2">
