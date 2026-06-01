@@ -20,8 +20,8 @@ export default function BuchverlageDekarbonisierung() {
       <section className="relative flex flex-col items-center justify-center min-h-[70vh] w-full text-center overflow-hidden">
         <div className="absolute inset-0 w-full h-full z-0">
           <Image
-            src="/Pictures/pexels-marcin-jozwiak-199600-3641377.jpg"
-            alt="Industrieanlage Papierproduktion"
+            src="/Pictures/buchverlage-dekarbonisierung-hero.png"
+            alt="Geschwungene Bücherregale in einer modernen Bibliothek, Symbolbild für Dekarbonisierung der Buch- und Verlagsbranche"
             fill
             style={{ objectFit: "cover", objectPosition: "center" }}
             className="opacity-90"

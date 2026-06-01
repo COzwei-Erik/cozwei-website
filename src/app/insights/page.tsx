@@ -28,8 +28,8 @@ const POSTS: Post[] = [
   },
   {
     slug: "buchverlage-dekarbonisierung",
-    image: "/Pictures/pexels-marcin-jozwiak-199600-3641377.jpg",
-    imageAlt: "Industrieanlage",
+    image: "/Pictures/buchverlage-dekarbonisierung-hero.png",
+    imageAlt: "Geschwungene Bücherregale in einer modernen Bibliothek, Symbolbild für Dekarbonisierung der Buch- und Verlagsbranche",
     dateKey: "insightsPost1Date",
     categoryKey: "insightsPost1Category",
     titleKey: "insightsPost1Title",
