@@ -63,27 +63,14 @@ export default function CdpClient() {
         </div>
         <div className="relative z-20 flex flex-col items-center justify-center w-full h-full py-16 px-4">
           <div className="bg-white/85 rounded-2xl shadow-xl px-8 py-10 max-w-3xl mx-auto border border-white/60 backdrop-blur-sm">
-            {/* Breadcrumb (sichtbar, ergänzend zum BreadcrumbList-JSON-LD) */}
-            <nav aria-label="Breadcrumb" className="mb-4 text-xs">
-              <ol className="flex items-center justify-center gap-2 flex-wrap" style={{ color: "#3D405B", opacity: 0.7 }}>
-                <li><Link href="/" className="hover:underline">{c.breadcrumbHome}</Link></li>
-                <li aria-hidden>›</li>
-                <li><Link href="/nachhaltigkeit" className="hover:underline">{c.breadcrumbSolutions}</Link></li>
-                <li aria-hidden>›</li>
-                <li aria-current="page" className="font-semibold" style={{ color: "#3D405B" }}>{c.breadcrumbCurrent}</li>
-              </ol>
-            </nav>
             <p className="text-xs font-semibold uppercase tracking-[0.2em] mb-4" style={{ color: "#81B29A" }}>
               {c.heroEyebrow}
             </p>
             <h1 className="text-4xl sm:text-5xl font-extrabold mb-4 leading-tight" style={{ color: "#3D405B" }}>
               {c.heroTitle}
             </h1>
-            <p className="text-lg sm:text-xl max-w-2xl mx-auto mb-6" style={{ color: "#3D405B" }}>
+            <p className="text-lg sm:text-xl max-w-2xl mx-auto mb-8" style={{ color: "#3D405B" }}>
               {c.heroSubtitle}
-            </p>
-            <p className="text-xs mb-8" style={{ color: "#3D405B", opacity: 0.6 }}>
-              {c.lastUpdatedLabel}: {c.lastUpdatedDate}
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <a
