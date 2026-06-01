@@ -32,6 +32,11 @@ type Content = {
   ctaButtonLabel: string;
 
   authorBio: string;
+  authorSectionLabel: string;
+  authorSectionTitle: string;
+  authorRole: string;
+  authorCtaLabel: string;
+  authorCtaDesc: string;
 
   faqIntro: string;
   faqs: Faq[];
@@ -87,6 +92,11 @@ export const content: Record<"de" | "en" | "pt", Content> = {
 
     authorBio:
       "Erik Jakob ist einer der beiden Geschäftsführer der COzwei GmbH, einer auf Klimaschutzthemen spezialisierten Unternehmensberatung. Er begleitet Buchverlage seit mehreren Jahren bei der Erstellung von Klimabilanzen und der konkreten Umsetzung von Dekarbonisierungs-Maßnahmen.",
+    authorSectionLabel: "Ihr Ansprechpartner",
+    authorSectionTitle: "Im Erstgespräch klären wir Ihren Dekarbonisierungspfad",
+    authorRole: "Geschäftsführer · Dekarbonisierung Buch- und Verlagsbranche",
+    authorCtaLabel: "30-Minuten-Erstgespräch buchen",
+    authorCtaDesc: "Kostenlos und unverbindlich. Wir ordnen Ihre Hotspots ein, skizzieren mögliche Reduktionspfade und klären die sinnvollen nächsten Schritte.",
 
     faqIntro: "Antworten auf die Fragen, die uns in Verlagsgesprächen am häufigsten gestellt werden.",
     faqs: [
@@ -159,6 +169,11 @@ export const content: Record<"de" | "en" | "pt", Content> = {
 
     authorBio:
       "Erik Jakob is one of the two managing directors of COzwei GmbH, a consultancy specialising in climate-protection topics. For several years he has guided book publishers in building climate inventories and implementing concrete decarbonization measures.",
+    authorSectionLabel: "Your contact",
+    authorSectionTitle: "In a first call we clarify your decarbonisation path",
+    authorRole: "Managing Director · decarbonisation of the book and publishing industry",
+    authorCtaLabel: "Book a 30-minute intro call",
+    authorCtaDesc: "Free of charge, no obligation. We rank your hotspots, sketch out feasible reduction pathways and outline the sensible next steps.",
 
     faqIntro: "Answers to the questions we are most often asked in publisher conversations.",
     faqs: [
@@ -231,6 +246,11 @@ export const content: Record<"de" | "en" | "pt", Content> = {
 
     authorBio:
       "Erik Jakob é um dos dois administradores da COzwei GmbH, uma consultoria especializada em proteção climática. Há vários anos acompanha editoras na elaboração de inventários climáticos e na implementação concreta de medidas de descarbonização.",
+    authorSectionLabel: "O seu interlocutor",
+    authorSectionTitle: "Numa primeira conversa esclarecemos o seu caminho de descarbonização",
+    authorRole: "Administrador · descarbonização da indústria do livro e da edição",
+    authorCtaLabel: "Agendar conversa inicial de 30 minutos",
+    authorCtaDesc: "Gratuito e sem compromisso. Ordenamos os seus hotspots, esboçamos trajetórias de redução viáveis e definimos os próximos passos razoáveis.",
 
     faqIntro: "Respostas às perguntas que mais nos colocam em conversas com editoras.",
     faqs: [
