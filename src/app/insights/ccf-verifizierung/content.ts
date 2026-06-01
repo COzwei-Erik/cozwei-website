@@ -46,6 +46,11 @@ type Content = {
   ctaButtonLabel: string;
 
   authorBio: string;
+  authorSectionLabel: string;
+  authorSectionTitle: string;
+  authorRole: string;
+  authorCtaLabel: string;
+  authorCtaDesc: string;
 
   faqIntro: string;
   faqs: Faq[];
@@ -167,6 +172,11 @@ export const content: Record<"de" | "en" | "pt", Content> = {
 
     authorBio:
       "Erik Jakob ist Geschäftsführer der COzwei GmbH, einer auf Klimaschutzthemen spezialisierten Nachhaltigkeitsberatung. Er hat in den letzten sieben Jahren Treibhausgasbilanzen für DAX-Konzerne, Mittelständler, Kleinstunternehmen und kommunale Einrichtungen in ganz Europa erstellt oder verifiziert.",
+    authorSectionLabel: "Ihr Ansprechpartner",
+    authorSectionTitle: "Im Erstgespräch klären wir Ihre CCF-Ausgangslage",
+    authorRole: "Geschäftsführer · CCF-Verifizierung nach ISO 14064-3",
+    authorCtaLabel: "30-Minuten-Erstgespräch buchen",
+    authorCtaDesc: "Kostenlos und unverbindlich. Wir prüfen Ihre Bilanz auf typische Schwachstellen und skizzieren den nächsten sinnvollen Schritt, Verifizierung oder gezielte Vor-Arbeit.",
 
     faqIntro: "Antworten auf die Fragen, die uns in Erstgesprächen am häufigsten gestellt werden.",
     faqs: [
@@ -317,6 +327,11 @@ export const content: Record<"de" | "en" | "pt", Content> = {
 
     authorBio:
       "Erik Jakob is managing director of COzwei GmbH, a sustainability consultancy specialised in climate protection topics. Over the past seven years, he has built or verified greenhouse gas inventories for DAX corporations, mid-sized companies, micro-businesses and municipal institutions across Europe.",
+    authorSectionLabel: "Your contact",
+    authorSectionTitle: "In a first call we clarify your CCF starting point",
+    authorRole: "Managing Director · CCF verification per ISO 14064-3",
+    authorCtaLabel: "Book a 30-minute intro call",
+    authorCtaDesc: "Free of charge, no obligation. We screen your inventory for the typical weak spots and outline the sensible next step — verification or targeted preparation.",
 
     faqIntro: "Answers to the questions we are most often asked in intro calls.",
     faqs: [
@@ -467,6 +482,11 @@ export const content: Record<"de" | "en" | "pt", Content> = {
 
     authorBio:
       "Erik Jakob é administrador da COzwei GmbH, uma consultoria de sustentabilidade especializada em temas de proteção climática. Nos últimos sete anos elaborou ou verificou inventários de gases de efeito estufa para empresas do DAX, médias empresas, microempresas e instituições municipais em toda a Europa.",
+    authorSectionLabel: "O seu interlocutor",
+    authorSectionTitle: "Numa primeira conversa esclarecemos a sua situação inicial CCF",
+    authorRole: "Administrador · verificação CCF segundo a ISO 14064-3",
+    authorCtaLabel: "Agendar conversa inicial de 30 minutos",
+    authorCtaDesc: "Gratuito e sem compromisso. Analisamos o seu inventário em busca dos pontos fracos típicos e definimos o próximo passo razoável — verificação ou preparação direcionada.",
 
     faqIntro: "Respostas às perguntas que mais nos colocam em conversas iniciais.",
     faqs: [

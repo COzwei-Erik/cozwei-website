@@ -3,9 +3,13 @@ import Header from "../../Header";
 import Image from "next/image";
 import Link from "next/link";
 import { useLanguage, translations } from "../../LanguageContext";
-import ContactForm from "../../components/ContactForm";
-import { StatCallout, PullQuote, PatternBox, CtaBox } from "../../components/InsightCallouts";
+import { StatCallout, PullQuote, PatternBox } from "../../components/InsightCallouts";
+import { OUTLOOK_BOOKING_URL } from "../../links";
+import { trackEvent, Events } from "../../analytics";
 import { content } from "./content";
+
+// Eriks Outlook-Kalender für 30-Min-Erstgespräche zur CCF-Verifizierung.
+const ERIK_BOOKING_URL = OUTLOOK_BOOKING_URL;
 
 export default function CcfVerifizierung() {
   const { language } = useLanguage();
@@ -104,29 +108,47 @@ export default function CcfVerifizierung() {
           <h2 className="text-2xl sm:text-3xl font-extrabold mt-12 mb-4" style={{ color: "#3D405B" }}>{c.section7Title}</h2>
           <p className="text-lg leading-relaxed mb-6" style={{ color: "#23243a" }}>{c.section7P}</p>
 
-          <CtaBox eyebrow={c.ctaEyebrow} title={c.ctaTitle} buttonLabel={c.ctaButtonLabel} trackingLocation="blog_ccf">
-            {c.ctaBody}
-          </CtaBox>
+          {/* Ihr Ansprechpartner — Erik Jakob (ersetzt die frühere CtaBox an dieser Stelle und die alte ContactForm am Seitenende) */}
+          <section id="kontakt" className="mt-16 mb-12">
+            <div className="text-center mb-8">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] mb-3" style={{ color: "#81B29A" }}>
+                {c.authorSectionLabel}
+              </p>
+              <h2 className="text-2xl sm:text-3xl font-extrabold" style={{ color: "#3D405B" }}>
+                {c.authorSectionTitle}
+              </h2>
+            </div>
 
-          {/* Author Box */}
-          <aside className="mt-16 p-6 sm:p-8 rounded-2xl border border-[#81B29A]/30 bg-[#81B29A]/5 flex flex-col sm:flex-row items-start gap-6">
-            <div className="relative w-24 h-24 flex-shrink-0 rounded-full overflow-hidden border-2 border-[#81B29A]/30">
-              <Image
-                src="/Pictures/Erik.png"
-                alt="Erik Jakob"
-                fill
-                sizes="96px"
-                style={{ objectFit: "cover" }}
-              />
-            </div>
-            <div>
-              <div className="text-xs font-semibold uppercase tracking-wider mb-2" style={{ color: "#81B29A" }}>
-                {t.insightsAuthorBoxLabel}
+            <div className="rounded-3xl border border-[#81B29A]/30 bg-[#81B29A]/5 p-6 sm:p-8 flex flex-col md:flex-row items-start gap-6">
+              <div className="relative w-28 h-28 sm:w-36 sm:h-36 flex-shrink-0 rounded-full overflow-hidden border-2 border-[#81B29A]/30 mx-auto md:mx-0">
+                <Image
+                  src="/Pictures/Erik.png"
+                  alt={`Erik Jakob, ${c.authorRole} bei COzwei`}
+                  fill
+                  sizes="144px"
+                  style={{ objectFit: "cover" }}
+                />
               </div>
-              <h3 className="text-xl font-extrabold mb-2" style={{ color: "#3D405B" }}>Erik Jakob</h3>
-              <p className="text-base leading-relaxed" style={{ color: "#23243a" }}>{c.authorBio}</p>
+              <div className="flex-1">
+                <h3 className="text-xl sm:text-2xl font-extrabold mb-1" style={{ color: "#3D405B" }}>Erik Jakob</h3>
+                <p className="text-sm font-semibold mb-3" style={{ color: "#81B29A" }}>{c.authorRole}</p>
+                <p className="text-base leading-relaxed mb-5" style={{ color: "#23243a" }}>{c.authorBio}</p>
+                <a
+                  href={ERIK_BOOKING_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => trackEvent(Events.BookingClick, { location: "ccf_author" })}
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-bold transition text-base"
+                  style={{ backgroundColor: "#81B29A", color: "white", boxShadow: "0 4px 24px 0 rgba(61, 64, 91, 0.25)" }}
+                  onMouseOver={(e) => (e.currentTarget.style.backgroundColor = "#6fa18a")}
+                  onMouseOut={(e) => (e.currentTarget.style.backgroundColor = "#81B29A")}
+                >
+                  {c.authorCtaLabel} →
+                </a>
+                <p className="text-sm mt-3 italic" style={{ color: "#23243a", opacity: 0.7 }}>{c.authorCtaDesc}</p>
+              </div>
             </div>
-          </aside>
+          </section>
 
           {/* FAQ */}
           <h2 className="text-2xl sm:text-3xl font-extrabold mt-16 mb-2" style={{ color: "#3D405B" }}>{t.insightsFaqTitle}</h2>
@@ -148,8 +170,6 @@ export default function CcfVerifizierung() {
           <p className="text-sm italic mt-12" style={{ color: "#23243a", opacity: 0.7 }}>{c.disclaimer}</p>
         </article>
       </main>
-
-      <ContactForm />
 
       <footer className="bg-gray-100 py-8 px-4 mt-8 text-center text-sm text-gray-600">
         <div className="mb-2">COzwei GmbH &bull; Gutenbergstraße 16A, 70176 Stuttgart &bull; Telefon: +49 711 12171034 &bull; E-Mail: mail@cozwei.de</div>
