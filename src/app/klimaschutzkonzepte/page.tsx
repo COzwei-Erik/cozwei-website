@@ -173,6 +173,38 @@ export default function Klimaschutzkonzepte() {
           </div>
         </div>
       </section>
+
+      {/* Insights cross-link — Verweis auf den NKI-Blogbeitrag */}
+      <section className="w-full pb-16 bg-white">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="rounded-3xl border border-[#81B29A]/30 bg-[#81B29A]/10 p-8 md:p-10">
+            <div className="flex flex-col items-start gap-6 md:flex-row md:items-center md:justify-between">
+              <div className="max-w-2xl">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] mb-3" style={{ color: "#81B29A" }}>
+                  {t.klimaInsightsEyebrow}
+                </p>
+                <h3 className="text-2xl sm:text-3xl font-extrabold leading-snug mb-3" style={{ color: "#3D405B" }}>
+                  {t.klimaInsightsTitle}
+                </h3>
+                <p className="text-sm sm:text-base leading-relaxed" style={{ color: "#23243a" }}>
+                  {t.klimaInsightsDesc}
+                </p>
+              </div>
+              <a
+                href="/insights/nki-foerderung"
+                className="inline-flex flex-shrink-0 items-center gap-2 rounded-lg border-2 border-[#81B29A] bg-white px-6 py-3 text-sm font-bold transition"
+                style={{ color: "#3D405B" }}
+                onMouseOver={(e) => { e.currentTarget.style.backgroundColor = "#81B29A"; e.currentTarget.style.color = "white"; }}
+                onMouseOut={(e) => { e.currentTarget.style.backgroundColor = "white"; e.currentTarget.style.color = "#3D405B"; }}
+              >
+                {t.klimaInsightsButton}
+                <span aria-hidden>→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <footer className="bg-gray-100 py-8 px-4 mt-8 text-center text-sm text-gray-600">
         <div className="mb-2">COzwei GmbH &bull; Gutenbergstraße 16A, 70176 Stuttgart &bull; Telefon: +49 711 12171034 &bull; E-Mail: mail@cozwei.de</div>
         <div className="flex justify-center gap-4 mb-2">

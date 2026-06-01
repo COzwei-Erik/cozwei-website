@@ -449,6 +449,10 @@ export const translations = {
     klimaAuthorBio: "Marie Bruns ist Energieberaterin und betreut bei der COzwei GmbH neben Unternehmenskunden schwerpunktmäßig Klimaschutzkonzepte der NKI. Sie trägt als Umweltingenieurin der RWTH Aachen zudem maßgeblich zur Bewertung von Maßnahmen zur CO₂-Reduktion bei.",
     klimaAuthorCtaLabel: "30-Minuten-Erstgespräch buchen",
     klimaAuthorCtaDesc: "Kostenlos und unverbindlich. Wir klären Ihren Förderanspruch, die drei NKI-Erfolgsfaktoren und mögliche nächste Schritte.",
+    klimaInsightsEyebrow: "Industry Insights · NKI-Förderpraxis",
+    klimaInsightsTitle: "Was über die NKI-Förderpraxis wirklich entscheidet.",
+    klimaInsightsDesc: "Aus über 30 begleiteten Klimaschutzkonzepten: die drei Erfolgsfaktoren, die im Antrag den Unterschied machen, und wo Erstantragsteller am häufigsten Punkte liegen lassen.",
+    klimaInsightsButton: "Industry Insights lesen",
     klimaTags: [
       "Bildungseinrichtungen",
       "Gemeinnützige Vereine",
@@ -1012,6 +1016,10 @@ export const translations = {
     klimaAuthorBio: "Marie Bruns is an energy consultant at COzwei GmbH and, alongside corporate clients, focuses on NKI climate protection concepts. As an environmental engineer graduating from RWTH Aachen, she also contributes substantially to the assessment of CO₂ reduction measures.",
     klimaAuthorCtaLabel: "Book a 30-minute intro call",
     klimaAuthorCtaDesc: "Free of charge, no obligation. We clarify your funding eligibility, the three NKI success factors and the next steps.",
+    klimaInsightsEyebrow: "Industry Insights · NKI funding practice",
+    klimaInsightsTitle: "What really decides NKI funding success.",
+    klimaInsightsDesc: "Lessons from more than 30 supported climate-protection concepts: the three success factors that make a difference in the application, and where first-time applicants most often lose points.",
+    klimaInsightsButton: "Read Industry Insights",
     klimaTags: [
       "Educational institutions",
       "Non-profit associations",
@@ -1576,6 +1584,10 @@ export const translations = {
     klimaAuthorBio: "Marie Bruns é consultora de energia e, na COzwei GmbH, acompanha, além de clientes empresariais, sobretudo conceitos NKI de proteção climática. Como engenheira ambiental formada na RWTH Aachen, contribui decisivamente para a avaliação de medidas de redução de CO₂.",
     klimaAuthorCtaLabel: "Agendar conversa inicial de 30 minutos",
     klimaAuthorCtaDesc: "Gratuito e sem compromisso. Esclarecemos a sua elegibilidade, os três fatores de sucesso NKI e os próximos passos.",
+    klimaInsightsEyebrow: "Industry Insights · prática de apoios NKI",
+    klimaInsightsTitle: "O que realmente decide o sucesso do apoio NKI.",
+    klimaInsightsDesc: "Lições de mais de 30 conceitos de proteção climática acompanhados: os três fatores de sucesso que fazem a diferença na candidatura e onde os primeiros candidatos perdem pontos com mais frequência.",
+    klimaInsightsButton: "Ler Industry Insights",
     klimaTags: [
       "Instituições de ensino",
       "Associações sem fins lucrativos",
