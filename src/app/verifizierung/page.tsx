@@ -221,6 +221,50 @@ export default function Verifizierung() {
         </div>
       </section>
 
+      {/* Author / Ihr Ansprechpartner — Erik Jakob */}
+      <section className="w-full py-16 bg-white">
+        <div className="max-w-5xl mx-auto px-4">
+          <div className="text-center mb-10">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] mb-3" style={{ color: "#81B29A" }}>
+              {t.verifAuthorLabel}
+            </p>
+            <h2 className="text-3xl sm:text-4xl font-extrabold" style={{ color: "#3D405B" }}>
+              {t.verifAuthorTitle}
+            </h2>
+          </div>
+
+          <div className="rounded-3xl border border-[#81B29A]/30 bg-[#81B29A]/5 p-8 sm:p-10 flex flex-col md:flex-row items-start gap-8">
+            <div className="relative w-32 h-32 sm:w-40 sm:h-40 flex-shrink-0 rounded-full overflow-hidden border-2 border-[#81B29A]/30 mx-auto md:mx-0">
+              <Image
+                src="/Pictures/Erik.png"
+                alt={`${t.verifAuthorName}, ${t.verifAuthorRole} bei COzwei`}
+                fill
+                sizes="160px"
+                style={{ objectFit: "cover" }}
+              />
+            </div>
+            <div className="flex-1">
+              <h3 className="text-2xl font-extrabold mb-1" style={{ color: "#3D405B" }}>{t.verifAuthorName}</h3>
+              <p className="text-sm font-semibold mb-4" style={{ color: "#81B29A" }}>{t.verifAuthorRole}</p>
+              <p className="text-base leading-relaxed mb-6" style={{ color: "#23243a" }}>{t.verifAuthorBio}</p>
+              <a
+                href={BOOKING_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => trackEvent(Events.BookingClick, { location: "verif_author" })}
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-bold transition text-base"
+                style={{ backgroundColor: "#81B29A", color: "white", boxShadow: "0 4px 24px 0 rgba(61, 64, 91, 0.25)" }}
+                onMouseOver={(e) => (e.currentTarget.style.backgroundColor = "#6fa18a")}
+                onMouseOut={(e) => (e.currentTarget.style.backgroundColor = "#81B29A")}
+              >
+                {t.verifAuthorCtaLabel} →
+              </a>
+              <p className="text-sm mt-3 italic" style={{ color: "#23243a", opacity: 0.7 }}>{t.verifAuthorCtaDesc}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Insights CTA */}
       <section className="w-full py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4">
