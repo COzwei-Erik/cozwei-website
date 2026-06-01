@@ -13,9 +13,9 @@ export default function Klimaschutzkonzepte() {
       {/* Hero Section */}
       <section className="relative flex flex-col items-center justify-center min-h-screen w-full text-center overflow-hidden">
         <div className="absolute inset-0 w-full h-full z-0">
-          <Image 
-            src="/Pictures/image copy 6.webp"
-            alt="Klimaschutzkonzepte Hero Background" 
+          <Image
+            src="/Pictures/klimaschutzkonzepte-hero-chemnitz.png"
+            alt="Theaterplatz in Chemnitz mit Opernhaus und St. Petri-Kirche bei Sonnenuntergang, Symbolbild für kommunale Klimaschutzkonzepte"
             fill
             style={{objectFit: 'cover', objectPosition: 'center'}}
             className="opacity-90"
