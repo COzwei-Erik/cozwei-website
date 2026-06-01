@@ -37,8 +37,8 @@ const POSTS: Post[] = [
   },
   {
     slug: "nki-foerderung",
-    image: "/Pictures/image copy 6.png",
-    imageAlt: "Klimaschutzkonzept Hochschule",
+    image: "/Pictures/nki-foerderung-hero.png",
+    imageAlt: "Theaterplatz in Chemnitz mit Opernhaus und St. Petri-Kirche bei Sonnenuntergang, Symbolbild für NKI-geförderte Klimaschutzkonzepte",
     dateKey: "insightsPost2Date",
     categoryKey: "insightsPost2Category",
     titleKey: "insightsPost2Title",

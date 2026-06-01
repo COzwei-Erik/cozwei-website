@@ -20,8 +20,8 @@ export default function NkiFoerderung() {
       <section className="relative flex flex-col items-center justify-center min-h-[70vh] w-full text-center overflow-hidden">
         <div className="absolute inset-0 w-full h-full z-0">
           <Image
-            src="/Pictures/image copy 6.png"
-            alt="Klimaschutzkonzept Hochschule"
+            src="/Pictures/nki-foerderung-hero.png"
+            alt="Theaterplatz in Chemnitz mit Opernhaus und St. Petri-Kirche bei Sonnenuntergang, Symbolbild für NKI-geförderte Klimaschutzkonzepte"
             fill
             style={{ objectFit: "cover", objectPosition: "center" }}
             className="opacity-90"
