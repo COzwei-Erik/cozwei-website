@@ -71,27 +71,40 @@ export default function Verifizierung() {
             <h1 className="text-4xl sm:text-5xl font-extrabold mb-4 leading-tight" style={{ color: "#3D405B" }}>
               {t.verifHeroTitle}
             </h1>
-            <p className="text-lg sm:text-xl max-w-2xl mx-auto mb-6" style={{ color: "#3D405B" }}>
+            <p className="text-lg sm:text-xl max-w-2xl mx-auto mb-8" style={{ color: "#3D405B" }}>
               {t.verifHeroSubtitle}
             </p>
-            <button
-              type="button"
-              className="inline-block px-8 py-4 rounded-lg font-bold shadow-lg transition mb-2 text-xl"
-              style={{ backgroundColor: "#81B29A", color: "white", boxShadow: "0 4px 24px 0 rgba(61, 64, 91, 0.25)" }}
-              onMouseOver={(e) => (e.currentTarget.style.backgroundColor = "#6fa18a")}
-              onMouseOut={(e) => (e.currentTarget.style.backgroundColor = "#81B29A")}
-              onClick={() => {
-                const target = document.getElementById("intro-section");
-                if (target) {
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <a
+                href={BOOKING_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => trackEvent(Events.BookingClick, { location: "verif_hero" })}
+                className="inline-block px-8 py-4 rounded-lg font-bold transition text-lg"
+                style={{ backgroundColor: "#81B29A", color: "white", boxShadow: "0 4px 24px 0 rgba(61, 64, 91, 0.25)" }}
+                onMouseOver={(e) => (e.currentTarget.style.backgroundColor = "#6fa18a")}
+                onMouseOut={(e) => (e.currentTarget.style.backgroundColor = "#81B29A")}
+              >
+                {t.verifHeroPrimaryCta}
+              </a>
+              <button
+                type="button"
+                onClick={() => {
+                  const target = document.getElementById("tiers-section");
+                  if (!target) return;
                   const header = document.querySelector("nav");
                   const headerHeight = header ? (header as HTMLElement).offsetHeight : 80;
                   const y = target.getBoundingClientRect().top + window.scrollY - headerHeight - 16;
                   window.scrollTo({ top: y, behavior: "smooth" });
-                }
-              }}
-            >
-              {t.learnMore}
-            </button>
+                }}
+                className="inline-block px-8 py-4 rounded-lg font-bold transition text-lg border-2 border-[#81B29A] bg-white"
+                style={{ color: "#3D405B" }}
+                onMouseOver={(e) => { e.currentTarget.style.backgroundColor = "#81B29A"; e.currentTarget.style.color = "white"; }}
+                onMouseOut={(e) => { e.currentTarget.style.backgroundColor = "white"; e.currentTarget.style.color = "#3D405B"; }}
+              >
+                {t.verifHeroSecondaryCta}
+              </button>
+            </div>
           </div>
         </div>
       </section>
@@ -129,7 +142,7 @@ export default function Verifizierung() {
       </section>
 
       {/* Service Cards */}
-      <section className="w-full py-16 bg-[#81B29A]/5">
+      <section id="tiers-section" className="w-full py-16 bg-[#81B29A]/5">
         <div className="max-w-7xl mx-auto px-4">
           <div className="max-w-2xl mx-auto text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-extrabold mb-4" style={{ color: "#3D405B" }}>
