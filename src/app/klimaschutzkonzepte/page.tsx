@@ -14,8 +14,8 @@ export default function Klimaschutzkonzepte() {
       <section className="relative flex flex-col items-center justify-center min-h-screen w-full text-center overflow-hidden">
         <div className="absolute inset-0 w-full h-full z-0">
           <Image
-            src="/Pictures/klimaschutzkonzepte-hero-chemnitz.png"
-            alt="Theaterplatz in Chemnitz mit Opernhaus und St. Petri-Kirche bei Sonnenuntergang, Symbolbild für kommunale Klimaschutzkonzepte"
+            src="/Pictures/klimaschutzkonzepte-hero.png"
+            alt="Berliner Skyline mit Fernsehturm, Berliner Dom und Spree, Symbolbild für kommunale Klimaschutzkonzepte"
             fill
             style={{objectFit: 'cover', objectPosition: 'center'}}
             className="opacity-90"
