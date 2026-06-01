@@ -4,13 +4,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { useLanguage, translations } from "../../LanguageContext";
 import { StatCallout, PullQuote } from "../../components/InsightCallouts";
-import { HUBSPOT_FORM_URL } from "../../links";
 import { trackEvent, Events } from "../../analytics";
 import { content } from "./content";
 
-// Buchungslink für Marie. Bis Marie einen eigenen Outlook-Kalender hat,
-// laufen alle "Erstgespräch"-Klicks über das zentrale HubSpot-Formular.
-const MARIE_BOOKING_URL = HUBSPOT_FORM_URL;
+// Maries Microsoft-Bookings-Link für 30-Min-Erstgespräche zur NKI-Förderung.
+const MARIE_BOOKING_URL =
+  "https://bookings.cloud.microsoft/bookwithme/user/8e5fcd9b00414e37ac068ba0cb79aa5e%40cozwei.de/meetingtype/e5_NXh7LX0C0o52_Nt2ChA2?anonymous&ismsaljsauthenabled";
 
 export default function NkiFoerderung() {
   const { language } = useLanguage();
