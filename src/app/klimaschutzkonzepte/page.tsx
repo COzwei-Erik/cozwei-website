@@ -150,22 +150,22 @@ export default function Klimaschutzkonzepte() {
                   logo: '/Pictures/References/htwg-konstanz.png',
                   name: t.klimaRefHtwgName,
                   subtitle: t.klimaRefHtwgSubtitle,
-                  desc: t.klimaRefHtwgDesc,
                   href: 'https://www.htwg-konstanz.de/fileadmin/pub/ou/nachhaltigkeit/Klimaschutzkonzept/241220_Integriertes_Klimaschutzkonzept_HTWG_Konstanz.pdf',
+                  buttonLabel: t.klimaRefsButtonReport,
                 },
                 {
                   logo: '/Pictures/References/hfu.webp',
                   name: t.klimaRefHfuName,
                   subtitle: t.klimaRefHfuSubtitle,
-                  desc: t.klimaRefHfuDesc,
                   href: 'https://www.hs-furtwangen.de/fileadmin/Redaktion/Dokumente/2026/HFU_Energie-_und_Klimaschutzkonzept_2025.pdf',
+                  buttonLabel: t.klimaRefsButtonReport,
                 },
                 {
                   logo: '/Pictures/References/rwth-aachen.png',
                   name: t.klimaRefRwthName,
                   subtitle: t.klimaRefRwthSubtitle,
-                  desc: t.klimaRefRwthDesc,
                   href: 'https://www.rwth-aachen.de/cms/root/wir/nachhaltigkeit/wirkungsbereiche/nachhaltigkeit-im-betrieb/~blikep/erstellung-eines-integrierten-klimaschut/',
+                  buttonLabel: t.klimaRefsButtonPage,
                 },
               ]).map((ref) => (
                 <article
@@ -185,11 +185,8 @@ export default function Klimaschutzkonzepte() {
                   <h3 className="text-lg sm:text-xl font-extrabold text-center" style={{ color: '#3D405B' }}>
                     {ref.name}
                   </h3>
-                  <p className="text-sm font-semibold text-center mt-1 mb-4" style={{ color: '#81B29A' }}>
+                  <p className="text-sm font-semibold text-center mt-1 mb-8 flex-1" style={{ color: '#81B29A' }}>
                     {ref.subtitle}
-                  </p>
-                  <p className="text-sm leading-relaxed text-center mb-6 flex-1" style={{ color: '#23243a' }}>
-                    {ref.desc}
                   </p>
                   <a
                     href={ref.href}
@@ -200,7 +197,7 @@ export default function Klimaschutzkonzepte() {
                     onMouseOver={(e) => { e.currentTarget.style.backgroundColor = '#81B29A'; e.currentTarget.style.color = 'white'; }}
                     onMouseOut={(e) => { e.currentTarget.style.backgroundColor = 'white'; e.currentTarget.style.color = '#3D405B'; }}
                   >
-                    {t.klimaRefsButton}
+                    {ref.buttonLabel}
                     <span aria-hidden>→</span>
                   </a>
                 </article>
