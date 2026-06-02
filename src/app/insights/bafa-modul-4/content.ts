@@ -12,12 +12,12 @@ type Content = {
   // Lead
   intro: string;
 
-  // Section 1 — Ausgangslage
+  // Section 1, Ausgangslage
   s1Title: string;
   s1P1: string;
   s1P2: string;
 
-  // Section 2 — Modul 4 Premium
+  // Section 2, Modul 4 Premium
   s2Title: string;
   s2P1: string;
   s2BulletBasisLabel: string;
@@ -28,7 +28,7 @@ type Content = {
   s2Table: Table;
   s2TableFooter: string;
 
-  // Section 3 — Referenzmaschine
+  // Section 3, Referenzmaschine
   s3Title: string;
   s3P1: string;
   s3WegALabel: string;
@@ -37,7 +37,7 @@ type Content = {
   s3WegB: string;
   s3P2: string;
 
-  // Section 4 — Beispielrechnung im Detail
+  // Section 4, Beispielrechnung im Detail
   s4Title: string;
   s4Step1Label: string;
   s4Step1Table: Table;
@@ -54,7 +54,7 @@ type Content = {
   statNumber: string;
   statText: string;
 
-  // Section 5 — Fehlerquellen
+  // Section 5, Fehlerquellen
   s5Title: string;
   s5Intro: string;
   s5E1Label: string;
@@ -64,11 +64,11 @@ type Content = {
   s5E3Label: string;
   s5E3: string;
 
-  // Section 6 — Voranfrage
+  // Section 6, Voranfrage
   s6Title: string;
   s6P: string;
 
-  // Section 7 — Zeitablauf
+  // Section 7, Zeitablauf
   s7Title: string;
   s7P1: string;
   s7Table: Table;
@@ -77,7 +77,7 @@ type Content = {
   // Pull quote
   pullQuote: string;
 
-  // Section 8 — Fazit
+  // Section 8, Fazit
   s8Title: string;
   s8P: string;
 
@@ -145,17 +145,17 @@ export const content: Record<"de" | "en" | "pt", Content> = {
     s3Title: "Die methodische Kernfrage: Was ist die Referenzmaschine?",
     s3P1:
       "Modul 4 fördert nicht die absoluten Investitionskosten, sondern die Investitionsmehrkosten gegenüber einer Referenz. Dafür gibt es zwei Wege.",
-    s3WegALabel: "Weg A — Bestandsvergleich:",
+    s3WegALabel: "Weg A, Bestandsvergleich:",
     s3WegA:
       " Existiert eine direkt vergleichbare Bestandsanlage, kann sie als Referenz dienen. Bei großformatigen UV-Flachbettdruckern ist ein sauberer 1:1-Vergleich in der Praxis aber oft nicht möglich, weil die neue Maschine anderer Bauart ist, andere Materialien verarbeitet oder eine breitere Anwendung abdeckt.",
-    s3WegBLabel: "Weg B — Referenzmaschine am Markt (Mehrkostenansatz):",
+    s3WegBLabel: "Weg B, Referenzmaschine am Markt (Mehrkostenansatz):",
     s3WegB:
       " Verglichen wird gegen eine am Markt etablierte Standardmaschine derselben Funktion mit geringerer Effizienz. Die Differenz der Investitionskosten sind die förderfähigen Mehrkosten. Fehlt ein Angebot für die Referenzanlage, können alternativ die Investitionsgesamtkosten (IGK) angesetzt werden, dann wird die Förderquote jedoch um 50 % reduziert.",
     s3P2:
       "Die Wahl der Vergleichsmaschine ist methodisch entscheidend. Sie muss funktional vergleichbar (gleiche Anwendungsfälle), marktrepräsentativ (weder das billigste noch das hochwertigste Modell), energetisch sauber dokumentiert (Herstellerangaben, Datenblätter) und methodisch begründbar sein. Die BAFA kann eine nicht tragfähig begründete Referenz zurückweisen, einer der häufigsten Gründe für Nachforderungen.",
 
     s4Title: "Die Beispielrechnung im Detail",
-    s4Step1Label: "Schritt 1 — Referenzmaschine festlegen",
+    s4Step1Label: "Schritt 1, Referenzmaschine festlegen",
     s4Step1Table: {
       headers: ["Position", "Wert"],
       rows: [
@@ -165,7 +165,7 @@ export const content: Record<"de" | "en" | "pt", Content> = {
       ],
     },
     s4Step1After: "Förderfähig sind nicht 500.000 €, sondern die 300.000 € Mehrkosten.",
-    s4Step2Label: "Schritt 2 — Förderquote ansetzen",
+    s4Step2Label: "Schritt 2, Förderquote ansetzen",
     s4Step2P:
       "KU + Modul 4 Premium + De-Minimis = 45 % auf die Mehrkosten (IMK). Bei Nutzung der IGK-Option für die Vergleichsanlage liegt der Satz bei 22,5 %.",
     s4Step2Table: {
@@ -176,10 +176,10 @@ export const content: Record<"de" | "en" | "pt", Content> = {
         ["Rechnerisch maximale Förderung", "135.000 € / 112.500 €"],
       ],
     },
-    s4Step3Label: "Schritt 3 — CO₂-Deckel prüfen",
+    s4Step3Label: "Schritt 3, CO₂-Deckel prüfen",
     s4Step3P:
       "Bei angenommen 30 t CO₂-Einsparung/Jahr und 2.600 €/t für KU ergibt der Deckel 78.000 €. Der niedrigere Wert ist bindend, hier also der CO₂-Deckel, nicht die Förderquote. Die Fördersumme kann in keinem Szenario über 135.000 € bzw. 112.500 € hinausgehen.",
-    s4Step4Label: "Schritt 4 — De-Minimis vs. AGVO",
+    s4Step4Label: "Schritt 4, De-Minimis vs. AGVO",
     s4Step4P:
       "Bei 78.000 € liegt das Vorhaben deutlich unter der De-Minimis-Grenze von 300.000 €. De-Minimis ist hier die einfachere und attraktivere Variante, sofern im Unternehmensverbund über drei Jahre genügend Budget frei ist.",
 
@@ -317,17 +317,17 @@ export const content: Record<"de" | "en" | "pt", Content> = {
     s3Title: "The methodological core question: what is the reference machine?",
     s3P1:
       "Module 4 does not fund the absolute investment costs, but the incremental investment costs against a reference. There are two paths.",
-    s3WegALabel: "Path A — existing-asset comparison:",
+    s3WegALabel: "Path A, existing-asset comparison:",
     s3WegA:
       " If a directly comparable existing asset exists, it can serve as the reference. For large-format UV flatbed printers a clean 1:1 comparison is often not possible in practice, because the new machine has a different design, processes different materials or covers a broader range of applications.",
-    s3WegBLabel: "Path B — market reference machine (incremental-cost approach):",
+    s3WegBLabel: "Path B, market reference machine (incremental-cost approach):",
     s3WegB:
       " The new machine is compared against an established market-standard machine of the same function with lower efficiency. The difference in investment costs is the eligible incremental cost. If no quote is available for the reference machine, the total investment cost (IGK) can be used instead, but the funding rate is then reduced by 50 %.",
     s3P2:
       "Choosing the comparison machine is methodologically decisive. It must be functionally comparable (same use cases), market-representative (neither the cheapest nor the highest-end model), cleanly documented from an energy perspective (manufacturer data, datasheets), and methodologically defensible. The BAFA can reject a poorly justified reference, one of the most frequent triggers for follow-up requests.",
 
     s4Title: "The worked example in detail",
-    s4Step1Label: "Step 1 — define the reference machine",
+    s4Step1Label: "Step 1, define the reference machine",
     s4Step1Table: {
       headers: ["Position", "Value"],
       rows: [
@@ -337,7 +337,7 @@ export const content: Record<"de" | "en" | "pt", Content> = {
       ],
     },
     s4Step1After: "Eligible are not 500,000 € but the 300,000 € of incremental costs.",
-    s4Step2Label: "Step 2 — apply the funding rate",
+    s4Step2Label: "Step 2, apply the funding rate",
     s4Step2P:
       "SME + Module 4 Premium + de-minimis = 45 % on the incremental costs (IMK). Using the IGK option for the comparison machine, the rate is 22.5 %.",
     s4Step2Table: {
@@ -348,10 +348,10 @@ export const content: Record<"de" | "en" | "pt", Content> = {
         ["Maximum funding on paper", "135,000 € / 112,500 €"],
       ],
     },
-    s4Step3Label: "Step 3 — check the CO₂ cap",
+    s4Step3Label: "Step 3, check the CO₂ cap",
     s4Step3P:
       "Assuming 30 t CO₂ savings per year and 2,600 €/t for SMEs, the cap is 78,000 €. The lower of the two values is binding, so the CO₂ cap, not the funding rate. The grant cannot exceed 135,000 € or 112,500 € in any scenario.",
-    s4Step4Label: "Step 4 — de-minimis vs. AGVO",
+    s4Step4Label: "Step 4, de-minimis vs. AGVO",
     s4Step4P:
       "At 78,000 €, the project sits well below the de-minimis ceiling of 300,000 €. De-minimis is the simpler and more attractive option here, provided enough headroom is available within the group of companies over three years.",
 
@@ -441,7 +441,7 @@ export const content: Record<"de" | "en" | "pt", Content> = {
       },
       {
         q: "Is a BAFA pre-enquiry worth it?",
-        a: "In methodologically complex cases, yes. It clarifies in advance whether the reference machine is acceptable, which components fall within the eligible boundary and whether the data foundation is sufficient — with little lead time and a markedly reduced rejection risk.",
+        a: "In methodologically complex cases, yes. It clarifies in advance whether the reference machine is acceptable, which components fall within the eligible boundary and whether the data foundation is sufficient, with little lead time and a markedly reduced rejection risk.",
       },
     ],
 
@@ -488,17 +488,17 @@ export const content: Record<"de" | "en" | "pt", Content> = {
     s3Title: "A questão metodológica central: qual é a máquina de referência?",
     s3P1:
       "O Módulo 4 não apoia os custos totais de investimento, mas sim os custos incrementais face a uma referência. Existem dois caminhos.",
-    s3WegALabel: "Caminho A — comparação com o equipamento existente:",
+    s3WegALabel: "Caminho A, comparação com o equipamento existente:",
     s3WegA:
       " Se houver um equipamento existente diretamente comparável, pode servir como referência. Em impressoras flatbed UV de grande formato, uma comparação 1:1 limpa é, na prática, muitas vezes impossível, porque a nova máquina tem outra construção, processa outros materiais ou cobre uma aplicação mais ampla.",
-    s3WegBLabel: "Caminho B — máquina de referência no mercado (método de custos incrementais):",
+    s3WegBLabel: "Caminho B, máquina de referência no mercado (método de custos incrementais):",
     s3WegB:
       " A comparação é feita contra uma máquina padrão consolidada no mercado, com a mesma função e eficiência inferior. A diferença nos custos de investimento são os custos incrementais elegíveis. Se não houver proposta para a máquina de referência, podem usar-se em alternativa os custos totais de investimento (IGK), mas a taxa de apoio é então reduzida em 50 %.",
     s3P2:
       "A escolha da máquina de comparação é metodologicamente decisiva. Ela deve ser funcionalmente comparável (mesmos casos de uso), representativa do mercado (nem o modelo mais barato nem o de gama mais alta), bem documentada do ponto de vista energético (dados do fabricante, fichas técnicas) e metodologicamente defensável. A BAFA pode rejeitar uma referência mal fundamentada, uma das causas mais frequentes de pedidos adicionais.",
 
     s4Title: "O exemplo prático em detalhe",
-    s4Step1Label: "Passo 1 — definir a máquina de referência",
+    s4Step1Label: "Passo 1, definir a máquina de referência",
     s4Step1Table: {
       headers: ["Item", "Valor"],
       rows: [
@@ -508,7 +508,7 @@ export const content: Record<"de" | "en" | "pt", Content> = {
       ],
     },
     s4Step1After: "Elegíveis não são 500.000 €, mas sim os 300.000 € de custos incrementais.",
-    s4Step2Label: "Passo 2 — aplicar a taxa de apoio",
+    s4Step2Label: "Passo 2, aplicar a taxa de apoio",
     s4Step2P:
       "PME + Módulo 4 Premium + de-minimis = 45 % sobre os custos incrementais (IMK). Usando a opção IGK para a máquina de comparação, a taxa é de 22,5 %.",
     s4Step2Table: {
@@ -519,10 +519,10 @@ export const content: Record<"de" | "en" | "pt", Content> = {
         ["Apoio máximo no papel", "135.000 € / 112.500 €"],
       ],
     },
-    s4Step3Label: "Passo 3 — verificar o limite de CO₂",
+    s4Step3Label: "Passo 3, verificar o limite de CO₂",
     s4Step3P:
       "Assumindo 30 t de CO₂ poupadas por ano e 2.600 €/t para PME, o limite é de 78.000 €. O valor mais baixo é o que vincula, ou seja, o limite de CO₂ e não a taxa de apoio. Em nenhum cenário o apoio pode ultrapassar 135.000 € ou 112.500 €.",
-    s4Step4Label: "Passo 4 — de-minimis vs. AGVO",
+    s4Step4Label: "Passo 4, de-minimis vs. AGVO",
     s4Step4P:
       "Com 78.000 €, o projeto fica bem abaixo do limite de de-minimis de 300.000 €. A via de-minimis é aqui a opção mais simples e mais atrativa, desde que haja margem suficiente no grupo de empresas ao longo de três anos.",
 

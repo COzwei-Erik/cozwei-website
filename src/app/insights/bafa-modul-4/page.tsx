@@ -135,7 +135,7 @@ export default function BafaModul4() {
             {c.intro}
           </p>
 
-          {/* Section 1 — Ausgangslage */}
+          {/* Section 1, Ausgangslage */}
           <h2
             className="text-2xl sm:text-3xl font-extrabold mt-12 mb-4"
             style={{ color: "#3D405B" }}
@@ -149,7 +149,7 @@ export default function BafaModul4() {
             {c.s1P2}
           </p>
 
-          {/* Section 2 — Modul 4 Premium */}
+          {/* Section 2, Modul 4 Premium */}
           <h2
             className="text-2xl sm:text-3xl font-extrabold mt-12 mb-4"
             style={{ color: "#3D405B" }}
@@ -186,7 +186,7 @@ export default function BafaModul4() {
             {c.s2TableFooter}
           </p>
 
-          {/* Section 3 — Referenzmaschine */}
+          {/* Section 3, Referenzmaschine */}
           <h2
             className="text-2xl sm:text-3xl font-extrabold mt-12 mb-4"
             style={{ color: "#3D405B" }}
@@ -208,7 +208,7 @@ export default function BafaModul4() {
             {c.s3P2}
           </p>
 
-          {/* Section 4 — Beispielrechnung im Detail */}
+          {/* Section 4, Beispielrechnung im Detail */}
           <h2
             className="text-2xl sm:text-3xl font-extrabold mt-12 mb-4"
             style={{ color: "#3D405B" }}
@@ -260,7 +260,7 @@ export default function BafaModul4() {
           {/* Stat callout */}
           <StatCallout number={c.statNumber}>{c.statText}</StatCallout>
 
-          {/* Section 5 — Fehlerquellen */}
+          {/* Section 5, Fehlerquellen */}
           <h2
             className="text-2xl sm:text-3xl font-extrabold mt-12 mb-4"
             style={{ color: "#3D405B" }}
@@ -283,7 +283,7 @@ export default function BafaModul4() {
             {c.s5E3}
           </p>
 
-          {/* Section 6 — Voranfrage */}
+          {/* Section 6, Voranfrage */}
           <h2
             className="text-2xl sm:text-3xl font-extrabold mt-12 mb-4"
             style={{ color: "#3D405B" }}
@@ -294,7 +294,7 @@ export default function BafaModul4() {
             {c.s6P}
           </p>
 
-          {/* Section 7 — Zeitablauf */}
+          {/* Section 7, Zeitablauf */}
           <h2
             className="text-2xl sm:text-3xl font-extrabold mt-12 mb-4"
             style={{ color: "#3D405B" }}
@@ -312,7 +312,7 @@ export default function BafaModul4() {
           {/* Pull quote */}
           <PullQuote>{c.pullQuote}</PullQuote>
 
-          {/* Section 8 — Fazit */}
+          {/* Section 8, Fazit */}
           <h2
             className="text-2xl sm:text-3xl font-extrabold mt-12 mb-4"
             style={{ color: "#3D405B" }}
@@ -323,7 +323,7 @@ export default function BafaModul4() {
             {c.s8P}
           </p>
 
-          {/* CTA-Block — primärer Buchungslink + sekundärer Formular-Link */}
+          {/* CTA-Block, primärer Buchungslink + sekundärer Formular-Link */}
           <aside className="my-12 rounded-3xl border-2 border-[#81B29A] bg-[#81B29A]/10 p-8 sm:p-10 text-center">
             <div
               className="text-xs font-bold uppercase tracking-widest mb-3"
@@ -383,7 +383,7 @@ export default function BafaModul4() {
             </div>
           </aside>
 
-          {/* Ihr Ansprechpartner — Dominik */}
+          {/* Ihr Ansprechpartner, Dominik */}
           <section id="kontakt" className="mt-16 mb-12">
             <div className="text-center mb-8">
               <p
