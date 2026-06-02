@@ -128,6 +128,86 @@ export default function Klimaschutzkonzepte() {
             </div>
           </div>
         </section>
+
+        {/* References: drei geförderte und veröffentlichte Klimaschutzkonzepte */}
+        <section id="references" className="w-full py-16">
+          <div className="max-w-7xl mx-auto px-4">
+            <div className="text-center mb-10 sm:mb-12 max-w-3xl mx-auto">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] mb-3" style={{ color: '#81B29A' }}>
+                {t.klimaRefsEyebrow}
+              </p>
+              <h2 className="text-3xl sm:text-4xl font-extrabold mb-3" style={{ color: '#3D405B' }}>
+                {t.klimaRefsTitle}
+              </h2>
+              <p className="text-base sm:text-lg leading-relaxed" style={{ color: '#23243a' }}>
+                {t.klimaRefsIntro}
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {([
+                {
+                  logo: '/Pictures/References/htwg-konstanz.png',
+                  name: t.klimaRefHtwgName,
+                  subtitle: t.klimaRefHtwgSubtitle,
+                  desc: t.klimaRefHtwgDesc,
+                  href: 'https://www.htwg-konstanz.de/fileadmin/pub/ou/nachhaltigkeit/Klimaschutzkonzept/241220_Integriertes_Klimaschutzkonzept_HTWG_Konstanz.pdf',
+                },
+                {
+                  logo: '/Pictures/References/hfu.webp',
+                  name: t.klimaRefHfuName,
+                  subtitle: t.klimaRefHfuSubtitle,
+                  desc: t.klimaRefHfuDesc,
+                  href: 'https://www.hs-furtwangen.de/fileadmin/Redaktion/Dokumente/2026/HFU_Energie-_und_Klimaschutzkonzept_2025.pdf',
+                },
+                {
+                  logo: '/Pictures/References/rwth-aachen.png',
+                  name: t.klimaRefRwthName,
+                  subtitle: t.klimaRefRwthSubtitle,
+                  desc: t.klimaRefRwthDesc,
+                  href: 'https://www.rwth-aachen.de/cms/root/wir/nachhaltigkeit/wirkungsbereiche/nachhaltigkeit-im-betrieb/~blikep/erstellung-eines-integrierten-klimaschut/',
+                },
+              ]).map((ref) => (
+                <article
+                  key={ref.name}
+                  className="flex flex-col rounded-3xl bg-white border border-[#81B29A]/30 p-6 sm:p-8 transition-all duration-300 hover:border-[#81B29A] hover:shadow-lg"
+                >
+                  <div className="flex items-center justify-center h-20 sm:h-24 mb-6">
+                    <Image
+                      src={ref.logo}
+                      alt={`${ref.name} Logo`}
+                      width={240}
+                      height={96}
+                      className="max-h-16 sm:max-h-20 w-auto object-contain"
+                      unoptimized
+                    />
+                  </div>
+                  <h3 className="text-lg sm:text-xl font-extrabold text-center" style={{ color: '#3D405B' }}>
+                    {ref.name}
+                  </h3>
+                  <p className="text-sm font-semibold text-center mt-1 mb-4" style={{ color: '#81B29A' }}>
+                    {ref.subtitle}
+                  </p>
+                  <p className="text-sm leading-relaxed text-center mb-6 flex-1" style={{ color: '#23243a' }}>
+                    {ref.desc}
+                  </p>
+                  <a
+                    href={ref.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-auto inline-flex items-center justify-center gap-2 rounded-lg border-2 border-[#81B29A] bg-white px-5 py-3 text-sm font-bold transition"
+                    style={{ color: '#3D405B' }}
+                    onMouseOver={(e) => { e.currentTarget.style.backgroundColor = '#81B29A'; e.currentTarget.style.color = 'white'; }}
+                    onMouseOut={(e) => { e.currentTarget.style.backgroundColor = 'white'; e.currentTarget.style.color = '#3D405B'; }}
+                  >
+                    {t.klimaRefsButton}
+                    <span aria-hidden>→</span>
+                  </a>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
       </main>
 
       {/* Ihre Ansprechpartnerin — Marie Bruns (ersetzt die frühere ContactForm) */}
