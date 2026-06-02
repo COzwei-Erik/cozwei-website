@@ -18,6 +18,15 @@ type Post = {
 
 const POSTS: Post[] = [
   {
+    slug: "bafa-modul-4",
+    image: "/Pictures/pexels-marcin-jozwiak-199600-3641377.jpg",
+    imageAlt: "Industrielle UV-Flachbettdruckanlage, Symbolbild für BAFA Modul 4 Förderung",
+    dateKey: "insightsPost4Date",
+    categoryKey: "insightsPost4Category",
+    titleKey: "insightsPost4Title",
+    descKey: "insightsPost4Desc",
+  },
+  {
     slug: "ccf-verifizierung",
     image: "/Pictures/pexels-rdne-7948058.jpg",
     imageAlt: "Datenanalyse am Schreibtisch",
