@@ -16,17 +16,10 @@ type Post = {
   descKey: keyof typeof translations.de;
 };
 
+// Reihenfolge chronologisch aufsteigend: älteste oben, neueste unten.
 const POSTS: Post[] = [
   {
-    slug: "bafa-modul-4",
-    image: "/Pictures/pexels-marcin-jozwiak-199600-3641377.jpg",
-    imageAlt: "Industrielle UV-Flachbettdruckanlage, Symbolbild für BAFA Modul 4 Förderung",
-    dateKey: "insightsPost4Date",
-    categoryKey: "insightsPost4Category",
-    titleKey: "insightsPost4Title",
-    descKey: "insightsPost4Desc",
-  },
-  {
+    // März 2026
     slug: "ccf-verifizierung",
     image: "/Pictures/pexels-rdne-7948058.jpg",
     imageAlt: "Datenanalyse am Schreibtisch",
@@ -36,6 +29,17 @@ const POSTS: Post[] = [
     descKey: "insightsPost3Desc",
   },
   {
+    // April 2026
+    slug: "nki-foerderung",
+    image: "/Pictures/nki-foerderung-hero.png",
+    imageAlt: "Theaterplatz in Chemnitz mit Opernhaus und St. Petri-Kirche bei Sonnenuntergang, Symbolbild für NKI-geförderte Klimaschutzkonzepte",
+    dateKey: "insightsPost2Date",
+    categoryKey: "insightsPost2Category",
+    titleKey: "insightsPost2Title",
+    descKey: "insightsPost2Desc",
+  },
+  {
+    // Mai 2026
     slug: "buchverlage-dekarbonisierung",
     image: "/Pictures/buchverlage-dekarbonisierung-hero.png",
     imageAlt: "Geschwungene Bücherregale in einer modernen Bibliothek, Symbolbild für Dekarbonisierung der Buch- und Verlagsbranche",
@@ -45,13 +49,14 @@ const POSTS: Post[] = [
     descKey: "insightsPost1Desc",
   },
   {
-    slug: "nki-foerderung",
-    image: "/Pictures/nki-foerderung-hero.png",
-    imageAlt: "Theaterplatz in Chemnitz mit Opernhaus und St. Petri-Kirche bei Sonnenuntergang, Symbolbild für NKI-geförderte Klimaschutzkonzepte",
-    dateKey: "insightsPost2Date",
-    categoryKey: "insightsPost2Category",
-    titleKey: "insightsPost2Title",
-    descKey: "insightsPost2Desc",
+    // Juni 2026
+    slug: "bafa-modul-4",
+    image: "/Pictures/pexels-marcin-jozwiak-199600-3641377.jpg",
+    imageAlt: "Industrielle UV-Flachbettdruckanlage, Symbolbild für BAFA Modul 4 Förderung",
+    dateKey: "insightsPost4Date",
+    categoryKey: "insightsPost4Category",
+    titleKey: "insightsPost4Title",
+    descKey: "insightsPost4Desc",
   },
 ];
 
