@@ -71,8 +71,8 @@ export default function BafaModul4() {
       <section className="relative flex flex-col items-center justify-center min-h-[70vh] w-full text-center overflow-hidden">
         <div className="absolute inset-0 w-full h-full z-0">
           <Image
-            src="/Pictures/pexels-marcin-jozwiak-199600-3641377.jpg"
-            alt="Industrielle UV-Flachbettdruckanlage, Symbolbild für BAFA Modul 4 Förderung"
+            src="/Pictures/bafa-modul-4-hero.png"
+            alt="Druckereimitarbeiter vor einer industriellen Bogenoffset-Druckmaschine, Symbolbild für BAFA Modul 4 Förderung"
             fill
             style={{ objectFit: "cover", objectPosition: "center" }}
             className="opacity-90"

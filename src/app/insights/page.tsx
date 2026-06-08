@@ -51,8 +51,8 @@ const POSTS: Post[] = [
   {
     // Juni 2026
     slug: "bafa-modul-4",
-    image: "/Pictures/pexels-marcin-jozwiak-199600-3641377.jpg",
-    imageAlt: "Industrielle UV-Flachbettdruckanlage, Symbolbild für BAFA Modul 4 Förderung",
+    image: "/Pictures/bafa-modul-4-hero.png",
+    imageAlt: "Druckereimitarbeiter vor einer industriellen Bogenoffset-Druckmaschine, Symbolbild für BAFA Modul 4 Förderung",
     dateKey: "insightsPost4Date",
     categoryKey: "insightsPost4Category",
     titleKey: "insightsPost4Title",
