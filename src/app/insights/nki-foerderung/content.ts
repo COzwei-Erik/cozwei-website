@@ -113,7 +113,7 @@ export const content: Record<"de" | "en" | "pt", Content> = {
     factor3P1:
       "Ein entscheidender Punkt, der in vielen Förderprojekten unterschätzt wird: Die Einrichtung selbst entscheidet häufig gar nicht selbstständig über Gebäude, Investitionen oder technische Maßnahmen.",
     factor3P2:
-      "Gerade bei Schulen, Hochschulen oder Krankenhäusern liegen Zuständigkeiten häufig bei Trägern, Bauämtern oder externen Betreibergesellschaften. Wer diese Strukturen nicht versteht, plant Maßnahmen, die später nicht umgesetzt werden können. Unsere Erfahrung hilft dabei, diese Stakeholder frühzeitig einzubinden und realistische Umsetzungswege zu entwickeln, auch wenn das bei dem ein oder anderen Klimaschutzmanager regelmäßig für Frustrationen sorgt.",
+      "Gerade bei Schulen, Hochschulen oder Krankenhäusern liegen Zuständigkeiten häufig bei Trägern, Bauämtern oder externen Betreibergesellschaften. Wer diese Strukturen nicht versteht, plant Maßnahmen, die später nicht umgesetzt werden können. Unsere Erfahrung hilft dabei, diese Stakeholder frühzeitig einzubinden und realistische Umsetzungswege zu entwickeln.",
 
     section4Title: "Warum Klimaschutzkonzepte für Einrichtungen heute entscheidend sind",
     section4P1:
@@ -129,10 +129,10 @@ export const content: Record<"de" | "en" | "pt", Content> = {
     ctaButtonLabel: "30-Minuten-Erstgespräch buchen",
 
     authorBio:
-      "Marie Bruns ist Energieberaterin und betreut bei der COzwei GmbH neben Unternehmenskunden schwerpunktmäßig Klimaschutzkonzepte der NKI. Sie trägt als Umweltingenieurin der RWTH Aachen zudem maßgeblich zur Bewertung von Maßnahmen zur CO₂-Reduktion bei.",
+      "Marie Bruns ist Nachhaltigkeitsberaterin und betreut bei der COzwei GmbH neben Unternehmenskunden schwerpunktmäßig Klimaschutzkonzepte der NKI. Sie trägt als Umweltingenieurin der RWTH Aachen zudem maßgeblich zur Bewertung von Maßnahmen zur CO₂-Reduktion bei.",
     authorSectionLabel: "Ihre Ansprechpartnerin",
     authorSectionTitle: "Im Erstgespräch klären wir Ihre NKI-Ausgangslage",
-    authorRole: "Energieberaterin · NKI-Klimaschutzkonzepte",
+    authorRole: "Nachhaltigkeitsberaterin · NKI-Klimaschutzkonzepte",
     authorCtaLabel: "30-Minuten-Erstgespräch anfragen",
     authorCtaDesc: "Kostenlos und unverbindlich. Wir klären Ihren Förderanspruch, die drei NKI-Erfolgsfaktoren und mögliche nächste Schritte.",
 
@@ -221,7 +221,7 @@ export const content: Record<"de" | "en" | "pt", Content> = {
     factor3P1:
       "A decisive point often underestimated in funded projects: the institution itself often does not decide independently on buildings, investments or technical measures.",
     factor3P2:
-      "Especially with schools, universities and hospitals, responsibilities frequently sit with sponsoring bodies, building authorities or external operators. Those who do not understand these structures plan measures that cannot later be implemented. Our experience helps to engage these stakeholders early and to develop realistic implementation paths, even if that sometimes frustrates the occasional climate protection manager.",
+      "Especially with schools, universities and hospitals, responsibilities frequently sit with sponsoring bodies, building authorities or external operators. Those who do not understand these structures plan measures that cannot later be implemented. Our experience helps to engage these stakeholders early and to develop realistic implementation paths.",
 
     section4Title: "Why climate protection concepts matter for institutions today",
     section4P1:
@@ -237,10 +237,10 @@ export const content: Record<"de" | "en" | "pt", Content> = {
     ctaButtonLabel: "Book 30-minute intro call",
 
     authorBio:
-      "Marie Bruns is an energy consultant at COzwei GmbH and, alongside corporate clients, focuses on NKI climate protection concepts. As an environmental engineer graduating from RWTH Aachen, she also contributes substantially to the assessment of CO₂ reduction measures.",
+      "Marie Bruns is a sustainability consultant at COzwei GmbH and, alongside corporate clients, focuses on NKI climate protection concepts. As an environmental engineer graduating from RWTH Aachen, she also contributes substantially to the assessment of CO₂ reduction measures.",
     authorSectionLabel: "Your contact",
     authorSectionTitle: "In a first call we clarify your NKI starting point",
-    authorRole: "Energy consultant · NKI climate protection concepts",
+    authorRole: "Sustainability consultant · NKI climate protection concepts",
     authorCtaLabel: "Request a 30-minute intro call",
     authorCtaDesc: "Free of charge, no obligation. We clarify your funding eligibility, the three NKI success factors and the next steps.",
 
@@ -329,7 +329,7 @@ export const content: Record<"de" | "en" | "pt", Content> = {
     factor3P1:
       "Um ponto decisivo, frequentemente subestimado em projetos financiados: a própria instituição muitas vezes não decide autonomamente sobre edifícios, investimentos ou medidas técnicas.",
     factor3P2:
-      "Em particular em escolas, universidades ou hospitais, as competências situam-se frequentemente em entidades tutelares, gabinetes de obras ou empresas operadoras externas. Quem não compreende estas estruturas planeia medidas que mais tarde não podem ser implementadas. A nossa experiência ajuda a envolver estes stakeholders cedo e a desenvolver caminhos de implementação realistas, mesmo que isso, por vezes, frustre algum responsável de proteção climática.",
+      "Em particular em escolas, universidades ou hospitais, as competências situam-se frequentemente em entidades tutelares, gabinetes de obras ou empresas operadoras externas. Quem não compreende estas estruturas planeia medidas que mais tarde não podem ser implementadas. A nossa experiência ajuda a envolver estes stakeholders cedo e a desenvolver caminhos de implementação realistas.",
 
     section4Title: "Por que os conceitos de proteção climática são hoje decisivos para as instituições",
     section4P1:
@@ -345,10 +345,10 @@ export const content: Record<"de" | "en" | "pt", Content> = {
     ctaButtonLabel: "Agendar conversa inicial de 30 min",
 
     authorBio:
-      "Marie Bruns é consultora de energia e, na COzwei GmbH, acompanha, além de clientes empresariais, sobretudo conceitos NKI de proteção climática. Como engenheira ambiental formada na RWTH Aachen, contribui decisivamente para a avaliação de medidas de redução de CO₂.",
+      "Marie Bruns é consultora de sustentabilidade e, na COzwei GmbH, acompanha, além de clientes empresariais, sobretudo conceitos NKI de proteção climática. Como engenheira ambiental formada na RWTH Aachen, contribui decisivamente para a avaliação de medidas de redução de CO₂.",
     authorSectionLabel: "A sua interlocutora",
     authorSectionTitle: "Numa primeira conversa esclarecemos a sua situação inicial NKI",
-    authorRole: "Consultora de energia · conceitos NKI de proteção climática",
+    authorRole: "Consultora de sustentabilidade · conceitos NKI de proteção climática",
     authorCtaLabel: "Solicitar conversa inicial de 30 minutos",
     authorCtaDesc: "Gratuito e sem compromisso. Esclarecemos a sua elegibilidade, os três fatores de sucesso NKI e os próximos passos.",
 
