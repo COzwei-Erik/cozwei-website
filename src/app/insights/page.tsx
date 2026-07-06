@@ -58,6 +58,16 @@ const POSTS: Post[] = [
     titleKey: "insightsPost4Title",
     descKey: "insightsPost4Desc",
   },
+  {
+    // Juli 2026
+    slug: "csrd-automobilindustrie-lektionen-zulieferer",
+    image: "/Pictures/pexels-goumbik-590020.jpg",
+    imageAlt: "Analyse von Nachhaltigkeits-Kennzahlen am Laptop, Symbolbild für CSRD-Berichterstattung in der Automobilindustrie",
+    dateKey: "insightsPost5Date",
+    categoryKey: "insightsPost5Category",
+    titleKey: "insightsPost5Title",
+    descKey: "insightsPost5Desc",
+  },
 ];
 
 export default function Insights() {
