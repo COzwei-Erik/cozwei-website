@@ -415,24 +415,8 @@ export default function CsrdAutomotive() {
             ))}
           </div>
 
-          {/* Quellen-Liste */}
-          <h2
-            className="text-xl sm:text-2xl font-extrabold mt-16 mb-4"
-            style={{ color: "#3D405B" }}
-          >
-            {c.sourcesTitle}
-          </h2>
-          <ul
-            className="list-disc list-outside ml-6 space-y-2 text-sm leading-relaxed"
-            style={{ color: "#23243a" }}
-          >
-            {c.sources.map((s, i) => (
-              <li key={i}>{s}</li>
-            ))}
-          </ul>
-
           <p
-            className="text-sm italic mt-12"
+            className="text-sm italic mt-16"
             style={{ color: "#23243a", opacity: 0.7 }}
           >
             {c.disclaimer}
