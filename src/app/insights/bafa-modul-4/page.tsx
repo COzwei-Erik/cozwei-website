@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { useLanguage, translations } from "../../LanguageContext";
 import { StatCallout, PullQuote } from "../../components/InsightCallouts";
-import { HUBSPOT_FORM_URL } from "../../links";
 import { trackEvent, Events } from "../../analytics";
 import { content } from "./content";
 
@@ -323,67 +322,7 @@ export default function BafaModul4() {
             {c.s8P}
           </p>
 
-          {/* CTA-Block, primärer Buchungslink + sekundärer Formular-Link */}
-          <aside className="my-12 rounded-3xl border-2 border-[#81B29A] bg-[#81B29A]/10 p-8 sm:p-10 text-center">
-            <div
-              className="text-xs font-bold uppercase tracking-widest mb-3"
-              style={{ color: "#81B29A" }}
-            >
-              {c.ctaEyebrow}
-            </div>
-            <h3
-              className="text-2xl sm:text-3xl font-extrabold mb-4"
-              style={{ color: "#3D405B" }}
-            >
-              {c.ctaTitle}
-            </h3>
-            <p
-              className="text-base sm:text-lg leading-relaxed mb-6 max-w-2xl mx-auto"
-              style={{ color: "#23243a" }}
-            >
-              {c.ctaBody}
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
-              <a
-                href={DOMINIK_BOOKING_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() =>
-                  trackEvent(Events.BookingClick, { location: "blog_bafa_cta" })
-                }
-                className="inline-block px-8 py-4 rounded-lg font-bold transition text-lg"
-                style={{
-                  backgroundColor: "#81B29A",
-                  color: "white",
-                  boxShadow: "0 4px 24px 0 rgba(61, 64, 91, 0.25)",
-                }}
-                onMouseOver={(e) =>
-                  (e.currentTarget.style.backgroundColor = "#6fa18a")
-                }
-                onMouseOut={(e) =>
-                  (e.currentTarget.style.backgroundColor = "#81B29A")
-                }
-              >
-                {c.ctaPrimaryLabel}
-              </a>
-              <a
-                href={HUBSPOT_FORM_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() =>
-                  trackEvent(Events.ContactFormClick, {
-                    location: "blog_bafa_cta_secondary",
-                  })
-                }
-                className="inline-block text-sm font-semibold underline transition hover:no-underline"
-                style={{ color: "#3D405B" }}
-              >
-                {c.ctaSecondaryLabel}
-              </a>
-            </div>
-          </aside>
-
-          {/* Ihr Ansprechpartner, Dominik */}
+          {/* Ihr Ansprechpartner, Dominik (kombinierte CTA + Author-Karte, analog CCF-Post) */}
           <section id="kontakt" className="mt-16 mb-12">
             <div className="text-center mb-8">
               <p

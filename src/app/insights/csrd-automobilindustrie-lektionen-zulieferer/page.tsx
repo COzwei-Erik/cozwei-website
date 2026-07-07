@@ -240,54 +240,7 @@ export default function CsrdAutomotive() {
             {c.cP3}
           </p>
 
-          {/* CTA-Block (Long Fall Yellow per Briefing) */}
-          <aside
-            className="my-12 rounded-3xl p-8 sm:p-10 text-center border-2"
-            style={{ backgroundColor: "#F2CC8F", borderColor: "#F2CC8F" }}
-          >
-            <div
-              className="text-xs font-bold uppercase tracking-widest mb-3"
-              style={{ color: "#3D405B" }}
-            >
-              {c.ctaEyebrow}
-            </div>
-            <h3
-              className="text-2xl sm:text-3xl font-extrabold mb-4"
-              style={{ color: "#3D405B" }}
-            >
-              {c.ctaTitle}
-            </h3>
-            <p
-              className="text-base sm:text-lg leading-relaxed mb-6 max-w-2xl mx-auto"
-              style={{ color: "#3D405B" }}
-            >
-              {c.ctaBody}
-            </p>
-            <a
-              href={CHRISTIAN_BOOKING_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() =>
-                trackEvent(Events.BookingClick, { location: "blog_csrd_cta" })
-              }
-              className="inline-block px-8 py-4 rounded-lg font-bold transition text-lg"
-              style={{
-                backgroundColor: "#3D405B",
-                color: "white",
-                boxShadow: "0 4px 24px 0 rgba(61, 64, 91, 0.25)",
-              }}
-              onMouseOver={(e) =>
-                (e.currentTarget.style.backgroundColor = "#23243a")
-              }
-              onMouseOut={(e) =>
-                (e.currentTarget.style.backgroundColor = "#3D405B")
-              }
-            >
-              {c.ctaButtonLabel}
-            </a>
-          </aside>
-
-          {/* Ihr Ansprechpartner, Christian Philippen */}
+          {/* Ihr Ansprechpartner, Christian Philippen (kombinierte CTA + Author-Karte, analog CCF-Post) */}
           <section id="kontakt" className="mt-16 mb-12">
             <div className="text-center mb-8">
               <p
