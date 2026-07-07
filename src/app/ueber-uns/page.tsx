@@ -207,7 +207,7 @@ export default function UeberUns() {
               </div>
               {/* Card 7: Marie Bruns */}
               <div className="flex flex-col md:flex-row items-center bg-white rounded-2xl border border-[#81B29A]/30 p-4 sm:p-6 gap-4 sm:gap-6 min-h-[200px] sm:min-h-[220px] transition-all duration-300 hover:scale-105 hover:border-2 hover:border-[#81B29A] hover:ring-2 hover:ring-[#81B29A]/30 overflow-hidden group">
-                <Image src="/Pictures/Marie_Bruns.png" alt="Marie Bruns" width={600} height={600} className="rounded-xl object-contain flex-shrink-0 mb-4 md:mb-0 w-24 h-24 sm:w-32 sm:h-32 md:w-36 md:h-36 lg:w-44 lg:h-44" unoptimized priority quality={100} style={{ imageRendering: 'crisp-edges' }} />
+                <Image src="/Pictures/Marie_Bruns.png" alt="Marie Bruns" width={120} height={120} className="rounded-xl object-cover flex-shrink-0 mb-4 md:mb-0 w-24 h-24 sm:w-32 sm:h-32 md:w-36 md:h-36 lg:w-44 lg:h-44" />
                 <div className="flex flex-col justify-center flex-1 items-center md:items-start text-center md:text-left">
                   <div className="text-lg sm:text-xl font-bold mb-1 text-[#3D405B] break-words">Marie Bruns</div>
                   <div className="text-sm sm:text-base font-semibold mb-2 text-[#81B29A] tracking-wide break-words">{t.teamRoleMarie}</div>
