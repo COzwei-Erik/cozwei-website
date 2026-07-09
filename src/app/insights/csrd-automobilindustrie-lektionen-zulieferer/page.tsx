@@ -91,14 +91,15 @@ function StatTile({
 }) {
   return (
     <figure
-      className="my-10 rounded-lg grid gap-6 sm:gap-8 grid-cols-1 sm:grid-cols-[minmax(140px,180px)_1fr] items-center px-6 sm:px-10 py-6 sm:py-8"
+      className="my-10 rounded-lg grid gap-6 sm:gap-8 grid-cols-1 sm:grid-cols-[auto_1fr] items-center px-6 sm:px-10 py-6 sm:py-8"
       style={{
-        backgroundColor: TOKEN.beige,
+        backgroundColor: "#FFFFFF",
+        border: `1px solid ${TOKEN.rule}`,
         borderLeft: `6px solid ${TOKEN.sage}`,
       }}
     >
       <div
-        className="text-5xl sm:text-6xl font-extrabold leading-none"
+        className="text-5xl sm:text-6xl font-extrabold leading-none whitespace-nowrap"
         style={{ color: TOKEN.slate, letterSpacing: "-0.02em" }}
       >
         {number}
@@ -282,7 +283,7 @@ export default function CsrdAutomotive() {
           {/* Slate Pull-Quote (ersetzt die frühere Ice-Beige-Zitatbox) */}
           <blockquote
             className="my-12 rounded-xl px-8 sm:px-14 py-10 sm:py-12 relative"
-            style={{ backgroundColor: TOKEN.slate, color: TOKEN.beige }}
+            style={{ backgroundColor: TOKEN.slate, color: "#FFFFFF" }}
           >
             <span
               aria-hidden
@@ -300,7 +301,7 @@ export default function CsrdAutomotive() {
             </span>
             <p
               className="text-lg sm:text-xl italic leading-snug m-0 mb-4"
-              style={{ color: TOKEN.beige }}
+              style={{ color: "#FFFFFF" }}
             >
               {c.pullQuote}
             </p>
@@ -334,7 +335,7 @@ export default function CsrdAutomotive() {
                 href={card.href}
                 className="block rounded-lg px-7 py-6 no-underline transition-transform"
                 style={{
-                  backgroundColor: TOKEN.beige70,
+                  backgroundColor: "#FFFFFF",
                   border: `1px solid ${TOKEN.rule}`,
                   borderTop: `4px solid ${TOKEN.sage}`,
                 }}
@@ -481,7 +482,8 @@ export default function CsrdAutomotive() {
             <div
               className="rounded-3xl p-6 sm:p-8 flex flex-col md:flex-row items-start gap-6"
               style={{
-                backgroundColor: TOKEN.beige,
+                backgroundColor: "#FFFFFF",
+                border: `1px solid ${TOKEN.rule}`,
                 borderLeft: `8px solid ${TOKEN.sage}`,
               }}
             >
@@ -527,12 +529,12 @@ export default function CsrdAutomotive() {
                   }
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-bold transition text-base"
                   style={{
-                    backgroundColor: TOKEN.slate,
-                    color: TOKEN.beige,
+                    backgroundColor: TOKEN.sage,
+                    color: "#FFFFFF",
                     boxShadow: "0 4px 24px 0 rgba(61, 64, 91, 0.25)",
                   }}
-                  onMouseOver={(e) => (e.currentTarget.style.backgroundColor = "#23243a")}
-                  onMouseOut={(e) => (e.currentTarget.style.backgroundColor = TOKEN.slate)}
+                  onMouseOver={(e) => (e.currentTarget.style.backgroundColor = "#6fa18a")}
+                  onMouseOut={(e) => (e.currentTarget.style.backgroundColor = TOKEN.sage)}
                 >
                   {c.authorCtaLabel} →
                 </a>
@@ -561,7 +563,7 @@ export default function CsrdAutomotive() {
                 open={i === 0}
                 className="group rounded-lg px-6 py-5"
                 style={{
-                  backgroundColor: TOKEN.beige70,
+                  backgroundColor: "#FFFFFF",
                   border: `1px solid ${TOKEN.rule}`,
                   borderLeft: `4px solid ${TOKEN.sage}`,
                 }}
