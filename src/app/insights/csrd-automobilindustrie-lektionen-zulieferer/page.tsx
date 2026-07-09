@@ -24,8 +24,8 @@ export default function CsrdAutomotive() {
       <section className="relative flex flex-col items-center justify-center min-h-[70vh] w-full text-center overflow-hidden">
         <div className="absolute inset-0 w-full h-full z-0">
           <Image
-            src="/Pictures/csrd-automotive-hero.png"
-            alt="Cover-Collage der Nachhaltigkeitsberichte 2025 von VW, Porsche, Continental, Mercedes-Benz und Schaeffler, Symbolbild für CSRD-Berichterstattung in der Automobilindustrie"
+            src="/Pictures/pexels-goumbik-590020.jpg"
+            alt="Analyse von Nachhaltigkeits-Kennzahlen am Laptop, Symbolbild für CSRD-Berichterstattung in der Automobilindustrie"
             fill
             style={{ objectFit: "cover", objectPosition: "center" }}
             className="opacity-90"
