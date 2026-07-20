@@ -16,37 +16,17 @@ type Post = {
   descKey: keyof typeof translations.de;
 };
 
-// Reihenfolge chronologisch aufsteigend: älteste oben, neueste unten.
+// Reihenfolge chronologisch absteigend: neueste oben, älteste unten.
 const POSTS: Post[] = [
   {
-    // März 2026
-    slug: "ccf-verifizierung",
-    image: "/Pictures/pexels-rdne-7948058.jpg",
-    imageAlt: "Datenanalyse am Schreibtisch",
-    dateKey: "insightsPost3Date",
-    categoryKey: "insightsPost3Category",
-    titleKey: "insightsPost3Title",
-    descKey: "insightsPost3Desc",
-  },
-  {
-    // April 2026
-    slug: "nki-foerderung",
-    image: "/Pictures/nki-foerderung-hero.png",
-    imageAlt: "Theaterplatz in Chemnitz mit Opernhaus und St. Petri-Kirche bei Sonnenuntergang, Symbolbild für NKI-geförderte Klimaschutzkonzepte",
-    dateKey: "insightsPost2Date",
-    categoryKey: "insightsPost2Category",
-    titleKey: "insightsPost2Title",
-    descKey: "insightsPost2Desc",
-  },
-  {
-    // Mai 2026
-    slug: "buchverlage-dekarbonisierung",
-    image: "/Pictures/buchverlage-dekarbonisierung-hero.png",
-    imageAlt: "Geschwungene Bücherregale in einer modernen Bibliothek, Symbolbild für Dekarbonisierung der Buch- und Verlagsbranche",
-    dateKey: "insightsPost1Date",
-    categoryKey: "insightsPost1Category",
-    titleKey: "insightsPost1Title",
-    descKey: "insightsPost1Desc",
+    // Juli 2026
+    slug: "csrd-automobilindustrie-lektionen-zulieferer",
+    image: "/Pictures/csrd-automotive-hero.png",
+    imageAlt: "Cover-Collage der Nachhaltigkeitsberichte 2025 von VW, Porsche, Continental, Mercedes-Benz und Schaeffler, Symbolbild für CSRD-Berichterstattung in der Automobilindustrie",
+    dateKey: "insightsPost5Date",
+    categoryKey: "insightsPost5Category",
+    titleKey: "insightsPost5Title",
+    descKey: "insightsPost5Desc",
   },
   {
     // Juni 2026
@@ -59,14 +39,34 @@ const POSTS: Post[] = [
     descKey: "insightsPost4Desc",
   },
   {
-    // Juli 2026
-    slug: "csrd-automobilindustrie-lektionen-zulieferer",
-    image: "/Pictures/csrd-automotive-hero.png",
-    imageAlt: "Cover-Collage der Nachhaltigkeitsberichte 2025 von VW, Porsche, Continental, Mercedes-Benz und Schaeffler, Symbolbild für CSRD-Berichterstattung in der Automobilindustrie",
-    dateKey: "insightsPost5Date",
-    categoryKey: "insightsPost5Category",
-    titleKey: "insightsPost5Title",
-    descKey: "insightsPost5Desc",
+    // Mai 2026
+    slug: "buchverlage-dekarbonisierung",
+    image: "/Pictures/buchverlage-dekarbonisierung-hero.png",
+    imageAlt: "Geschwungene Bücherregale in einer modernen Bibliothek, Symbolbild für Dekarbonisierung der Buch- und Verlagsbranche",
+    dateKey: "insightsPost1Date",
+    categoryKey: "insightsPost1Category",
+    titleKey: "insightsPost1Title",
+    descKey: "insightsPost1Desc",
+  },
+  {
+    // April 2026
+    slug: "nki-foerderung",
+    image: "/Pictures/nki-foerderung-hero.png",
+    imageAlt: "Theaterplatz in Chemnitz mit Opernhaus und St. Petri-Kirche bei Sonnenuntergang, Symbolbild für NKI-geförderte Klimaschutzkonzepte",
+    dateKey: "insightsPost2Date",
+    categoryKey: "insightsPost2Category",
+    titleKey: "insightsPost2Title",
+    descKey: "insightsPost2Desc",
+  },
+  {
+    // März 2026
+    slug: "ccf-verifizierung",
+    image: "/Pictures/pexels-rdne-7948058.jpg",
+    imageAlt: "Datenanalyse am Schreibtisch",
+    dateKey: "insightsPost3Date",
+    categoryKey: "insightsPost3Category",
+    titleKey: "insightsPost3Title",
+    descKey: "insightsPost3Desc",
   },
 ];
 
