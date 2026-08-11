@@ -61,7 +61,7 @@ export default function Home() {
           {/* Animated gradient background */}
           <div className="absolute inset-0 -z-10 animate-gradient-x" style={{background: 'linear-gradient(120deg, #e0eafc 0%, #cfdef3 100%)', opacity: 0.7}} />
           <div className="max-w-7xl mx-auto px-4">
-            <h2 className="text-4xl font-extrabold text-center mb-4" style={{ color: '#3D405B' }}>{t.solutions}</h2>
+            <h2 className="text-4xl font-extrabold text-center mb-4" style={{ color: '#3D405B' }}>{t.solutionsHeading}</h2>
             <p className="mb-12 text-lg text-center" style={{ color: '#3D405B' }}>{t.solutionsDesc}</p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
               {/* Nachhaltigkeit Card */}
