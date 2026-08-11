@@ -22,6 +22,17 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // Nur Production verschickt echte Mails. Staging- und Preview-Deployments
+    // quittieren die Absendung erfolgreich, versenden aber nichts, damit
+    // Testeingaben nicht im echten Postfach landen.
+    if (process.env.VERCEL_ENV && process.env.VERCEL_ENV !== 'production') {
+      console.info(`Kontaktformular auf ${process.env.VERCEL_ENV}: Versand unterdrueckt`);
+      return NextResponse.json(
+        { message: 'Email sent successfully' },
+        { status: 200 }
+      );
+    }
+
     // Check if environment variables are set
     const smtpHost = process.env.SMTP_HOST;
     const smtpPort = process.env.SMTP_PORT;
