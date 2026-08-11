@@ -1,5 +1,10 @@
 import type { NextConfig } from "next";
 
+// Nur Deployments von main laufen auf Vercel als "production". Alles andere
+// (Staging-Branch, Previews) bekommt zusaetzlich zum robots.txt einen
+// noindex-Header, damit einzeln verlinkte Seiten nicht doch im Index landen.
+const isProduction = process.env.VERCEL_ENV === "production";
+
 const nextConfig: NextConfig = {
   images: {
     domains: ["images.unsplash.com"],
@@ -27,6 +32,19 @@ const nextConfig: NextConfig = {
   // Add headers for better caching
   async headers() {
     return [
+      ...(isProduction
+        ? []
+        : [
+            {
+              source: '/(.*)',
+              headers: [
+                {
+                  key: 'X-Robots-Tag',
+                  value: 'noindex, nofollow',
+                },
+              ],
+            },
+          ]),
       {
         source: '/(.*)',
         headers: [
