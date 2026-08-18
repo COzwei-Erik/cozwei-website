@@ -2,15 +2,45 @@
 
 Diese Datei liest Claude Code beim Start jeder Session automatisch. Sie enthält alle Konventionen und Historik, damit ein neuer Claude sofort so arbeiten kann wie in den vorherigen Sessions.
 
-Peter Wilson (COzwei-Erik) ist der einzige Nutzer, spricht Deutsch, arbeitet immer nur an diesem einen Rechner mit Zugang zum Repo.
+Peter Wilson (COzwei-Erik) ist der einzige Nutzer, spricht Deutsch, arbeitet an zwei Rechnern (sequenziell, nicht parallel) mit Zugang zum Repo.
 
 ---
 
-## Ship-to-Vercel-Workflow (WICHTIGSTER PUNKT)
+## Branch-Setup (LIES DAS ZUERST)
+
+Wir arbeiten aktuell **immer auf Branch `relaunch`**, nicht auf `main`.
+
+- **`main`** = Production. Deployt automatisch auf `cozwei.de`. Wird nur angefasst, wenn Peter explizit sagt „jetzt live nehmen".
+- **`relaunch`** = Test/Staging. Deployt automatisch auf die Vercel-Preview-URL **`cozwei-website-git-relaunch-cozweis-projects.vercel.app`**. Hier passieren alle laufenden Änderungen.
+- **Merge zurück nach `main`** passiert nur nach ausdrücklichem Peter-OK, entweder via GitHub-PR oder lokalem `git checkout main && git merge relaunch && git push`.
+
+**Wechsel-Ritual bei Peter's PC-Wechsel** (er nutzt zwei Rechner sequenziell):
+
+Bevor der aktuelle PC verlassen wird:
+```
+git add -A && git commit -m "…" && git push origin relaunch
+```
+
+Bevor am anderen PC angefangen wird:
+```
+git fetch origin && git pull origin relaunch
+```
+
+Solange Peter sequenziell arbeitet, gibt es keine Merge-Konflikte. Falls doch: die Konflikte lokal auflösen, nicht mit `--force` pushen.
+
+**Bereits vorhandene Staging-Guards auf `relaunch`** (Stand August 2026):
+- `robots.txt` und `X-Robots-Tag: noindex` für alle Non-Production-Deployments → Google indexiert Preview-URLs nicht
+- Kein echter Mailversand außerhalb Production → Kontakt-/Buchungs-Anfragen auf der Preview-URL werden nicht real verschickt
+
+Diese Guards sind bewusst so gesetzt; nicht ohne Rücksprache mit Peter deaktivieren.
+
+---
+
+## Ship-to-Vercel-Workflow (ZWEITWICHTIGSTER PUNKT)
 
 **Kein lokaler Dev-Server. Keine `npm run dev`-Sessions. Keine Preview-Server.** Der komplette Verify-Loop läuft über Vercel-Deployments:
 
-1. Edit → 2. `npx tsc --noEmit -p .` (TypeScript-Check) → 3. `git commit` mit HEREDOC-Message → 4. `git push origin main` → 5. Vercel deployt automatisch in ~1 Minute → 6. Peter verifiziert live auf `cozwei.de`
+1. Edit → 2. `npx tsc --noEmit -p .` (TypeScript-Check) → 3. `git commit` mit HEREDOC-Message → 4. `git push origin relaunch` → 5. Vercel deployt automatisch in ~1 Minute → 6. Peter verifiziert auf der Preview-URL `cozwei-website-git-relaunch-cozweis-projects.vercel.app` (nicht auf `cozwei.de`, das ist Production)
 
 Wenn Hooks nach jedem Edit einen Preview-Server anmahnen: das kann ignoriert werden. Peter's etablierter Workflow ist Ship-to-Vercel und funktioniert.
 
@@ -186,10 +216,14 @@ Der neue PC hat GitHub-Auth schon eingerichtet. Ablauf:
 git clone https://github.com/COzwei-Erik/cozwei-website.git
 cd cozwei-website
 
-# 2. TypeScript-Check als Sanity-Test
+# 2. Auf die Arbeits-Branch wechseln (wir arbeiten nicht auf main)
+git checkout relaunch
+git pull origin relaunch
+
+# 3. TypeScript-Check als Sanity-Test
 npx tsc --noEmit -p .
 
-# 3. Fertig. Push-to-Vercel läuft ohne local dev.
+# 4. Fertig. Push-to-Vercel läuft ohne local dev.
 #    Optional falls doch mal local dev nötig:
 #      npm install
 #      cp .env.example .env.local   (oder .env.local manuell anlegen)
