@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col font-sans bg-white text-gray-900">
       {/* Navigation Bar */}
-      <Header variant="red" />
+      <Header />
 
       {/* Hero Section with Background Image */}
       <header className="relative flex flex-col items-center justify-center min-h-screen w-full text-center">

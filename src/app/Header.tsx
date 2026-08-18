@@ -55,13 +55,7 @@ const headerTranslations = {
 // Lazy load mobile menu component
 const MobileMenu = lazy(() => import('./MobileMenu'));
 
-// `variant` steuert die Hintergrundfarbe der Navigationsleiste.
-// "default" = weiss (alle Unterseiten), "red" = roter Balken (aktuell nur Homepage).
-export default function Header({
-  variant = "default",
-}: {
-  variant?: "default" | "red";
-}) {
+export default function Header() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownTimeout = useRef<Timeout | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -77,11 +71,7 @@ export default function Header({
   };
 
   return (
-    <nav
-      className={`w-full flex items-center justify-between px-6 py-1 shadow-sm sticky top-0 z-50 ${
-        variant === "red" ? "bg-red-600" : "bg-white"
-      }`}
-    >
+    <nav className="w-full flex items-center justify-between px-6 py-1 shadow-sm bg-white sticky top-0 z-50">
       <div className="flex items-center gap-2">
         <Link href="/" className="cursor-pointer">
           <Image 
