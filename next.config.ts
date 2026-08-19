@@ -29,6 +29,17 @@ const nextConfig: NextConfig = {
   },
   // Enable static optimization
   trailingSlash: false,
+  // Dauerhafte Umleitungen umbenannter Seiten. Ohne diese verlieren die alten
+  // URLs ihre Rankings und externe Links laufen ins Leere.
+  async redirects() {
+    return [
+      {
+        source: "/nachhaltigkeit",
+        destination: "/berichterstattung",
+        permanent: true,
+      },
+    ];
+  },
   // Add headers for better caching
   async headers() {
     return [
