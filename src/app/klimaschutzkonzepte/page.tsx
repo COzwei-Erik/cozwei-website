@@ -1,8 +1,11 @@
 "use client";
 import Header from "../Header";
 import Image from "next/image";
+import Link from "next/link";
 import { useLanguage, translations } from "../LanguageContext";
 import { trackEvent, Events } from "../analytics";
+import ContactCTA from "../components/ContactCTA";
+import InfoBox from "../components/InfoBox";
 
 // Maries Microsoft-Bookings-Link für 30-Min-Erstgespräche zu NKI-Klimaschutzkonzepten.
 const MARIE_BOOKING_URL =
@@ -281,6 +284,65 @@ export default function Klimaschutzkonzepte() {
           </div>
         </div>
       </section>
+
+      {/* Hub-Sektion: Einstieg in die drei Zielgruppenseiten. Diese Seite ist das
+          Ziel von Kachel 5 der Startseite, die Zielgruppenseiten haengen darunter. */}
+      <section className="w-full py-16" style={{ backgroundColor: "#F4F1DE" }}>
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-3xl font-extrabold mb-8" style={{ color: "#3D405B" }}>
+            Für Ihre Einrichtung
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+            {[
+              {
+                href: "/klimaschutzkonzepte-hochschulen",
+                title: "Hochschulen & Universitäten",
+                body: "Heterogene Gebäudebestände, energieintensive Labore, Pendelverkehr und Mensen, mit Konzepten, die Gremien überzeugen.",
+              },
+              {
+                href: "/klimaschutzkonzepte-kirchen",
+                title: "Kirchen & kirchliche Einrichtungen",
+                body: "Von der denkmalgeschützten Kirche bis zur Kita, priorisiert je Gebäude und anschlussfähig an kirchliche Klimaziele.",
+              },
+              {
+                href: "/klimaschutzkonzepte-krankenhaeuser",
+                title: "Krankenhäuser & soziale Träger",
+                body: "Maßnahmen, die Versorgungssicherheit und Hygieneanforderungen im 24/7-Betrieb nicht gefährden.",
+              },
+            ].map((card) => (
+              <Link
+                key={card.href}
+                href={card.href}
+                className="block rounded-2xl bg-white border p-6 transition hover:border-[#81B29A] hover:ring-2 hover:ring-[#81B29A]/30"
+                style={{ borderColor: "#E2DDD0" }}
+              >
+                <h3
+                  className="text-base font-extrabold uppercase tracking-wide mb-2"
+                  style={{ color: "#81B29A" }}
+                >
+                  {card.title}
+                </h3>
+                <p className="text-sm leading-relaxed" style={{ color: "#23243a" }}>
+                  {card.body}
+                </p>
+              </Link>
+            ))}
+          </div>
+
+          <InfoBox label="Aktuelle Förderfakten">
+            Seit dem 1. Juni 2026 erfolgt die Antragstellung über easy-Online ausschließlich
+            digital. Und seit dem 1. Juli 2026 gelten Klimaschutzkonzepte, die vor dem
+            31. August 2021 fertiggestellt und seitdem nicht grundlegend aktualisiert wurden,
+            nicht mehr als förderschädlich für ein Erstvorhaben. Einrichtungen mit einem
+            älteren Konzept können also wieder antragsberechtigt sein.
+          </InfoBox>
+        </div>
+      </section>
+
+      <ContactCTA
+        location="klimaschutzkonzepte"
+        context="Wir prüfen kostenlos, ob Ihre Einrichtung antragsberechtigt ist und welche Förderquote gilt."
+      />
 
       <footer className="bg-gray-100 py-8 px-4 mt-8 text-center text-sm text-gray-600">
         <div className="mb-2">COzwei GmbH &bull; Gutenbergstraße 16A, 70176 Stuttgart &bull; Telefon: +49 711 12171034 &bull; E-Mail: mail@cozwei.de</div>
