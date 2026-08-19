@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
 import Header from "./Header";
 import { useLanguage } from "./LanguageContext";
 import { homeContent } from "./home-content";
@@ -102,12 +103,55 @@ const FOOTER_BRANCHEN_HREFS = [
   "/klimaschutzkonzepte",
 ];
 
+// Untergrenze fuer den Hero, damit Ueberschrift und Subline auf sehr flachen
+// Fenstern (Handy im Querformat) nicht aus dem Bild laufen.
+const HERO_MIN_HEIGHT = 300;
+
 export default function Home() {
   const { language } = useLanguage();
   const c = homeContent[language] || homeContent.de;
 
+  // Der Hero soll genau den Platz einnehmen, der nach Header und Kunden-Sektion
+  // uebrig bleibt, damit die Kunden beim Laden immer vollstaendig sichtbar sind.
+  // Beide Hoehen werden gemessen statt hart gesetzt: Der Header ist auf dem
+  // Desktop hoeher als mit Mobile-Menue, und die Logo-Reihe haengt an der
+  // Schriftgroesse. Der Viewport-Anteil bleibt als CSS-Einheit svh stehen, damit
+  // das Ein- und Ausklappen der mobilen Adressleiste die Hoehe nicht veraendert.
+  const kundenRef = useRef<HTMLElement>(null);
+  const [heroOffset, setHeroOffset] = useState<number | null>(null);
+
+  useEffect(() => {
+    const nav = document.querySelector("nav");
+
+    const recalc = () => {
+      const navHeight = nav ? (nav as HTMLElement).offsetHeight : 0;
+      const kundenHeight = kundenRef.current ? kundenRef.current.offsetHeight : 0;
+      setHeroOffset(navHeight + kundenHeight);
+    };
+
+    recalc();
+
+    // Logos und Webfonts koennen die Hoehen nachtraeglich veraendern, ausserdem
+    // wechselt der Header am md-Breakpoint die Bauform. Beobachten statt einmalig
+    // messen deckt beides ab, ein Resize-Listener ist dadurch nicht noetig.
+    const observer = new ResizeObserver(recalc);
+    if (kundenRef.current) observer.observe(kundenRef.current);
+    if (nav) observer.observe(nav);
+
+    return () => observer.disconnect();
+  }, []);
+
+  // Vor der Messung greifen die Fallback-Klassen am Element (siehe unten), danach
+  // ueberschreibt der gemessene Inline-Wert sie.
+  const heroHeight =
+    heroOffset === null
+      ? undefined
+      : `max(${HERO_MIN_HEIGHT}px, calc(100svh - ${heroOffset}px))`;
+
+  // Die Kunden-Sektion ist jetzt schon beim Laden sichtbar, deshalb springt der
+  // Pfeil zur naechsten Sektion darunter statt zu den Kunden.
   const scrollToContent = () => {
-    const target = document.getElementById("kunden");
+    const target = document.getElementById("loesungen");
     if (!target) return;
     const header = document.querySelector("nav");
     const headerHeight = header ? (header as HTMLElement).offsetHeight : 80;
@@ -121,7 +165,13 @@ export default function Home() {
 
       {/* 01 HERO — grüne Textur mit eingebackenen Bubbles, leichter Gradient für Textlesbarkeit.
           Die Kreise sind Teil des Hintergrundbilds, es gibt bewusst kein separates Bubbles-Overlay mehr. */}
-      <section className="relative w-full overflow-hidden" style={{ minHeight: "72vh" }}>
+      {/* Die h-Klassen sind der Startwert fuer den ersten Frame und rechnen mit
+          Header 69px plus Kunden-Sektion (mobil rund 156px, ab sm rund 232px).
+          Sobald gemessen ist, gewinnt der Inline-Style. */}
+      <section
+        className="relative w-full overflow-hidden min-h-[300px] h-[calc(100svh-225px)] sm:h-[calc(100svh-301px)]"
+        style={heroHeight ? { height: heroHeight } : undefined}
+      >
         <Image
           src="/Pictures/Homepage/hero-texture.jpg"
           alt=""
@@ -138,8 +188,8 @@ export default function Home() {
               "linear-gradient(90deg, rgba(23,42,35,0.55) 0%, rgba(23,42,35,0.30) 40%, rgba(23,42,35,0.05) 70%, rgba(23,42,35,0) 100%)",
           }}
         />
-        <div className="relative z-10 flex flex-col justify-center h-full max-w-7xl mx-auto px-6 sm:px-10" style={{ minHeight: "72vh" }}>
-          <div className="max-w-2xl py-24">
+        <div className="relative z-10 flex flex-col justify-center h-full max-w-7xl mx-auto px-6 sm:px-10">
+          <div className="max-w-2xl py-8 sm:py-12">
             <h1
               className="text-4xl sm:text-5xl md:text-6xl font-extrabold uppercase leading-tight mb-6 text-white"
               style={{ letterSpacing: "0.01em", textShadow: "0 2px 12px rgba(0,0,0,0.25)" }}
@@ -169,8 +219,11 @@ export default function Home() {
       </section>
 
       {/* 02 UNSERE KUNDEN — Band + Logos mit Grayscale-zu-Farbe-Hover */}
-      <section id="kunden" className="w-full">
-        <div className="w-full py-6" style={{ backgroundColor: "#c3c9cf" }}>
+      {/* Die Hoehe dieser Sektion bestimmt ueber kundenRef die Hoehe des Heros,
+          damit sie beim Laden immer vollstaendig im Bild ist. Die Logos stehen
+          deshalb auf jeder Breite in einer Reihe und skalieren mit. */}
+      <section id="kunden" ref={kundenRef} className="w-full">
+        <div className="w-full py-4 sm:py-6" style={{ backgroundColor: "#c3c9cf" }}>
           <h2
             className="text-3xl sm:text-4xl font-extrabold text-center"
             style={{ color: "#3D405B", letterSpacing: "0.01em" }}
@@ -178,16 +231,16 @@ export default function Home() {
             {c.kundenTitle}
           </h2>
         </div>
-        <div className="max-w-6xl mx-auto px-6 py-10">
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 items-center">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-5 sm:py-8">
+          <div className="grid grid-cols-5 gap-3 sm:gap-6 md:gap-8 items-center">
             {KUNDEN_LOGOS.map((logo) => (
-              <div key={logo.alt} className="flex items-center justify-center h-20">
+              <div key={logo.alt} className="flex items-center justify-center h-12 sm:h-16 md:h-20">
                 <Image
                   src={logo.src}
                   alt={logo.alt}
                   width={180}
                   height={80}
-                  className="max-h-16 w-auto object-contain filter grayscale hover:grayscale-0 transition duration-300"
+                  className="max-h-9 sm:max-h-12 md:max-h-16 w-auto object-contain filter grayscale hover:grayscale-0 transition duration-300"
                 />
               </div>
             ))}
