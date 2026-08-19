@@ -29,6 +29,14 @@ Kontakt: mail@cozwei.de, +49 711 12171034, Gutenbergstr. 16A, 70176 Stuttgart
 - [Klimaschutzkonzepte für Krankenhäuser](https://www.cozwei.de/klimaschutzkonzepte-krankenhaeuser): NKI-gefördertes Konzept für Kliniken und soziale Träger, ausgelegt auf den 24/7-Betrieb.
 - [KI & Automatisierung](https://www.cozwei.de/ki-automatisierung): KI-Implementierung, individuelle Softwareentwicklung und automatisierte Nachhaltigkeitsdaten.
 
+## Branchen
+
+- [Branchen im Überblick](https://www.cozwei.de/branchen): Vier Branchen mit ihren jeweiligen Anforderungen, Anforderern und Fristen.
+- [Automotive](https://www.cozwei.de/branchen/automotive): PCF je Bauteil, SAQ 5.0, CDP und SBTi: die Klimaanforderungen der OEMs methodensicher erfüllen.
+- [Druck & Verlag](https://www.cozwei.de/branchen/druck-verlag): Papier, Druck und Logistik korrekt bilanziert, Klimaaussagen nach den ab 27. September 2026 geltenden UWG-Regeln.
+- [Verbrauchsgüter](https://www.cozwei.de/branchen/verbrauchsgueter): PCF je Produkt und Verpackung, VSME-Bericht für Handel und Banken, Datenbasis für Umweltaussagen.
+- [Öffentliche Einrichtungen](https://www.cozwei.de/branchen/oeffentliche-einrichtungen): NKI-geförderte Klimaschutzkonzepte mit 70 bis 90 Prozent Zuschuss für Hochschulen, Kirchen, Kliniken und Kommunen.
+
 ## Unternehmen
 
 - [Referenzen](https://www.cozwei.de/referenzen): Kundenprojekte aus Industrie, Verlagswesen, Handel und öffentlichem Sektor.

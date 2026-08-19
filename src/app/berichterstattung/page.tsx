@@ -160,6 +160,9 @@ export default function Berichterstattung() {
             der Rückmeldung auf Nachhaltigkeitsanfragen ihrer Kunden und sorgen dafür, dass
             die Antworten zu den Zahlen im Bericht passen.
           </p>
+          <p className="text-lg leading-relaxed mt-4" style={{ color: "#23243a" }}>
+            Wie SAQ 5.0, CDP und Ratings in der Automobilindustrie zusammenspielen: <Link href="/branchen/automotive" className="font-bold underline" style={{ color: "#3D405B" }}>Branchenseite Automotive</Link>
+          </p>
         </div>
       </section>
 

@@ -109,6 +109,7 @@ export default function Header() {
             ))}
           </ul>
         </li>
+        <li><a href="/branchen" className="hover:text-green-700 transition text-lg font-bold" style={{ color: '#3D405B' }}>Branchen</a></li>
         <li><a href="/referenzen" className="hover:text-green-700 transition text-lg font-bold" style={{ color: '#3D405B' }}>{t.references}</a></li>
         <li><a href="/ueber-uns" className="hover:text-green-700 transition text-lg font-bold" style={{ color: '#3D405B' }}>{t.about}</a></li>
         <li><a href="/insights" className="hover:text-green-700 transition text-lg font-bold" style={{ color: '#3D405B' }}>{t.insights}</a></li>

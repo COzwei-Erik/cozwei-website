@@ -184,6 +184,11 @@ export default function KlimaschutzkonzepteKrankenhaeuser() {
             href: "/klimaschutzkonzepte",
           },
           {
+            title: "Öffentliche Einrichtungen",
+            body: "Alle Angebote für den öffentlichen Sektor im Überblick.",
+            href: "/branchen/oeffentliche-einrichtungen",
+          },
+          {
             title: "Förderung",
             body: "Weitere Programme, auch für privatwirtschaftliche Träger.",
             href: "/foerderung",

@@ -184,6 +184,9 @@ export default function ProductCarbonFootprint() {
             weisen Datenqualität und Unsicherheiten transparent aus. So bleibt Ihr PCF auch
             bei Rückfragen von Kunden oder Prüfern belastbar.
           </p>
+          <p className="text-lg leading-relaxed mt-4" style={{ color: "#23243a" }}>
+            Für {"" }<Link href="/branchen/automotive" className="font-bold underline" style={{ color: "#3D405B" }}>Automobilzulieferer</Link> und <Link href="/branchen/verbrauchsgueter" className="font-bold underline" style={{ color: "#3D405B" }}>Verbrauchsgüterhersteller</Link> haben wir die typischen Kundenanforderungen im Detail aufbereitet.
+          </p>
         </div>
       </section>
 

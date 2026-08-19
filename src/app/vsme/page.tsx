@@ -191,6 +191,9 @@ export default function Vsme() {
             ausgewählte GRI-Angaben mit Umweltfokus, anschlussfähig an bestehende
             VSME/VS-Daten.
           </p>
+          <p className="text-lg leading-relaxed mb-4" style={{ color: "#23243a" }}>
+            Was Handel und Banken bei Verbrauchsgütern konkret abfragen: <Link href="/branchen/verbrauchsgueter" className="font-bold underline" style={{ color: "#3D405B" }}>Branchenseite Verbrauchsgüter</Link>
+          </p>
           <p className="text-lg leading-relaxed" style={{ color: "#23243a" }}>
             Importieren Sie emissionsintensive Waren in die EU? Dann betrifft Sie zusätzlich
             der CO₂-Grenzausgleich CBAM.{" "}

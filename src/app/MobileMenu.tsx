@@ -71,6 +71,7 @@ export default function MobileMenu({
               </div>
             )}
           </div>
+          <Link href="/branchen" className="hover:text-green-700 transition text-[#3D405B] font-bold text-2xl pl-1" onClick={onClose}>Branchen</Link>
           <Link href="/referenzen" className="hover:text-green-700 transition text-[#3D405B] font-bold text-2xl pl-1" onClick={onClose}>{t.references}</Link>
           <Link href="/ueber-uns" className="hover:text-green-700 transition text-[#3D405B] font-bold text-2xl pl-1" onClick={onClose}>{t.about}</Link>
           <Link href="/insights" className="hover:text-green-700 transition text-[#3D405B] font-bold text-2xl pl-1" onClick={onClose}>{t.insights}</Link>

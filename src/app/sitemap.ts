@@ -15,6 +15,13 @@ const ROUTES: { path: string; priority: number }[] = [
   { path: "/klimaschutzkonzepte", priority: 0.9 },
   { path: "/ki-automatisierung", priority: 0.9 },
 
+  // Branchen
+  { path: "/branchen", priority: 0.9 },
+  { path: "/branchen/automotive", priority: 0.8 },
+  { path: "/branchen/druck-verlag", priority: 0.8 },
+  { path: "/branchen/verbrauchsgueter", priority: 0.8 },
+  { path: "/branchen/oeffentliche-einrichtungen", priority: 0.8 },
+
   // Detailseiten
   { path: "/corporate-carbon-footprint", priority: 0.8 },
   { path: "/product-carbon-footprint", priority: 0.8 },

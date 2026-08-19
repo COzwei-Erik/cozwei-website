@@ -173,6 +173,11 @@ export default function KlimaschutzkonzepteKirchen() {
             href: "/klimaschutzkonzepte",
           },
           {
+            title: "Öffentliche Einrichtungen",
+            body: "Alle Angebote für den öffentlichen Sektor im Überblick.",
+            href: "/branchen/oeffentliche-einrichtungen",
+          },
+          {
             title: "Förderung",
             body: "Weitere Programme für Investitionen und Beratung.",
             href: "/foerderung",

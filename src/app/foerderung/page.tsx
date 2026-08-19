@@ -269,6 +269,9 @@ export default function Foerderung() {
               Mehr zu NKI-geförderten Klimaschutzkonzepten
             </Link>
           </p>
+          <p className="text-lg leading-relaxed mt-4" style={{ color: "#23243a" }}>
+            Förderwege für öffentliche Einrichtungen im Überblick: <Link href="/branchen/oeffentliche-einrichtungen" className="font-bold underline" style={{ color: "#3D405B" }}>Branchenseite öffentliche Einrichtungen</Link>
+          </p>
         </div>
       </section>
 

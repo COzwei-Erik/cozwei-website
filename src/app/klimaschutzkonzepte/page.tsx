@@ -328,6 +328,13 @@ export default function Klimaschutzkonzepte() {
             ))}
           </div>
 
+          <p className="text-lg leading-relaxed mb-8" style={{ color: "#23243a" }}>
+            Überblick über alle Angebote für den öffentlichen Sektor:{" "}
+            <Link href="/branchen/oeffentliche-einrichtungen" className="font-bold underline" style={{ color: "#3D405B" }}>
+              Branchenseite öffentliche Einrichtungen
+            </Link>
+          </p>
+
           <InfoBox label="Aktuelle Förderfakten">
             Seit dem 1. Juni 2026 erfolgt die Antragstellung über easy-Online ausschließlich
             digital. Und seit dem 1. Juli 2026 gelten Klimaschutzkonzepte, die vor dem

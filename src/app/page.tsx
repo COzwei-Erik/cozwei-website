@@ -137,22 +137,22 @@ const BRANCHEN_META: { image: string; alt: string; href: string }[] = [
   {
     image: "/Pictures/Homepage/branche-automotive.jpg",
     alt: "Getriebe eines Fahrzeugs in Nahaufnahme, Symbolbild für die Automobilindustrie",
-    href: "/insights/csrd-automobilindustrie-lektionen-zulieferer",
+    href: "/branchen/automotive",
   },
   {
     image: "/Pictures/Homepage/branche-druck-verlag.jpg",
     alt: "Stapel gedruckter Zeitungen, Symbolbild für Druck- und Verlagsbranche",
-    href: "/insights/buchverlage-dekarbonisierung",
+    href: "/branchen/druck-verlag",
   },
   {
     image: "/Pictures/Homepage/branche-verbrauchsgueter.jpg",
     alt: "Mitarbeiterin mit Tablet im Einzelhandel, Symbolbild für Verbrauchsgüter",
-    href: "/referenzen",
+    href: "/branchen/verbrauchsgueter",
   },
   {
     image: "/Pictures/Homepage/branche-oeffentlich.jpg",
     alt: "Skyline einer Stadt, Symbolbild für öffentliche Einrichtungen",
-    href: "/klimaschutzkonzepte",
+    href: "/branchen/oeffentliche-einrichtungen",
   },
 ];
 
@@ -173,10 +173,10 @@ const FOOTER_LOESUNGEN_HREFS = [
   "/massnahmen",
 ];
 const FOOTER_BRANCHEN_HREFS = [
-  "/insights/buchverlage-dekarbonisierung",
-  "/insights/csrd-automobilindustrie-lektionen-zulieferer",
-  "/foerderungen",
-  "/klimaschutzkonzepte",
+  "/branchen/druck-verlag",
+  "/branchen/automotive",
+  "/branchen/verbrauchsgueter",
+  "/branchen/oeffentliche-einrichtungen",
 ];
 
 // Untergrenze fuer den Hero, damit Ueberschrift und Subline auf sehr flachen

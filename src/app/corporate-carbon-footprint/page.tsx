@@ -188,6 +188,9 @@ export default function CorporateCarbonFootprint() {
             und Herkunftsnachweise. So sind Ihre Zahlen für CDP, SBTi und ESRS E1
             anschlussfähig.
           </p>
+          <p className="text-lg leading-relaxed mt-4" style={{ color: "#23243a" }}>
+            Branchenspezifika, etwa für <Link href="/branchen/druck-verlag" className="font-bold underline" style={{ color: "#3D405B" }}>Verlage mit papierdominierter Lieferkette</Link>, finden Sie auf unseren Branchenseiten.
+          </p>
         </div>
       </section>
 
