@@ -7,6 +7,7 @@ import { useLanguage } from "./LanguageContext";
 import { homeContent } from "./home-content";
 import { HUBSPOT_FORM_URL } from "./links";
 import { trackEvent, Events } from "./analytics";
+import { jsonLd, organizationSchema } from "./components/schema";
 
 // Sprachunabhängige Struktur-Daten der Homepage (Bilder + Link-Ziele).
 // Reihenfolge korrespondiert 1:1 mit den Arrays in home-content.ts.
@@ -673,6 +674,9 @@ export default function Home() {
           </div>
         </div>
       </footer>
+
+      {/* Organization-Schema, genau einmal im Dokumentbestand der Website. */}
+      <script {...jsonLd(organizationSchema())} />
     </div>
   );
 }

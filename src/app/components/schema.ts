@@ -24,6 +24,28 @@ export const ORGANIZATION = {
 
 export type FaqItem = { question: string; answer: string };
 
+/**
+ * Organization-Schema der Startseite, mit Adresse, Kontaktpunkt und sameAs.
+ * Gehört genau einmal ins Dokument, deshalb nur auf der Startseite ausgeben.
+ */
+export function organizationSchema() {
+  return {
+    "@context": "https://schema.org",
+    ...ORGANIZATION,
+    description:
+      "COzwei GmbH ist eine Nachhaltigkeits- und Dekarbonisierungsberatung mit Standorten in Stuttgart und Lissabon. Leistungen sind CO₂-Bilanzierung, Dekarbonisierung, Nachhaltigkeitsberichterstattung, Förderberatung und Automatisierung von Nachhaltigkeitsdaten.",
+    contactPoint: {
+      "@type": "ContactPoint",
+      contactType: "customer service",
+      email: "mail@cozwei.de",
+      telephone: "+49 711 12171034",
+      areaServed: "DE",
+      availableLanguage: ["de", "en", "pt"],
+    },
+    sameAs: ["https://www.linkedin.com/company/cozwei"],
+  };
+}
+
 /** Service-Schema einer Lösungsseite. */
 export function serviceSchema(opts: {
   name: string;

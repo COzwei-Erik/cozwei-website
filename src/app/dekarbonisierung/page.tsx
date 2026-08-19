@@ -2,11 +2,35 @@
 import Header from "../Header";
 import Image from "next/image";
 import { useLanguage, translations } from "../LanguageContext";
-import ContactForm from "../components/ContactForm";
+import { dekarbContent } from "./content";
+import ContactCTA from "../components/ContactCTA";
+import RelatedSolutions from "../components/RelatedSolutions";
+
+// Bilder aus dem Bestand plus Link-Ziele, parallel zu cards in content.ts.
+const DEKARB_CARD_META = [
+  {
+    image: "/Pictures/pexels-marcin-jozwiak-199600-3641377.jpg",
+    alt: "Industrieanlage, Symbolbild fuer den Dekarbonisierungsplan",
+    href: "#klimaziele-erreichen",
+  },
+  {
+    image: "/Pictures/pexels-rdne-7948058.jpg",
+    alt: "Team bei der Projektplanung, Symbolbild fuer die Massnahmenumsetzung",
+    href: "/massnahmen",
+  },
+  {
+    image: "/Pictures/image copy 6.png",
+    alt: "Symbolbild fuer Energieeffizienz im Betrieb",
+    href: "/energieeffizienz",
+  },
+];
+
+const DEKARB_RELATED_HREFS = ["/co2-bilanzierung", "/massnahmen", "/foerderung"];
 
 export default function Dekarbonisierung() {
   const { language } = useLanguage();
   const t = translations[language] || translations.de;
+  const c = dekarbContent[language] || dekarbContent.de;
   return (
     <div className="min-h-screen flex flex-col font-sans bg-white text-gray-900">
       <Header />
@@ -58,49 +82,30 @@ export default function Dekarbonisierung() {
             <p className="mb-12 text-lg text-center" style={{ color: '#3D405B' }}>
               {t.decarbonSectionSubtitle}
             </p>
+            {/* Karten passend zur Startseiten-Kachel "Emissionen reduzieren".
+                Bilder aus dem Bestand, Ziele: Ankersprung, /massnahmen, /energieeffizienz. */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {/* BAFA 5 Card */}
-              <div className="flex flex-col rounded-3xl bg-white/60 border border-[#81B29A]/20 backdrop-blur-xl transition-all duration-300 hover:scale-105 hover:border-2 hover:border-[#81B29A] hover:ring-2 hover:ring-[#81B29A]/30 overflow-hidden group">
-                <Image src="/Pictures/pexels-marcin-jozwiak-199600-3641377.jpg" alt="BAFA 5" width={600} height={256} quality={40} className="w-full h-64 object-cover rounded-t-2xl transition-all duration-300" />
-                <div className="flex flex-col p-8 flex-1">
-                  <h3 className="text-lg font-extrabold mb-2" style={{ color: '#23243a' }}>{t.decarbonCard1Title}</h3>
-                  <p className="mb-6 text-base" style={{ color: '#23243a' }}>
-                    {t.decarbonCard1Desc}
-                  </p>
-                  <a href="/transformationskonzepte" className="mt-auto text-[#81B29A] font-bold flex items-center group/link hover:underline transition">
-                    {t.learnMore}
-                    <svg className="ml-2 w-5 h-5 text-[#81B29A] group-hover/link:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"/></svg>
-                  </a>
-                </div>
-              </div>
-              {/* CBAM Card */}
-              <div className="flex flex-col rounded-3xl bg-white/60 border border-[#81B29A]/20 backdrop-blur-xl transition-all duration-300 hover:scale-105 hover:border-2 hover:border-[#81B29A] hover:ring-2 hover:ring-[#81B29A]/30 overflow-hidden group">
-                <Image src="/Pictures/image copy 6.png" alt="Klimaschutzkonzept" width={600} height={256} quality={40} className="w-full h-64 object-cover rounded-t-2xl transition-all duration-300" />
-                <div className="flex flex-col p-8 flex-1">
-                  <h3 className="text-lg font-extrabold mb-2" style={{ color: '#23243a' }}>{t.decarbonCard2Title}</h3>
-                  <p className="mb-6 text-base" style={{ color: '#23243a' }}>
-                    {t.decarbonCard2Desc}
-                  </p>
-                  <a href="/klimaschutzkonzepte" className="mt-auto text-[#81B29A] font-bold flex items-center group/link hover:underline transition">
-                    {t.learnMore}
-                    <svg className="ml-2 w-5 h-5 text-[#81B29A] group-hover/link:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"/></svg>
-                  </a>
-                </div>
-              </div>
-              {/* ESRS E1 Card */}
-              <div className="flex flex-col rounded-3xl bg-white/60 border border-[#81B29A]/20 backdrop-blur-xl transition-all duration-300 hover:scale-105 hover:border-2 hover:border-[#81B29A] hover:ring-2 hover:ring-[#81B29A]/30 overflow-hidden group">
-                <Image src="/Pictures/pexels-rdne-7948058.jpg" alt="ESRS E1" width={600} height={256} quality={40} className="w-full h-64 object-cover rounded-t-2xl transition-all duration-300" />
-                <div className="flex flex-col p-8 flex-1">
-                  <h3 className="text-lg font-extrabold mb-2" style={{ color: '#23243a' }}>{t.decarbonCard3Title}</h3>
-                  <p className="mb-6 text-base" style={{ color: '#23243a' }}>
-                    {t.decarbonCard3Desc}
-                  </p>
-                  <a href="/esrs-e1" className="mt-auto text-[#81B29A] font-bold flex items-center group/link hover:underline transition">
-                    {t.learnMore}
-                    <svg className="ml-2 w-5 h-5 text-[#81B29A] group-hover/link:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"/></svg>
-                  </a>
-                </div>
-              </div>
+              {DEKARB_CARD_META.map((meta, i) => {
+                const card = c.cards[i];
+                return (
+                  <div
+                    key={meta.href}
+                    className="flex flex-col rounded-3xl bg-white/60 border border-[#81B29A]/20 backdrop-blur-xl transition-all duration-300 hover:scale-105 hover:border-2 hover:border-[#81B29A] hover:ring-2 hover:ring-[#81B29A]/30 overflow-hidden group"
+                  >
+                    <Image src={meta.image} alt={meta.alt} width={600} height={256} quality={40} className="w-full h-64 object-cover rounded-t-2xl transition-all duration-300" />
+                    <div className="flex flex-col p-8 flex-1">
+                      <h3 className="text-lg font-extrabold mb-2" style={{ color: '#23243a' }}>{card.title}</h3>
+                      <p className="mb-6 text-base" style={{ color: '#23243a' }}>
+                        {card.body}
+                      </p>
+                      <a href={meta.href} className="mt-auto text-[#81B29A] font-bold flex items-center group/link hover:underline transition">
+                        {card.linkLabel}
+                        <svg className="ml-2 w-5 h-5 text-[#81B29A] group-hover/link:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"/></svg>
+                      </a>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </section>
@@ -132,14 +137,44 @@ export default function Dekarbonisierung() {
                 <div className="flex items-center justify-center w-14 h-14 rounded-full bg-[#81B29A] text-white text-2xl font-bold mb-4">4</div>
                 <h3 className="text-lg font-bold mb-2 text-center" style={{ color: '#23243a' }}>{t.decarbonStep4Title}</h3>
                 <p className="text-sm text-center text-[#23243a]">{t.decarbonStep4Desc}</p>
+                {/* Weiterführende Links aus Schritt 4: Offenlegung und Reporting. */}
+                <p className="text-sm text-center mt-3">
+                  <a href="/cdp-klimaberichterstattung" className="font-bold hover:underline" style={{ color: "#81B29A" }}>
+                    CDP
+                  </a>
+                  <span className="mx-2" style={{ color: "#6B6B6B" }}>
+                    ·
+                  </span>
+                  <a href="/berichterstattung" className="font-bold hover:underline" style={{ color: "#81B29A" }}>
+                    Berichterstattung
+                  </a>
+                </p>
               </div>
             </div>
           </div>
         </section>
         {/* Contact Form Section */}
-        <ContactForm />
-        {/* Content continues here... */}
+        {/* Klimaziele nach SBTi. Bewusst ohne Gebuehren und Fristen der SBTi,
+            die aendern sich haeufig. */}
+        <section className="w-full py-16" style={{ backgroundColor: "#F4F1DE" }}>
+          <div className="max-w-4xl mx-auto px-4">
+            <h2 className="text-3xl font-extrabold mb-6" style={{ color: "#3D405B" }}>
+              {c.sbtiTitle}
+            </h2>
+            <p className="text-lg leading-relaxed" style={{ color: "#23243a" }}>
+              {c.sbtiBody}
+            </p>
+          </div>
+        </section>
       </main>
+
+      <RelatedSolutions
+        heading={c.relatedTitle}
+        items={c.related.map((item, i) => ({ ...item, href: DEKARB_RELATED_HREFS[i] }))}
+      />
+
+      <ContactCTA location="dekarbonisierung" context={c.ctaContext} />
+
       <footer className="bg-gray-100 py-8 px-4 mt-8 text-center text-sm text-gray-600">
         <div className="mb-2">COzwei GmbH &bull; Gutenbergstraße 16A, 70176 Stuttgart &bull; Telefon: +49 711 12171034 &bull; E-Mail: mail@cozwei.de</div>
         <div className="flex justify-center gap-4 mb-2">
