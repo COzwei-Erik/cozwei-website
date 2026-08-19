@@ -189,16 +189,29 @@ export default function Home() {
           }}
         />
         <div className="relative z-10 flex flex-col justify-center h-full max-w-7xl mx-auto px-6 sm:px-10">
-          <div className="max-w-2xl py-8 sm:py-12">
+          {/* Unten mehr Luft als oben, damit der zentrierte Text nie in den
+              Doppelpfeil laeuft, der absolut am unteren Rand sitzt. */}
+          <div className="max-w-2xl pt-6 pb-20 sm:pt-10 sm:pb-24">
+            {/* Schriftgroessen stufenlos per clamp statt in Breakpoint-Stufen:
+                Die Obergrenzen entsprechen den bisherigen Desktop-Werten
+                (60px bzw. 24px), nach unten wird gleichmaessig kleiner, ohne
+                die harten Spruenge bei 640px und 768px. */}
             <h1
-              className="text-4xl sm:text-5xl md:text-6xl font-extrabold uppercase leading-tight mb-6 text-white"
-              style={{ letterSpacing: "0.01em", textShadow: "0 2px 12px rgba(0,0,0,0.25)" }}
+              className="font-extrabold uppercase leading-tight mb-5 sm:mb-6 text-white"
+              style={{
+                fontSize: "clamp(1.75rem, 5.2vw, 3.75rem)",
+                letterSpacing: "0.01em",
+                textShadow: "0 2px 12px rgba(0,0,0,0.25)",
+              }}
             >
               {c.heroTitle}
             </h1>
             <p
-              className="text-lg sm:text-xl md:text-2xl leading-relaxed text-white/95 max-w-xl"
-              style={{ textShadow: "0 1px 8px rgba(0,0,0,0.25)" }}
+              className="leading-relaxed text-white/95 max-w-xl"
+              style={{
+                fontSize: "clamp(1rem, 1.9vw, 1.5rem)",
+                textShadow: "0 1px 8px rgba(0,0,0,0.25)",
+              }}
             >
               {c.heroSubtitle}
             </p>
