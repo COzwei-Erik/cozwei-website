@@ -55,7 +55,7 @@ export const homeContent: Record<"de" | "en" | "pt", HomeContent> = {
       "Unser Ziel ist es, Unternehmen und Institutionen zu befähigen, nachhaltiger zu wirtschaften und Klimaziele zu erreichen.",
     heroArrowAria: "Zum Inhalt scrollen",
 
-    kundenTitle: "Unsere Kunden",
+    kundenTitle: "Wer auf unsere Beratung setzt",
 
     loesungenTitle: "Lösungen",
     solutions: [
@@ -154,7 +154,7 @@ export const homeContent: Record<"de" | "en" | "pt", HomeContent> = {
       "Our goal is to enable companies and institutions to operate more sustainably and reach their climate targets.",
     heroArrowAria: "Scroll to content",
 
-    kundenTitle: "Our clients",
+    kundenTitle: "Who relies on our advice",
 
     loesungenTitle: "Solutions",
     solutions: [
@@ -253,7 +253,7 @@ export const homeContent: Record<"de" | "en" | "pt", HomeContent> = {
       "O nosso objetivo é capacitar empresas e instituições para operar de forma mais sustentável e alcançar as suas metas climáticas.",
     heroArrowAria: "Ir para o conteúdo",
 
-    kundenTitle: "Os nossos clientes",
+    kundenTitle: "Quem confia na nossa consultoria",
 
     loesungenTitle: "Soluções",
     solutions: [

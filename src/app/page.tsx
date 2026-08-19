@@ -11,12 +11,55 @@ import { trackEvent, Events } from "./analytics";
 // Sprachunabhängige Struktur-Daten der Homepage (Bilder + Link-Ziele).
 // Reihenfolge korrespondiert 1:1 mit den Arrays in home-content.ts.
 
+// Logos stammen aus dem Referenzen-Bestand (public/Pictures/Logos Kunden) und
+// liegen hier unter sprechenden Namen. Zu jedem Logo gehoert eine getoente
+// Variante "-tint.png" im Blaugrau #788596, das ist die Eigenfarbe des
+// Klett-Gruppe-Logos und damit der gemeinsame Ruhezustand aller fuenf.
+//
+// Warum zwei Dateien statt eines CSS-Filters: grayscale() entfernt nur die
+// Saettigung und laesst dunkle Logos dunkel, helle hell. Ein einheitlicher Ton
+// ist damit nicht erreichbar. Die Tint-Dateien faerben jeden nicht-weissen
+// Pixel in den Zielton und lassen weisse Innenflaechen transparent, dadurch
+// bleibt zum Beispiel das weisse D bei Deichmann erhalten.
+//
+// Neues Logo ergaenzen: Original nach Homepage/logos kopieren und eine
+// Tint-Variante nach demselben Verfahren erzeugen.
 const KUNDEN_LOGOS = [
-  { src: "/Pictures/Homepage/logos/klett.jpg", alt: "Klett Gruppe" },
-  { src: "/Pictures/Homepage/logos/deichmann.png", alt: "Deichmann" },
-  { src: "/Pictures/Homepage/logos/porsche.png", alt: "Porsche" },
-  { src: "/Pictures/Homepage/logos/lotus.webp", alt: "Lotus" },
-  { src: "/Pictures/Homepage/logos/hfu.webp", alt: "Hochschule Furtwangen University" },
+  {
+    src: "/Pictures/Homepage/logos/klett-gruppe.png",
+    tint: "/Pictures/Homepage/logos/klett-gruppe-tint.png",
+    alt: "Klett Gruppe",
+    width: 225,
+    height: 225,
+  },
+  {
+    src: "/Pictures/Homepage/logos/deichmann-se.jpg",
+    tint: "/Pictures/Homepage/logos/deichmann-se-tint.png",
+    alt: "Deichmann",
+    width: 199,
+    height: 198,
+  },
+  {
+    src: "/Pictures/Homepage/logos/porsche.png",
+    tint: "/Pictures/Homepage/logos/porsche-tint.png",
+    alt: "Porsche",
+    width: 390,
+    height: 200,
+  },
+  {
+    src: "/Pictures/Homepage/logos/sfc-energy.png",
+    tint: "/Pictures/Homepage/logos/sfc-energy-tint.png",
+    alt: "SFC Energy",
+    width: 661,
+    height: 378,
+  },
+  {
+    src: "/Pictures/Homepage/logos/rwth-aachen.jpg",
+    tint: "/Pictures/Homepage/logos/rwth-aachen-tint.png",
+    alt: "RWTH Aachen University",
+    width: 358,
+    height: 111,
+  },
 ];
 
 const SOLUTIONS_META: {
@@ -252,14 +295,28 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 py-5 sm:py-8">
           <div className="grid grid-cols-5 gap-3 sm:gap-6 md:gap-8 items-center">
             {KUNDEN_LOGOS.map((logo) => (
-              <div key={logo.alt} className="flex items-center justify-center h-12 sm:h-16 md:h-20">
-                <Image
-                  src={logo.src}
-                  alt={logo.alt}
-                  width={180}
-                  height={80}
-                  className="max-h-9 sm:max-h-12 md:max-h-16 w-auto object-contain filter grayscale hover:grayscale-0 transition duration-300"
-                />
+              <div key={logo.alt} className="group relative h-12 sm:h-16 md:h-20">
+                {/* Ruhezustand: einheitlich getoente Variante */}
+                <span className="absolute inset-0 flex items-center justify-center transition-opacity duration-300 group-hover:opacity-0">
+                  <Image
+                    src={logo.tint}
+                    alt=""
+                    aria-hidden="true"
+                    width={logo.width}
+                    height={logo.height}
+                    className="max-h-9 sm:max-h-12 md:max-h-16 w-auto object-contain"
+                  />
+                </span>
+                {/* Hover: Original in den Markenfarben */}
+                <span className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                  <Image
+                    src={logo.src}
+                    alt={logo.alt}
+                    width={logo.width}
+                    height={logo.height}
+                    className="max-h-9 sm:max-h-12 md:max-h-16 w-auto object-contain"
+                  />
+                </span>
               </div>
             ))}
           </div>
