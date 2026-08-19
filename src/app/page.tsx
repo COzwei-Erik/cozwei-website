@@ -194,14 +194,22 @@ export default function Home() {
       ? undefined
       : `max(${HERO_MIN_HEIGHT}px, calc(100svh - ${heroOffset}px))`;
 
-  // Die Kunden-Sektion ist jetzt schon beim Laden sichtbar, deshalb springt der
-  // Pfeil zur naechsten Sektion darunter statt zu den Kunden.
+  // Die Kunden-Sektion ist schon beim Laden sichtbar, deshalb springt der Pfeil
+  // zur Loesungen-Sektion darunter statt zu den Kunden.
+  //
+  // Zielpunkt ist die Ueberschrift, nicht die Sektionskante: Die Sektion hat oben
+  // 64px Innenabstand, beim Scrollen auf ihre Kante blieb deshalb oberhalb noch
+  // ein Streifen der Kunden-Logos stehen. Ueber die Ueberschrift landet die Seite
+  // 64px weiter unten, die Logo-Reihe ist damit aus dem Bild.
   const scrollToContent = () => {
-    const target = document.getElementById("loesungen");
-    if (!target) return;
+    const section = document.getElementById("loesungen");
+    if (!section) return;
+    const anchor = section.querySelector("h2") ?? section;
     const header = document.querySelector("nav");
     const headerHeight = header ? (header as HTMLElement).offsetHeight : 80;
-    const y = target.getBoundingClientRect().top + window.scrollY - headerHeight;
+    // 12px Luft zwischen Header-Unterkante und Ueberschrift. Groesser sollte der
+    // Wert nicht werden, sonst kommt die Logo-Reihe oben wieder ins Bild.
+    const y = anchor.getBoundingClientRect().top + window.scrollY - headerHeight - 12;
     window.scrollTo({ top: y, behavior: "smooth" });
   };
 
