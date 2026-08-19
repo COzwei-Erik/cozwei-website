@@ -29,8 +29,11 @@ const KUNDEN_LOGOS = [
     src: "/Pictures/Homepage/logos/klett-gruppe.png",
     tint: "/Pictures/Homepage/logos/klett-gruppe-tint.png",
     alt: "Klett Gruppe",
-    width: 225,
-    height: 225,
+    // Auf den Inhalt beschnitten: Die Quelldatei aus den Referenzen hatte rund
+    // 60 % Leerraum, wodurch der Schriftzug bei begrenzter Hoehe viel kleiner
+    // rendert als die uebrigen Logos.
+    width: 187,
+    height: 85,
   },
   {
     src: "/Pictures/Homepage/logos/deichmann-se.jpg",
@@ -304,7 +307,7 @@ export default function Home() {
                     aria-hidden="true"
                     width={logo.width}
                     height={logo.height}
-                    className="max-h-9 sm:max-h-12 md:max-h-16 w-auto object-contain"
+                    className="max-h-9 sm:max-h-12 md:max-h-16 w-auto max-w-full object-contain"
                   />
                 </span>
                 {/* Hover: Original in den Markenfarben */}
@@ -314,7 +317,7 @@ export default function Home() {
                     alt={logo.alt}
                     width={logo.width}
                     height={logo.height}
-                    className="max-h-9 sm:max-h-12 md:max-h-16 w-auto object-contain"
+                    className="max-h-9 sm:max-h-12 md:max-h-16 w-auto max-w-full object-contain"
                   />
                 </span>
               </div>
