@@ -193,7 +193,10 @@ Wichtigste Sache, die ein neuer Claude sofort wissen muss. Die URLs sind auf dre
 
 ## Bekannte offene Punkte (Backlog)
 
-- **SEO-Metadaten fehlen auf allen Seiten außer CDP.** Fix: pro Landing Page und Blog-Post eine Server-Component-Wrapper-Datei mit `export const metadata` bauen (Muster: `cdp-klimaberichterstattung/page.tsx`). Aufwand ~15 min pro Seite. Wenn Peter das anstößt: alle betroffenen Seiten in einem Rutsch machen.
+- ~~SEO-Metadaten fehlen auf allen Seiten außer CDP.~~ **Erledigt am 19.08.2026.** Jede Route hat jetzt einen Server-Wrapper mit eigener `metadata` (Title, Description, Canonical, OpenGraph, Twitter) und eine Client Component daneben. Muster: `cdp-klimaberichterstattung/page.tsx`. **Beim Anlegen neuer Seiten mitziehen**, sonst fällt die Seite auf den Default aus `layout.tsx` zurück und ist in Suche und GA4 nicht unterscheidbar. Zielwerte: Title max. 60 Zeichen, Description 140 bis 155 Zeichen.
+- **Offene TODOs im Code**, mit `TODO` markiert: dedizierte 1200x630-OG-Bilder für alle Seiten (aktuell Fallback auf `Artboard 1.png`), Hero-Bilder für `/klimaschutzkonzepte-kirchen` und `-krankenhaeuser` (aktuell Interimsmotive aus dem öffentlichen Sektor), Kachelbild `loesung-oeffentlich-platzhalter.png` auf der Startseite, sowie eine eigene Seite `/cbam` (derzeit Anker `/berichterstattung#cbam`).
+- **`/foerderungen` und `/foerderung` bestehen parallel.** Die alte Seite trägt das HTML-Dashboard, die neue die Förderberatung. Zwei so ähnliche URLs sind SEO-seitig ungünstig. Empfehlung: `/foerderungen` per 301 auf `/foerderung` umleiten und das Dashboard dort einbinden. Entscheidung liegt bei Erik.
+- **Service-Worker `public/sw.js` ist cache-first ohne Cleanup.** Wiederkehrende Besucher bekommen die Startseite dauerhaft aus dem Cache und sehen neue Deployments nicht. Muss vor dem Go-live behoben werden.
 - Partner-Sektion auf `/ueber-uns` wurde entfernt; `t.partner*`-Strings liegen in `LanguageContext.tsx` als Dead-Data. Nur räumen, wenn Peter explizit sagt.
 - Legacy Bilddateien mit generischen Namen (`image copy N.png/.webp`) im `public/Pictures/`-Ordner: nicht anfassen ohne Absprache.
 
