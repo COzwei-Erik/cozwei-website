@@ -52,6 +52,8 @@ export function serviceSchema(opts: {
   description: string;
   path: string;
   serviceType: string;
+  /** Branchenseiten benennen hier ihre Zielbranche als BusinessAudience. */
+  audience?: string;
 }) {
   return {
     "@context": "https://schema.org",
@@ -62,6 +64,14 @@ export function serviceSchema(opts: {
     provider: ORGANIZATION,
     areaServed: { "@type": "Country", name: "DE" },
     url: `${SITE_URL}${opts.path}`,
+    ...(opts.audience
+      ? {
+          audience: {
+            "@type": "BusinessAudience",
+            name: opts.audience,
+          },
+        }
+      : {}),
   };
 }
 
