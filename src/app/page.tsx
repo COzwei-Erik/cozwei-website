@@ -189,17 +189,21 @@ export default function Home() {
           }}
         />
         <div className="relative z-10 flex flex-col justify-center h-full max-w-7xl mx-auto px-6 sm:px-10">
-          {/* Unten mehr Luft als oben, damit der zentrierte Text nie in den
-              Doppelpfeil laeuft, der absolut am unteren Rand sitzt. */}
-          <div className="max-w-2xl pt-6 pb-20 sm:pt-10 sm:pb-24">
-            {/* Schriftgroessen stufenlos per clamp statt in Breakpoint-Stufen:
-                Die Obergrenzen entsprechen den bisherigen Desktop-Werten
-                (60px bzw. 24px), nach unten wird gleichmaessig kleiner, ohne
-                die harten Spruenge bei 640px und 768px. */}
+          {/* Oben und unten der gleiche Innenabstand: Der Textblock ist im Hero
+              vertikal zentriert, dadurch sind die sichtbaren Abstaende zur
+              Ober- und Unterkante zwangslaeufig gleich. */}
+          <div className="max-w-2xl py-10 sm:py-14">
+            {/* Schriftgroessen stufenlos statt in Breakpoint-Stufen, und
+                begrenzt durch BEIDE Achsen: Der Hero hat eine feste Hoehe, damit
+                die Kunden-Sektion ins Bild passt, deshalb entscheidet auf flachen
+                Fenstern die Fensterhoehe (svh) darueber, was hineinpasst, nicht
+                die Breite. min() nimmt jeweils den kleineren der beiden Werte.
+                Die Obergrenzen sind die bisherigen Desktop-Werte (60px und 24px)
+                und werden ab etwa 940px Fensterhoehe erreicht. */}
             <h1
               className="font-extrabold uppercase leading-tight mb-5 sm:mb-6 text-white"
               style={{
-                fontSize: "clamp(1.75rem, 5.2vw, 3.75rem)",
+                fontSize: "clamp(1.5rem, min(5.2vw, 6.4svh), 3.75rem)",
                 letterSpacing: "0.01em",
                 textShadow: "0 2px 12px rgba(0,0,0,0.25)",
               }}
@@ -209,7 +213,7 @@ export default function Home() {
             <p
               className="leading-relaxed text-white/95 max-w-xl"
               style={{
-                fontSize: "clamp(1rem, 1.9vw, 1.5rem)",
+                fontSize: "clamp(0.95rem, min(1.9vw, 2.6svh), 1.5rem)",
                 textShadow: "0 1px 8px rgba(0,0,0,0.25)",
               }}
             >
@@ -222,9 +226,10 @@ export default function Home() {
           type="button"
           onClick={scrollToContent}
           aria-label={c.heroArrowAria}
-          className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 animate-bounce p-2 rounded-full transition hover:bg-white/15"
+          className="absolute bottom-3 sm:bottom-6 left-1/2 -translate-x-1/2 z-10 animate-bounce p-2 rounded-full transition hover:bg-white/15"
         >
-          <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+          {/* Auf flachen Fenstern kleiner, damit der Pfeil nicht in den Text laeuft. */}
+          <svg className="w-8 h-8 sm:w-10 sm:h-10 text-white" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" d="M19 7l-7 7-7-7" />
             <path strokeLinecap="round" strokeLinejoin="round" d="M19 13l-7 7-7-7" />
           </svg>
