@@ -75,50 +75,60 @@ const SOLUTIONS_META: {
   {
     image: "/Pictures/Homepage/loesung-transparenz.jpg",
     alt: "Industrieschornstein in der Abenddämmerung, Symbolbild für CO₂-Bilanzierung",
-    href: "/dekarbonisierung",
-    itemHrefs: ["/dekarbonisierung", "/dekarbonisierung", "/verifizierung"],
+    href: "/co2-bilanzierung",
+    itemHrefs: [
+      "/corporate-carbon-footprint",
+      "/product-carbon-footprint",
+      "/verifizierung",
+    ],
   },
   // 2 Emissionen reduzieren
   {
     image: "/Pictures/pexels-tomfisk-9893729_low_low.jpg",
     alt: "Solarpark aus der Vogelperspektive, Symbolbild für Reduktionsmaßnahmen",
     href: "/dekarbonisierung",
-    itemHrefs: ["/dekarbonisierung", "/massnahmen", "/massnahmen"],
+    itemHrefs: ["/dekarbonisierung", "/massnahmen", "/energieeffizienz"],
   },
   // 3 Nachhaltigkeit berichten
   {
     image: "/Pictures/Homepage/loesung-berichten.jpg",
     alt: "Laptop und Tablet mit Diagrammen, Symbolbild für Nachhaltigkeitsberichterstattung",
-    href: "/nachhaltigkeit",
-    // VSME, GRI und CBAM sind zu einem Punkt zusammengelegt und zeigen auf die
-    // Nachhaltigkeitsseite; eine eigene CBAM-Seite gibt es noch nicht.
-    itemHrefs: ["/esrs-e1", "/cdp-klimaberichterstattung", "/nachhaltigkeit"],
+    href: "/berichterstattung",
+    itemHrefs: ["/esrs-e1", "/cdp-klimaberichterstattung", "/vsme"],
   },
   // 4 Förderung sichern
   {
     image: "/Pictures/Homepage/loesung-foerderung.jpg",
     alt: "Studierende mit Tablet in einem hellen Hochschulgebäude, Symbolbild für Förderprogramme",
-    href: "/foerderungen",
-    // "EEW / BAFA Modul 4 & 5" deckt zwei Themen ab, die je eine eigene Seite
-    // haben. Der Punkt zeigt auf /transformationskonzepte (Modul 5), weil das
-    // sonst die einzige Landing Page ohne Verlinkung von der Homepage waere.
-    // Der Insights-Artikel zu Modul 4 bleibt ueber /insights erreichbar.
-    itemHrefs: ["/foerderungen", "/transformationskonzepte", "/foerderungen"],
+    href: "/foerderung",
+    itemHrefs: [
+      "/foerderung#foerderanalyse",
+      "/transformationskonzepte",
+      "/foerderung#grw",
+    ],
   },
-  // 5 Klimaschutzkonzepte für öffentliche Einrichtungen
+  // 5 Klimaschutzkonzepte
   {
     // PLATZHALTER: Bild noch durch ein echtes Foto ersetzen.
     image: "/Pictures/Homepage/loesung-oeffentlich-platzhalter.png",
-    alt: "Platzhalterbild, Klimaschutz für öffentliche Einrichtungen",
+    alt: "Platzhalterbild, Klimaschutzkonzepte für öffentliche Einrichtungen",
     href: "/klimaschutzkonzepte",
-    itemHrefs: ["/klimaschutzkonzepte", "/klimaschutzkonzepte", "/klimaschutzkonzepte"],
+    itemHrefs: [
+      "/klimaschutzkonzepte-hochschulen",
+      "/klimaschutzkonzepte-kirchen",
+      "/klimaschutzkonzepte-krankenhaeuser",
+    ],
   },
-  // 6 KI und Automatisierung, noch ohne eigene Unterseiten
+  // 6 KI und Automatisierung
   {
     image: "/Pictures/Homepage/loesung-ai.jpg",
     alt: "KI-Visualisierung über einem Laptop, Symbolbild für KI und Automatisierung",
-    href: null,
-    itemHrefs: [null, null, null],
+    href: "/ki-automatisierung",
+    itemHrefs: [
+      "/ki-automatisierung#implementierung",
+      "/ki-automatisierung#software",
+      "/ki-automatisierung#datenautomatisierung",
+    ],
   },
 ];
 
@@ -157,7 +167,7 @@ const FOOTER_LOESUNGEN_HREFS = [
   "/verifizierung",
   "/esrs-e1",
   "/cdp-klimaberichterstattung",
-  "/nachhaltigkeit",
+  "/berichterstattung",
   "/dekarbonisierung",
   "/massnahmen",
 ];

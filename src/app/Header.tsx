@@ -6,6 +6,7 @@ import { HiMenu, HiX } from "react-icons/hi";
 import { useLanguage } from "./LanguageContext";
 import { HUBSPOT_FORM_URL } from "./links";
 import { trackEvent, Events } from "./analytics";
+import { NAV_LOESUNGEN, type Language } from "./nav-loesungen";
 
 // Type for timeout ref (works in both JS and TS)
 type Timeout = ReturnType<typeof setTimeout>;
@@ -99,12 +100,13 @@ export default function Header() {
             onMouseEnter={handleDropdownEnter}
             onMouseLeave={handleDropdownLeave}
           >
-            <li><a href="/nachhaltigkeit" className="block px-6 py-3 hover:bg-[#81B29A]/10 text-[#3D405B] text-base font-semibold">{t.sustainability}</a></li>
-            <li><a href="/dekarbonisierung" className="block px-6 py-3 hover:bg-[#81B29A]/10 text-[#3D405B] text-base font-semibold">{t.decarbonization}</a></li>
-            <li><a href="/massnahmen" className="block px-6 py-3 hover:bg-[#81B29A]/10 text-[#3D405B] text-base font-semibold">{t.measures}</a></li>
-            <li><a href="/verifizierung" className="block px-6 py-3 hover:bg-[#81B29A]/10 text-[#3D405B] text-base font-semibold">{t.verification}</a></li>
-            <li><a href="/klimaschutzkonzepte" className="block px-6 py-3 hover:bg-[#81B29A]/10 text-[#3D405B] text-base font-semibold">{t.nki}</a></li>
-            <li><a href="/cdp-klimaberichterstattung" className="block px-6 py-3 hover:bg-[#81B29A]/10 text-[#3D405B] text-base font-semibold">{t.cdp}</a></li>
+            {NAV_LOESUNGEN.map((item) => (
+              <li key={item.href}>
+                <a href={item.href} className="block px-6 py-3 hover:bg-[#81B29A]/10 text-[#3D405B] text-base font-semibold">
+                  {item.label[language as Language] || item.label.de}
+                </a>
+              </li>
+            ))}
           </ul>
         </li>
         <li><a href="/referenzen" className="hover:text-green-700 transition text-lg font-bold" style={{ color: '#3D405B' }}>{t.references}</a></li>

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { HiX } from "react-icons/hi";
 import { HUBSPOT_FORM_URL } from "./links";
 import { trackEvent, Events } from "./analytics";
+import { NAV_LOESUNGEN } from "./nav-loesungen";
 
 type Language = "de" | "en" | "pt";
 
@@ -57,12 +58,16 @@ export default function MobileMenu({
             </button>
             {dropdownOpen && (
               <div className="flex flex-col mt-2 bg-white border border-[#81B29A]/30 rounded-2xl shadow-lg py-2 z-50">
-                <Link href="/nachhaltigkeit" className="block px-6 py-3 hover:bg-[#81B29A]/10 text-[#3D405B] text-base font-semibold" onClick={onClose}>{t.sustainability}</Link>
-                <Link href="/dekarbonisierung" className="block px-6 py-3 hover:bg-[#81B29A]/10 text-[#3D405B] text-base font-semibold" onClick={onClose}>{t.decarbonization}</Link>
-                <Link href="/massnahmen" className="block px-6 py-3 hover:bg-[#81B29A]/10 text-[#3D405B] text-base font-semibold" onClick={onClose}>{t.measures}</Link>
-                <Link href="/verifizierung" className="block px-6 py-3 hover:bg-[#81B29A]/10 text-[#3D405B] text-base font-semibold" onClick={onClose}>{t.verification}</Link>
-                <Link href="/klimaschutzkonzepte" className="block px-6 py-3 hover:bg-[#81B29A]/10 text-[#3D405B] text-base font-semibold" onClick={onClose}>{t.nki}</Link>
-                <Link href="/cdp-klimaberichterstattung" className="block px-6 py-3 hover:bg-[#81B29A]/10 text-[#3D405B] text-base font-semibold" onClick={onClose}>{t.cdp}</Link>
+                {NAV_LOESUNGEN.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="block px-6 py-3 hover:bg-[#81B29A]/10 text-[#3D405B] text-base font-semibold"
+                    onClick={onClose}
+                  >
+                    {item.label[language] || item.label.de}
+                  </Link>
+                ))}
               </div>
             )}
           </div>
