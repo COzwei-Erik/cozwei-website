@@ -10,7 +10,7 @@ const PATH = "/dekarbonisierung";
 export const metadata: Metadata = {
   title: "Emissionen reduzieren: Dekarbonisierungsplan & SBTi | COzwei",
   description:
-    "Dekarbonisierung mit COzwei: Reduktionspfad aus Ihrer CO₂-Bilanz, Klimaziele nach SBTi, Maßnahmenumsetzung und Energieeffizienz im Betrieb.",
+    "Dekarbonisierung mit COzwei: Reduktionspfad aus Ihrer CO₂-Bilanz, Klimaziele nach SBTi, Maßnahmenumsetzung und Energieeffizienz. Jetzt Pfad skizzieren.",
   alternates: { canonical: `${SITE_URL}${PATH}` },
   openGraph: {
     title: "Emissionen reduzieren: Dekarbonisierungsplan & SBTi | COzwei",

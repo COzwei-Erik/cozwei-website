@@ -3,6 +3,7 @@ import Link from "next/link";
 import Header from "../Header";
 import PageHero from "../components/PageHero";
 import ContactCTA from "../components/ContactCTA";
+import SiteFooter from "../components/SiteFooter";
 import FaqSection from "../components/FaqSection";
 import ProcessSteps from "../components/ProcessSteps";
 import RelatedSolutions from "../components/RelatedSolutions";
@@ -232,6 +233,8 @@ export default function Vsme() {
         location="vsme"
         context="Leiten Sie uns eine konkrete ESG-Anfrage weiter, wir sagen Ihnen, welches Modul sie abdeckt."
       />
+
+      <SiteFooter />
 
       <script
         {...jsonLd(

@@ -4,6 +4,7 @@ import Header from "../Header";
 import PageHero from "../components/PageHero";
 import StandardPfad from "./StandardPfad";
 import ContactCTA from "../components/ContactCTA";
+import SiteFooter from "../components/SiteFooter";
 import FaqSection from "../components/FaqSection";
 import RelatedSolutions from "../components/RelatedSolutions";
 import {
@@ -19,7 +20,7 @@ const PATH = "/berichterstattung";
 export const metadata: Metadata = {
   title: "Nachhaltigkeitsberichterstattung: CSRD, CDP, VSME | COzwei",
   description:
-    "Nachhaltigkeitsberichterstattung mit COzwei: CSRD/ESRS E1, CDP, VSME/VS, GRI und CBAM, pflichtgemäß oder freiwillig, immer datenbasiert.",
+    "Nachhaltigkeitsberichterstattung: CSRD/ESRS E1, CDP, VSME/VS, GRI und CBAM, pflichtgemäß oder freiwillig, immer datenbasiert. Jetzt einordnen lassen.",
   alternates: { canonical: `${SITE_URL}${PATH}` },
   openGraph: {
     title: "Nachhaltigkeitsberichterstattung: CSRD, CDP, VSME | COzwei",
@@ -226,6 +227,8 @@ export default function Berichterstattung() {
         location="berichterstattung"
         context="Sie wissen nicht, welcher Standard für Sie gilt? Wir ordnen es im Erstgespräch ein."
       />
+
+      <SiteFooter />
 
       <script
         {...jsonLd(

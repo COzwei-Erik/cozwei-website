@@ -3,6 +3,7 @@ import Link from "next/link";
 import Header from "../Header";
 import PageHero from "../components/PageHero";
 import ContactCTA from "../components/ContactCTA";
+import SiteFooter from "../components/SiteFooter";
 import FaqSection from "../components/FaqSection";
 import InfoBox from "../components/InfoBox";
 import ProcessSteps from "../components/ProcessSteps";
@@ -205,6 +206,8 @@ export default function KlimaschutzkonzepteKrankenhaeuser() {
         location="klimaschutzkonzepte_krankenhaeuser"
         context="Lassen Sie uns über Ihr Haus sprechen, wir prüfen Antragsberechtigung und Förderweg kostenlos."
       />
+
+      <SiteFooter />
 
       <script
         {...jsonLd(

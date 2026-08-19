@@ -3,6 +3,7 @@ import Link from "next/link";
 import Header from "../Header";
 import PageHero from "../components/PageHero";
 import ContactCTA from "../components/ContactCTA";
+import SiteFooter from "../components/SiteFooter";
 import FaqSection from "../components/FaqSection";
 import ProcessSteps from "../components/ProcessSteps";
 import RelatedSolutions from "../components/RelatedSolutions";
@@ -269,6 +270,8 @@ export default function KiAutomatisierung() {
         location="ki_automatisierung"
         context="Nennen Sie uns einen Prozess, der Sie Zeit kostet, wir sagen Ihnen, ob sich Automatisierung lohnt."
       />
+
+      <SiteFooter />
 
       <script
         {...jsonLd(

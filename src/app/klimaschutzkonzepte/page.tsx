@@ -9,7 +9,7 @@ const PATH = "/klimaschutzkonzepte";
 export const metadata: Metadata = {
   title: "Klimaschutzkonzepte mit NKI-Förderung | COzwei",
   description:
-    "NKI-geförderte Klimaschutzkonzepte für Hochschulen, Kirchen, Kliniken und soziale Träger: 70 bis 90 Prozent Zuschuss, von der Antragstellung bis zum Maßnahmenplan.",
+    "NKI-geförderte Klimaschutzkonzepte für Hochschulen, Kirchen, Kliniken und soziale Träger: 70 bis 90 Prozent Zuschuss, von Antrag bis Maßnahmenplan.",
   alternates: { canonical: `${SITE_URL}${PATH}` },
   openGraph: {
     title: "Klimaschutzkonzepte mit NKI-Förderung | COzwei",

@@ -4,6 +4,7 @@ import Header from "../Header";
 import PageHero from "../components/PageHero";
 import BilanzSwitch from "./BilanzSwitch";
 import ContactCTA from "../components/ContactCTA";
+import SiteFooter from "../components/SiteFooter";
 import FaqSection from "../components/FaqSection";
 import InfoBox from "../components/InfoBox";
 import ProcessSteps from "../components/ProcessSteps";
@@ -228,6 +229,8 @@ export default function Co2Bilanzierung() {
         location="co2_bilanzierung"
         context="Sie möchten wissen, welche Bilanz Ihr Unternehmen braucht? Wir klären es in einem Erstgespräch."
       />
+
+      <SiteFooter />
 
       <script
         {...jsonLd(

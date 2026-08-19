@@ -4,6 +4,7 @@ import Header from "../../Header";
 import PageHero from "../../components/PageHero";
 import GreenClaimsCheck from "./GreenClaimsCheck";
 import ContactCTA from "../../components/ContactCTA";
+import SiteFooter from "../../components/SiteFooter";
 import FaqSection from "../../components/FaqSection";
 import LogoStrip from "../../components/LogoStrip";
 import RelatedSolutions from "../../components/RelatedSolutions";
@@ -22,7 +23,7 @@ const PATH = "/branchen/verbrauchsgueter";
 export const metadata: Metadata = {
   title: "Dekarbonisierung Verbrauchsgüter & Handel | COzwei",
   description:
-    "Klimadaten für Verbrauchsgüterhersteller: PCF je Produkt, Handels- und Bankenanfragen nach VSME, Green Claims EmpCo-konform ab 27.09.2026.",
+    "Klimadaten für Verbrauchsgüterhersteller: PCF je Produkt, Handels- und Bankenanfragen nach VSME, Green Claims EmpCo-konform ab 27.09.2026. Jetzt prüfen.",
   alternates: { canonical: `${SITE_URL}${PATH}` },
   openGraph: {
     title: "Dekarbonisierung Verbrauchsgüter & Handel | COzwei",
@@ -250,6 +251,8 @@ export default function BranchenVerbrauchsgueter() {
         location="branche_verbrauchsgueter"
         context="Senden Sie uns eine konkrete Handelsanfrage oder einen Ihrer Claims, wir sagen Ihnen, welche Daten dafür nötig sind."
       />
+
+      <SiteFooter />
 
       <script
         {...jsonLd(

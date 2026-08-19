@@ -3,6 +3,7 @@ import Link from "next/link";
 import Header from "../Header";
 import PageHero from "../components/PageHero";
 import ContactCTA from "../components/ContactCTA";
+import SiteFooter from "../components/SiteFooter";
 import FaqSection from "../components/FaqSection";
 import InfoBox from "../components/InfoBox";
 import ProcessSteps from "../components/ProcessSteps";
@@ -197,6 +198,8 @@ export default function KlimaschutzkonzepteHochschulen() {
         location="klimaschutzkonzepte_hochschulen"
         context="Sprechen Sie mit uns über Ihren Antrag, wir prüfen Antragsberechtigung und Förderquote Ihrer Hochschule kostenlos."
       />
+
+      <SiteFooter />
 
       <script
         {...jsonLd(

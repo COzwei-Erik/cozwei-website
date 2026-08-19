@@ -68,7 +68,7 @@ export default function Foerderungen() {
           <div className="rounded-2xl overflow-hidden border border-[#81B29A]/30 shadow-lg bg-white">
             <iframe
               src="/foerderungen-dashboard.html"
-              title="Klima-Förderungen Deutschland — interaktives Dashboard"
+              title="Klima-Förderungen Deutschland: interaktives Dashboard"
               loading="lazy"
               className="w-full block"
               style={{ height: '1400px', border: 'none' }}

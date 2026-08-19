@@ -3,6 +3,7 @@ import Link from "next/link";
 import Header from "../Header";
 import PageHero from "../components/PageHero";
 import ContactCTA from "../components/ContactCTA";
+import SiteFooter from "../components/SiteFooter";
 import FaqSection from "../components/FaqSection";
 import InfoBox from "../components/InfoBox";
 import RelatedSolutions from "../components/RelatedSolutions";
@@ -19,7 +20,7 @@ const PATH = "/foerderung";
 export const metadata: Metadata = {
   title: "Förderung für Klimaschutz & Dekarbonisierung | COzwei",
   description:
-    "Förderprogramme für Dekarbonisierung: BAFA/EEW Modul 4 & 5, GRW, NKI. Wir finden das passende Programm und begleiten die Antragstellung.",
+    "Förderprogramme für Dekarbonisierung: BAFA/EEW Modul 4 & 5, GRW und NKI. Wir finden das passende Programm und begleiten Sie durch die Antragstellung.",
   alternates: { canonical: `${SITE_URL}${PATH}` },
   openGraph: {
     title: "Förderung für Klimaschutz & Dekarbonisierung | COzwei",
@@ -301,6 +302,8 @@ export default function Foerderung() {
         location="foerderung"
         context="Schildern Sie uns Ihr Vorhaben, wir sagen Ihnen, welche Förderung realistisch ist."
       />
+
+      <SiteFooter />
 
       <script
         {...jsonLd(

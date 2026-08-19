@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Header from "../Header";
 import PageHero from "../components/PageHero";
 import ContactCTA from "../components/ContactCTA";
+import SiteFooter from "../components/SiteFooter";
 import RelatedSolutions from "../components/RelatedSolutions";
 import SolutionCard from "../components/SolutionCard";
 import { breadcrumbSchema, jsonLd, serviceSchema, SITE_URL } from "../components/schema";
@@ -11,7 +12,7 @@ const PATH = "/branchen";
 export const metadata: Metadata = {
   title: "Branchen: Dekarbonisierung nach Sektor | COzwei",
   description:
-    "Branchenlösungen von COzwei: Automotive, Druck & Verlag, Verbrauchsgüter und öffentliche Einrichtungen, jeweils mit den konkreten Anforderungen und Fristen.",
+    "Branchenlösungen von COzwei: Automotive, Druck & Verlag, Verbrauchsgüter und öffentliche Einrichtungen mit ihren konkreten Anforderungen und Fristen.",
   alternates: { canonical: `${SITE_URL}${PATH}` },
   openGraph: {
     title: "Branchen: Dekarbonisierung nach Sektor | COzwei",
@@ -129,6 +130,8 @@ export default function BranchenHub() {
         location="branchen_hub"
         context="Sagen Sie uns, wer bei Ihnen Klimadaten anfragt, wir ordnen es der passenden Anforderung zu."
       />
+
+      <SiteFooter />
 
       <script
         {...jsonLd(

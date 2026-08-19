@@ -3,6 +3,7 @@ import Link from "next/link";
 import Header from "../Header";
 import PageHero from "../components/PageHero";
 import ContactCTA from "../components/ContactCTA";
+import SiteFooter from "../components/SiteFooter";
 import FaqSection from "../components/FaqSection";
 import RelatedSolutions from "../components/RelatedSolutions";
 import {
@@ -216,6 +217,8 @@ export default function ProductCarbonFootprint() {
         location="product_carbon_footprint"
         context="Kundenanfrage mit Frist erhalten? Schreiben Sie uns, wir priorisieren PCF-Anfragen mit Deadline."
       />
+
+      <SiteFooter />
 
       <script
         {...jsonLd(

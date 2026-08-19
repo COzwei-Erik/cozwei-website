@@ -3,6 +3,7 @@ import Link from "next/link";
 import Header from "../../Header";
 import PageHero from "../../components/PageHero";
 import ContactCTA from "../../components/ContactCTA";
+import SiteFooter from "../../components/SiteFooter";
 import FaqSection from "../../components/FaqSection";
 import InfoBox from "../../components/InfoBox";
 import LogoStrip from "../../components/LogoStrip";
@@ -282,6 +283,8 @@ export default function BranchenDruckVerlag() {
         location="branche_druck_verlag"
         context="Prüfen Sie Ihre Klimaaussagen vor dem 27. September 2026, wir starten mit einer Bestandsaufnahme Ihrer Claims und Daten."
       />
+
+      <SiteFooter />
 
       <script
         {...jsonLd(

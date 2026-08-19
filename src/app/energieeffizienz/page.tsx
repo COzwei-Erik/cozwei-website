@@ -3,6 +3,7 @@ import Link from "next/link";
 import Header from "../Header";
 import PageHero from "../components/PageHero";
 import ContactCTA from "../components/ContactCTA";
+import SiteFooter from "../components/SiteFooter";
 import FaqSection from "../components/FaqSection";
 import RelatedSolutions from "../components/RelatedSolutions";
 import {
@@ -229,6 +230,8 @@ export default function Energieeffizienz() {
         location="energieeffizienz"
         context="Senden Sie uns Ihre letzten Energieabrechnungen, wir nennen Ihnen die drei größten Hebel."
       />
+
+      <SiteFooter />
 
       <script
         {...jsonLd(

@@ -3,6 +3,7 @@ import Link from "next/link";
 import Header from "../../Header";
 import PageHero from "../../components/PageHero";
 import ContactCTA from "../../components/ContactCTA";
+import SiteFooter from "../../components/SiteFooter";
 import FaqSection from "../../components/FaqSection";
 import LogoStrip from "../../components/LogoStrip";
 import RelatedSolutions from "../../components/RelatedSolutions";
@@ -339,6 +340,8 @@ export default function BranchenAutomotive() {
         location="branche_automotive"
         context="Leiten Sie uns die OEM-Anfrage weiter, wir sagen Ihnen binnen zwei Werktagen, was zu tun ist."
       />
+
+      <SiteFooter />
 
       <script
         {...jsonLd(

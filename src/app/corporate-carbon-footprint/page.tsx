@@ -3,6 +3,7 @@ import Link from "next/link";
 import Header from "../Header";
 import PageHero from "../components/PageHero";
 import ContactCTA from "../components/ContactCTA";
+import SiteFooter from "../components/SiteFooter";
 import FaqSection from "../components/FaqSection";
 import RelatedSolutions from "../components/RelatedSolutions";
 import {
@@ -220,6 +221,8 @@ export default function CorporateCarbonFootprint() {
         location="corporate_carbon_footprint"
         context="Fordern Sie ein Festpreisangebot für Ihren CCF an, Antwort innerhalb von zwei Werktagen."
       />
+
+      <SiteFooter />
 
       <script
         {...jsonLd(

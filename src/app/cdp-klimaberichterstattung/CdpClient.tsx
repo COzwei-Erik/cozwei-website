@@ -53,7 +53,7 @@ export default function CdpClient() {
         <div className="absolute inset-0 w-full h-full z-0">
           <Image
             src="/Pictures/cdp-hero-truck-forest.png"
-            alt="LKW auf einer Straße durch dichten Wald, Vogelperspektive — Symbolbild für Lieferketten-Emissionen und CDP Klima-Reporting"
+            alt="LKW auf einer Straße durch dichten Wald, Vogelperspektive, Symbolbild für Lieferketten-Emissionen und CDP Klima-Reporting"
             fill
             style={{ objectFit: "cover", objectPosition: "center" }}
             className="opacity-90"

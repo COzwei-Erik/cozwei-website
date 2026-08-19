@@ -135,9 +135,9 @@ export default function Massnahmen() {
         {/* Drei-Karten-Section */}
         <section id="karten-section" className="w-full py-8 sm:py-16 relative overflow-x-hidden">
           <div className="max-w-7xl mx-auto px-4">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-center mb-4 break-words" style={{ color: '#3D405B' }}>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-center mb-4 break-words" style={{ color: '#3D405B' }}>
               {t.measuresSectionTitle}
-            </h1>
+            </h2>
             <p className="mb-8 sm:mb-12 text-base sm:text-lg text-center break-words" style={{ color: '#3D405B' }}>
               {t.measuresSectionSubtitle}
             </p>
@@ -209,7 +209,7 @@ export default function Massnahmen() {
               <div className="lg:order-2 order-1 flex justify-center">
                 <Image
                   src="/Pictures/foerderkatalog-preview.png"
-                  alt="COzwei Förderkatalog für Klimaförderungen — Cover, Inhaltsverzeichnis und Beispielseiten"
+                  alt="COzwei Förderkatalog für Klimaförderungen: Cover, Inhaltsverzeichnis und Beispielseiten"
                   width={1200}
                   height={1080}
                   className="w-full max-w-md h-auto"

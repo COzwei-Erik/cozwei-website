@@ -3,6 +3,7 @@ import Link from "next/link";
 import Header from "../Header";
 import PageHero from "../components/PageHero";
 import ContactCTA from "../components/ContactCTA";
+import SiteFooter from "../components/SiteFooter";
 import FaqSection from "../components/FaqSection";
 import InfoBox from "../components/InfoBox";
 import ProcessSteps from "../components/ProcessSteps";
@@ -194,6 +195,8 @@ export default function KlimaschutzkonzepteKirchen() {
         location="klimaschutzkonzepte_kirchen"
         context="Wir prüfen kostenlos, welche Ihrer Körperschaften antragsberechtigt ist, schreiben Sie uns."
       />
+
+      <SiteFooter />
 
       <script
         {...jsonLd(

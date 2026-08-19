@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Header from "../../Header";
 import PageHero from "../../components/PageHero";
 import ContactCTA from "../../components/ContactCTA";
+import SiteFooter from "../../components/SiteFooter";
 import FaqSection from "../../components/FaqSection";
 import LogoStrip from "../../components/LogoStrip";
 import RelatedSolutions from "../../components/RelatedSolutions";
@@ -268,6 +269,8 @@ export default function BranchenOeffentlicheEinrichtungen() {
         location="branche_oeffentliche_einrichtungen"
         context="Wir prüfen kostenlos, ob Ihre Einrichtung antragsberechtigt ist und welche Förderquote gilt."
       />
+
+      <SiteFooter />
 
       <script
         {...jsonLd(
