@@ -119,7 +119,8 @@ export default function Home() {
     <div className="min-h-screen flex flex-col font-sans bg-white text-gray-900">
       <Header />
 
-      {/* 01 HERO — grüne Textur, Bubbles rechts, leichter Gradient für Textlesbarkeit */}
+      {/* 01 HERO — grüne Textur mit eingebackenen Bubbles, leichter Gradient für Textlesbarkeit.
+          Die Kreise sind Teil des Hintergrundbilds, es gibt bewusst kein separates Bubbles-Overlay mehr. */}
       <section className="relative w-full overflow-hidden" style={{ minHeight: "72vh" }}>
         <Image
           src="/Pictures/Homepage/hero-texture.jpg"
@@ -129,16 +130,6 @@ export default function Home() {
           priority
           quality={82}
         />
-        {/* Bubbles-Dekor rechts, wie im Mockup */}
-        <div className="absolute right-[-8%] top-[-10%] w-[55%] max-w-[720px] opacity-90 pointer-events-none select-none hidden sm:block">
-          <Image
-            src="/Pictures/Homepage/bubbles.png"
-            alt=""
-            width={1400}
-            height={1333}
-            style={{ width: "100%", height: "auto" }}
-          />
-        </div>
         {/* Leichter Gradient von links, damit der Text sich abhebt */}
         <div
           className="absolute inset-0 pointer-events-none"
