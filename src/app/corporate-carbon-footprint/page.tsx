@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "../Header";
+import PageHero from "../components/PageHero";
 import ContactCTA from "../components/ContactCTA";
 import FaqSection from "../components/FaqSection";
 import RelatedSolutions from "../components/RelatedSolutions";
@@ -101,32 +102,15 @@ export default function CorporateCarbonFootprint() {
     <div className="min-h-screen flex flex-col font-sans bg-white text-gray-900">
       <Header />
 
-      <section className="w-full pt-16 pb-12" style={{ backgroundColor: "#F4F1DE" }}>
-        <div className="max-w-4xl mx-auto px-6">
-          <p
-            className="text-sm font-extrabold uppercase tracking-wide mb-4"
-            style={{ color: "#81B29A" }}
-          >
-            <Link href="/co2-bilanzierung" className="hover:underline">
-              CO₂-Bilanzierung
-            </Link>
-          </p>
-          <h1
-            className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight mb-6"
-            style={{ color: "#3D405B" }}
-          >
-            Corporate Carbon Footprint: die CO₂-Bilanz Ihres Unternehmens
-          </h1>
-          <p className="text-lg leading-relaxed" style={{ color: "#23243a" }}>
-            Der Corporate Carbon Footprint (CCF) ist die vollständige Treibhausgasbilanz
-            eines Unternehmens über die Scopes 1, 2 und 3 nach dem GHG Protocol. Er zeigt,
-            wo Emissionen entstehen, und ist die Pflichtgrundlage für Klimaziele,
-            CSRD-Berichte, CDP und Förderanträge.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        image="/Pictures/pexels-marcin-jozwiak-199600-3641377.jpg"
+        alt="Industrieanlage bei Nacht, Symbolbild für die Unternehmensbilanz"
+        title="Corporate Carbon Footprint: die CO₂-Bilanz Ihres Unternehmens"
+        subtitle="Der Corporate Carbon Footprint (CCF) ist die vollständige Treibhausgasbilanz eines Unternehmens über die Scopes 1, 2 und 3 nach dem GHG Protocol. Er zeigt, wo Emissionen entstehen, und ist die Pflichtgrundlage für Klimaziele, CSRD-Berichte, CDP und Förderanträge."
+        scrollTargetId="inhalt"
+      />
 
-      <section className="w-full py-16 bg-white">
+      <section id="inhalt" className="w-full py-16 bg-white">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-3xl font-extrabold mb-8" style={{ color: "#3D405B" }}>
             Die drei Scopes im Überblick
@@ -144,7 +128,7 @@ export default function CorporateCarbonFootprint() {
                     <span
                       key={chip}
                       className="text-xs font-bold px-3 py-1.5 rounded-full"
-                      style={{ backgroundColor: "#F4F1DE", color: "#3D405B" }}
+                      style={{ backgroundColor: "rgba(129,178,154,0.18)", color: "#3D405B" }}
                     >
                       {chip}
                     </span>
@@ -163,7 +147,7 @@ export default function CorporateCarbonFootprint() {
         </div>
       </section>
 
-      <section className="w-full py-16" style={{ backgroundColor: "#F4F1DE" }}>
+      <section className="w-full py-16 bg-[#81B29A]/5">
         <div className="max-w-4xl mx-auto px-6">
           <h2 className="text-3xl font-extrabold mb-6" style={{ color: "#3D405B" }}>
             Was Sie von uns bekommen

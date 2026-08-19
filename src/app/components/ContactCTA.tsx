@@ -18,8 +18,9 @@ type Props = {
  */
 export default function ContactCTA({ context, location }: Props) {
   return (
-    <section className="w-full py-16" style={{ backgroundColor: "#F4F1DE" }}>
-      <div className="max-w-3xl mx-auto px-6 text-center">
+    <section className="w-full py-16 bg-[#81B29A]/10">
+      <div className="max-w-3xl mx-auto px-6">
+        <div className="rounded-3xl bg-white/60 border border-[#81B29A]/20 backdrop-blur-xl p-8 sm:p-10 text-center transition-all duration-300 hover:border-2 hover:border-[#81B29A] hover:ring-2 hover:ring-[#81B29A]/30">
         <h2 className="text-3xl font-extrabold mb-4" style={{ color: "#3D405B" }}>
           Kontaktieren Sie uns
         </h2>
@@ -42,6 +43,7 @@ export default function ContactCTA({ context, location }: Props) {
         >
           Kontaktformular öffnen
         </a>
+        </div>
       </div>
     </section>
   );

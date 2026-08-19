@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "../Header";
+import PageHero from "../components/PageHero";
 import ContactCTA from "../components/ContactCTA";
 import FaqSection from "../components/FaqSection";
 import ProcessSteps from "../components/ProcessSteps";
@@ -96,34 +97,15 @@ export default function Vsme() {
     <div className="min-h-screen flex flex-col font-sans bg-white text-gray-900">
       <Header />
 
-      <section className="w-full pt-16 pb-12" style={{ backgroundColor: "#F4F1DE" }}>
-        <div className="max-w-4xl mx-auto px-6">
-          <p
-            className="text-sm font-extrabold uppercase tracking-wide mb-4"
-            style={{ color: "#81B29A" }}
-          >
-            <Link href="/berichterstattung" className="hover:underline">
-              Nachhaltigkeit berichten
-            </Link>
-          </p>
-          <h1
-            className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight mb-6"
-            style={{ color: "#3D405B" }}
-          >
-            VSME &amp; Voluntary Standard: freiwillig berichten, Anfragen bündeln
-          </h1>
-          <p className="text-lg leading-relaxed" style={{ color: "#23243a" }}>
-            Der VSME ist der von der EFRAG entwickelte freiwillige EU-Standard für die
-            Nachhaltigkeitsberichterstattung kleiner und mittlerer Unternehmen. Sein
-            Nachfolger, der Voluntary Standard (VS), wurde von der EU-Kommission am 3. Juli
-            2026 angenommen. Mit einem Bericht nach diesem Standard beantworten Unternehmen
-            die ESG-Anfragen von Banken, Kunden und Versicherern gebündelt, statt jeden
-            Fragebogen einzeln.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        image="/Pictures/pexels-goumbik-590020.jpg"
+        alt="Diagramme auf Papier mit Stift, Symbolbild für freiwillige Berichterstattung"
+        title="VSME & Voluntary Standard: freiwillig berichten, Anfragen bündeln"
+        subtitle="Der VSME ist der von der EFRAG entwickelte freiwillige EU-Standard für die Nachhaltigkeitsberichterstattung kleiner und mittlerer Unternehmen. Sein Nachfolger, der Voluntary Standard (VS), wurde von der EU-Kommission am 3. Juli 2026 angenommen. Mit einem Bericht nach diesem Standard beantworten Unternehmen die ESG-Anfragen von Banken, Kunden und Versicherern gebündelt, statt jeden Fragebogen einzeln."
+        scrollTargetId="inhalt"
+      />
 
-      <section className="w-full py-16 bg-white">
+      <section id="inhalt" className="w-full py-16 bg-white">
         <div className="max-w-4xl mx-auto px-6">
           <h2 className="text-3xl font-extrabold mb-6" style={{ color: "#3D405B" }}>
             Warum jetzt: Der Standard wird zum Schutzschild
@@ -142,7 +124,7 @@ export default function Vsme() {
         </div>
       </section>
 
-      <section className="w-full py-16" style={{ backgroundColor: "#F4F1DE" }}>
+      <section className="w-full py-16 bg-[#81B29A]/5">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-3xl font-extrabold mb-8" style={{ color: "#3D405B" }}>
             Basis- oder Comprehensive-Modul?

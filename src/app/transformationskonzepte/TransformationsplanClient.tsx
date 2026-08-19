@@ -125,7 +125,7 @@ export default function TransformationsplanClient() {
         </section>
 
         {/* Modul 4: Umsetzung foerdern lassen */}
-        <section className="w-full py-16" style={{ backgroundColor: "#F4F1DE" }}>
+        <section className="w-full py-16 bg-[#81B29A]/5">
           <div className="max-w-4xl mx-auto px-4">
             <h2 className="text-3xl font-extrabold mb-6" style={{ color: "#3D405B" }}>
               {c.modul4Title}

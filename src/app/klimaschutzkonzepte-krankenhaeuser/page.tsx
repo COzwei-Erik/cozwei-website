@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "../Header";
+import PageHero from "../components/PageHero";
 import ContactCTA from "../components/ContactCTA";
 import FaqSection from "../components/FaqSection";
 import InfoBox from "../components/InfoBox";
@@ -90,31 +91,15 @@ export default function KlimaschutzkonzepteKrankenhaeuser() {
     <div className="min-h-screen flex flex-col font-sans bg-white text-gray-900">
       <Header />
 
-      <section className="w-full pt-16 pb-12" style={{ backgroundColor: "#F4F1DE" }}>
-        <div className="max-w-4xl mx-auto px-6">
-          <p className="text-sm font-extrabold uppercase tracking-wide mb-4" style={{ color: "#81B29A" }}>
-            <Link href="/klimaschutzkonzepte" className="hover:underline">
-              Klimaschutzkonzepte
-            </Link>
-          </p>
-          <h1
-            className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight mb-6"
-            style={{ color: "#3D405B" }}
-          >
-            Klimaschutzkonzepte für Krankenhäuser und soziale Träger
-          </h1>
-          <p className="text-lg leading-relaxed" style={{ color: "#23243a" }}>
-            Öffentliche, gemeinnützige und mildtätige Träger des Gesundheitswesens, der
-            Pflege und der sozialen Hilfe sind über die Kommunalrichtlinie der NKI
-            antragsberechtigt: 70 Prozent Zuschuss für Klimaschutzkonzept und
-            Klimaschutzmanagement, bis zu 90 Prozent in finanzschwachen Kommunen und
-            Braunkohlegebieten. COzwei entwickelt Konzepte, die im 24/7-Betrieb eines
-            Krankenhauses funktionieren.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        image="/Pictures/Homepage/branche-oeffentlich.jpg"
+        alt="Skyline einer Stadt, Interimsbild für Krankenhäuser und soziale Träger"
+        title="Klimaschutzkonzepte für Krankenhäuser und soziale Träger"
+        subtitle="Öffentliche, gemeinnützige und mildtätige Träger des Gesundheitswesens, der Pflege und der sozialen Hilfe sind über die Kommunalrichtlinie der NKI antragsberechtigt: 70 Prozent Zuschuss für Klimaschutzkonzept und Klimaschutzmanagement, bis zu 90 Prozent in finanzschwachen Kommunen und Braunkohlegebieten. COzwei entwickelt Konzepte, die im 24/7-Betrieb eines Krankenhauses funktionieren."
+        scrollTargetId="inhalt"
+      />
 
-      <section className="w-full py-16 bg-white">
+      <section id="inhalt" className="w-full py-16 bg-white">
         <div className="max-w-4xl mx-auto px-6">
           <h2 className="text-3xl font-extrabold mb-6" style={{ color: "#3D405B" }}>
             Klimaschutz unter Versorgungsauflagen
@@ -150,19 +135,19 @@ export default function KlimaschutzkonzepteKrankenhaeuser() {
         ]}
       />
 
-      <section className="w-full py-16" style={{ backgroundColor: "#F4F1DE" }}>
+      <section className="w-full py-16 bg-[#81B29A]/5">
         <div className="max-w-4xl mx-auto px-6">
           <h2 className="text-3xl font-extrabold mb-6" style={{ color: "#3D405B" }}>
             Energieprofil einer Klinik
           </h2>
-          <div className="rounded-2xl bg-white border p-6" style={{ borderColor: "#E2DDD0" }}>
+          <div className="rounded-3xl bg-white/60 border border-[#81B29A]/20 backdrop-blur-xl transition-all duration-300 hover:border-2 hover:border-[#81B29A] hover:ring-2 hover:ring-[#81B29A]/30 p-6">
             <ul className="space-y-4">
               {ENERGIEPROFIL.map((e) => (
                 <li key={e.bereich}>
                   <p className="text-sm font-bold mb-1" style={{ color: "#3D405B" }}>
                     {e.bereich}
                   </p>
-                  <div className="h-4 rounded-full" style={{ backgroundColor: "#F4F1DE" }}>
+                  <div className="h-4 rounded-full" style={{ backgroundColor: "rgba(129,178,154,0.10)" }}>
                     <div
                       className="h-4 rounded-full"
                       style={{ width: `${e.anteil}%`, backgroundColor: "#81B29A" }}

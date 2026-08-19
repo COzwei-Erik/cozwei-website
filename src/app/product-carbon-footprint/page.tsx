@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "../Header";
+import PageHero from "../components/PageHero";
 import ContactCTA from "../components/ContactCTA";
 import FaqSection from "../components/FaqSection";
 import RelatedSolutions from "../components/RelatedSolutions";
@@ -88,33 +89,15 @@ export default function ProductCarbonFootprint() {
     <div className="min-h-screen flex flex-col font-sans bg-white text-gray-900">
       <Header />
 
-      <section className="w-full pt-16 pb-12" style={{ backgroundColor: "#F4F1DE" }}>
-        <div className="max-w-4xl mx-auto px-6">
-          <p
-            className="text-sm font-extrabold uppercase tracking-wide mb-4"
-            style={{ color: "#81B29A" }}
-          >
-            <Link href="/co2-bilanzierung" className="hover:underline">
-              CO₂-Bilanzierung
-            </Link>
-          </p>
-          <h1
-            className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight mb-6"
-            style={{ color: "#3D405B" }}
-          >
-            Product Carbon Footprint: die CO₂-Bilanz Ihres Produkts
-          </h1>
-          <p className="text-lg leading-relaxed" style={{ color: "#23243a" }}>
-            Der Product Carbon Footprint (PCF) beziffert die Treibhausgasemissionen eines
-            Produkts über seinen Lebensweg, von der Rohstoffgewinnung über Produktion und
-            Nutzung bis zur Entsorgung. COzwei berechnet PCFs nach ISO 14067 und GHG
-            Protocol Product Standard, belastbar für Kundenanfragen, Ausschreibungen und
-            Produktentwicklung.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        image="/Pictures/Homepage/branche-verbrauchsgueter.jpg"
+        alt="Mitarbeiterin mit Tablet vor Produktregalen, Symbolbild für Produktbilanzen"
+        title="Product Carbon Footprint: die CO₂-Bilanz Ihres Produkts"
+        subtitle="Der Product Carbon Footprint (PCF) beziffert die Treibhausgasemissionen eines Produkts über seinen Lebensweg, von der Rohstoffgewinnung über Produktion und Nutzung bis zur Entsorgung. COzwei berechnet PCFs nach ISO 14067 und GHG Protocol Product Standard, belastbar für Kundenanfragen, Ausschreibungen und Produktentwicklung."
+        scrollTargetId="inhalt"
+      />
 
-      <section className="w-full py-16 bg-white">
+      <section id="inhalt" className="w-full py-16 bg-white">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-3xl font-extrabold mb-8" style={{ color: "#3D405B" }}>
             Vom Rohstoff bis zur Entsorgung
@@ -130,7 +113,7 @@ export default function ProductCarbonFootprint() {
                 <span
                   aria-hidden="true"
                   className="inline-flex w-8 h-8 rounded-full items-center justify-center text-sm font-extrabold mb-3 transition-colors"
-                  style={{ backgroundColor: "#F4F1DE", color: "#3D405B" }}
+                  style={{ backgroundColor: "rgba(129,178,154,0.18)", color: "#3D405B" }}
                 >
                   {i + 1}
                 </span>
@@ -152,7 +135,7 @@ export default function ProductCarbonFootprint() {
         </div>
       </section>
 
-      <section className="w-full py-16" style={{ backgroundColor: "#F4F1DE" }}>
+      <section className="w-full py-16 bg-[#81B29A]/5">
         <div className="max-w-4xl mx-auto px-6">
           <h2 className="text-3xl font-extrabold mb-8" style={{ color: "#3D405B" }}>
             Typische Anlässe

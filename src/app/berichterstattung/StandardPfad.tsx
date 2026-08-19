@@ -49,11 +49,8 @@ export default function StandardPfad() {
           return (
             <div
               key={f.key}
-              className="rounded-2xl border p-5 transition-colors"
-              style={{
-                borderColor: antwort === "ja" ? "#81B29A" : "#E2DDD0",
-                backgroundColor: "white",
-              }}
+              className="rounded-2xl bg-white/60 backdrop-blur-xl border p-5 transition-colors"
+              style={{ borderColor: antwort === "ja" ? "#81B29A" : "rgba(129,178,154,0.20)" }}
             >
               <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:justify-between">
                 <p className="font-bold" style={{ color: "#3D405B" }}>
@@ -102,7 +99,7 @@ export default function StandardPfad() {
       </div>
 
       {alleBeantwortet && (
-        <div className="mt-6 rounded-2xl p-5" style={{ backgroundColor: "#F4F1DE" }}>
+        <div className="mt-6 rounded-2xl bg-white/60 border border-[#81B29A]/20 backdrop-blur-xl p-5">
           {relevant.length > 0 ? (
             <p className="leading-relaxed" style={{ color: "#23243a" }}>
               <strong>Für Sie relevant:</strong>{" "}

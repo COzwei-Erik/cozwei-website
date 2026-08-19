@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "../Header";
+import PageHero from "../components/PageHero";
 import ContactCTA from "../components/ContactCTA";
 import FaqSection from "../components/FaqSection";
 import InfoBox from "../components/InfoBox";
@@ -90,31 +91,15 @@ export default function KlimaschutzkonzepteKirchen() {
     <div className="min-h-screen flex flex-col font-sans bg-white text-gray-900">
       <Header />
 
-      <section className="w-full pt-16 pb-12" style={{ backgroundColor: "#F4F1DE" }}>
-        <div className="max-w-4xl mx-auto px-6">
-          <p className="text-sm font-extrabold uppercase tracking-wide mb-4" style={{ color: "#81B29A" }}>
-            <Link href="/klimaschutzkonzepte" className="hover:underline">
-              Klimaschutzkonzepte
-            </Link>
-          </p>
-          <h1
-            className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight mb-6"
-            style={{ color: "#3D405B" }}
-          >
-            Klimaschutzkonzepte für Kirchen und kirchliche Einrichtungen
-          </h1>
-          <p className="text-lg leading-relaxed" style={{ color: "#23243a" }}>
-            Religionsgemeinschaften mit Körperschaftsstatus sowie deren Stiftungen und
-            Einrichtungen sind über die Kommunalrichtlinie der NKI antragsberechtigt: 70
-            Prozent Zuschuss für Klimaschutzkonzept und Klimaschutzmanagement, bis zu 90
-            Prozent in finanzschwachen Kommunen und Braunkohlegebieten. COzwei begleitet
-            Landeskirchen, Bistümer, Kirchenkreise und kirchliche Träger von der
-            Antragstellung bis zum beschlussfähigen Konzept.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        image="/Pictures/klimaschutzkonzepte-hero.png"
+        alt="Stadtansicht, Interimsbild für kirchliche Einrichtungen"
+        title="Klimaschutzkonzepte für Kirchen und kirchliche Einrichtungen"
+        subtitle="Religionsgemeinschaften mit Körperschaftsstatus sowie deren Stiftungen und Einrichtungen sind über die Kommunalrichtlinie der NKI antragsberechtigt: 70 Prozent Zuschuss für Klimaschutzkonzept und Klimaschutzmanagement, bis zu 90 Prozent in finanzschwachen Kommunen und Braunkohlegebieten. COzwei begleitet Landeskirchen, Bistümer, Kirchenkreise und kirchliche Träger von der Antragstellung bis zum beschlussfähigen Konzept."
+        scrollTargetId="inhalt"
+      />
 
-      <section className="w-full py-16 bg-white">
+      <section id="inhalt" className="w-full py-16 bg-white">
         <div className="max-w-4xl mx-auto px-6">
           <h2 className="text-3xl font-extrabold mb-6" style={{ color: "#3D405B" }}>
             Die kirchliche Ausgangslage ist besonders
@@ -148,14 +133,14 @@ export default function KlimaschutzkonzepteKirchen() {
         ]}
       />
 
-      <section className="w-full py-16" style={{ backgroundColor: "#F4F1DE" }}>
+      <section className="w-full py-16 bg-[#81B29A]/5">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-3xl font-extrabold mb-8" style={{ color: "#3D405B" }}>
             Gebäudetypen und typische Hebel
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
             {GEBAEUDETYPEN.map((g) => (
-              <div key={g.typ} className="rounded-2xl bg-white border p-5" style={{ borderColor: "#E2DDD0" }}>
+              <div key={g.typ} className="rounded-3xl bg-white/60 border border-[#81B29A]/20 backdrop-blur-xl transition-all duration-300 hover:border-2 hover:border-[#81B29A] hover:ring-2 hover:ring-[#81B29A]/30 p-5">
                 <h3 className="text-base font-extrabold mb-2" style={{ color: "#3D405B" }}>
                   {g.typ}
                 </h3>

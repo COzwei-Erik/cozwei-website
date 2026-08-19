@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "../Header";
+import PageHero from "../components/PageHero";
 import ContactCTA from "../components/ContactCTA";
 import FaqSection from "../components/FaqSection";
 import RelatedSolutions from "../components/RelatedSolutions";
@@ -97,40 +98,22 @@ export default function Energieeffizienz() {
     <div className="min-h-screen flex flex-col font-sans bg-white text-gray-900">
       <Header />
 
-      <section className="w-full pt-16 pb-12" style={{ backgroundColor: "#F4F1DE" }}>
-        <div className="max-w-4xl mx-auto px-6">
-          <p
-            className="text-sm font-extrabold uppercase tracking-wide mb-4"
-            style={{ color: "#81B29A" }}
-          >
-            <Link href="/dekarbonisierung" className="hover:underline">
-              Emissionen reduzieren
-            </Link>
-          </p>
-          <h1
-            className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight mb-6"
-            style={{ color: "#3D405B" }}
-          >
-            Energieeffizienz im Betrieb: weniger Verbrauch, weniger Kosten, weniger
-            Emissionen
-          </h1>
-          <p className="text-lg leading-relaxed" style={{ color: "#23243a" }}>
-            Energieeffizienz ist der schnellste Hebel der Dekarbonisierung: Jede eingesparte
-            Kilowattstunde senkt Kosten und Emissionen zugleich. COzwei analysiert Ihre
-            Verbräuche, priorisiert Maßnahmen nach Wirtschaftlichkeit und begleitet die
-            Umsetzung, inklusive der passenden Förderung.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        image="/Pictures/pexels-tomfisk-9893729.jpg"
+        alt="Solarpark aus der Vogelperspektive, Symbolbild für Energieeffizienz"
+        title="Energieeffizienz im Betrieb: weniger Verbrauch, weniger Kosten, weniger Emissionen"
+        subtitle="Energieeffizienz ist der schnellste Hebel der Dekarbonisierung: Jede eingesparte Kilowattstunde senkt Kosten und Emissionen zugleich. COzwei analysiert Ihre Verbräuche, priorisiert Maßnahmen nach Wirtschaftlichkeit und begleitet die Umsetzung, inklusive der passenden Förderung."
+        scrollTargetId="inhalt"
+      />
 
-      <section className="w-full py-16 bg-white">
+      <section id="inhalt" className="w-full py-16 bg-white">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-3xl font-extrabold mb-8" style={{ color: "#3D405B" }}>
             Wo wir ansetzen
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {HANDLUNGSFELDER.map((f) => (
-              <div key={f.title} className="rounded-2xl border p-6" style={{ borderColor: "#E2DDD0" }}>
+              <div key={f.title} className="rounded-3xl bg-white/60 border border-[#81B29A]/20 backdrop-blur-xl transition-all duration-300 hover:border-2 hover:border-[#81B29A] hover:ring-2 hover:ring-[#81B29A]/30 p-6">
                 <h3
                   className="text-base font-extrabold uppercase tracking-wide mb-2"
                   style={{ color: "#81B29A" }}
@@ -156,7 +139,7 @@ export default function Energieeffizienz() {
       </section>
 
       {/* Signature-Element: Wirtschaftlichkeits-Matrix als reines SVG */}
-      <section className="w-full py-16" style={{ backgroundColor: "#F4F1DE" }}>
+      <section className="w-full py-16 bg-[#81B29A]/5">
         <div className="max-w-4xl mx-auto px-6">
           <h2 className="text-3xl font-extrabold mb-6" style={{ color: "#3D405B" }}>
             Priorisieren statt Gießkanne
@@ -167,7 +150,7 @@ export default function Energieeffizienz() {
             Betrieb passt.
           </p>
 
-          <figure className="rounded-2xl bg-white border p-6" style={{ borderColor: "#E2DDD0" }}>
+          <figure className="rounded-3xl bg-white/60 border border-[#81B29A]/20 backdrop-blur-xl transition-all duration-300 hover:border-2 hover:border-[#81B29A] hover:ring-2 hover:ring-[#81B29A]/30 p-6">
             <svg
               viewBox="0 0 460 320"
               className="w-full h-auto"

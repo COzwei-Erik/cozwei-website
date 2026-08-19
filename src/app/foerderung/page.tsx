@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "../Header";
+import PageHero from "../components/PageHero";
 import ContactCTA from "../components/ContactCTA";
 import FaqSection from "../components/FaqSection";
 import InfoBox from "../components/InfoBox";
@@ -116,28 +117,13 @@ export default function Foerderung() {
     <div className="min-h-screen flex flex-col font-sans bg-white text-gray-900">
       <Header />
 
-      <section className="w-full pt-16 pb-12" style={{ backgroundColor: "#F4F1DE" }}>
-        <div className="max-w-4xl mx-auto px-6">
-          <p
-            className="text-sm font-extrabold uppercase tracking-wide mb-4"
-            style={{ color: "#81B29A" }}
-          >
-            Förderung sichern
-          </p>
-          <h1
-            className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight mb-6"
-            style={{ color: "#3D405B" }}
-          >
-            Förderung sichern: Zuschüsse für Ihre Dekarbonisierung
-          </h1>
-          <p className="text-lg leading-relaxed" style={{ color: "#23243a" }}>
-            Bund und Länder fördern Klimaschutzberatung und -investitionen mit Zuschüssen
-            von bis zu 90 Prozent, je nach Programm und Antragsteller. COzwei identifiziert
-            die passenden Programme für Ihr Vorhaben, prüft die Voraussetzungen und
-            begleitet Sie durch Antragstellung und Verwendungsnachweis.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        image="/Pictures/pexels-fauxels-3184292.jpg"
+        alt="Team am Tisch mit Auswertungen, Symbolbild für Förderanalyse und Antragstellung"
+        title="Förderung sichern: Zuschüsse für Ihre Dekarbonisierung"
+        subtitle="Bund und Länder fördern Klimaschutzberatung und -investitionen mit Zuschüssen von bis zu 90 Prozent, je nach Programm und Antragsteller. COzwei identifiziert die passenden Programme für Ihr Vorhaben, prüft die Voraussetzungen und begleitet Sie durch Antragstellung und Verwendungsnachweis."
+        scrollTargetId="inhalt"
+      />
 
       <section id="foerderanalyse" className="w-full py-16 bg-white scroll-mt-24">
         <div className="max-w-4xl mx-auto px-6">
@@ -167,7 +153,7 @@ export default function Foerderung() {
         </div>
       </section>
 
-      <section className="w-full py-16" style={{ backgroundColor: "#F4F1DE" }}>
+      <section id="inhalt" className="w-full py-16 bg-[#81B29A]/5">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-3xl font-extrabold mb-8" style={{ color: "#3D405B" }}>
             Die wichtigsten Programme im Überblick
@@ -176,7 +162,7 @@ export default function Foerderung() {
           {/* Desktop: Tabelle. Answer Engines extrahieren Tabellen und Fliesstext
               unterschiedlich, deshalb stehen die Kernzahlen zusaetzlich in den
               Abschnitten darunter. */}
-          <div className="hidden md:block overflow-x-auto rounded-2xl bg-white border" style={{ borderColor: "#E2DDD0" }}>
+          <div className="hidden md:block overflow-x-auto rounded-3xl bg-white/60 border border-[#81B29A]/20 backdrop-blur-xl">
             <table className="w-full text-left text-sm">
               <thead>
                 <tr style={{ backgroundColor: "#3D405B" }}>
@@ -204,7 +190,7 @@ export default function Foerderung() {
           {/* Mobil: dieselben Daten als Karten */}
           <div className="md:hidden space-y-4">
             {PROGRAMME.map((p) => (
-              <div key={p.programm} className="rounded-2xl bg-white border p-5" style={{ borderColor: "#E2DDD0" }}>
+              <div key={p.programm} className="rounded-3xl bg-white/60 border border-[#81B29A]/20 backdrop-blur-xl transition-all duration-300 hover:border-2 hover:border-[#81B29A] hover:ring-2 hover:ring-[#81B29A]/30 p-5">
                 <h3 className="font-extrabold mb-3" style={{ color: "#3D405B" }}>
                   {p.programm}
                 </h3>
@@ -253,7 +239,7 @@ export default function Foerderung() {
         </div>
       </section>
 
-      <section id="grw" className="w-full py-16 scroll-mt-24" style={{ backgroundColor: "#F4F1DE" }}>
+      <section id="grw" className="w-full py-16 scroll-mt-24 bg-[#81B29A]/5">
         <div className="max-w-4xl mx-auto px-6">
           <h2 className="text-3xl font-extrabold mb-6" style={{ color: "#3D405B" }}>
             GRW: Investitionsförderung in strukturschwachen Regionen

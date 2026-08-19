@@ -5,14 +5,14 @@ type Props = {
 };
 
 /**
- * Hervorgehobene Hinweisbox für Förderhinweise und Fristen. Ice Beige mit
- * Sage-Kante links, kein flächiges Gelb (CI-Vorgabe).
+ * Hervorgehobene Hinweisbox für Förderhinweise und Fristen. Weiße Glasfläche
+ * mit kräftiger Sage-Kante links, passend zur Kartenoptik der Website.
  */
 export default function InfoBox({ label, children }: Props) {
   return (
     <div
-      className="rounded-2xl p-6 border-l-4"
-      style={{ backgroundColor: "#F4F1DE", borderColor: "#81B29A" }}
+      className="rounded-2xl p-6 border border-l-4 bg-white/60 backdrop-blur-xl border-[#81B29A]/20"
+      style={{ borderLeftColor: "#81B29A" }}
     >
       {label && (
         <p

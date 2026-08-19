@@ -287,7 +287,7 @@ export default function Klimaschutzkonzepte() {
 
       {/* Hub-Sektion: Einstieg in die drei Zielgruppenseiten. Diese Seite ist das
           Ziel von Kachel 5 der Startseite, die Zielgruppenseiten haengen darunter. */}
-      <section className="w-full py-16" style={{ backgroundColor: "#F4F1DE" }}>
+      <section className="w-full py-16 bg-[#81B29A]/5">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-3xl font-extrabold mb-8" style={{ color: "#3D405B" }}>
             Für Ihre Einrichtung
@@ -313,8 +313,7 @@ export default function Klimaschutzkonzepte() {
               <Link
                 key={card.href}
                 href={card.href}
-                className="block rounded-2xl bg-white border p-6 transition hover:border-[#81B29A] hover:ring-2 hover:ring-[#81B29A]/30"
-                style={{ borderColor: "#E2DDD0" }}
+                className="block rounded-3xl bg-white/60 border border-[#81B29A]/20 backdrop-blur-xl transition-all duration-300 hover:border-2 hover:border-[#81B29A] hover:ring-2 hover:ring-[#81B29A]/30 p-6"
               >
                 <h3
                   className="text-base font-extrabold uppercase tracking-wide mb-2"

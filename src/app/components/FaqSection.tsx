@@ -14,14 +14,18 @@ export default function FaqSection({ items, heading = "Häufige Fragen" }: Props
   if (items.length === 0) return null;
 
   return (
-    <section className="w-full py-16 bg-white">
+    <section className="w-full py-16 bg-[#81B29A]/5">
       <div className="max-w-3xl mx-auto px-6">
         <h2 className="text-3xl font-extrabold mb-8" style={{ color: "#3D405B" }}>
           {heading}
         </h2>
-        <div className="divide-y" style={{ borderColor: "#E2DDD0" }}>
+        <div className="space-y-3">
           {items.map((item, i) => (
-            <details key={item.question} open={i === 0} className="group py-4">
+            <details
+              key={item.question}
+              open={i === 0}
+              className="group rounded-2xl bg-white/60 border border-[#81B29A]/20 backdrop-blur-xl p-5 transition-all duration-300 hover:border-[#81B29A]"
+            >
               <summary
                 className="cursor-pointer list-none font-bold text-lg flex items-start justify-between gap-4"
                 style={{ color: "#3D405B" }}

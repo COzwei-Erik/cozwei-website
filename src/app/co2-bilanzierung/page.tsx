@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "../Header";
+import PageHero from "../components/PageHero";
 import BilanzSwitch from "./BilanzSwitch";
 import ContactCTA from "../components/ContactCTA";
 import FaqSection from "../components/FaqSection";
@@ -112,31 +113,15 @@ export default function Co2Bilanzierung() {
       <Header />
 
       {/* Hero mit H1 und Definitionsabsatz, direkt extrahierbar für Answer Engines */}
-      <section className="w-full pt-16 pb-12" style={{ backgroundColor: "#F4F1DE" }}>
-        <div className="max-w-4xl mx-auto px-6">
-          <p
-            className="text-sm font-extrabold uppercase tracking-wide mb-4"
-            style={{ color: "#81B29A" }}
-          >
-            Treibhausgase bilanzieren
-          </p>
-          <h1
-            className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight mb-6"
-            style={{ color: "#3D405B" }}
-          >
-            CO₂-Bilanzierung: Treibhausgase messbar machen
-          </h1>
-          <p className="text-lg leading-relaxed" style={{ color: "#23243a" }}>
-            Eine CO₂-Bilanz erfasst alle Treibhausgasemissionen eines Unternehmens oder
-            Produkts nach anerkannten Standards wie dem GHG Protocol und den ISO-Normen
-            14064 und 14067. Sie ist die Datengrundlage für Klimaziele, Berichtspflichten
-            und Förderanträge. COzwei erstellt auditierungsfähige Bilanzen für Unternehmen
-            jeder Größe.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        image="/Pictures/Homepage/loesung-transparenz.jpg"
+        alt="Industrieschornstein in der Abenddämmerung, Symbolbild für CO₂-Bilanzierung"
+        title="CO₂-Bilanzierung: Treibhausgase messbar machen"
+        subtitle="Eine CO₂-Bilanz erfasst alle Treibhausgasemissionen eines Unternehmens oder Produkts nach anerkannten Standards wie dem GHG Protocol und den ISO-Normen 14064 und 14067. Sie ist die Datengrundlage für Klimaziele, Berichtspflichten und Förderanträge. COzwei erstellt auditierungsfähige Bilanzen für Unternehmen jeder Größe."
+        scrollTargetId="inhalt"
+      />
 
-      <section className="w-full py-16 bg-white">
+      <section id="inhalt" className="w-full py-16 bg-white">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-3xl font-extrabold mb-8" style={{ color: "#3D405B" }}>
             Zwei Bilanzen, ein System
@@ -145,7 +130,7 @@ export default function Co2Bilanzierung() {
         </div>
       </section>
 
-      <section className="w-full py-16" style={{ backgroundColor: "#F4F1DE" }}>
+      <section className="w-full py-16 bg-[#81B29A]/5">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-3xl font-extrabold mb-8" style={{ color: "#3D405B" }}>
             Wofür Sie die Bilanz brauchen

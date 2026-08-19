@@ -35,7 +35,7 @@ export default function BilanzSwitch() {
     <div>
       <div
         className="inline-flex rounded-full p-1 mb-6"
-        style={{ backgroundColor: "#F4F1DE" }}
+        style={{ backgroundColor: "rgba(129,178,154,0.12)" }}
         role="tablist"
         aria-label="Bilanzart wählen"
       >
@@ -68,16 +68,15 @@ export default function BilanzSwitch() {
           return (
             <div
               key={card.key}
-              className="rounded-2xl border p-7 transition-all duration-300"
+              className="rounded-3xl bg-white/60 backdrop-blur-xl border p-7 transition-all duration-300"
               style={
                 isActive
                   ? {
                       borderColor: "#81B29A",
                       borderWidth: 2,
-                      backgroundColor: "white",
                       boxShadow: "0 8px 24px rgba(61,64,91,0.10)",
                     }
-                  : { borderColor: "#E2DDD0", backgroundColor: "white", opacity: 0.7 }
+                  : { borderColor: "rgba(129,178,154,0.20)", opacity: 0.75 }
               }
             >
               <h3 className="text-lg font-extrabold mb-3" style={{ color: "#3D405B" }}>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "../Header";
+import PageHero from "../components/PageHero";
 import ContactCTA from "../components/ContactCTA";
 import FaqSection from "../components/FaqSection";
 import ProcessSteps from "../components/ProcessSteps";
@@ -130,29 +131,13 @@ export default function KiAutomatisierung() {
     <div className="min-h-screen flex flex-col font-sans bg-white text-gray-900">
       <Header />
 
-      <section className="w-full pt-16 pb-12" style={{ backgroundColor: "#F4F1DE" }}>
-        <div className="max-w-4xl mx-auto px-6">
-          <p
-            className="text-sm font-extrabold uppercase tracking-wide mb-4"
-            style={{ color: "#81B29A" }}
-          >
-            KI &amp; Automatisierung
-          </p>
-          <h1
-            className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight mb-6"
-            style={{ color: "#3D405B" }}
-          >
-            KI &amp; Automatisierung: Prozesse beschleunigen, Daten nutzbar machen
-          </h1>
-          <p className="text-lg leading-relaxed" style={{ color: "#23243a" }}>
-            COzwei entwickelt KI-gestützte Lösungen für wiederkehrende
-            Unternehmensprozesse, von der automatisierten Datenerhebung über
-            Dokumenten-Workflows bis zu individueller Software. Wir kommen aus der
-            Beratungspraxis: Jede Lösung entsteht aus einem realen Prozess, nicht aus einer
-            Technologie-Idee.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        image="/Pictures/Homepage/loesung-ai.jpg"
+        alt="KI-Visualisierung über einem Laptop, Symbolbild für KI und Automatisierung"
+        title="KI & Automatisierung: Prozesse beschleunigen, Daten nutzbar machen"
+        subtitle="COzwei entwickelt KI-gestützte Lösungen für wiederkehrende Unternehmensprozesse, von der automatisierten Datenerhebung über Dokumenten-Workflows bis zu individueller Software. Wir kommen aus der Beratungspraxis: Jede Lösung entsteht aus einem realen Prozess, nicht aus einer Technologie-Idee."
+        scrollTargetId="implementierung"
+      />
 
       <section id="implementierung" className="w-full py-16 bg-white scroll-mt-24">
         <div className="max-w-6xl mx-auto px-6">
@@ -169,7 +154,7 @@ export default function KiAutomatisierung() {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {EINSATZFELDER.map((f) => (
-              <div key={f.title} className="rounded-2xl border p-6" style={{ borderColor: "#E2DDD0" }}>
+              <div key={f.title} className="rounded-3xl bg-white/60 border border-[#81B29A]/20 backdrop-blur-xl transition-all duration-300 hover:border-2 hover:border-[#81B29A] hover:ring-2 hover:ring-[#81B29A]/30 p-6">
                 <h3
                   className="text-base font-extrabold uppercase tracking-wide mb-2"
                   style={{ color: "#81B29A" }}
@@ -185,7 +170,7 @@ export default function KiAutomatisierung() {
         </div>
       </section>
 
-      <section id="software" className="w-full py-16 scroll-mt-24" style={{ backgroundColor: "#F4F1DE" }}>
+      <section id="software" className="w-full py-16 scroll-mt-24 bg-[#81B29A]/5">
         <div className="max-w-4xl mx-auto px-6">
           <h2 className="text-3xl font-extrabold mb-6" style={{ color: "#3D405B" }}>
             Individuelle Softwareentwicklung
@@ -208,17 +193,17 @@ export default function KiAutomatisierung() {
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-            <div className="rounded-2xl border p-6" style={{ borderColor: "#E2DDD0" }}>
+            <div className="rounded-3xl bg-white/60 border border-[#81B29A]/20 backdrop-blur-xl transition-all duration-300 hover:border-2 hover:border-[#81B29A] hover:ring-2 hover:ring-[#81B29A]/30 p-6">
               <h3 className="text-base font-extrabold uppercase tracking-wide mb-4" style={{ color: "#6B6B6B" }}>
                 Manuell
               </h3>
               <Kette items={MANUELL} tone="#EFEFEF" />
             </div>
-            <div className="rounded-2xl border-2 p-6" style={{ borderColor: "#81B29A" }}>
+            <div className="rounded-3xl bg-white/60 backdrop-blur-xl border-2 p-6" style={{ borderColor: "#81B29A" }}>
               <h3 className="text-base font-extrabold uppercase tracking-wide mb-4" style={{ color: "#81B29A" }}>
                 Automatisiert
               </h3>
-              <Kette items={AUTOMATISIERT} tone="#F4F1DE" />
+              <Kette items={AUTOMATISIERT} tone="rgba(129,178,154,0.18)" />
             </div>
           </div>
 
