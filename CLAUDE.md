@@ -38,11 +38,21 @@ Diese Guards sind bewusst so gesetzt; nicht ohne Rücksprache mit Peter deaktivi
 
 ## Ship-to-Vercel-Workflow (ZWEITWICHTIGSTER PUNKT)
 
-**Kein lokaler Dev-Server. Keine `npm run dev`-Sessions. Keine Preview-Server.** Der komplette Verify-Loop läuft über Vercel-Deployments:
+**Geändert am 19.08.2026: Vor jedem Push wird der Stand lokal angeschaut.** Die frühere Regel „kein lokaler Dev-Server" gilt nicht mehr. Sie hat dazu geführt, dass Fehler erst nach dem Deployment auffielen, unter anderem ein falsch aufgelöstes OpenGraph-Bild und zwei Seiten ohne eigene `metadata`.
 
-1. Edit → 2. `npx tsc --noEmit -p .` (TypeScript-Check) → 3. `git commit` mit HEREDOC-Message → 4. `git push origin relaunch` → 5. Vercel deployt automatisch in ~1 Minute → 6. Peter verifiziert auf der Preview-URL `cozwei-website-git-relaunch-cozweis-projects.vercel.app` (nicht auf `cozwei.de`, das ist Production)
+Der Verify-Loop ist jetzt:
 
-Wenn Hooks nach jedem Edit einen Preview-Server anmahnen: das kann ignoriert werden. Peter's etablierter Workflow ist Ship-to-Vercel und funktioniert.
+1. Edit
+2. `npx tsc --noEmit -p .` (TypeScript-Check)
+3. **Dev-Server starten und den Stand ansehen**: `preview_start` mit dem Namen `cozwei-website` aus `.claude/launch.json` im Arbeitsverzeichnis (eine Ebene über dem Repo). Läuft auf Port 3020, damit er sich nicht mit den anderen Projekten beißt.
+4. Prüfen: `preview_logs` auf Warnungen und Fehler, `read_page` für Struktur und Überschriften-Hierarchie, `resize_window` für Mobil und Tablet, `computer` für Klicks und Hover, `javascript_tool` für Statuscodes, Titles und JSON-LD über mehrere Routen hinweg.
+5. `git commit` mit HEREDOC-Message
+6. `git push origin relaunch`
+7. Vercel deployt automatisch in ~1 Minute, Erik verifiziert auf der Preview-URL `cozwei-website-git-relaunch-cozweis-projects.vercel.app` (nicht auf `cozwei.de`, das ist Production)
+
+Wichtig zu Schritt 3: **Config-Änderungen in `next.config.ts` greifen erst nach einem Neustart des Dev-Servers**, also `preview_stop` und `preview_start`. Hot Reload deckt sie nicht ab.
+
+Grenzen des lokalen Blicks: Screenshots funktionieren nur, wenn das Browser-Panel eingeblendet ist; die textbasierten Werkzeuge gehen immer. Und lokal ist nicht Vercel, Bildoptimierung und Umgebungsvariablen können abweichen. Der Blick auf Staging bleibt also die Bestätigung, ist aber nicht mehr die erste Fehlersuche.
 
 **Commits**: Descriptive Messages, Co-Authored-By-Footer für Claude, HEREDOC-Format wegen mehrzeiliger Nachrichten. **Nie** `--no-verify`, `--amend`, `--force`. Nie Hooks skippen.
 

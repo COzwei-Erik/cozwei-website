@@ -7,10 +7,22 @@ const isProduction = process.env.VERCEL_ENV === "production";
 
 const nextConfig: NextConfig = {
   images: {
-    domains: ["images.unsplash.com"],
+    // images.domains ist in Next.js 16 veraltet, remotePatterns ist der Ersatz
+    // und erlaubt eine engere Einschraenkung auf Protokoll und Pfad.
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+      },
+    ],
     formats: ['image/webp', 'image/avif'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    // Next.js 16 erlaubt nur noch deklarierte quality-Werte. Ohne diese Liste
+    // gilt der Default [75] und jedes andere quality-Attribut wird verworfen,
+    // sichtbar nur als Warnung im Server-Log. Hier stehen alle Werte, die in
+    // src/ tatsaechlich verwendet werden.
+    qualities: [40, 70, 75, 82],
     minimumCacheTTL: 31536000, // 1 year cache
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",

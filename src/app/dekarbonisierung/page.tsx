@@ -1,189 +1,67 @@
-"use client";
-import Header from "../Header";
-import Image from "next/image";
-import { useLanguage, translations } from "../LanguageContext";
-import { dekarbContent } from "./content";
-import ContactCTA from "../components/ContactCTA";
-import RelatedSolutions from "../components/RelatedSolutions";
+import type { Metadata } from "next";
+import DekarbonisierungClient from "./DekarbonisierungClient";
+import { breadcrumbSchema, jsonLd, serviceSchema, SITE_URL } from "../components/schema";
 
-// Bilder aus dem Bestand plus Link-Ziele, parallel zu cards in content.ts.
-const DEKARB_CARD_META = [
-  {
-    image: "/Pictures/pexels-marcin-jozwiak-199600-3641377.jpg",
-    alt: "Industrieanlage, Symbolbild fuer den Dekarbonisierungsplan",
-    href: "#klimaziele-erreichen",
-  },
-  {
-    image: "/Pictures/pexels-rdne-7948058.jpg",
-    alt: "Team bei der Projektplanung, Symbolbild fuer die Massnahmenumsetzung",
-    href: "/massnahmen",
-  },
-  {
-    image: "/Pictures/image copy 6.png",
-    alt: "Symbolbild fuer Energieeffizienz im Betrieb",
-    href: "/energieeffizienz",
-  },
-];
+// Server Component nur fuer metadata und JSON-LD, die Seite selbst bleibt ein
+// Client Component wegen der Sprachumschaltung. Muster wie bei
+// cdp-klimaberichterstattung und transformationskonzepte.
+const PATH = "/dekarbonisierung";
 
-const DEKARB_RELATED_HREFS = ["/co2-bilanzierung", "/massnahmen", "/foerderung"];
+export const metadata: Metadata = {
+  title: "Emissionen reduzieren: Dekarbonisierungsplan & SBTi | COzwei",
+  description:
+    "Dekarbonisierung mit COzwei: Reduktionspfad aus Ihrer CO₂-Bilanz, Klimaziele nach SBTi, Maßnahmenumsetzung und Energieeffizienz im Betrieb.",
+  alternates: { canonical: `${SITE_URL}${PATH}` },
+  openGraph: {
+    title: "Emissionen reduzieren: Dekarbonisierungsplan & SBTi | COzwei",
+    description:
+      "Vom Reduktionspfad über wissenschaftsbasierte Klimaziele bis zur geförderten Umsetzung.",
+    url: `${SITE_URL}${PATH}`,
+    siteName: "COzwei",
+    locale: "de_DE",
+    type: "website",
+    images: [
+      {
+        // TODO: dediziertes 1200x630-OG-Bild.
+        url: `${SITE_URL}/Pictures/Artboard 1.png`,
+        width: 1200,
+        height: 630,
+        alt: "Dekarbonisierungsberatung durch COzwei",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Emissionen reduzieren: Dekarbonisierungsplan & SBTi | COzwei",
+    description: "Reduktionspfad, SBTi-Klimaziele und geförderte Umsetzung.",
+    images: [`${SITE_URL}/Pictures/Artboard 1.png`],
+  },
+  robots: { index: true, follow: true },
+};
 
 export default function Dekarbonisierung() {
-  const { language } = useLanguage();
-  const t = translations[language] || translations.de;
-  const c = dekarbContent[language] || dekarbContent.de;
   return (
-    <div className="min-h-screen flex flex-col font-sans bg-white text-gray-900">
-      <Header />
-      {/* Hero Section with Background Image */}
-      <section className="relative flex flex-col items-center justify-center min-h-screen w-full text-center overflow-hidden">
-        <div className="absolute inset-0 w-full h-full z-0">
-          <Image 
-            src="/Pictures/pexels-pixabay-60575.jpg" 
-            alt="Dekarbonisierung Hero Background" 
-            fill
-            style={{objectFit: 'cover', objectPosition: 'center'}}
-            className="opacity-90"
-            priority
-          />
-          <div className="absolute inset-0 bg-black/30" />
-        </div>
-        <div className="relative z-20 flex flex-col items-center justify-center w-full h-full py-16">
-          <div className="bg-white/80 rounded-2xl shadow-xl px-8 py-10 max-w-2xl mx-auto flex flex-col items-center border border-white/60 backdrop-blur-sm">
-            <h1 className="text-4xl sm:text-5xl font-extrabold mb-4 leading-tight" style={{ color: '#3D405B' }}>{t.decarbonHeroTitle}</h1>
-            <p className="text-lg sm:text-xl max-w-2xl mb-6" style={{ color: '#3D405B' }}>
-              {t.decarbonHeroSubtitle}
-            </p>
-            <button
-              type="button"
-              className="inline-block px-8 py-4 rounded-lg font-bold shadow-lg transition mb-2 text-xl"
-              style={{ backgroundColor: '#81B29A', color: 'white', boxShadow: '0 4px 24px 0 rgba(61, 64, 91, 0.25)' }}
-              onMouseOver={e => e.currentTarget.style.backgroundColor = '#6fa18a'}
-              onMouseOut={e => e.currentTarget.style.backgroundColor = '#81B29A'}
-              onClick={() => {
-                const target = document.getElementById('klimaziele-erreichen');
-                if (target) {
-                  const header = document.querySelector('nav');
-                  const headerHeight = header ? (header as HTMLElement).offsetHeight : 80;
-                  const y = target.getBoundingClientRect().top + window.scrollY - headerHeight - 16;
-                  window.scrollTo({ top: y, behavior: 'smooth' });
-                }
-              }}
-            >
-              {t.learnMore}
-            </button>
-          </div>
-        </div>
-      </section>
-      <main className="flex-1 px-4 py-8 max-w-5xl mx-auto">
-        {/* Klimaziele erreichen Section */}
-        <section id="klimaziele-erreichen" className="w-full py-16 relative overflow-x-hidden">
-          <div className="max-w-7xl mx-auto px-4">
-            <h2 className="text-4xl font-extrabold text-center mb-4" style={{ color: '#3D405B' }}>{t.decarbonSectionTitle}</h2>
-            <p className="mb-12 text-lg text-center" style={{ color: '#3D405B' }}>
-              {t.decarbonSectionSubtitle}
-            </p>
-            {/* Karten passend zur Startseiten-Kachel "Emissionen reduzieren".
-                Bilder aus dem Bestand, Ziele: Ankersprung, /massnahmen, /energieeffizienz. */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {DEKARB_CARD_META.map((meta, i) => {
-                const card = c.cards[i];
-                return (
-                  <div
-                    key={meta.href}
-                    className="flex flex-col rounded-3xl bg-white/60 border border-[#81B29A]/20 backdrop-blur-xl transition-all duration-300 hover:scale-105 hover:border-2 hover:border-[#81B29A] hover:ring-2 hover:ring-[#81B29A]/30 overflow-hidden group"
-                  >
-                    <Image src={meta.image} alt={meta.alt} width={600} height={256} quality={40} className="w-full h-64 object-cover rounded-t-2xl transition-all duration-300" />
-                    <div className="flex flex-col p-8 flex-1">
-                      <h3 className="text-lg font-extrabold mb-2" style={{ color: '#23243a' }}>{card.title}</h3>
-                      <p className="mb-6 text-base" style={{ color: '#23243a' }}>
-                        {card.body}
-                      </p>
-                      <a href={meta.href} className="mt-auto text-[#81B29A] font-bold flex items-center group/link hover:underline transition">
-                        {card.linkLabel}
-                        <svg className="ml-2 w-5 h-5 text-[#81B29A] group-hover/link:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"/></svg>
-                      </a>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-        {/* 4 Steps Section */}
-        <section className="w-full py-20">
-          <div className="max-w-7xl mx-auto px-4">
-            <h2 className="text-3xl font-extrabold text-center mb-12" style={{ color: '#3D405B' }}>{t.decarbonStepsTitle}</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative">
-              {/* Step 1 */}
-              <div className="relative z-10 flex flex-col items-center bg-white/60 rounded-3xl border border-[#81B29A]/20 backdrop-blur-xl transition-all duration-300 hover:scale-105 hover:border-2 hover:border-[#81B29A] hover:ring-2 hover:ring-[#81B29A]/30 overflow-hidden group p-8">
-                <div className="flex items-center justify-center w-14 h-14 rounded-full bg-[#81B29A] text-white text-2xl font-bold mb-4">1</div>
-                <h3 className="text-lg font-bold mb-2 text-center" style={{ color: '#23243a' }}>{t.decarbonStep1Title}</h3>
-                <p className="text-sm text-center text-[#23243a]">{t.decarbonStep1Desc}</p>
-              </div>
-              {/* Step 2 */}
-              <div className="relative z-10 flex flex-col items-center bg-white/60 rounded-3xl border border-[#81B29A]/20 backdrop-blur-xl transition-all duration-300 hover:scale-105 hover:border-2 hover:border-[#81B29A] hover:ring-2 hover:ring-[#81B29A]/30 overflow-hidden group p-8">
-                <div className="flex items-center justify-center w-14 h-14 rounded-full bg-[#81B29A] text-white text-2xl font-bold mb-4">2</div>
-                <h3 className="text-lg font-bold mb-2 text-center" style={{ color: '#23243a' }}>{t.decarbonStep2Title}</h3>
-                <p className="text-sm text-center text-[#23243a]">{t.decarbonStep2Desc}</p>
-              </div>
-              {/* Step 3 */}
-              <div className="relative z-10 flex flex-col items-center bg-white/60 rounded-3xl border border-[#81B29A]/20 backdrop-blur-xl transition-all duration-300 hover:scale-105 hover:border-2 hover:border-[#81B29A] hover:ring-2 hover:ring-[#81B29A]/30 overflow-hidden group p-8">
-                <div className="flex items-center justify-center w-14 h-14 rounded-full bg-[#81B29A] text-white text-2xl font-bold mb-4">3</div>
-                <h3 className="text-lg font-bold mb-2 text-center" style={{ color: '#23243a' }}>{t.decarbonStep3Title}</h3>
-                <p className="text-sm text-center text-[#23243a]">{t.decarbonStep3Desc}</p>
-              </div>
-              {/* Step 4 */}
-              <div className="relative z-10 flex flex-col items-center bg-white/60 rounded-3xl border border-[#81B29A]/20 backdrop-blur-xl transition-all duration-300 hover:scale-105 hover:border-2 hover:border-[#81B29A] hover:ring-2 hover:ring-[#81B29A]/30 overflow-hidden group p-8">
-                <div className="flex items-center justify-center w-14 h-14 rounded-full bg-[#81B29A] text-white text-2xl font-bold mb-4">4</div>
-                <h3 className="text-lg font-bold mb-2 text-center" style={{ color: '#23243a' }}>{t.decarbonStep4Title}</h3>
-                <p className="text-sm text-center text-[#23243a]">{t.decarbonStep4Desc}</p>
-                {/* Weiterführende Links aus Schritt 4: Offenlegung und Reporting. */}
-                <p className="text-sm text-center mt-3">
-                  <a href="/cdp-klimaberichterstattung" className="font-bold hover:underline" style={{ color: "#81B29A" }}>
-                    CDP
-                  </a>
-                  <span className="mx-2" style={{ color: "#6B6B6B" }}>
-                    ·
-                  </span>
-                  <a href="/berichterstattung" className="font-bold hover:underline" style={{ color: "#81B29A" }}>
-                    Berichterstattung
-                  </a>
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-        {/* Contact Form Section */}
-        {/* Klimaziele nach SBTi. Bewusst ohne Gebuehren und Fristen der SBTi,
-            die aendern sich haeufig. */}
-        <section className="w-full py-16 bg-[#81B29A]/5">
-          <div className="max-w-4xl mx-auto px-4">
-            <h2 className="text-3xl font-extrabold mb-6" style={{ color: "#3D405B" }}>
-              {c.sbtiTitle}
-            </h2>
-            <p className="text-lg leading-relaxed" style={{ color: "#23243a" }}>
-              {c.sbtiBody}
-            </p>
-          </div>
-        </section>
-      </main>
-
-      <RelatedSolutions
-        heading={c.relatedTitle}
-        items={c.related.map((item, i) => ({ ...item, href: DEKARB_RELATED_HREFS[i] }))}
+    <>
+      <DekarbonisierungClient />
+      <script
+        {...jsonLd(
+          serviceSchema({
+            name: "Dekarbonisierung und Klimaziele",
+            description:
+              "Ableitung des Reduktionspfads aus der Treibhausgasbilanz, Klimaziele nach Science Based Targets initiative, Priorisierung und Umsetzung von Reduktionsmaßnahmen.",
+            path: PATH,
+            serviceType: "Dekarbonisierungsberatung",
+          })
+        )}
       />
-
-      <ContactCTA location="dekarbonisierung" context={c.ctaContext} />
-
-      <footer className="bg-gray-100 py-8 px-4 mt-8 text-center text-sm text-gray-600">
-        <div className="mb-2">COzwei GmbH &bull; Gutenbergstraße 16A, 70176 Stuttgart &bull; Telefon: +49 711 12171034 &bull; E-Mail: mail@cozwei.de</div>
-        <div className="flex justify-center gap-4 mb-2">
-          <a href="/datenschutz" className="hover:underline">{t.privacy}</a>
-          <a href="/impressum" className="hover:underline">{t.imprint}</a>
-          <a href="https://www.linkedin.com/company/cozwei" target="_blank" rel="noopener noreferrer" className="hover:underline">{t.linkedin}</a>
-        </div>
-        <div>© {new Date().getFullYear()} COzwei GmbH</div>
-      </footer>
-    </div>
+      <script
+        {...jsonLd(
+          breadcrumbSchema([
+            { name: "Startseite", path: "/" },
+            { name: "Emissionen reduzieren", path: PATH },
+          ])
+        )}
+      />
+    </>
   );
-} 
+}
