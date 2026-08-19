@@ -63,7 +63,7 @@ export const homeContent: Record<"de" | "en" | "pt", HomeContent> = {
       {
         title: "Treibhausgase bilanzieren",
         description:
-          "Wir berechnen Ihre CO₂-Emissionen nach GHG Protocol und ISO-Normen, als Basis für alle weiteren Schritte.",
+          "Wir berechnen Ihre CO₂-Emissionen nach GHG Protocol und ISO-Normen.",
         items: [
           "Corporate Carbon Footprint (CO₂-Bilanz)",
           "Product Carbon Footprint",
@@ -84,7 +84,7 @@ export const homeContent: Record<"de" | "en" | "pt", HomeContent> = {
         title: "Nachhaltigkeit berichten",
         description:
           "Wir bereiten Ihre Klimadaten berichtsfertig auf, pflichtgemäß oder freiwillig.",
-        items: ["CSRD / ESRS E1", "CDP Klima-Reporting", "VSME & GRI (freiwillig)", "CBAM"],
+        items: ["CSRD / ESRS E1", "CDP Klima-Reporting", "VSME, GRI & CBAM"],
       },
       {
         title: "Förderung sichern",
@@ -92,15 +92,14 @@ export const homeContent: Record<"de" | "en" | "pt", HomeContent> = {
           "Wir identifizieren passende Förderprogramme und begleiten Sie durch die Antragstellung.",
         items: [
           "Förderanalyse für Ihr Vorhaben",
-          "EEW / BAFA Modul 4",
-          "Transformationskonzept (bis zu 90.000 €)",
+          "EEW / BAFA Modul 4 & 5",
           "GRW-Förderung",
         ],
       },
       {
-        title: "Klimaschutz für öffentliche Einrichtungen",
+        title: "Klimaschutzkonzepte",
         description:
-          "NKI-geförderte Klimaschutzkonzepte für Institutionen, von der Antragstellung bis zum Maßnahmenplan.",
+          "NKI-geförderte Klimaschutzkonzepte, von der Antragstellung bis zum Maßnahmenplan.",
         items: [
           "Hochschulen & Universitäten",
           "Kirchen & kirchliche Einrichtungen",
@@ -110,7 +109,7 @@ export const homeContent: Record<"de" | "en" | "pt", HomeContent> = {
       {
         title: "KI & Automatisierung",
         description:
-          "Wir entwickeln KI-Lösungen, die Ihre Prozesse beschleunigen, von der Datenerhebung bis zur individuellen Software.",
+          "Wir entwickeln KI-Lösungen, von der Datenerhebung bis zur individuellen Software.",
         items: [
           "KI-Implementierung im Unternehmen",
           "Individuelle Softwareentwicklung",
@@ -199,7 +198,7 @@ export const homeContent: Record<"de" | "en" | "pt", HomeContent> = {
       {
         title: "Accounting for greenhouse gases",
         description:
-          "We calculate your CO₂ emissions in line with the GHG Protocol and ISO standards, the basis for every further step.",
+          "We calculate your CO₂ emissions in line with the GHG Protocol and ISO standards.",
         items: [
           "Corporate Carbon Footprint (CCF)",
           "Product Carbon Footprint",
@@ -220,7 +219,7 @@ export const homeContent: Record<"de" | "en" | "pt", HomeContent> = {
         title: "Reporting on sustainability",
         description:
           "We prepare your climate data ready for reporting, whether mandatory or voluntary.",
-        items: ["CSRD / ESRS E1", "CDP climate reporting", "VSME & GRI (voluntary)", "CBAM"],
+        items: ["CSRD / ESRS E1", "CDP climate reporting", "VSME, GRI & CBAM"],
       },
       {
         title: "Securing funding",
@@ -228,15 +227,14 @@ export const homeContent: Record<"de" | "en" | "pt", HomeContent> = {
           "We identify suitable funding programmes and guide you through the application.",
         items: [
           "Funding analysis for your project",
-          "EEW / BAFA module 4",
-          "Transformation concept (up to EUR 90,000)",
+          "EEW / BAFA modules 4 & 5",
           "GRW funding",
         ],
       },
       {
-        title: "Climate action for public institutions",
+        title: "Climate action plans",
         description:
-          "NKI-funded climate action plans for institutions, from the application to the roadmap of measures.",
+          "NKI-funded climate action plans, from the application to the roadmap of measures.",
         items: [
           "Universities & higher education",
           "Churches & church institutions",
@@ -246,7 +244,7 @@ export const homeContent: Record<"de" | "en" | "pt", HomeContent> = {
       {
         title: "AI & automation",
         description:
-          "We build AI solutions that speed up your processes, from data collection to custom software.",
+          "We build AI solutions, from data collection to custom software.",
         items: [
           "AI implementation in your organisation",
           "Custom software development",
@@ -335,7 +333,7 @@ export const homeContent: Record<"de" | "en" | "pt", HomeContent> = {
       {
         title: "Balanço de gases com efeito de estufa",
         description:
-          "Calculamos as suas emissões de CO₂ segundo o GHG Protocol e as normas ISO, a base para todos os passos seguintes.",
+          "Calculamos as suas emissões de CO₂ segundo o GHG Protocol e as normas ISO.",
         items: [
           "Corporate Carbon Footprint (pegada de carbono)",
           "Product Carbon Footprint",
@@ -356,7 +354,7 @@ export const homeContent: Record<"de" | "en" | "pt", HomeContent> = {
         title: "Relatar sustentabilidade",
         description:
           "Preparamos os seus dados climáticos prontos para relatório, obrigatório ou voluntário.",
-        items: ["CSRD / ESRS E1", "Relatório climático CDP", "VSME e GRI (voluntário)", "CBAM"],
+        items: ["CSRD / ESRS E1", "Relatório climático CDP", "VSME, GRI e CBAM"],
       },
       {
         title: "Garantir financiamento",
@@ -364,15 +362,14 @@ export const homeContent: Record<"de" | "en" | "pt", HomeContent> = {
           "Identificamos programas de financiamento adequados e acompanhamos a candidatura.",
         items: [
           "Análise de financiamento para o seu projeto",
-          "EEW / BAFA módulo 4",
-          "Conceito de transformação (até 90.000 €)",
+          "EEW / BAFA módulos 4 e 5",
           "Financiamento GRW",
         ],
       },
       {
-        title: "Proteção climática para instituições públicas",
+        title: "Planos de proteção climática",
         description:
-          "Planos de proteção climática financiados pelo NKI para instituições, da candidatura ao plano de medidas.",
+          "Planos financiados pelo NKI, da candidatura ao plano de medidas.",
         items: [
           "Universidades e ensino superior",
           "Igrejas e instituições religiosas",
@@ -382,7 +379,7 @@ export const homeContent: Record<"de" | "en" | "pt", HomeContent> = {
       {
         title: "IA e automatização",
         description:
-          "Desenvolvemos soluções de IA que aceleram os seus processos, da recolha de dados ao software personalizado.",
+          "Desenvolvemos soluções de IA, da recolha de dados ao software personalizado.",
         items: [
           "Implementação de IA na empresa",
           "Desenvolvimento de software personalizado",

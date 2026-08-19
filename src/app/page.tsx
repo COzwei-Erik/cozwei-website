@@ -90,22 +90,22 @@ const SOLUTIONS_META: {
     image: "/Pictures/Homepage/loesung-berichten.jpg",
     alt: "Laptop und Tablet mit Diagrammen, Symbolbild für Nachhaltigkeitsberichterstattung",
     href: "/nachhaltigkeit",
-    // CBAM hat noch keine eigene Seite, deshalb null.
-    itemHrefs: ["/esrs-e1", "/cdp-klimaberichterstattung", "/nachhaltigkeit", null],
+    // VSME, GRI und CBAM sind zu einem Punkt zusammengelegt und zeigen auf die
+    // Nachhaltigkeitsseite; eine eigene CBAM-Seite gibt es noch nicht.
+    itemHrefs: ["/esrs-e1", "/cdp-klimaberichterstattung", "/nachhaltigkeit"],
   },
   // 4 Förderung sichern
   {
     image: "/Pictures/Homepage/loesung-foerderung.jpg",
     alt: "Studierende mit Tablet in einem hellen Hochschulgebäude, Symbolbild für Förderprogramme",
     href: "/foerderungen",
-    itemHrefs: [
-      "/foerderungen",
-      "/insights/bafa-modul-4",
-      "/transformationskonzepte",
-      "/foerderungen",
-    ],
+    // "EEW / BAFA Modul 4 & 5" deckt zwei Themen ab, die je eine eigene Seite
+    // haben. Der Punkt zeigt auf /transformationskonzepte (Modul 5), weil das
+    // sonst die einzige Landing Page ohne Verlinkung von der Homepage waere.
+    // Der Insights-Artikel zu Modul 4 bleibt ueber /insights erreichbar.
+    itemHrefs: ["/foerderungen", "/transformationskonzepte", "/foerderungen"],
   },
-  // 5 Klimaschutz für öffentliche Einrichtungen
+  // 5 Klimaschutzkonzepte für öffentliche Einrichtungen
   {
     // PLATZHALTER: Bild noch durch ein echtes Foto ersetzen.
     image: "/Pictures/Homepage/loesung-oeffentlich-platzhalter.png",
