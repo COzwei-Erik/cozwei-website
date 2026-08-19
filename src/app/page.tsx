@@ -71,35 +71,54 @@ const SOLUTIONS_META: {
   href: string | null;
   itemHrefs: (string | null)[];
 }[] = [
+  // 1 Treibhausgase bilanzieren
   {
     image: "/Pictures/Homepage/loesung-transparenz.jpg",
-    alt: "Industrieschornstein in der Abenddämmerung, Symbolbild für CO₂-Transparenz",
+    alt: "Industrieschornstein in der Abenddämmerung, Symbolbild für CO₂-Bilanzierung",
     href: "/dekarbonisierung",
     itemHrefs: ["/dekarbonisierung", "/dekarbonisierung", "/verifizierung"],
   },
-  {
-    image: "/Pictures/Homepage/loesung-berichten.jpg",
-    alt: "Laptop und Tablet mit Diagrammen, Symbolbild für Nachhaltigkeitsberichterstattung",
-    href: "/nachhaltigkeit",
-    itemHrefs: ["/esrs-e1", "/cdp-klimaberichterstattung", "/nachhaltigkeit"],
-  },
+  // 2 Emissionen reduzieren
   {
     image: "/Pictures/pexels-tomfisk-9893729_low_low.jpg",
     alt: "Solarpark aus der Vogelperspektive, Symbolbild für Reduktionsmaßnahmen",
     href: "/dekarbonisierung",
-    itemHrefs: ["/dekarbonisierung", "/massnahmen"],
+    itemHrefs: ["/dekarbonisierung", "/massnahmen", "/massnahmen"],
   },
+  // 3 Nachhaltigkeit berichten
+  {
+    image: "/Pictures/Homepage/loesung-berichten.jpg",
+    alt: "Laptop und Tablet mit Diagrammen, Symbolbild für Nachhaltigkeitsberichterstattung",
+    href: "/nachhaltigkeit",
+    // CBAM hat noch keine eigene Seite, deshalb null.
+    itemHrefs: ["/esrs-e1", "/cdp-klimaberichterstattung", "/nachhaltigkeit", null],
+  },
+  // 4 Förderung sichern
   {
     image: "/Pictures/Homepage/loesung-foerderung.jpg",
     alt: "Studierende mit Tablet in einem hellen Hochschulgebäude, Symbolbild für Förderprogramme",
     href: "/foerderungen",
-    itemHrefs: ["/klimaschutzkonzepte", "/foerderungen"],
+    itemHrefs: [
+      "/foerderungen",
+      "/insights/bafa-modul-4",
+      "/transformationskonzepte",
+      "/foerderungen",
+    ],
   },
+  // 5 Klimaschutz für öffentliche Einrichtungen
+  {
+    // PLATZHALTER: Bild noch durch ein echtes Foto ersetzen.
+    image: "/Pictures/Homepage/loesung-oeffentlich-platzhalter.png",
+    alt: "Platzhalterbild, Klimaschutz für öffentliche Einrichtungen",
+    href: "/klimaschutzkonzepte",
+    itemHrefs: ["/klimaschutzkonzepte", "/klimaschutzkonzepte", "/klimaschutzkonzepte"],
+  },
+  // 6 KI und Automatisierung, noch ohne eigene Unterseiten
   {
     image: "/Pictures/Homepage/loesung-ai.jpg",
-    alt: "KI-Visualisierung über einem Laptop, Symbolbild für AI-Automatisierung",
+    alt: "KI-Visualisierung über einem Laptop, Symbolbild für KI und Automatisierung",
     href: null,
-    itemHrefs: [],
+    itemHrefs: [null, null, null],
   },
 ];
 
@@ -334,7 +353,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 03 LÖSUNGEN — 5 Karten mit Bild, grünem Titel und verlinkten Leistungen */}
+      {/* 03 LÖSUNGEN — 6 Karten mit Bild, grünem Titel, Kurzbeschreibung und
+          verlinkten Leistungen. Reihenfolge und Texte kommen aus home-content.ts,
+          die Bilder und Link-Ziele aus SOLUTIONS_META oben, Index für Index. */}
       <section id="loesungen" className="w-full py-16 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-4xl font-extrabold text-center mb-12" style={{ color: "#3D405B" }}>
@@ -369,7 +390,7 @@ export default function Home() {
                     {meta.href ? (
                       <Link href={meta.href} className="hover:underline">
                         <h3
-                          className="text-lg font-extrabold uppercase tracking-wide mb-4"
+                          className="text-lg font-extrabold uppercase tracking-wide mb-3"
                           style={{ color: "#81B29A" }}
                         >
                           {sol.title}
@@ -377,12 +398,16 @@ export default function Home() {
                       </Link>
                     ) : (
                       <h3
-                        className="text-lg font-extrabold uppercase tracking-wide mb-4"
+                        className="text-lg font-extrabold uppercase tracking-wide mb-3"
                         style={{ color: "#81B29A" }}
                       >
                         {sol.title}
                       </h3>
                     )}
+                    {/* Kurzbeschreibung zwischen Titel und Leistungsliste */}
+                    <p className="text-sm leading-relaxed mb-5" style={{ color: "#23243a" }}>
+                      {sol.description}
+                    </p>
                     {sol.items.length > 0 && (
                       <ul className="space-y-0">
                         {sol.items.map((item, j) => {
