@@ -1,96 +1,176 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { HiX } from "react-icons/hi";
+import { useState } from "react";
+import { HiX, HiChevronDown } from "react-icons/hi";
 import { HUBSPOT_FORM_URL } from "./links";
 import { trackEvent, Events } from "./analytics";
+import { navContent } from "./nav-content";
 
 type Language = "de" | "en" | "pt";
 
 interface MobileMenuProps {
   isOpen: boolean;
   onClose: () => void;
-  dropdownOpen: boolean;
-  setDropdownOpen: (open: boolean) => void;
   language: Language;
   setLanguage: (lang: Language) => void;
-  t: Record<string, string>;
 }
 
-export default function MobileMenu({ 
-  isOpen, 
-  onClose, 
-  dropdownOpen, 
-  setDropdownOpen, 
-  language, 
-  setLanguage, 
-  t 
-}: MobileMenuProps) {
+type OpenSection = "solutions" | "branchen" | null;
+
+export default function MobileMenu({ isOpen, onClose, language, setLanguage }: MobileMenuProps) {
+  const [openSection, setOpenSection] = useState<OpenSection>(null);
+  const nav = navContent[language] || navContent.de;
+
   if (!isOpen) return null;
+
+  const toggle = (s: Exclude<OpenSection, null>) =>
+    setOpenSection(openSection === s ? null : s);
 
   return (
     <div className="fixed inset-0 bg-black/40 z-50 flex flex-col">
-      <div className="bg-white shadow-lg w-4/5 max-w-xs h-full p-8 flex flex-col gap-8 animate-slide-in-left">
-        <button className="self-end mb-4 p-2" onClick={onClose} aria-label="Menü schließen">
-          <HiX size={32} style={{ color: '#3D405B' }} />
+      <div className="bg-white shadow-lg w-4/5 max-w-sm h-full p-6 flex flex-col animate-slide-in-left overflow-y-auto">
+        <button className="self-end mb-2 p-2" onClick={onClose} aria-label="Menü schließen">
+          <HiX size={32} style={{ color: "#3D405B" }} />
         </button>
         <Link href="/" className="mb-6 flex items-center gap-2" onClick={onClose}>
-          <Image 
-            src="/Pictures/cozwei.png" 
-            alt="COzwei Logo" 
-            width={100} 
-            height={100}
-            priority
-          />
+          <Image src="/Pictures/cozwei.png" alt="COzwei Logo" width={100} height={100} priority />
         </Link>
-        <div className="flex flex-col gap-4 text-lg font-bold">
-          <div className="relative">
-            <button 
-              className="w-full flex items-center justify-between px-0 py-2 rounded hover:bg-gray-100 text-[#3D405B] font-bold text-2xl" 
-              onClick={() => setDropdownOpen(!dropdownOpen)} 
-              style={{paddingLeft: '0.25rem'}}
-            >
-              <span className="flex items-center gap-2">{t.solutions}</span>
-              <svg className="w-5 h-5 ml-2 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7"/>
-              </svg>
-            </button>
-            {dropdownOpen && (
-              <div className="flex flex-col mt-2 bg-white border border-[#81B29A]/30 rounded-2xl shadow-lg py-2 z-50">
-                <Link href="/nachhaltigkeit" className="block px-6 py-3 hover:bg-[#81B29A]/10 text-[#3D405B] text-base font-semibold" onClick={onClose}>{t.sustainability}</Link>
-                <Link href="/dekarbonisierung" className="block px-6 py-3 hover:bg-[#81B29A]/10 text-[#3D405B] text-base font-semibold" onClick={onClose}>{t.decarbonization}</Link>
-                <Link href="/massnahmen" className="block px-6 py-3 hover:bg-[#81B29A]/10 text-[#3D405B] text-base font-semibold" onClick={onClose}>{t.measures}</Link>
-                <Link href="/verifizierung" className="block px-6 py-3 hover:bg-[#81B29A]/10 text-[#3D405B] text-base font-semibold" onClick={onClose}>{t.verification}</Link>
-                <Link href="/klimaschutzkonzepte" className="block px-6 py-3 hover:bg-[#81B29A]/10 text-[#3D405B] text-base font-semibold" onClick={onClose}>{t.nki}</Link>
-                <Link href="/cdp-klimaberichterstattung" className="block px-6 py-3 hover:bg-[#81B29A]/10 text-[#3D405B] text-base font-semibold" onClick={onClose}>{t.cdp}</Link>
-              </div>
-            )}
-          </div>
-          <Link href="/referenzen" className="hover:text-green-700 transition text-[#3D405B] font-bold text-2xl pl-1" onClick={onClose}>{t.references}</Link>
-          <Link href="/ueber-uns" className="hover:text-green-700 transition text-[#3D405B] font-bold text-2xl pl-1" onClick={onClose}>{t.about}</Link>
-          <Link href="/insights" className="hover:text-green-700 transition text-[#3D405B] font-bold text-2xl pl-1" onClick={onClose}>{t.insights}</Link>
-          <a href={HUBSPOT_FORM_URL} target="_blank" rel="noopener noreferrer" className="hover:text-green-700 transition text-[#3D405B] font-bold text-2xl pl-1" onClick={() => { trackEvent(Events.ContactFormClick, { location: 'mobile_menu' }); onClose(); }}>{t.contact}</a>
+
+        <div className="flex flex-col gap-1">
+          {/* LÖSUNGEN Akkordeon: Kategorien als Gruppen-Labels, Leistungen als Links */}
+          <button
+            className="w-full flex items-center justify-between py-3 text-[#3D405B] font-extrabold text-xl uppercase tracking-wide"
+            onClick={() => toggle("solutions")}
+            aria-expanded={openSection === "solutions"}
+          >
+            <span>{nav.solutions}</span>
+            <HiChevronDown
+              size={24}
+              className={`transition-transform ${openSection === "solutions" ? "rotate-180" : ""}`}
+            />
+          </button>
+          {openSection === "solutions" && (
+            <div className="pb-2">
+              {nav.categories.map((cat) => (
+                <div key={cat.label} className="mb-3">
+                  <div
+                    className="px-1 py-1 text-xs font-extrabold uppercase tracking-widest"
+                    style={{ color: "#81B29A" }}
+                  >
+                    {cat.label}
+                  </div>
+                  <div className="flex flex-col">
+                    {cat.items.map((item) =>
+                      item.external ? (
+                        <a
+                          key={item.label}
+                          href={item.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="px-3 py-2 rounded-lg text-[#3D405B] text-sm font-semibold hover:bg-[#81B29A]/10"
+                          onClick={onClose}
+                        >
+                          {item.label}
+                        </a>
+                      ) : (
+                        <Link
+                          key={item.label}
+                          href={item.href}
+                          className="px-3 py-2 rounded-lg text-[#3D405B] text-sm font-semibold hover:bg-[#81B29A]/10"
+                          onClick={onClose}
+                        >
+                          {item.label}
+                        </Link>
+                      )
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {/* BRANCHEN Akkordeon */}
+          <button
+            className="w-full flex items-center justify-between py-3 text-[#3D405B] font-extrabold text-xl uppercase tracking-wide"
+            onClick={() => toggle("branchen")}
+            aria-expanded={openSection === "branchen"}
+          >
+            <span>{nav.branchen}</span>
+            <HiChevronDown
+              size={24}
+              className={`transition-transform ${openSection === "branchen" ? "rotate-180" : ""}`}
+            />
+          </button>
+          {openSection === "branchen" && (
+            <div className="flex flex-col pb-2">
+              {nav.branchenItems.map((b) => (
+                <Link
+                  key={b.label}
+                  href={b.href}
+                  className="px-3 py-2 rounded-lg text-[#3D405B] text-sm font-semibold hover:bg-[#81B29A]/10"
+                  onClick={onClose}
+                >
+                  {b.label}
+                </Link>
+              ))}
+            </div>
+          )}
+
+          {/* Flache Links */}
+          <Link
+            href="/referenzen"
+            className="py-3 text-[#3D405B] font-extrabold text-xl uppercase tracking-wide hover:text-[#81B29A] transition"
+            onClick={onClose}
+          >
+            {nav.references}
+          </Link>
+          <Link
+            href="/insights"
+            className="py-3 text-[#3D405B] font-extrabold text-xl uppercase tracking-wide hover:text-[#81B29A] transition"
+            onClick={onClose}
+          >
+            {nav.wissen}
+          </Link>
+          <Link
+            href="/ueber-uns"
+            className="py-3 text-[#3D405B] font-extrabold text-xl uppercase tracking-wide hover:text-[#81B29A] transition"
+            onClick={onClose}
+          >
+            {nav.about}
+          </Link>
+          <a
+            href={HUBSPOT_FORM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="py-3 text-[#3D405B] font-extrabold text-xl uppercase tracking-wide hover:text-[#81B29A] transition"
+            onClick={() => {
+              trackEvent(Events.ContactFormClick, { location: "mobile_menu" });
+              onClose();
+            }}
+          >
+            {nav.contact}
+          </a>
         </div>
+
         <div className="mt-8 flex items-center gap-1 border rounded px-2 py-1 bg-white self-start">
-          <button
-            className={`px-3 py-1 text-lg font-bold transition-colors rounded focus:outline-none ${language === "de" ? "" : "text-[#3D405B]"}`}
-            style={{ background: language === "de" ? '#8ABBA7' : 'transparent', color: language === "de" ? '#fff' : '#3D405B' }}
-            onClick={() => setLanguage("de")}
-          >DE</button>
-          <span className="text-[#3D405B] text-lg font-bold">|</span>
-          <button
-            className={`px-3 py-1 text-lg font-bold hover:bg-gray-100 transition-colors rounded focus:outline-none ${language === "en" ? "" : "text-[#3D405B]"}`}
-            style={{ background: language === "en" ? '#8ABBA7' : 'transparent', color: language === "en" ? '#fff' : '#3D405B' }}
-            onClick={() => setLanguage("en")}
-          >EN</button>
-          <span className="text-[#3D405B] text-lg font-bold">|</span>
-          <button
-            className={`px-3 py-1 text-lg font-bold hover:bg-gray-100 transition-colors rounded focus:outline-none ${language === "pt" ? "" : "text-[#3D405B]"}`}
-            style={{ background: language === "pt" ? '#8ABBA7' : 'transparent', color: language === "pt" ? '#fff' : '#3D405B' }}
-            onClick={() => setLanguage("pt")}
-          >PT</button>
+          {(["de", "en", "pt"] as const).map((lng, i) => (
+            <span key={lng} className="flex items-center gap-1">
+              {i > 0 && <span className="text-[#3D405B] text-lg font-bold">|</span>}
+              <button
+                className="px-3 py-1 text-lg font-bold transition-colors rounded focus:outline-none"
+                style={{
+                  background: language === lng ? "#8ABBA7" : "transparent",
+                  color: language === lng ? "#fff" : "#3D405B",
+                }}
+                onClick={() => setLanguage(lng)}
+              >
+                {lng.toUpperCase()}
+              </button>
+            </span>
+          ))}
         </div>
       </div>
     </div>
   );
-} 
+}
