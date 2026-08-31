@@ -21,6 +21,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  // Basis fuer alle relativen URLs in Metadaten. Ohne diese Angabe loest Next
+  // relative OpenGraph-Bilder gegen die Deployment-Domain auf, beim Teilen
+  // erschienen also vercel.app-URLs statt cozwei.de.
+  metadataBase: new URL("https://www.cozwei.de"),
   title: "COzwei - Nachhaltigkeit & Dekarbonisierung",
   description: "COzwei GmbH - Ihr Partner für Nachhaltigkeit und Dekarbonisierung. Wir unterstützen Unternehmen bei der Transformation zu nachhaltigen Geschäftsmodellen.",
   keywords: "Nachhaltigkeit, Dekarbonisierung, Klimaschutz, COzwei, Transformation",

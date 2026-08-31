@@ -49,7 +49,8 @@ export function PullQuote({
           className="mt-3 text-sm font-semibold not-italic"
           style={{ color: "#81B29A" }}
         >
-          — {author}
+          {/* Kein Em-Dash als Attributionsstrich, Copy-Konvention laut CLAUDE.md. */}
+          {author}
         </footer>
       )}
     </blockquote>

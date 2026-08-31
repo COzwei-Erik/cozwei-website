@@ -1,35 +1,44 @@
 # COzwei GmbH
 
-> Nachhaltigkeits- und Dekarbonisierungsberatung aus Stuttgart. Fokus: Corporate Carbon Footprints, Product Carbon Footprints, CDP-Klimaberichterstattung, CSRD/ESRS und ESG-Ratings für B2B-Kunden in DACH und Portugal.
+COzwei ist eine Nachhaltigkeits- und Dekarbonisierungsberatung mit Standorten in
+Stuttgart und Lissabon. Wir berechnen Treibhausgasbilanzen, entwickeln
+Dekarbonisierungspfade, bereiten Nachhaltigkeitsberichte vor, sichern
+Förderprogramme und automatisieren Nachhaltigkeitsdaten. Mandanten sind
+Mittelstand, Industrie und öffentliche Einrichtungen.
 
-## Leistungen
+Kontakt: mail@cozwei.de, +49 711 12171034, Gutenbergstr. 16A, 70176 Stuttgart
 
-- [Nachhaltigkeit](https://www.cozwei.de/nachhaltigkeit): Strategie- und ESG-Beratung für Mittelstand und Konzerne
-- [Dekarbonisierung](https://www.cozwei.de/dekarbonisierung): Wissenschaftsbasierte Reduktionspfade und THG-Bilanzen (CCF, PCF) nach GHG Protocol
-- [Maßnahmen](https://www.cozwei.de/massnahmen): Operative Umsetzung von Klimaschutz- und Effizienzprojekten
-- [CDP Klima-Reporting](https://www.cozwei.de/cdp-klimaberichterstattung): Begleitung beim CDP Climate Change Questionnaire (SME, Full, Score-Optimierung)
-- [Verifizierung](https://www.cozwei.de/verifizierung): Drittparteien-Verifizierung von THG-Bilanzen nach ISO 14064-3
-- [Klimaschutzkonzepte](https://www.cozwei.de/klimaschutzkonzepte): NKI-geförderte Maßnahmenplanung und Umsetzung
-- [Förderungen](https://www.cozwei.de/foerderungen): Förder-Finder für Bundes- und Landesprogramme
+## Lösungen
 
-## Insights
+- [CO₂-Bilanzierung](https://www.cozwei.de/co2-bilanzierung): Corporate und Product Carbon Footprint nach GHG Protocol und ISO-Normen, auditierungsfähig dokumentiert.
+- [Corporate Carbon Footprint](https://www.cozwei.de/corporate-carbon-footprint): Vollständige Treibhausgasbilanz eines Unternehmens über Scope 1, 2 und 3, inklusive Scope-2-Dual-Reporting.
+- [Product Carbon Footprint](https://www.cozwei.de/product-carbon-footprint): Produkt-CO₂-Bilanzen cradle-to-gate oder cradle-to-grave nach ISO 14067 und GHG Protocol Product Standard.
+- [Verifizierung ISO 14064-3](https://www.cozwei.de/verifizierung): Vorbereitung und Begleitung der unabhängigen Prüfung von Treibhausgasbilanzen.
+- [Emissionen reduzieren](https://www.cozwei.de/dekarbonisierung): Dekarbonisierungsplan, wissenschaftsbasierte Klimaziele nach SBTi und Begleitung der Umsetzung.
+- [Maßnahmen](https://www.cozwei.de/massnahmen): Umsetzung von Photovoltaik, Sanierung und Anlagentechnik über ein geprüftes Partnernetzwerk.
+- [Energieeffizienz](https://www.cozwei.de/energieeffizienz): Verbrauchsanalyse, Priorisierung von Effizienzmaßnahmen nach Wirtschaftlichkeit und CO₂-Wirkung.
+- [Berichterstattung](https://www.cozwei.de/berichterstattung): CSRD/ESRS E1, CDP, VSME, GRI und CBAM, pflichtgemäß oder freiwillig, immer datenbasiert.
+- [CSRD / ESRS E1](https://www.cozwei.de/esrs-e1): Klimabezogene Datenpunkte des europäischen Berichtsstandards, von der Bilanz bis zum Übergangsplan.
+- [CDP Klima-Reporting](https://www.cozwei.de/cdp-klimaberichterstattung): Begleitung durch den CDP Climate Change Questionnaire, von der Datenbasis bis zur Einreichung.
+- [VSME & Voluntary Standard](https://www.cozwei.de/vsme): Freiwilliger Nachhaltigkeitsbericht für KMU, der ESG-Anfragen von Banken und Kunden gebündelt beantwortet.
+- [Förderung](https://www.cozwei.de/foerderung): Förderanalyse und Antragsbegleitung für BAFA EEW Modul 4 und 5, GRW und NKI.
+- [Transformationsplan (EEW Modul 5)](https://www.cozwei.de/transformationskonzepte): Geförderter Fahrplan zur Klimaneutralität, 40 bis 60 Prozent der Beratungskosten.
+- [Klimaschutzkonzepte](https://www.cozwei.de/klimaschutzkonzepte): NKI-geförderte Klimaschutzkonzepte für öffentliche und gemeinnützige Einrichtungen.
+- [Klimaschutzkonzepte für Hochschulen](https://www.cozwei.de/klimaschutzkonzepte-hochschulen): NKI-gefördertes Konzept für Hochschulen und Universitäten, 70 bis 90 Prozent Zuschuss.
+- [Klimaschutzkonzepte für Kirchen](https://www.cozwei.de/klimaschutzkonzepte-kirchen): NKI-gefördertes Konzept für Landeskirchen, Bistümer und kirchliche Träger.
+- [Klimaschutzkonzepte für Krankenhäuser](https://www.cozwei.de/klimaschutzkonzepte-krankenhaeuser): NKI-gefördertes Konzept für Kliniken und soziale Träger, ausgelegt auf den 24/7-Betrieb.
+- [KI & Automatisierung](https://www.cozwei.de/ki-automatisierung): KI-Implementierung, individuelle Softwareentwicklung und automatisierte Nachhaltigkeitsdaten.
 
-- [Insights-Übersicht](https://www.cozwei.de/insights): Fachbeiträge zu Klima-Reporting, Dekarbonisierung und CCF-Verifizierung
+## Branchen
 
-## Über COzwei
+- [Branchen im Überblick](https://www.cozwei.de/branchen): Vier Branchen mit ihren jeweiligen Anforderungen, Anforderern und Fristen.
+- [Automotive](https://www.cozwei.de/branchen/automotive): PCF je Bauteil, SAQ 5.0, CDP und SBTi: die Klimaanforderungen der OEMs methodensicher erfüllen.
+- [Druck & Verlag](https://www.cozwei.de/branchen/druck-verlag): Papier, Druck und Logistik korrekt bilanziert, Klimaaussagen nach den ab 27. September 2026 geltenden UWG-Regeln.
+- [Verbrauchsgüter](https://www.cozwei.de/branchen/verbrauchsgueter): PCF je Produkt und Verpackung, VSME-Bericht für Handel und Banken, Datenbasis für Umweltaussagen.
+- [Öffentliche Einrichtungen](https://www.cozwei.de/branchen/oeffentliche-einrichtungen): NKI-geförderte Klimaschutzkonzepte mit 70 bis 90 Prozent Zuschuss für Hochschulen, Kirchen, Kliniken und Kommunen.
 
-- [Über uns](https://www.cozwei.de/about): Team, Mission und Methodik
-- Branchenfokus: Industrie, Handel, Verlagswesen, Logistik, Mittelstand
-- Sprachen: Deutsch, Englisch, Portugiesisch
+## Unternehmen
 
-## Kontakt
-
-- Adresse: Gutenbergstraße 16A, 70176 Stuttgart, Deutschland
-- Telefon: +49 711 12171034
-- E-Mail: mail@cozwei.de
-- LinkedIn: https://www.linkedin.com/company/cozwei
-
-## Rechtliches
-
-- [Impressum](https://www.cozwei.de/impressum)
-- [Datenschutz](https://www.cozwei.de/datenschutz)
+- [Referenzen](https://www.cozwei.de/referenzen): Kundenprojekte aus Industrie, Verlagswesen, Handel und öffentlichem Sektor.
+- [Über uns](https://www.cozwei.de/ueber-uns): Team, Standorte und Arbeitsweise der COzwei GmbH.
+- [Insights](https://www.cozwei.de/insights): Fachartikel zu CSRD, CDP, Förderprogrammen und Dekarbonisierung.

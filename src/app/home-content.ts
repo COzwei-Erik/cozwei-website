@@ -4,6 +4,7 @@
 
 type Solution = {
   title: string;
+  description: string;
   items: string[];
 };
 
@@ -55,29 +56,65 @@ export const homeContent: Record<"de" | "en" | "pt", HomeContent> = {
       "Unser Ziel ist es, Unternehmen und Institutionen zu befähigen, nachhaltiger zu wirtschaften und Klimaziele zu erreichen.",
     heroArrowAria: "Zum Inhalt scrollen",
 
-    kundenTitle: "Unsere Kunden",
+    kundenTitle: "Wer auf unsere Beratung setzt",
 
     loesungenTitle: "Lösungen",
     solutions: [
       {
-        title: "Transparenz schaffen",
-        items: ["CO₂-Bilanz (CCF)", "Product Carbon Footprint", "Verifizierung ISO 14064-3"],
+        title: "Treibhausgase bilanzieren",
+        description:
+          "Wir berechnen Ihre CO₂-Emissionen nach GHG Protocol und ISO-Normen.",
+        items: [
+          "Corporate Carbon Footprint (CO₂-Bilanz)",
+          "Product Carbon Footprint",
+          "Verifizierung ISO 14064-3",
+        ],
       },
       {
-        title: "Berichten und Offenlegen",
-        items: ["CSRD / ESRS E1", "CDP Klima-Reporting", "VSME / GRI freiwillig"],
+        title: "Emissionen reduzieren",
+        description:
+          "Vom Dekarbonisierungsplan bis zur Umsetzung: Wir bringen Ihre Klimaziele in die Praxis.",
+        items: [
+          "Dekarbonisierungsplan & Klimaziele (SBTi)",
+          "Maßnahmenumsetzung: PV, Sanierung",
+          "Energieeffizienz im Betrieb",
+        ],
       },
       {
-        title: "Reduzieren und Umsetzen",
-        items: ["Dekarbonisierungsplan, SBTi", "Maßnahmen: PV, Sanierung"],
+        title: "Nachhaltigkeit berichten",
+        description:
+          "Wir bereiten Ihre Klimadaten berichtsfertig auf, pflichtgemäß oder freiwillig.",
+        items: ["CSRD / ESRS E1", "CDP Klima-Reporting", "VSME, GRI & CBAM"],
       },
       {
-        title: "Förderung",
-        items: ["NKI", "BAFA"],
+        title: "Förderung sichern",
+        description:
+          "Wir identifizieren passende Förderprogramme und begleiten Sie durch die Antragstellung.",
+        items: [
+          "Förderanalyse für Ihr Vorhaben",
+          "EEW / BAFA Modul 4 & 5",
+          "GRW-Förderung",
+        ],
       },
       {
-        title: "AI-Automatisierung",
-        items: [],
+        title: "Klimaschutzkonzepte",
+        description:
+          "NKI-geförderte Klimaschutzkonzepte, von der Antragstellung bis zum Maßnahmenplan.",
+        items: [
+          "Hochschulen & Universitäten",
+          "Kirchen & kirchliche Einrichtungen",
+          "Krankenhäuser & soziale Träger",
+        ],
+      },
+      {
+        title: "KI & Automatisierung",
+        description:
+          "Wir entwickeln KI-Lösungen, von der Datenerhebung bis zur individuellen Software.",
+        items: [
+          "KI-Implementierung im Unternehmen",
+          "Individuelle Softwareentwicklung",
+          "Automatisierte Nachhaltigkeitsdaten",
+        ],
       },
     ],
 
@@ -154,29 +191,65 @@ export const homeContent: Record<"de" | "en" | "pt", HomeContent> = {
       "Our goal is to enable companies and institutions to operate more sustainably and reach their climate targets.",
     heroArrowAria: "Scroll to content",
 
-    kundenTitle: "Our clients",
+    kundenTitle: "Who relies on our advice",
 
     loesungenTitle: "Solutions",
     solutions: [
       {
-        title: "Creating transparency",
-        items: ["Corporate Carbon Footprint (CCF)", "Product Carbon Footprint", "Verification ISO 14064-3"],
+        title: "Accounting for greenhouse gases",
+        description:
+          "We calculate your CO₂ emissions in line with the GHG Protocol and ISO standards.",
+        items: [
+          "Corporate Carbon Footprint (CCF)",
+          "Product Carbon Footprint",
+          "Verification ISO 14064-3",
+        ],
       },
       {
-        title: "Reporting and disclosure",
-        items: ["CSRD / ESRS E1", "CDP climate reporting", "VSME / GRI voluntary"],
+        title: "Reducing emissions",
+        description:
+          "From the decarbonisation plan through to implementation: we put your climate targets into practice.",
+        items: [
+          "Decarbonisation plan & climate targets (SBTi)",
+          "Implementation: PV, refurbishment",
+          "Energy efficiency in operations",
+        ],
       },
       {
-        title: "Reducing and implementing",
-        items: ["Decarbonisation plan, SBTi", "Measures: PV, refurbishment"],
+        title: "Reporting on sustainability",
+        description:
+          "We prepare your climate data ready for reporting, whether mandatory or voluntary.",
+        items: ["CSRD / ESRS E1", "CDP climate reporting", "VSME, GRI & CBAM"],
       },
       {
-        title: "Funding",
-        items: ["NKI", "BAFA"],
+        title: "Securing funding",
+        description:
+          "We identify suitable funding programmes and guide you through the application.",
+        items: [
+          "Funding analysis for your project",
+          "EEW / BAFA modules 4 & 5",
+          "GRW funding",
+        ],
       },
       {
-        title: "AI automation",
-        items: [],
+        title: "Climate action plans",
+        description:
+          "NKI-funded climate action plans, from the application to the roadmap of measures.",
+        items: [
+          "Universities & higher education",
+          "Churches & church institutions",
+          "Hospitals & social service providers",
+        ],
+      },
+      {
+        title: "AI & automation",
+        description:
+          "We build AI solutions, from data collection to custom software.",
+        items: [
+          "AI implementation in your organisation",
+          "Custom software development",
+          "Automated sustainability data",
+        ],
       },
     ],
 
@@ -253,29 +326,65 @@ export const homeContent: Record<"de" | "en" | "pt", HomeContent> = {
       "O nosso objetivo é capacitar empresas e instituições para operar de forma mais sustentável e alcançar as suas metas climáticas.",
     heroArrowAria: "Ir para o conteúdo",
 
-    kundenTitle: "Os nossos clientes",
+    kundenTitle: "Quem confia na nossa consultoria",
 
     loesungenTitle: "Soluções",
     solutions: [
       {
-        title: "Criar transparência",
-        items: ["Inventário CO₂ (CCF)", "Product Carbon Footprint", "Verificação ISO 14064-3"],
+        title: "Balanço de gases com efeito de estufa",
+        description:
+          "Calculamos as suas emissões de CO₂ segundo o GHG Protocol e as normas ISO.",
+        items: [
+          "Corporate Carbon Footprint (pegada de carbono)",
+          "Product Carbon Footprint",
+          "Verificação ISO 14064-3",
+        ],
       },
       {
-        title: "Relatar e divulgar",
-        items: ["CSRD / ESRS E1", "Relato climático CDP", "VSME / GRI voluntário"],
+        title: "Reduzir emissões",
+        description:
+          "Do plano de descarbonização à implementação: colocamos as suas metas climáticas em prática.",
+        items: [
+          "Plano de descarbonização e metas (SBTi)",
+          "Implementação: PV, renovação",
+          "Eficiência energética na operação",
+        ],
       },
       {
-        title: "Reduzir e implementar",
-        items: ["Plano de descarbonização, SBTi", "Medidas: fotovoltaico, renovação"],
+        title: "Relatar sustentabilidade",
+        description:
+          "Preparamos os seus dados climáticos prontos para relatório, obrigatório ou voluntário.",
+        items: ["CSRD / ESRS E1", "Relatório climático CDP", "VSME, GRI e CBAM"],
       },
       {
-        title: "Apoios",
-        items: ["NKI", "BAFA"],
+        title: "Garantir financiamento",
+        description:
+          "Identificamos programas de financiamento adequados e acompanhamos a candidatura.",
+        items: [
+          "Análise de financiamento para o seu projeto",
+          "EEW / BAFA módulos 4 e 5",
+          "Financiamento GRW",
+        ],
       },
       {
-        title: "Automação com IA",
-        items: [],
+        title: "Planos de proteção climática",
+        description:
+          "Planos financiados pelo NKI, da candidatura ao plano de medidas.",
+        items: [
+          "Universidades e ensino superior",
+          "Igrejas e instituições religiosas",
+          "Hospitais e entidades sociais",
+        ],
+      },
+      {
+        title: "IA e automatização",
+        description:
+          "Desenvolvemos soluções de IA, da recolha de dados ao software personalizado.",
+        items: [
+          "Implementação de IA na empresa",
+          "Desenvolvimento de software personalizado",
+          "Dados de sustentabilidade automatizados",
+        ],
       },
     ],
 

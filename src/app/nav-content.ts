@@ -1,8 +1,8 @@
 // Navigations-Struktur für das Mega-Menü (Relaunch, Stufe 2).
 // Drei Ebenen unter "Lösungen": Kategorie -> Leistung -> Kurzbeschreibung.
 // Die Beschreibungen speisen das rechte Slate-Panel des Mega-Menüs.
-
-import { HUBSPOT_FORM_URL } from "./links";
+// Link-Ziele entsprechen der neuen Seitenstruktur des Lösungen-Umbaus
+// (Hub-Seiten + Detailseiten) und den vier Branchen-Landingpages.
 
 export type NavItem = {
   label: string;
@@ -45,16 +45,22 @@ export const navContent: Record<"de" | "en" | "pt", NavContent> = {
         label: "Transparenz schaffen",
         items: [
           {
-            label: "CO₂-Bilanz (CCF)",
-            href: "/dekarbonisierung",
+            label: "CO₂-Bilanzierung",
+            href: "/co2-bilanzierung",
             description:
-              "Treibhausgasbilanz für das gesamte Unternehmen nach GHG Protocol: Scope 1, Scope 2 und die wesentlichen Scope-3-Kategorien.",
+              "Corporate und Product Carbon Footprint nach GHG Protocol und ISO-Normen, auditierungsfähig dokumentiert.",
+          },
+          {
+            label: "Corporate Carbon Footprint",
+            href: "/corporate-carbon-footprint",
+            description:
+              "Vollständige Treibhausgasbilanz eines Unternehmens über Scope 1, 2 und 3, inklusive Scope-2-Dual-Reporting.",
           },
           {
             label: "Product Carbon Footprint",
-            href: "/dekarbonisierung",
+            href: "/product-carbon-footprint",
             description:
-              "Produktbezogene Klimabilanz vom Rohstoff bis zum Lebensende, als Grundlage für Kundenanfragen und Produktvergleiche.",
+              "Produkt-CO₂-Bilanzen cradle-to-gate oder cradle-to-grave nach ISO 14067 und GHG Protocol Product Standard.",
           },
           {
             label: "Verifizierung ISO 14064-3",
@@ -68,22 +74,28 @@ export const navContent: Record<"de" | "en" | "pt", NavContent> = {
         label: "Berichten und Offenlegen",
         items: [
           {
+            label: "Berichterstattung",
+            href: "/berichterstattung",
+            description:
+              "CSRD/ESRS E1, CDP, VSME, GRI und CBAM, pflichtgemäß oder freiwillig, immer datenbasiert.",
+          },
+          {
             label: "CSRD / ESRS E1",
             href: "/esrs-e1",
             description:
-              "Klimaberichterstattung nach den europäischen Standards: von der Wesentlichkeitsanalyse bis zum prüffähigen Bericht.",
+              "Klimabezogene Datenpunkte des europäischen Berichtsstandards, von der Bilanz bis zum Übergangsplan.",
           },
           {
             label: "CDP Klima-Reporting",
             href: "/cdp-klimaberichterstattung",
             description:
-              "Begleitung durch den CDP Climate Change Questionnaire, von der Datenbasis bis zur fristgerechten Einreichung im CDP-Portal.",
+              "Begleitung durch den CDP Climate Change Questionnaire, von der Datenbasis bis zur fristgerechten Einreichung.",
           },
           {
-            label: "VSME / GRI freiwillig",
-            href: "/nachhaltigkeit",
+            label: "VSME & Voluntary Standard",
+            href: "/vsme",
             description:
-              "Freiwillige Nachhaltigkeitsberichterstattung für Unternehmen unterhalb der Berichtspflicht, anschlussfähig an Kundenanfragen.",
+              "Freiwilliger Nachhaltigkeitsbericht für KMU, der ESG-Anfragen von Banken und Kunden gebündelt beantwortet.",
           },
         ],
       },
@@ -91,16 +103,22 @@ export const navContent: Record<"de" | "en" | "pt", NavContent> = {
         label: "Reduzieren und Umsetzen",
         items: [
           {
-            label: "Dekarbonisierungsplan, SBTi",
+            label: "Emissionen reduzieren",
             href: "/dekarbonisierung",
             description:
-              "Wissenschaftsbasierte Reduktionspfade und Übergangspläne, kompatibel zur Science Based Targets initiative.",
+              "Dekarbonisierungsplan, wissenschaftsbasierte Klimaziele nach SBTi und Begleitung der Umsetzung.",
           },
           {
             label: "Maßnahmen: PV, Sanierung",
             href: "/massnahmen",
             description:
-              "Identifikation, Bewertung und Umsetzungsbegleitung konkreter Effizienz- und Erzeugungsmaßnahmen.",
+              "Umsetzung von Photovoltaik, Sanierung und Anlagentechnik über ein geprüftes Partnernetzwerk.",
+          },
+          {
+            label: "Energieeffizienz",
+            href: "/energieeffizienz",
+            description:
+              "Verbrauchsanalyse und Priorisierung von Effizienzmaßnahmen nach Wirtschaftlichkeit und CO₂-Wirkung.",
           },
         ],
       },
@@ -108,37 +126,49 @@ export const navContent: Record<"de" | "en" | "pt", NavContent> = {
         label: "Förderung",
         items: [
           {
-            label: "NKI Klimaschutzkonzepte",
-            href: "/klimaschutzkonzepte",
+            label: "Förderanalyse & Anträge",
+            href: "/foerderung",
             description:
-              "Integrierte Klimaschutzkonzepte für Kommunen, Hochschulen und Einrichtungen, gefördert über die Nationale Klimaschutzinitiative.",
+              "Förderanalyse und Antragsbegleitung für BAFA EEW Modul 4 und 5, GRW und NKI.",
           },
           {
-            label: "BAFA / Förder-Finder",
+            label: "Transformationsplan (EEW Modul 5)",
+            href: "/transformationskonzepte",
+            description:
+              "Geförderter Fahrplan zur Klimaneutralität, 40 bis 60 Prozent der Beratungskosten werden übernommen.",
+          },
+          {
+            label: "Klimaschutzkonzepte (NKI)",
+            href: "/klimaschutzkonzepte",
+            description:
+              "NKI-geförderte Klimaschutzkonzepte für öffentliche und gemeinnützige Einrichtungen, mit 70 bis 90 Prozent Zuschuss.",
+          },
+          {
+            label: "Förder-Finder",
             href: "/foerderungen",
             description:
-              "Überblick über Bundes- und Landesförderungen mit interaktivem Förder-Finder, inklusive EEW Modul 4 für Maschineninvestitionen.",
+              "Interaktives Dashboard aller Bundes- und Landesförderungen rund um Klima, Energie und Effizienz.",
           },
         ],
       },
       {
-        label: "AI-Automatisierung",
+        label: "KI & Automatisierung",
         items: [
           {
-            label: "Individuelle Lösungen",
-            href: HUBSPOT_FORM_URL,
-            external: true,
+            label: "KI & Automatisierung",
+            href: "/ki-automatisierung",
             description:
-              "Automatisierung von Datenerfassung und Reporting-Prozessen rund um Ihre Klimakennzahlen. Sprechen Sie uns an.",
+              "KI-Implementierung, individuelle Softwareentwicklung und automatisierte Nachhaltigkeitsdaten.",
           },
         ],
       },
     ],
     branchenItems: [
-      { label: "Automotive", href: "/insights/csrd-automobilindustrie-lektionen-zulieferer" },
-      { label: "Druck & Verlag", href: "/insights/buchverlage-dekarbonisierung" },
-      { label: "Verbrauchsgüter", href: "/referenzen" },
-      { label: "Öffentliche Einrichtungen", href: "/klimaschutzkonzepte" },
+      { label: "Branchen im Überblick", href: "/branchen" },
+      { label: "Automotive", href: "/branchen/automotive" },
+      { label: "Druck & Verlag", href: "/branchen/druck-verlag" },
+      { label: "Verbrauchsgüter", href: "/branchen/verbrauchsgueter" },
+      { label: "Öffentliche Einrichtungen", href: "/branchen/oeffentliche-einrichtungen" },
     ],
   },
 
@@ -154,16 +184,22 @@ export const navContent: Record<"de" | "en" | "pt", NavContent> = {
         label: "Creating transparency",
         items: [
           {
-            label: "Corporate Carbon Footprint (CCF)",
-            href: "/dekarbonisierung",
+            label: "Carbon accounting",
+            href: "/co2-bilanzierung",
             description:
-              "Company-wide greenhouse gas inventory per the GHG Protocol: Scope 1, Scope 2 and the material Scope 3 categories.",
+              "Corporate and Product Carbon Footprint per the GHG Protocol and ISO standards, documented audit-ready.",
+          },
+          {
+            label: "Corporate Carbon Footprint",
+            href: "/corporate-carbon-footprint",
+            description:
+              "Complete company greenhouse gas inventory across Scope 1, 2 and 3, including Scope 2 dual reporting.",
           },
           {
             label: "Product Carbon Footprint",
-            href: "/dekarbonisierung",
+            href: "/product-carbon-footprint",
             description:
-              "Product-level climate footprint from raw material to end of life, as the basis for customer requests and product comparisons.",
+              "Product carbon footprints cradle-to-gate or cradle-to-grave per ISO 14067 and the GHG Protocol Product Standard.",
           },
           {
             label: "Verification ISO 14064-3",
@@ -177,22 +213,28 @@ export const navContent: Record<"de" | "en" | "pt", NavContent> = {
         label: "Reporting and disclosure",
         items: [
           {
+            label: "Reporting",
+            href: "/berichterstattung",
+            description:
+              "CSRD/ESRS E1, CDP, VSME, GRI and CBAM, mandatory or voluntary, always data-based.",
+          },
+          {
             label: "CSRD / ESRS E1",
             href: "/esrs-e1",
             description:
-              "Climate reporting under the European standards: from the materiality analysis to an audit-ready report.",
+              "Climate data points of the European reporting standard, from the inventory to the transition plan.",
           },
           {
             label: "CDP climate reporting",
             href: "/cdp-klimaberichterstattung",
             description:
-              "Support through the CDP Climate Change Questionnaire, from the data baseline to timely submission in the CDP portal.",
+              "Support through the CDP Climate Change Questionnaire, from the data baseline to timely submission.",
           },
           {
-            label: "VSME / GRI voluntary",
-            href: "/nachhaltigkeit",
+            label: "VSME & voluntary standard",
+            href: "/vsme",
             description:
-              "Voluntary sustainability reporting for companies below the reporting thresholds, compatible with customer requests.",
+              "Voluntary sustainability report for SMEs that answers ESG requests from banks and customers in one place.",
           },
         ],
       },
@@ -200,16 +242,22 @@ export const navContent: Record<"de" | "en" | "pt", NavContent> = {
         label: "Reducing and implementing",
         items: [
           {
-            label: "Decarbonisation plan, SBTi",
+            label: "Reducing emissions",
             href: "/dekarbonisierung",
             description:
-              "Science-based reduction pathways and transition plans, compatible with the Science Based Targets initiative.",
+              "Decarbonisation plan, science-based climate targets per SBTi and implementation support.",
           },
           {
             label: "Measures: PV, refurbishment",
             href: "/massnahmen",
             description:
-              "Identification, assessment and implementation support for concrete efficiency and generation measures.",
+              "Implementation of photovoltaics, refurbishment and plant technology through a vetted partner network.",
+          },
+          {
+            label: "Energy efficiency",
+            href: "/energieeffizienz",
+            description:
+              "Consumption analysis and prioritisation of efficiency measures by cost-effectiveness and CO₂ impact.",
           },
         ],
       },
@@ -217,37 +265,49 @@ export const navContent: Record<"de" | "en" | "pt", NavContent> = {
         label: "Funding",
         items: [
           {
-            label: "NKI climate protection concepts",
-            href: "/klimaschutzkonzepte",
+            label: "Funding analysis & applications",
+            href: "/foerderung",
             description:
-              "Integrated climate protection concepts for municipalities, universities and institutions, funded through the German NKI.",
+              "Funding analysis and application support for BAFA EEW Module 4 and 5, GRW and NKI.",
           },
           {
-            label: "BAFA / funding finder",
+            label: "Transformation plan (EEW Module 5)",
+            href: "/transformationskonzepte",
+            description:
+              "Funded roadmap to climate neutrality; 40 to 60 percent of the consulting costs are covered.",
+          },
+          {
+            label: "Climate action plans (NKI)",
+            href: "/klimaschutzkonzepte",
+            description:
+              "NKI-funded climate protection concepts for public and non-profit institutions, with 70 to 90 percent grants.",
+          },
+          {
+            label: "Funding finder",
             href: "/foerderungen",
             description:
-              "Overview of federal and state funding with an interactive funding finder, including EEW Module 4 for machinery investments.",
+              "Interactive dashboard of all federal and state funding around climate, energy and efficiency.",
           },
         ],
       },
       {
-        label: "AI automation",
+        label: "AI & automation",
         items: [
           {
-            label: "Individual solutions",
-            href: HUBSPOT_FORM_URL,
-            external: true,
+            label: "AI & automation",
+            href: "/ki-automatisierung",
             description:
-              "Automation of data collection and reporting processes around your climate metrics. Talk to us.",
+              "AI implementation, custom software development and automated sustainability data.",
           },
         ],
       },
     ],
     branchenItems: [
-      { label: "Automotive", href: "/insights/csrd-automobilindustrie-lektionen-zulieferer" },
-      { label: "Print & publishing", href: "/insights/buchverlage-dekarbonisierung" },
-      { label: "Consumer goods", href: "/referenzen" },
-      { label: "Public institutions", href: "/klimaschutzkonzepte" },
+      { label: "Industries overview", href: "/branchen" },
+      { label: "Automotive", href: "/branchen/automotive" },
+      { label: "Print & publishing", href: "/branchen/druck-verlag" },
+      { label: "Consumer goods", href: "/branchen/verbrauchsgueter" },
+      { label: "Public institutions", href: "/branchen/oeffentliche-einrichtungen" },
     ],
   },
 
@@ -263,16 +323,22 @@ export const navContent: Record<"de" | "en" | "pt", NavContent> = {
         label: "Criar transparência",
         items: [
           {
-            label: "Inventário CO₂ (CCF)",
-            href: "/dekarbonisierung",
+            label: "Balanço de carbono",
+            href: "/co2-bilanzierung",
             description:
-              "Inventário de gases de efeito estufa para toda a empresa segundo o GHG Protocol: Escopo 1, Escopo 2 e as categorias materiais do Escopo 3.",
+              "Corporate e Product Carbon Footprint segundo o GHG Protocol e as normas ISO, documentado pronto para auditoria.",
+          },
+          {
+            label: "Corporate Carbon Footprint",
+            href: "/corporate-carbon-footprint",
+            description:
+              "Inventário completo de gases de efeito estufa da empresa nos Escopos 1, 2 e 3, incluindo dual reporting do Escopo 2.",
           },
           {
             label: "Product Carbon Footprint",
-            href: "/dekarbonisierung",
+            href: "/product-carbon-footprint",
             description:
-              "Inventário climático ao nível do produto, da matéria-prima ao fim de vida, como base para pedidos de clientes e comparações de produtos.",
+              "Inventários de CO₂ de produtos cradle-to-gate ou cradle-to-grave segundo a ISO 14067 e o GHG Protocol Product Standard.",
           },
           {
             label: "Verificação ISO 14064-3",
@@ -286,22 +352,28 @@ export const navContent: Record<"de" | "en" | "pt", NavContent> = {
         label: "Relatar e divulgar",
         items: [
           {
+            label: "Relatórios",
+            href: "/berichterstattung",
+            description:
+              "CSRD/ESRS E1, CDP, VSME, GRI e CBAM, obrigatório ou voluntário, sempre com base em dados.",
+          },
+          {
             label: "CSRD / ESRS E1",
             href: "/esrs-e1",
             description:
-              "Relato climático segundo os padrões europeus: da análise de materialidade ao relatório auditável.",
+              "Pontos de dados climáticos do padrão europeu de relato, do inventário ao plano de transição.",
           },
           {
             label: "Relato climático CDP",
             href: "/cdp-klimaberichterstattung",
             description:
-              "Acompanhamento no CDP Climate Change Questionnaire, da base de dados à submissão atempada no portal CDP.",
+              "Acompanhamento no CDP Climate Change Questionnaire, da base de dados à submissão atempada.",
           },
           {
-            label: "VSME / GRI voluntário",
-            href: "/nachhaltigkeit",
+            label: "VSME & padrão voluntário",
+            href: "/vsme",
             description:
-              "Relato voluntário de sustentabilidade para empresas abaixo dos limiares de relato, compatível com pedidos de clientes.",
+              "Relatório voluntário de sustentabilidade para PME que responde de forma agregada aos pedidos ESG de bancos e clientes.",
           },
         ],
       },
@@ -309,16 +381,22 @@ export const navContent: Record<"de" | "en" | "pt", NavContent> = {
         label: "Reduzir e implementar",
         items: [
           {
-            label: "Plano de descarbonização, SBTi",
+            label: "Reduzir emissões",
             href: "/dekarbonisierung",
             description:
-              "Trajetórias de redução baseadas na ciência e planos de transição, compatíveis com a Science Based Targets initiative.",
+              "Plano de descarbonização, metas climáticas baseadas na ciência segundo a SBTi e acompanhamento da implementação.",
           },
           {
             label: "Medidas: fotovoltaico, renovação",
             href: "/massnahmen",
             description:
-              "Identificação, avaliação e acompanhamento da implementação de medidas concretas de eficiência e geração.",
+              "Implementação de fotovoltaico, renovação e tecnologia de instalações através de uma rede de parceiros verificada.",
+          },
+          {
+            label: "Eficiência energética",
+            href: "/energieeffizienz",
+            description:
+              "Análise de consumos e priorização de medidas de eficiência por rentabilidade e impacto de CO₂.",
           },
         ],
       },
@@ -326,37 +404,49 @@ export const navContent: Record<"de" | "en" | "pt", NavContent> = {
         label: "Apoios",
         items: [
           {
-            label: "Conceitos NKI de proteção climática",
-            href: "/klimaschutzkonzepte",
+            label: "Análise de apoios & candidaturas",
+            href: "/foerderung",
             description:
-              "Conceitos integrados de proteção climática para municípios, universidades e instituições, financiados pela NKI alemã.",
+              "Análise de apoios e acompanhamento de candidaturas para BAFA EEW Módulos 4 e 5, GRW e NKI.",
           },
           {
-            label: "BAFA / localizador de apoios",
+            label: "Plano de transformação (EEW Módulo 5)",
+            href: "/transformationskonzepte",
+            description:
+              "Roteiro financiado para a neutralidade climática; 40 a 60 por cento dos custos de consultoria são cobertos.",
+          },
+          {
+            label: "Conceitos de proteção climática (NKI)",
+            href: "/klimaschutzkonzepte",
+            description:
+              "Conceitos de proteção climática financiados pela NKI para instituições públicas e sem fins lucrativos, com 70 a 90 por cento de subsídio.",
+          },
+          {
+            label: "Localizador de apoios",
             href: "/foerderungen",
             description:
-              "Visão geral dos apoios federais e regionais com localizador interativo, incluindo o EEW Módulo 4 para investimentos em maquinaria.",
+              "Dashboard interativo de todos os apoios federais e regionais em torno de clima, energia e eficiência.",
           },
         ],
       },
       {
-        label: "Automação com IA",
+        label: "IA & automatização",
         items: [
           {
-            label: "Soluções individuais",
-            href: HUBSPOT_FORM_URL,
-            external: true,
+            label: "IA & automatização",
+            href: "/ki-automatisierung",
             description:
-              "Automação de processos de recolha de dados e de relato em torno dos seus indicadores climáticos. Fale connosco.",
+              "Implementação de IA, desenvolvimento de software individual e dados de sustentabilidade automatizados.",
           },
         ],
       },
     ],
     branchenItems: [
-      { label: "Automóvel", href: "/insights/csrd-automobilindustrie-lektionen-zulieferer" },
-      { label: "Impressão & edição", href: "/insights/buchverlage-dekarbonisierung" },
-      { label: "Bens de consumo", href: "/referenzen" },
-      { label: "Instituições públicas", href: "/klimaschutzkonzepte" },
+      { label: "Setores em resumo", href: "/branchen" },
+      { label: "Automóvel", href: "/branchen/automotive" },
+      { label: "Impressão & edição", href: "/branchen/druck-verlag" },
+      { label: "Bens de consumo", href: "/branchen/verbrauchsgueter" },
+      { label: "Instituições públicas", href: "/branchen/oeffentliche-einrichtungen" },
     ],
   },
 };

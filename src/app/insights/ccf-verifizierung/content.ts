@@ -331,7 +331,7 @@ export const content: Record<"de" | "en" | "pt", Content> = {
     authorSectionTitle: "In a first call we clarify your CCF starting point",
     authorRole: "Managing Director · CCF verification per ISO 14064-3",
     authorCtaLabel: "Book a 30-minute intro call",
-    authorCtaDesc: "Free of charge, no obligation. We screen your inventory for the typical weak spots and outline the sensible next step — verification or targeted preparation.",
+    authorCtaDesc: "Free of charge, no obligation. We screen your inventory for the typical weak spots and outline the sensible next step, verification or targeted preparation.",
 
     faqIntro: "Answers to the questions we are most often asked in intro calls.",
     faqs: [
@@ -486,7 +486,7 @@ export const content: Record<"de" | "en" | "pt", Content> = {
     authorSectionTitle: "Numa primeira conversa esclarecemos a sua situação inicial CCF",
     authorRole: "Administrador · verificação CCF segundo a ISO 14064-3",
     authorCtaLabel: "Agendar conversa inicial de 30 minutos",
-    authorCtaDesc: "Gratuito e sem compromisso. Analisamos o seu inventário em busca dos pontos fracos típicos e definimos o próximo passo razoável — verificação ou preparação direcionada.",
+    authorCtaDesc: "Gratuito e sem compromisso. Analisamos o seu inventário em busca dos pontos fracos típicos e definimos o próximo passo razoável, verificação ou preparação direcionada.",
 
     faqIntro: "Respostas às perguntas que mais nos colocam em conversas iniciais.",
     faqs: [

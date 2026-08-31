@@ -8,7 +8,7 @@ const PAGE_URL = "https://www.cozwei.de/cdp-klimaberichterstattung";
 export const metadata: Metadata = {
   title: "CDP Klima-Reporting & Climate Change Questionnaire | COzwei",
   description:
-    "Begleitung beim CDP Climate Change Questionnaire: von THG-Bilanz und Modul-Redaktion bis zur fristgerechten Einreichung. Drei Pakete (SME, Full, Optimierung) für KMU und Konzerne.",
+    "Begleitung beim CDP Climate Change Questionnaire: von der THG-Bilanz bis zur fristgerechten Einreichung. Drei Pakete für KMU und Konzerne, jetzt anfragen.",
   keywords: [
     "CDP",
     "Carbon Disclosure Project",
@@ -152,7 +152,9 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       position: 2,
       name: c.breadcrumbSolutions,
-      item: "https://www.cozwei.de/nachhaltigkeit",
+      // /nachhaltigkeit existiert nicht mehr und leitet auf /berichterstattung
+      // weiter. Ein Breadcrumb darf nicht auf einen Redirect zeigen.
+      item: "https://www.cozwei.de/berichterstattung",
     },
     {
       "@type": "ListItem",
