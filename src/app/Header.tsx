@@ -20,7 +20,6 @@ export default function Header() {
   const [openMenu, setOpenMenu] = useState<OpenMenu>(null);
   const [activeCat, setActiveCat] = useState(0);
   const [activeItem, setActiveItem] = useState(0);
-  const [activeBranche, setActiveBranche] = useState(0);
   const closeTimeout = useRef<Timeout | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { language, setLanguage } = useLanguage();
@@ -31,7 +30,6 @@ export default function Header() {
     if (openMenu !== menu) {
       setActiveCat(0);
       setActiveItem(0);
-      setActiveBranche(0);
     }
     setOpenMenu(menu);
   };
@@ -45,7 +43,6 @@ export default function Header() {
 
   const activeCategory = nav.categories[activeCat] ?? nav.categories[0];
   const activeNavItem = activeCategory.items[activeItem] ?? activeCategory.items[0];
-  const activeBrancheItem = nav.branchenItems[activeBranche] ?? nav.branchenItems[0];
 
   const topLinkClass =
     "uppercase tracking-wide transition text-base lg:text-lg font-extrabold hover:text-[#81B29A]";
@@ -90,8 +87,8 @@ export default function Header() {
             </button>
           </li>
 
-          {/* BRANCHEN — Mega-Panel wie Lösungen (Kategorie: Branchenerfahrung) */}
-          <li onMouseEnter={() => open("branchen")} onMouseLeave={scheduleClose}>
+          {/* BRANCHEN — schlankes Dropdown unter dem Button */}
+          <li className="relative" onMouseEnter={() => open("branchen")} onMouseLeave={scheduleClose}>
             <button
               className={`${topLinkClass} flex items-center gap-1.5`}
               style={{ color: openMenu === "branchen" ? "#81B29A" : "#3D405B" }}
@@ -109,6 +106,25 @@ export default function Header() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
               </svg>
             </button>
+            {openMenu === "branchen" && (
+              <ul
+                className="absolute left-1/2 -translate-x-1/2 mt-3 min-w-[280px] bg-white border border-[#81B29A]/30 rounded-2xl shadow-lg py-2 z-50"
+                onMouseEnter={() => open("branchen")}
+                onMouseLeave={scheduleClose}
+              >
+                {nav.branchenItems.map((b) => (
+                  <li key={b.label}>
+                    <Link
+                      href={b.href}
+                      onClick={closeNow}
+                      className="block px-6 py-3 hover:bg-[#81B29A]/10 text-[#3D405B] text-base font-semibold"
+                    >
+                      {b.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            )}
           </li>
 
           <li>
@@ -259,59 +275,6 @@ export default function Header() {
               </h3>
               <p className="text-sm leading-relaxed text-white/90">
                 {activeNavItem.description}
-              </p>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* MEGA-PANEL Branchen: Branchenerfahrung -> Branche -> Summary (Slate-Panel rechts) */}
-      {openMenu === "branchen" && (
-        <div
-          className="hidden md:block absolute left-0 right-0 top-full bg-white shadow-2xl border-t border-[#3D405B]/10 z-40"
-          onMouseEnter={() => open("branchen")}
-          onMouseLeave={scheduleClose}
-        >
-          <div className="grid grid-cols-[240px_1fr] lg:grid-cols-[300px_1fr_440px] min-h-[320px]">
-            {/* Spalte 1: eine Kategorie, immer aktiv */}
-            <div className="py-8 pl-10 pr-6 border-r border-[#3D405B]/10">
-              <div
-                className="px-3 py-2.5 rounded-lg uppercase tracking-wide text-sm font-extrabold"
-                style={{ color: "#3D405B", backgroundColor: "rgba(129,178,154,0.12)" }}
-              >
-                {nav.branchenCategoryLabel}
-              </div>
-            </div>
-
-            {/* Spalte 2: Branchen */}
-            <div className="py-8 px-8">
-              <ul className="space-y-1">
-                {nav.branchenItems.map((b, j) => (
-                  <li key={b.label} onMouseEnter={() => setActiveBranche(j)}>
-                    <Link
-                      href={b.href}
-                      onClick={closeNow}
-                      onFocus={() => setActiveBranche(j)}
-                      className="block px-3 py-2.5 rounded-lg uppercase tracking-wide text-sm font-bold transition hover:bg-[#81B29A]/10"
-                      style={{ color: activeBranche === j ? "#81B29A" : "#3D405B" }}
-                    >
-                      {b.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Spalte 3: Summary im Slate-Panel (erst ab lg sichtbar) */}
-            <div className="hidden lg:block py-8 px-10" style={{ backgroundColor: "#3D405B" }}>
-              <h3
-                className="uppercase tracking-wide text-sm font-extrabold mb-4"
-                style={{ color: "#E17960" }}
-              >
-                {activeBrancheItem.label}
-              </h3>
-              <p className="text-sm leading-relaxed text-white/90">
-                {activeBrancheItem.description}
               </p>
             </div>
           </div>
