@@ -141,7 +141,7 @@ export const navContent: Record<"de" | "en" | "pt", NavContent> = {
           },
           {
             label: "Förder-Finder",
-            href: "/foerderungen",
+            href: "/foerderung#dashboard",
             description:
               "Interaktives Dashboard aller Bundes- und Landesförderungen rund um Klima, Energie und Effizienz. In wenigen Fragen zu den passenden Programmen für Ihr Unternehmen.",
           },
@@ -306,7 +306,7 @@ export const navContent: Record<"de" | "en" | "pt", NavContent> = {
           },
           {
             label: "Funding finder",
-            href: "/foerderungen",
+            href: "/foerderung#dashboard",
             description:
               "Interactive dashboard of all federal and state funding around climate, energy and efficiency. A few questions lead you to the programmes that fit your company.",
           },
@@ -471,7 +471,7 @@ export const navContent: Record<"de" | "en" | "pt", NavContent> = {
           },
           {
             label: "Localizador de apoios",
-            href: "/foerderungen",
+            href: "/foerderung#dashboard",
             description:
               "Dashboard interativo de todos os apoios federais e regionais em torno de clima, energia e eficiência. Poucas perguntas levam aos programas certos para a sua empresa.",
           },
