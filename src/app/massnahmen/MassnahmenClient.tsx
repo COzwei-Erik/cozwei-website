@@ -160,7 +160,7 @@ export default function MassnahmenClient() {
                   <p className="mb-4 sm:mb-6 text-sm sm:text-base break-words" style={{ color: '#23243a' }}>
                     {t.measuresCard1Desc}
                   </p>
-                  <a href="/foerderungen" className="mt-auto text-[#81B29A] font-bold flex items-center group/link hover:underline transition text-base sm:text-lg">
+                  <a href="/foerderung#dashboard" className="mt-auto text-[#81B29A] font-bold flex items-center group/link hover:underline transition text-base sm:text-lg">
                     {t.measuresLearnMore}
                     <svg className="ml-2 w-4 h-4 sm:w-5 sm:h-5 text-[#81B29A] group-hover/link:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"/></svg>
                   </a>

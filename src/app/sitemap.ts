@@ -35,7 +35,6 @@ const ROUTES: { path: string; priority: number }[] = [
   { path: "/klimaschutzkonzepte-hochschulen", priority: 0.8 },
   { path: "/klimaschutzkonzepte-kirchen", priority: 0.8 },
   { path: "/klimaschutzkonzepte-krankenhaeuser", priority: 0.8 },
-  { path: "/foerderungen", priority: 0.6 },
 
   // Unternehmen und Inhalte
   { path: "/referenzen", priority: 0.7 },

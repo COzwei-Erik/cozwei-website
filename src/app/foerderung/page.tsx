@@ -138,6 +138,13 @@ export default function Foerderung() {
             Landesprogrammen, mit klarer Empfehlung, welcher Antrag sich lohnt und in
             welcher Reihenfolge.
           </p>
+          <p className="text-lg leading-relaxed mb-8" style={{ color: "#23243a" }}>
+            Einen ersten Überblick können Sie sich selbst verschaffen:{" "}
+            <a href="#dashboard" className="font-bold underline" style={{ color: "#3D405B" }}>
+              zum interaktiven Förderkatalog
+            </a>
+            .
+          </p>
           <h3 className="text-lg font-extrabold mb-4" style={{ color: "#3D405B" }}>
             Das Ergebnis
           </h3>
@@ -272,6 +279,34 @@ export default function Foerderung() {
           </p>
           <p className="text-lg leading-relaxed mt-4" style={{ color: "#23243a" }}>
             Förderwege für öffentliche Einrichtungen im Überblick: <Link href="/branchen/oeffentliche-einrichtungen" className="font-bold underline" style={{ color: "#3D405B" }}>Branchenseite öffentliche Einrichtungen</Link>
+          </p>
+        </div>
+      </section>
+
+      {/* Dashboard, übernommen von der früheren Seite /foerderungen, die per 301
+          hierher umgeleitet wird. Das iframe zieht public/foerderungen-dashboard.html. */}
+      <section id="dashboard" className="w-full py-16 scroll-mt-24 bg-[#81B29A]/5">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-3xl font-extrabold mb-4" style={{ color: "#3D405B" }}>
+            Förderkatalog: alle Programme im interaktiven Dashboard
+          </h2>
+          <p className="text-lg leading-relaxed mb-8 max-w-3xl" style={{ color: "#23243a" }}>
+            Übersicht aller Bundes- und Landesförderungen rund um Klima, Energie und
+            Effizienz. Inklusive interaktivem Förder-Finder, der in wenigen Fragen die
+            passenden Programme für Ihr Unternehmen ermittelt.
+          </p>
+          <div className="rounded-3xl overflow-hidden border border-[#81B29A]/20 bg-white/60 backdrop-blur-xl">
+            <iframe
+              src="/foerderungen-dashboard.html"
+              title="Klima-Förderungen Deutschland: interaktives Dashboard"
+              loading="lazy"
+              className="w-full block"
+              style={{ height: "1400px", border: "none" }}
+            />
+          </div>
+          <p className="text-sm italic mt-4" style={{ color: "#6B6B6B" }}>
+            Hinweis: Auf schmalen Bildschirmen stapeln sich Karte und Liste vertikal. Für die
+            volle Ansicht nebeneinander ein Desktop-Format nutzen.
           </p>
         </div>
       </section>

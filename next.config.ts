@@ -50,6 +50,12 @@ const nextConfig: NextConfig = {
         destination: "/berichterstattung",
         permanent: true,
       },
+      {
+        // Der Foerderkatalog ist als Sektion in /foerderung aufgegangen.
+        source: "/foerderungen",
+        destination: "/foerderung#dashboard",
+        permanent: true,
+      },
     ];
   },
   // Add headers for better caching
