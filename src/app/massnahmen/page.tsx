@@ -3,7 +3,6 @@ import Header from "../Header";
 import Image from "next/image";
 import { useLanguage, translations } from "../LanguageContext";
 import ContactForm from "@/app/components/ContactForm";
-import PDFDownloadForm from "@/app/components/PDFDownloadForm";
 
 export default function Massnahmen() {
   const { language } = useLanguage();
@@ -88,32 +87,6 @@ export default function Massnahmen() {
                     <svg className="ml-2 w-4 h-4 sm:w-5 sm:h-5 text-[#81B29A] group-hover/link:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"/></svg>
                   </a>
                 </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        {/* Klima-Förderungen Section */}
-        <section className="w-full py-8 sm:py-16 flex flex-col items-center justify-center bg-white">
-          <div className="max-w-6xl w-full mx-auto px-4">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-4 sm:mb-6 text-center break-words" style={{ color: '#3D405B' }}>{t.climateFundingTitle}</h2>
-            <p className="text-base sm:text-lg text-center mb-8 sm:mb-12 break-words max-w-3xl mx-auto" style={{ color: '#3D405B' }}>
-              {t.climateFundingSubtitle}
-            </p>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-              {/* Formular links */}
-              <div className="lg:order-1 order-2">
-                <PDFDownloadForm />
-              </div>
-              {/* Förderkatalog-Vorschau rechts */}
-              <div className="lg:order-2 order-1 flex justify-center">
-                <Image
-                  src="/Pictures/foerderkatalog-preview.png"
-                  alt="COzwei Förderkatalog für Klimaförderungen — Cover, Inhaltsverzeichnis und Beispielseiten"
-                  width={1200}
-                  height={1080}
-                  className="w-full max-w-md h-auto"
-                  priority
-                />
               </div>
             </div>
           </div>
