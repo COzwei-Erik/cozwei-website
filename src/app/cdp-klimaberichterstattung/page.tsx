@@ -73,9 +73,9 @@ const serviceSchema = {
     logo: "https://www.cozwei.de/Pictures/cozwei.png",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "Gutenbergstraße 16A",
-      postalCode: "70176",
-      addressLocality: "Stuttgart",
+      streetAddress: "Waldfeuchterstr. 274",
+      postalCode: "52525",
+      addressLocality: "Heinsberg",
       addressCountry: "DE",
     },
     contactPoint: {
@@ -172,9 +172,9 @@ const organizationSchema = {
   sameAs: ["https://www.linkedin.com/company/cozwei"],
   address: {
     "@type": "PostalAddress",
-    streetAddress: "Gutenbergstraße 16A",
-    postalCode: "70176",
-    addressLocality: "Stuttgart",
+    streetAddress: "Waldfeuchterstr. 274",
+    postalCode: "52525",
+    addressLocality: "Heinsberg",
     addressCountry: "DE",
   },
   contactPoint: {

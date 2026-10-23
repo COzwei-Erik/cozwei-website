@@ -153,7 +153,7 @@ export default async function VisitenkartePage({
         </div>
 
         <p className="text-center text-xs mt-10" style={{ color: "#6B6B6B" }}>
-          {k.firma} &bull; Gutenbergstraße 16A, 70176 Stuttgart
+          {k.firma} &bull; Waldfeuchterstr. 274, 52525 Heinsberg
           <br />
           <a href="/impressum" className="underline">
             Impressum

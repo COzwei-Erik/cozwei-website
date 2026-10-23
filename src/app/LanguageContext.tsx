@@ -333,7 +333,7 @@ export const translations = {
     aboutMapSintraAddress: "AV Heliodoro Salgado 48A",
     aboutMapStuttgartLabel: "Stuttgart, Deutschland",
     aboutMapStuttgartAddress: "Gutenbergstraße 16A",
-    footerContactLine: "COzwei GmbH • Gutenbergstraße 16A, 70176 Stuttgart • Telefon: +49 711 12171034 • E-Mail: mail@cozwei.de",
+    footerContactLine: "COzwei GmbH • Waldfeuchterstr. 274, 52525 Heinsberg • HRB 30407, Amtsgericht Aachen • Telefon: +49 711 12171034 • E-Mail: mail@cozwei.de",
     transfHeroTitle: "Klima Transformationspläne – BAFA Modul 5",
     transfHeroDesc: "Je deutschen Standort bis zu 90.000€ Förderung für Dienstleistungen zur Unterstützung bei der Planung und Umsetzung einer Transformation hin zur Treibhausgasneutralität von Unternehmen.",
     transfInfoTitle: "Mit geförderten Klima-Transformationsplänen Kosten senken",
@@ -522,7 +522,7 @@ export const translations = {
         title: "1. Verantwortlicher für die Datenverarbeitung",
         content: [
           "Verantwortlicher gemäß Art. 4 Abs. 7 DSGVO ist:",
-          "COzwei GmbH\nGutenbergstraße 16a 70176 Stuttgart\nDeutschland\nE-Mail: datenschutz@cozwei.de\nTelefon: 0711 12171034"
+          "COzwei GmbH\nWaldfeuchterstr. 274, 52525 Heinsberg\nDeutschland\nE-Mail: datenschutz@cozwei.de\nTelefon: 0711 12171034"
         ]
       },
       {
@@ -595,7 +595,7 @@ export const translations = {
       {
         title: "Angaben gemäß § 5 TMG",
         content: [
-          "COzwei GmbH\nGutenbergstraße 16a\n70176 Stuttgart"
+          "COzwei GmbH\nWaldfeuchterstr. 274\n52525 Heinsberg"
         ]
       },
       {
@@ -614,7 +614,7 @@ export const translations = {
       {
         title: "Verantwortlicher für journalistische Inhalte",
         content: [
-          "COzwei GmbH\nGutenbergstraße 16a\n70176 Stuttgart"
+          "COzwei GmbH\nWaldfeuchterstr. 274\n52525 Heinsberg"
         ]
       },
       {
@@ -919,7 +919,7 @@ export const translations = {
     aboutMapSintraAddress: "AV Heliodoro Salgado 48A",
     aboutMapStuttgartLabel: "Stuttgart, Germany",
     aboutMapStuttgartAddress: "Gutenbergstrasse 16A",
-    footerContactLine: "COzwei GmbH • Gutenbergstrasse 16A, 70176 Stuttgart • Phone: +49 711 12171034 • E-mail: mail@cozwei.de",
+    footerContactLine: "COzwei GmbH • Waldfeuchterstr. 274, 52525 Heinsberg • HRB 30407, Amtsgericht Aachen • Phone: +49 711 12171034 • E-mail: mail@cozwei.de",
     transfHeroTitle: "Climate transformation plans – BAFA Module 5",
     transfHeroDesc: "Up to €90,000 funding per German site for services supporting the planning and implementation of a transformation towards greenhouse gas neutrality for companies.",
     transfInfoTitle: "Reduce costs with subsidized climate transformation plans",
@@ -1108,7 +1108,7 @@ export const translations = {
         title: "1. Controller for Data Processing",
         content: [
           "Controller according to Art. 4 para. 7 GDPR:",
-          "COzwei GmbH\nGutenbergstraße 16a 70176 Stuttgart\nGermany\nE-Mail: datenschutz@cozwei.de\nPhone: 0711 12171034"
+          "COzwei GmbH\nWaldfeuchterstr. 274, 52525 Heinsberg\nGermany\nE-Mail: datenschutz@cozwei.de\nPhone: 0711 12171034"
         ]
       },
       {
@@ -1181,7 +1181,7 @@ export const translations = {
       {
         title: "Information according to § 5 TMG",
         content: [
-          "COzwei GmbH\nGutenbergstraße 16a\n70176 Stuttgart"
+          "COzwei GmbH\nWaldfeuchterstr. 274\n52525 Heinsberg"
         ]
       },
       {
@@ -1200,7 +1200,7 @@ export const translations = {
       {
         title: "Responsible for journalistic content",
         content: [
-          "COzwei GmbH\nGutenbergstraße 16a\n70176 Stuttgart"
+          "COzwei GmbH\nWaldfeuchterstr. 274\n52525 Heinsberg"
         ]
       },
       {
@@ -1506,7 +1506,7 @@ export const translations = {
     aboutMapSintraAddress: "AV Heliodoro Salgado 48A",
     aboutMapStuttgartLabel: "Estugarda, Alemanha",
     aboutMapStuttgartAddress: "Gutenbergstraße 16A",
-    footerContactLine: "COzwei GmbH • Gutenbergstraße 16A, 70176 Stuttgart • Telefone: +49 711 12171034 • E-mail: mail@cozwei.de",
+    footerContactLine: "COzwei GmbH • Waldfeuchterstr. 274, 52525 Heinsberg • HRB 30407, Amtsgericht Aachen • Telefone: +49 711 12171034 • E-mail: mail@cozwei.de",
     transfHeroTitle: "Planos de transformação climática – BAFA Módulo 5",
     transfHeroDesc: "Até 90.000€ de financiamento por local na Alemanha para serviços de apoio ao planeamento e implementação de uma transformação para a neutralidade dos gases com efeito de estufa das empresas.",
     transfInfoTitle: "Reduza custos com planos de transformação climática subsidiados",
@@ -1695,7 +1695,7 @@ export const translations = {
         title: "1. Responsável pelo tratamento de dados",
         content: [
           "Responsável nos termos do Art. 4º, nº 7 do RGPD:",
-          "COzwei GmbH\nGutenbergstraße 16a 70176 Stuttgart\nAlemanha\nE-Mail: datenschutz@cozwei.de\nTelefone: 0711 12171034"
+          "COzwei GmbH\nWaldfeuchterstr. 274, 52525 Heinsberg\nAlemanha\nE-Mail: datenschutz@cozwei.de\nTelefone: 0711 12171034"
         ]
       },
       {
@@ -1768,7 +1768,7 @@ export const translations = {
       {
         title: "Informações de acordo com § 5 TMG",
         content: [
-          "COzwei GmbH\nGutenbergstraße 16a\n70176 Stuttgart"
+          "COzwei GmbH\nWaldfeuchterstr. 274\n52525 Heinsberg"
         ]
       },
       {
@@ -1787,7 +1787,7 @@ export const translations = {
       {
         title: "Responsible for journalistic content",
         content: [
-          "COzwei GmbH\nGutenbergstraße 16a\n70176 Stuttgart"
+          "COzwei GmbH\nWaldfeuchterstr. 274\n52525 Heinsberg"
         ]
       },
       {

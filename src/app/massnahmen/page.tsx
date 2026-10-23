@@ -288,7 +288,7 @@ export default function Massnahmen() {
       {/* Contact Form Section */}
       <ContactForm />
       <footer className="bg-gray-100 py-6 sm:py-8 px-4 mt-8 text-center text-xs sm:text-sm text-gray-600">
-        <div className="mb-2 break-words">COzwei GmbH &bull; Gutenbergstraße 16A, 70176 Stuttgart &bull; Telefon: +49 711 12171034 &bull; E-Mail: mail@cozwei.de</div>
+        <div className="mb-2 break-words">COzwei GmbH &bull; Waldfeuchterstr. 274, 52525 Heinsberg &bull; HRB 30407, Amtsgericht Aachen &bull; Telefon: +49 711 12171034 &bull; E-Mail: mail@cozwei.de</div>
         <div className="flex flex-col sm:flex-row justify-center gap-2 sm:gap-4 mb-2">
           <a href="/datenschutz" className="hover:underline">{t.privacy}</a>
           <a href="/impressum" className="hover:underline">{t.imprint}</a>
