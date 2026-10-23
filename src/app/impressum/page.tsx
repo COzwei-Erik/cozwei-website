@@ -30,7 +30,7 @@ export default function Impressum() {
             className="text-base sm:text-lg leading-relaxed max-w-2xl mx-auto"
             style={{ color: "#23243a", opacity: 0.75 }}
           >
-            Angaben gemäß § 5 Telemediengesetz (TMG) sowie Hinweise zu Haftung, Urheberrecht und Streitbeilegung.
+            Angaben gemäß § 5 Digitale-Dienste-Gesetz (DDG) sowie Hinweise zu Haftung, Urheberrecht und Verbraucherstreitbeilegung.
           </p>
         </div>
       </section>
@@ -71,7 +71,7 @@ export default function Impressum() {
             </p>
           </InfoCard>
 
-          <InfoCard label="Vertreten durch">
+          <InfoCard label="Vertretungsberechtigte Geschäftsführer">
             <p style={{ color: "#23243a" }}>
               Erik Jakob
               <br />
@@ -89,7 +89,7 @@ export default function Impressum() {
 
           <InfoCard label="Umsatzsteuer-ID">
             <p style={{ color: "#23243a" }}>
-              Gemäß § 27 a Umsatzsteuergesetz:{" "}
+              Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG:{" "}
               <span className="font-semibold" style={{ color: "#3D405B" }}>
                 DE358028300
               </span>
@@ -109,28 +109,15 @@ export default function Impressum() {
 
         {/* Legal text sections */}
         <article className="space-y-8">
-          <LegalSection title="Online-Streitbeilegung & Verbraucherschlichtungsstelle">
+          <LegalSection title="Verbraucherstreitbeilegung">
             <p>
-              Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit, die Sie unter{" "}
-              <a
-                href="https://ec.europa.eu/consumers/odr"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-semibold hover:underline"
-                style={{ color: "#81B29A" }}
-              >
-                https://ec.europa.eu/consumers/odr
-              </a>{" "}
-              erreichen. Unsere E-Mail-Adresse finden Sie oben in diesem Impressum.
-            </p>
-            <p>
-              Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
+              Wir sind weder bereit noch verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
             </p>
           </LegalSection>
 
           <LegalSection title="Haftung für Inhalte">
             <p>
-              Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.
+              Als Diensteanbieter sind wir für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Eine allgemeine Pflicht, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen, besteht für uns nicht.
             </p>
             <p>
               Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.

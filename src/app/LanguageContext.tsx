@@ -590,58 +590,6 @@ export const translations = {
         ]
       }
     ],
-    impressumPageTitle: "Impressum",
-    impressumPageSections: [
-      {
-        title: "Angaben gemäß § 5 TMG",
-        content: [
-          "COzwei GmbH\nWaldfeuchterstr. 274\n52525 Heinsberg"
-        ]
-      },
-      {
-        title: "Kontakt",
-        content: [
-          "Telefon: 0711 12171034",
-          "E-Mail: info@cozwei.de"
-        ]
-      },
-      {
-        title: "Umsatzsteuer-ID",
-        content: [
-          "Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz: 000 000 00000"
-        ]
-      },
-      {
-        title: "Verantwortlicher für journalistische Inhalte",
-        content: [
-          "COzwei GmbH\nWaldfeuchterstr. 274\n52525 Heinsberg"
-        ]
-      },
-      {
-        title: "Haftungsausschluss",
-        content: [
-          "Die Inhalte dieser Website werden sorgfältig geprüft. Wir übernehmen jedoch keine Gewähr für deren Vollständigkeit, Richtigkeit und Aktualität. Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.",
-          "Unsere Verpflichtungen zur Entfernung von Informationen oder zur Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte unverzüglich entfernen.",
-          "Wir übernehmen keine Gewähr für die Richtigkeit, Vollständigkeit und Aktualität der bereitgestellten Links. Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich."
-        ]
-      },
-      {
-        title: "Urheberrecht",
-        content: [
-          "Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechts bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.",
-          "Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, sind die Urheberrechte Dritter zu beachten. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte unverzüglich entfernen.",
-          "Unsere Website enthält Links zu externen Webseiten Dritter. Auf diese sind die §§ 8 bis 10 TMG ohne besondere Hinweise nicht anwendbar. Wir haben keinen Einfluss auf die Zulassung und den Inhalt der verlinkten Seiten. Deshalb distanzieren wir uns ausdrücklich von allen Inhalten Dritter, die nach diesen Links oder Verknüpfungen gefunden werden. Diese Erklärung gilt für alle auf dieser Website angebotenen Links und Verknüpfungen."
-        ]
-      },
-      {
-        title: "Datenschutz",
-        content: [
-          "Die Nutzung unserer Website ist in der Regel ohne Angabe personenbezogener Daten möglich. Soweit auf unseren Seiten personenbezogene Daten (wie Name, Anschrift, E-Mail-Adresse, etc.) erhoben werden, erfolgt dies, soweit möglich, stets auf freiwilliger Basis. Diese Daten werden ohne Ihre ausdrückliche Zustimmung nicht an Dritte weitergegeben.",
-          "Wir weisen darauf hin, dass die Datenübertragung im Internet (z.B. bei der Kommunikation per E-Mail) Sicherheitslücken aufweisen kann. Ein lückenloses Schützen der Daten vor dem Zugriff durch Dritte ist nicht möglich. Der Nutzer übernimmt daher das Risiko, dass seine Daten durch Dritte unbeabsichtigt oder absichtlich verändert, zufällig gelöscht oder unter Umständen nicht zugänglich gemacht werden.",
-          "Wir behalten uns vor, die Nutzungsbedingungen zu ändern, zu ergänzen oder zu aktualisieren, auch ohne vorherige Ankündigung. Die Nutzungsbedingungen gelten ab dem Zeitpunkt der erstmaligen Nutzung der Website. Es empfiehlt sich, die Nutzungsbedingungen regelmäßig zu überprüfen."
-        ]
-      }
-    ],
   },
   en: {
     heroTitle: "We make climate goals possible",
@@ -1176,59 +1124,6 @@ export const translations = {
         ]
       }
     ],
-    impressumPageTitle: "Legal Notice",
-    impressumPageSections: [
-      {
-        title: "Information according to § 5 TMG",
-        content: [
-          "COzwei GmbH\nWaldfeuchterstr. 274\n52525 Heinsberg"
-        ]
-      },
-      {
-        title: "Contact",
-        content: [
-          "Phone: 0711 12171034",
-          "E-Mail: info@cozwei.de"
-        ]
-      },
-      {
-        title: "Sales tax identification number",
-        content: [
-          "Sales tax identification number according to § 27 a UStG: 000 000 00000"
-        ]
-      },
-      {
-        title: "Responsible for journalistic content",
-        content: [
-          "COzwei GmbH\nWaldfeuchterstr. 274\n52525 Heinsberg"
-        ]
-      },
-      {
-        title: "Disclaimer",
-        content: [
-          "The content of this website is carefully checked. However, we do not guarantee its completeness, accuracy, and currency. As a service provider, we are responsible for our own content on these pages in accordance with § 7 para. 1 TMG. According to §§ 8 to 10 TMG, we are not obliged to monitor transmitted or stored third-party information or to investigate circumstances that indicate a criminal offense.",
-          "Our obligations to remove information or to block the use of information under general laws remain unaffected by this. However, liability for such violations is only possible from the point in time at which the violation became known. Upon becoming aware of such violations, we will immediately remove such content.",
-          "We assume no liability for the accuracy, completeness, and currency of the information provided. The use of any information on this website is at your own risk."
-        ]
-      },
-      {
-        title: "Copyright",
-        content: [
-          "The content created by the website operators on these pages is subject to German copyright law. The reproduction, editing, distribution, and any kind of use outside the limits of copyright require the written consent of the respective author or creator. Downloads and copies of this page are only permitted for private, non-commercial use.",
-          "Insofar as the content on this page was not created by the operator, copyrights of third parties must be observed. In particular, the content of third parties is marked as such. Should you nevertheless become aware of a copyright infringement, please inform us accordingly. Upon becoming aware of violations of copyright, we will immediately remove such content.",
-          "Our website contains links to external websites of third parties. To these, §§ 8 to 10 TMG are not applicable without special notice. We have no influence on the admission and content of the linked pages. Therefore, we expressly distance ourselves from all content of third parties found via these links or links.",
-          "This declaration applies to all links and links offered on this website."
-        ]
-      },
-      {
-        title: "Data protection",
-        content: [
-          "The use of our website is generally possible without providing personal data. Where personal data (e.g., name, address, email address, etc.) is collected, this is done as far as possible on a voluntary basis. This data will not be passed on to third parties without your explicit consent.",
-          "We would like to point out that the data transmission over the Internet (e.g., when communicating by email) may have security gaps. A complete protection of the data against unauthorized access by third parties is not possible. The user assumes the risk that his data may be changed, deleted, or made inaccessible by third parties unintentionally or intentionally.",
-          "We reserve the right to change the terms of use, to supplement or update them, even without prior notice. The terms of use apply from the point in time of the first use of the website. It is recommended to check the terms of use regularly."
-        ]
-      }
-    ],
   },
   pt: {
     heroTitle: "Tornamos possíveis as metas climáticas",
@@ -1760,59 +1655,6 @@ export const translations = {
         title: "8. Changes to this privacy policy",
         content: [
           "We reserve the right to change this privacy policy to adapt it to technical or legal developments. The current version is always available on our website."
-        ]
-      }
-    ],
-    impressumPageTitle: "Impressum (Nota Legal)",
-    impressumPageSections: [
-      {
-        title: "Informações de acordo com § 5 TMG",
-        content: [
-          "COzwei GmbH\nWaldfeuchterstr. 274\n52525 Heinsberg"
-        ]
-      },
-      {
-        title: "Contact",
-        content: [
-          "Phone: 0711 12171034",
-          "E-Mail: info@cozwei.de"
-        ]
-      },
-      {
-        title: "Sales tax identification number",
-        content: [
-          "Sales tax identification number according to § 27 a UStG: 000 000 00000"
-        ]
-      },
-      {
-        title: "Responsible for journalistic content",
-        content: [
-          "COzwei GmbH\nWaldfeuchterstr. 274\n52525 Heinsberg"
-        ]
-      },
-      {
-        title: "Disclaimer",
-        content: [
-          "The content of this website is carefully checked. However, we do not guarantee its completeness, accuracy, and currency. As a service provider, we are responsible for our own content on these pages in accordance with § 7 para. 1 TMG. According to §§ 8 to 10 TMG, we are not obliged to monitor transmitted or stored third-party information or to investigate circumstances that indicate a criminal offense.",
-          "Our obligations to remove information or to block the use of information under general laws remain unaffected by this. However, liability for such violations is only possible from the point in time at which the violation became known. Upon becoming aware of such violations, we will immediately remove such content.",
-          "We assume no liability for the accuracy, completeness, and currency of the information provided. The use of any information on this website is at your own risk."
-        ]
-      },
-      {
-        title: "Copyright",
-        content: [
-          "The content created by the website operators on these pages is subject to German copyright law. The reproduction, editing, distribution, and any kind of use outside the limits of copyright require the written consent of the respective author or creator. Downloads and copies of this page are only permitted for private, non-commercial use.",
-          "Insofar as the content on this page was not created by the operator, copyrights of third parties must be observed. In particular, the content of third parties is marked as such. Should you nevertheless become aware of a copyright infringement, please inform us accordingly. Upon becoming aware of violations of copyright, we will immediately remove such content.",
-          "Our website contains links to external websites of third parties. To these, §§ 8 to 10 TMG are not applicable without special notice. We have no influence on the admission and content of the linked pages. Therefore, we expressly distance ourselves from all content of third parties found via these links or links.",
-          "This declaration applies to all links and links offered on this website."
-        ]
-      },
-      {
-        title: "Data protection",
-        content: [
-          "The use of our website is generally possible without providing personal data. Where personal data (e.g., name, address, email address, etc.) is collected, this is done as far as possible on a voluntary basis. This data will not be passed on to third parties without your explicit consent.",
-          "We would like to point out that the data transmission over the Internet (e.g., when communicating by email) may have security gaps. A complete protection of the data against unauthorized access by third parties is not possible. The user assumes the risk that his data may be changed, deleted, or made inaccessible by third parties unintentionally or intentionally.",
-          "We reserve the right to change the terms of use, to supplement or update them, even without prior notice. The terms of use apply from the point in time of the first use of the website. It is recommended to check the terms of use regularly."
         ]
       }
     ],
