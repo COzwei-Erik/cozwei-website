@@ -88,19 +88,7 @@ export default function UeberUnsClient() {
               {t.aboutTeamTitle}
             </h2>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 justify-center place-items-stretch h-full">
-              {/* Card 1 */}
-              <div className="flex flex-col md:flex-row items-center bg-white rounded-2xl border border-[#81B29A]/30 p-4 sm:p-6 gap-4 sm:gap-6 min-h-[200px] sm:min-h-[220px] transition-all duration-300 hover:scale-105 hover:border-2 hover:border-[#81B29A] hover:ring-2 hover:ring-[#81B29A]/30 overflow-hidden group">
-                <Image src="/Pictures/Christian.png" alt="Christian Philippen" width={120} height={120} className="rounded-xl object-cover flex-shrink-0 mb-4 md:mb-0 w-24 h-24 sm:w-32 sm:h-32 md:w-36 md:h-36 lg:w-44 lg:h-44" />
-                <div className="flex flex-col justify-center flex-1 items-center md:items-start text-center md:text-left">
-                  <div className="text-lg sm:text-xl font-bold mb-1 text-[#3D405B] break-words">Christian Philippen</div>
-                  <div className="text-sm sm:text-base text-[#23243a] mb-1 break-words">{t.teamFocusChristian}</div>
-                  <div className="text-sm sm:text-base font-semibold mb-2 text-[#81B29A] tracking-wide break-words">{t.teamRoleChristian}</div>
-                  <div className="text-xs sm:text-sm text-[#3D405B] mb-1 break-all">christian.philippen@cozwei.de</div>
-                  <div className="text-xs sm:text-sm text-[#3D405B] mb-3">+49 176 45830572</div>
-                  <a href="https://www.linkedin.com/in/christian-philippen/" target="_blank" rel="noopener noreferrer" className="inline-block"><LinkedInIcon /></a>
-                </div>
-              </div>
-              {/* Card 2 */}
+              {/* Card: Erik Jakob */}
               <div className="flex flex-col md:flex-row items-center bg-white rounded-2xl border border-[#81B29A]/30 p-4 sm:p-6 gap-4 sm:gap-6 min-h-[200px] sm:min-h-[220px] transition-all duration-300 hover:scale-105 hover:border-2 hover:border-[#81B29A] hover:ring-2 hover:ring-[#81B29A]/30 overflow-hidden group">
                 <Image src="/Pictures/Erik.png" alt="Erik Jakob" width={120} height={120} className="rounded-xl object-cover flex-shrink-0 mb-4 md:mb-0 w-24 h-24 sm:w-32 sm:h-32 md:w-36 md:h-36 lg:w-44 lg:h-44" />
                 <div className="flex flex-col justify-center flex-1 items-center md:items-start text-center md:text-left">
@@ -145,25 +133,15 @@ export default function UeberUnsClient() {
                   <a href="https://www.linkedin.com/in/marie-bruns-9384481b5/" target="_blank" rel="noopener noreferrer" className="inline-block"><LinkedInIcon /></a>
                 </div>
               </div>
-              {/* Card 8: Hannah Schmitt */}
+              {/* Card: Christian Philippen */}
               <div className="flex flex-col md:flex-row items-center bg-white rounded-2xl border border-[#81B29A]/30 p-4 sm:p-6 gap-4 sm:gap-6 min-h-[200px] sm:min-h-[220px] transition-all duration-300 hover:scale-105 hover:border-2 hover:border-[#81B29A] hover:ring-2 hover:ring-[#81B29A]/30 overflow-hidden group">
-                <Image src="/Pictures/Hannah_Schmitt_v2.png" alt="Hannah Schmitt" width={120} height={120} className="rounded-xl object-cover flex-shrink-0 mb-4 md:mb-0 w-24 h-24 sm:w-32 sm:h-32 md:w-36 md:h-36 lg:w-44 lg:h-44" />
+                <Image src="/Pictures/Christian.png" alt="Christian Philippen" width={120} height={120} className="rounded-xl object-cover flex-shrink-0 mb-4 md:mb-0 w-24 h-24 sm:w-32 sm:h-32 md:w-36 md:h-36 lg:w-44 lg:h-44" />
                 <div className="flex flex-col justify-center flex-1 items-center md:items-start text-center md:text-left">
-                  <div className="text-lg sm:text-xl font-bold mb-1 text-[#3D405B] break-words">Hannah Schmitt</div>
-                  <div className="text-sm sm:text-base font-semibold mb-2 text-[#81B29A] tracking-wide break-words">{t.teamRoleHannah}</div>
-                  <div className="text-xs sm:text-sm text-[#3D405B] mb-1 break-all">hannah.schmitt@cozwei.de</div>
+                  <div className="text-lg sm:text-xl font-bold mb-1 text-[#3D405B] break-words">Christian Philippen</div>
+                  <div className="text-sm sm:text-base font-semibold mb-2 text-[#81B29A] tracking-wide break-words">{t.teamRoleChristian}</div>
+                  <div className="text-xs sm:text-sm text-[#3D405B] mb-1 break-all">christian.philippen@cozwei.de</div>
                   <div className="text-xs sm:text-sm text-[#3D405B] mb-3">&nbsp;</div>
-                </div>
-              </div>
-              {/* Card 9: Ricardo Furtado */}
-              <div className="flex flex-col md:flex-row items-center bg-white rounded-2xl border border-[#81B29A]/30 p-4 sm:p-6 gap-4 sm:gap-6 min-h-[200px] sm:min-h-[220px] transition-all duration-300 hover:scale-105 hover:border-2 hover:border-[#81B29A] hover:ring-2 hover:ring-[#81B29A]/30 overflow-hidden group">
-                <Image src="/Pictures/Logos Kunden/ChatGPT Image May 5, 2026, 04_35_49 PM.png" alt="Ricardo Furtado" width={120} height={120} className="rounded-xl object-cover flex-shrink-0 mb-4 md:mb-0 w-24 h-24 sm:w-32 sm:h-32 md:w-36 md:h-36 lg:w-44 lg:h-44" />
-                <div className="flex flex-col justify-center flex-1 items-center md:items-start text-center md:text-left">
-                  <div className="text-lg sm:text-xl font-bold mb-1 text-[#3D405B] break-words">Ricardo Furtado</div>
-                  <div className="text-sm sm:text-base font-semibold mb-2 text-[#81B29A] tracking-wide break-words">{t.teamRoleRicardo}</div>
-                  <div className="text-xs sm:text-sm text-[#3D405B] mb-1 break-all">ricardo.furtado@cozwei.de</div>
-                  <div className="text-xs sm:text-sm text-[#3D405B] mb-3">&nbsp;</div>
-                  <a href="https://www.linkedin.com/in/ricardo-furtado-7a36b2100" target="_blank" rel="noopener noreferrer" className="inline-block"><LinkedInIcon /></a>
+                  <a href="https://www.linkedin.com/in/christian-philippen/" target="_blank" rel="noopener noreferrer" className="inline-block"><LinkedInIcon /></a>
                 </div>
               </div>
               {/* Card: Join Us — imaginärer Mitarbeiter / Recruiting-Slot */}

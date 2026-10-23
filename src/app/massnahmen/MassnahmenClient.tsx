@@ -1,7 +1,6 @@
 "use client";
 import Header from "../Header";
 import Image from "next/image";
-import { useState, useMemo, useEffect } from "react";
 import { useLanguage, translations } from "../LanguageContext";
 import ContactForm from "@/app/components/ContactForm";
 import PDFDownloadForm from "@/app/components/PDFDownloadForm";
@@ -9,82 +8,6 @@ import PDFDownloadForm from "@/app/components/PDFDownloadForm";
 export default function MassnahmenClient() {
   const { language } = useLanguage();
   const t = translations[language] || translations.de;
-
-  const [current, setCurrent] = useState(0);
-  const [visible, setVisible] = useState(3);
-  const [isMobile, setIsMobile] = useState(false);
-  
-  // Responsive partner slider
-  useEffect(() => {
-    const updateVisible = () => {
-      const mobile = window.innerWidth < 640;
-      setIsMobile(mobile);
-      setVisible(mobile ? 1 : 3);
-    };
-    
-    updateVisible();
-    window.addEventListener('resize', updateVisible);
-    return () => window.removeEventListener('resize', updateVisible);
-  }, []);
-
-  // Memoize partners data to prevent unnecessary re-renders
-  const partners = useMemo(() => [
-    {
-      type: 'link',
-      href: 'https://solera.de/',
-      logo: '/Pictures/Logos Partner/image.png',
-      name: t.partnerSoleraTitle,
-      text: t.partnerSoleraDesc
-    },
-    {
-      type: 'link',
-      href: 'https://www.effizienzpioniere.de/',
-      logo: '/Pictures/Logos Partner/image copy.png',
-      name: t.partnerEffizienzTitle,
-      text: t.partnerEffizienzDesc
-    },
-    {
-      type: 'link',
-      href: 'https://www.grundsteine.com/',
-      logo: '/Pictures/Logos Partner/image copy 2.png',
-      name: t.partnerGrundsteineTitle,
-      text: t.partnerGrundsteineDesc
-    },
-    {
-      type: 'link',
-      href: 'https://envoria.com/de',
-      logo: '/Pictures/Logos Partner/image copy 3.png',
-      name: t.partnerEnvoriaTitle,
-      text: t.partnerEnvoriaDesc
-    },
-    {
-      type: 'link',
-      href: 'https://www.finmatch.de/',
-      logo: '/Pictures/Logos Partner/image copy 4.png',
-      name: t.partnerFinmatchTitle,
-      text: t.partnerFinmatchDesc
-    },
-    {
-      type: 'link',
-      href: 'https://www.remzero.de/',
-      logo: '/Pictures/Logos Partner/image copy 5.png',
-      name: t.partnerRemzeroTitle,
-      text: t.partnerRemzeroDesc
-    },
-    {
-      logo: '/Pictures/Logos Kunden/image copy 9.png',
-      name: t.partnerMicrosoftTitle,
-      text: t.partnerMicrosoftDesc
-    }
-  ], [t]);
-  const max = partners.length;
-  const canPrev = max > visible;
-  const canNext = max > visible;
-  // Calculate the correct transform so the last slide is always fully visible
-  const getTransform = () => {
-    if (current > max - visible) return `-${(max - visible) * (100 / visible)}%`;
-    return `-${current * (100 / visible)}%`;
-  };
 
   return (
     <div className="min-h-screen flex flex-col font-sans bg-white text-gray-900">
@@ -141,7 +64,7 @@ export default function MassnahmenClient() {
             <p className="mb-8 sm:mb-12 text-base sm:text-lg text-center break-words" style={{ color: '#3D405B' }}>
               {t.measuresSectionSubtitle}
             </p>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 justify-center place-items-stretch h-full">
+            <div className="max-w-xl mx-auto">
               {/* Card 1 */}
               <div className="flex flex-col h-auto sm:h-[520px] rounded-3xl bg-white/60 border border-[#81B29A]/20 backdrop-blur-xl transition-all duration-300 hover:scale-105 hover:border-2 hover:border-[#81B29A] hover:ring-2 hover:ring-[#81B29A]/30 overflow-hidden group">
                 <Image 
@@ -161,30 +84,6 @@ export default function MassnahmenClient() {
                     {t.measuresCard1Desc}
                   </p>
                   <a href="/foerderung#dashboard" className="mt-auto text-[#81B29A] font-bold flex items-center group/link hover:underline transition text-base sm:text-lg">
-                    {t.measuresLearnMore}
-                    <svg className="ml-2 w-4 h-4 sm:w-5 sm:h-5 text-[#81B29A] group-hover/link:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"/></svg>
-                  </a>
-                </div>
-              </div>
-              {/* Card 2 */}
-              <div className="flex flex-col h-auto sm:h-[520px] rounded-3xl bg-white/60 border border-[#81B29A]/20 backdrop-blur-xl transition-all duration-300 hover:scale-105 hover:border-2 hover:border-[#81B29A] hover:ring-2 hover:ring-[#81B29A]/30 overflow-hidden group">
-                <Image 
-                  src="/Pictures/Bild2.png" 
-                  alt="Card 2" 
-                  width={600} 
-                  height={256} 
-                  quality={75}
-                  className="w-full h-48 sm:h-64 object-cover rounded-t-2xl transition-all duration-300"
-                  loading="lazy"
-                />
-                <div className="flex flex-col p-4 sm:p-8 flex-1">
-                  <h3 className="text-base sm:text-lg font-extrabold mb-2 break-words" style={{ color: '#23243a' }}>
-                    {t.measuresCard2Title}
-                  </h3>
-                  <p className="mb-4 sm:mb-6 text-sm sm:text-base break-words" style={{ color: '#23243a' }}>
-                    {t.measuresCard2Desc}
-                  </p>
-                  <a href="#" className="mt-auto text-[#81B29A] font-bold flex items-center group/link hover:underline transition text-base sm:text-lg">
                     {t.measuresLearnMore}
                     <svg className="ml-2 w-4 h-4 sm:w-5 sm:h-5 text-[#81B29A] group-hover/link:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"/></svg>
                   </a>
@@ -217,71 +116,6 @@ export default function MassnahmenClient() {
                 />
               </div>
             </div>
-          </div>
-        </section>
-        {/* Unsere Partner Section */}
-        <section className="w-full py-8 sm:py-16 bg-white">
-          <div className="max-w-7xl mx-auto px-4">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-8 sm:mb-10 text-center break-words" style={{ color: '#3D405B' }}>Unsere Partner</h2>
-            {/* Slider logic */}
-            {(() => {
-              return (
-                <div className="relative w-full">
-                  <button
-                    onClick={() => setCurrent(c => c === 0 ? max - visible : c - 1)}
-                    disabled={!canPrev}
-                    className={`absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white border border-[#81B29A]/40 rounded-full w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center text-[#3D405B] text-xl sm:text-2xl font-bold shadow-none transition hover:bg-[#e0eafc] disabled:opacity-30 disabled:cursor-not-allowed`}
-                    aria-label="Vorherige Partner"
-                  >
-                    &#8592;
-                  </button>
-                  <div className="overflow-hidden px-12 sm:px-16">
-                    <div
-                      className="flex transition-transform duration-500"
-                      style={{ transform: `translateX(${getTransform()})` }}
-                    >
-                      {partners.map((partner, i) => {
-                        const Card = (
-                          <div key={i} className="flex-shrink-0 w-full sm:w-[280px] mx-1 sm:mx-2 flex flex-col items-center bg-white/80 rounded-2xl border border-[#81B29A]/20 p-4 sm:p-6 transition hover:scale-105 hover:border-[#81B29A]" style={{ 
-                            maxWidth: isMobile ? 'calc(100vw - 6rem)' : '280px', 
-                            minWidth: isMobile ? 'calc(100vw - 6rem)' : '280px', 
-                            minHeight: isMobile ? 240 : 280, 
-                            height: isMobile ? 240 : 280 
-                          }}>
-                            <div className="w-20 h-16 sm:w-28 sm:h-20 mb-3 sm:mb-4 flex items-center justify-center">
-                              <Image
-                                src={partner.logo}
-                                alt={partner.name + ' Logo'}
-                                width={120}
-                                height={80}
-                                className="object-contain max-h-12 sm:max-h-16"
-                                loading="lazy"
-                              />
-                            </div>
-                            <h3 className="text-base sm:text-lg font-bold mb-2 text-center break-words" style={{ color: '#3D405B' }}>{partner.name}</h3>
-                            <p className="text-xs sm:text-sm text-center text-[#23243a] break-words">{partner.text}</p>
-                          </div>
-                        );
-                        if (partner.type === 'link') {
-                          return (
-                            <a key={i} href={partner.href} target="_blank" rel="noopener noreferrer" className="text-inherit no-underline">{Card}</a>
-                          );
-                        }
-                        return Card;
-                      })}
-                    </div>
-                  </div>
-                  <button
-                    onClick={() => setCurrent(c => c === max - visible ? 0 : c + 1)}
-                    disabled={!canNext}
-                    className={`absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white border border-[#81B29A]/40 rounded-full w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center text-[#3D405B] text-xl sm:text-2xl font-bold shadow-none transition hover:bg-[#e0eafc] disabled:opacity-30 disabled:cursor-not-allowed`}
-                    aria-label="Nächste Partner"
-                  >
-                    &#8594;
-                  </button>
-                </div>
-              );
-            })()}
           </div>
         </section>
       </main>
