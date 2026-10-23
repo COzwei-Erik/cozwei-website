@@ -73,9 +73,9 @@ export default function Impressum() {
 
           <InfoCard label="Vertreten durch">
             <p style={{ color: "#23243a" }}>
-              Christian Philippen
-              <br />
               Erik Jakob
+              <br />
+              Christian Philippen
             </p>
           </InfoCard>
 

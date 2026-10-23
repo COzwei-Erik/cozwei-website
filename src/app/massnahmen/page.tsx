@@ -64,7 +64,7 @@ export default function Massnahmen() {
             <p className="mb-8 sm:mb-12 text-base sm:text-lg text-center break-words" style={{ color: '#3D405B' }}>
               {t.measuresSectionSubtitle}
             </p>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 justify-center place-items-stretch h-full">
+            <div className="max-w-xl mx-auto">
               {/* Card 1 */}
               <div className="flex flex-col h-auto sm:h-[520px] rounded-3xl bg-white/60 border border-[#81B29A]/20 backdrop-blur-xl transition-all duration-300 hover:scale-105 hover:border-2 hover:border-[#81B29A] hover:ring-2 hover:ring-[#81B29A]/30 overflow-hidden group">
                 <Image 
@@ -84,30 +84,6 @@ export default function Massnahmen() {
                     {t.measuresCard1Desc}
                   </p>
                   <a href="/foerderungen" className="mt-auto text-[#81B29A] font-bold flex items-center group/link hover:underline transition text-base sm:text-lg">
-                    {t.measuresLearnMore}
-                    <svg className="ml-2 w-4 h-4 sm:w-5 sm:h-5 text-[#81B29A] group-hover/link:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"/></svg>
-                  </a>
-                </div>
-              </div>
-              {/* Card 2 */}
-              <div className="flex flex-col h-auto sm:h-[520px] rounded-3xl bg-white/60 border border-[#81B29A]/20 backdrop-blur-xl transition-all duration-300 hover:scale-105 hover:border-2 hover:border-[#81B29A] hover:ring-2 hover:ring-[#81B29A]/30 overflow-hidden group">
-                <Image 
-                  src="/Pictures/Bild2.png" 
-                  alt="Card 2" 
-                  width={600} 
-                  height={256} 
-                  quality={75}
-                  className="w-full h-48 sm:h-64 object-cover rounded-t-2xl transition-all duration-300"
-                  loading="lazy"
-                />
-                <div className="flex flex-col p-4 sm:p-8 flex-1">
-                  <h3 className="text-base sm:text-lg font-extrabold mb-2 break-words" style={{ color: '#23243a' }}>
-                    {t.measuresCard2Title}
-                  </h3>
-                  <p className="mb-4 sm:mb-6 text-sm sm:text-base break-words" style={{ color: '#23243a' }}>
-                    {t.measuresCard2Desc}
-                  </p>
-                  <a href="#" className="mt-auto text-[#81B29A] font-bold flex items-center group/link hover:underline transition text-base sm:text-lg">
                     {t.measuresLearnMore}
                     <svg className="ml-2 w-4 h-4 sm:w-5 sm:h-5 text-[#81B29A] group-hover/link:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"/></svg>
                   </a>
