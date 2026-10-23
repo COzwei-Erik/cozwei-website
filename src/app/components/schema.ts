@@ -15,9 +15,9 @@ export const ORGANIZATION = {
   telephone: "+49 711 12171034",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "Gutenbergstr. 16A",
-    postalCode: "70176",
-    addressLocality: "Stuttgart",
+    streetAddress: "Waldfeuchterstr. 274",
+    postalCode: "52525",
+    addressLocality: "Heinsberg",
     addressCountry: "DE",
   },
 } as const;

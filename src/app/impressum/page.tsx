@@ -9,12 +9,12 @@ const PATH = "/impressum";
 export const metadata: Metadata = {
   title: "Impressum | COzwei GmbH",
   description:
-    "Impressum der COzwei GmbH, Gutenbergstr. 16A in 70176 Stuttgart: Pflichtangaben, Registergericht, Umsatzsteuer-Identifikationsnummer und Kontaktdaten.",
+    "Impressum der COzwei GmbH, Waldfeuchterstr. 274 in 52525 Heinsberg: Pflichtangaben, Registergericht, Umsatzsteuer-Identifikationsnummer und Kontaktdaten.",
   alternates: { canonical: `${SITE_URL}${PATH}` },
   openGraph: {
     title: "Impressum | COzwei GmbH",
     description:
-      "Impressum der COzwei GmbH, Gutenbergstr. 16A in 70176 Stuttgart: Pflichtangaben, Registergericht, Umsatzsteuer-Identifikationsnummer und Kontaktdaten.",
+      "Impressum der COzwei GmbH, Waldfeuchterstr. 274 in 52525 Heinsberg: Pflichtangaben, Registergericht, Umsatzsteuer-Identifikationsnummer und Kontaktdaten.",
     url: `${SITE_URL}${PATH}`,
     siteName: "COzwei",
     locale: "de_DE",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Impressum | COzwei GmbH",
     description:
-      "Impressum der COzwei GmbH, Gutenbergstr. 16A in 70176 Stuttgart: Pflichtangaben, Registergericht, Umsatzsteuer-Identifikationsnummer und Kontaktdaten.",
+      "Impressum der COzwei GmbH, Waldfeuchterstr. 274 in 52525 Heinsberg: Pflichtangaben, Registergericht, Umsatzsteuer-Identifikationsnummer und Kontaktdaten.",
     images: [`${SITE_URL}/Pictures/Artboard 1.png`],
   },
   robots: { index: true, follow: true },

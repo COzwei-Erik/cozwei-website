@@ -13,7 +13,7 @@ export default function DatenschutzClient() {
         <h1 className="text-4xl font-extrabold mb-8 text-center" style={{ color: '#3D405B' }}>Datenschutzerklärung</h1>
         <div className="prose prose-lg max-w-none text-[#3D405B]">
           <h2>1. Verantwortlicher für die Datenverarbeitung</h2>
-          <p>Verantwortlicher gemäß Art. 4 Abs. 7 DSGVO ist:<br />COzwei GmbH<br />Gutenbergstraße 16a 70176 Stuttgart<br />Deutschland<br />E-Mail: datenschutz@cozwei.de<br />Telefon: 0711 12171034</p>
+          <p>Verantwortlicher gemäß Art. 4 Abs. 7 DSGVO ist:<br />COzwei GmbH<br />Waldfeuchterstr. 274, 52525 Heinsberg<br />Deutschland<br />E-Mail: datenschutz@cozwei.de<br />Telefon: 0711 12171034</p>
           <h2>2. Datenschutzbeauftragter</h2>
           <p>Sie erreichen den Datenschutzbeauftragten der COzwei GmbH unter datenschutz@cozwei.de oder per Post unter der oben angegebenen Adresse mit dem Zusatz „Datenschutzbeauftragter&quot;.</p>
           <h2>3. Hosting und Logfiles</h2>
@@ -38,11 +38,11 @@ export default function DatenschutzClient() {
           <h2>7. Ihre Rechte</h2>
           <p>Sie haben das Recht eine Bestätigung darüber zu verlangen, ob Sie betreffende personenbezogene Daten durch uns verarbeitet werden. Ist dies der Fall, geben wir Ihnen gerne Auskunft über diese personenbezogenen Daten und die in Art. 15 DSGVO aufgeführten Informationen. Darüber hinaus steht Ihnen unter den jeweiligen gesetzlichen Voraussetzungen das Recht auf Berichtigung (Art. 16 DSGVO), das Recht auf Einschränkung der Verarbeitung(Art. 18 DSGVO), das Recht auf Löschung (Art. 17 DSGVO), das Recht auf Datenübertragbarkeit (Art. 20 DSGVO) und das Recht Widerspruch gegen die Verarbeitung einzulegen (Art. 21 DSGVO) zu. Beruht die Verarbeitung auf Ihrer Einwilligung, haben Sie das Recht, diese Einwilligung jederzeit zu widerrufen(Art. 7 Abs. 3 DSGVO);die Rechtmäßigkeit der aufgrund der Einwilligung bis zum Widerruf erfolgten Verarbeitung bleibt dabei unberührt. Zur Ausübung Ihrer Betroffenenrechte wenden Sie sich bitte an die unter Ziffer 1 genannten Kontaktmöglichkeiten. Zudem haben Sie jederzeit die Möglichkeit, Ihr Recht auf Beschwerde bei einer zuständigen Aufsichtsbehörde geltend zu machen, wenn Sieder Ansicht sind, dass die Verarbeitung der Sie betreffenden personenbezogenen Daten gegen datenschutzrechtliche Vorschriften verstößt (Art. 77 DSGVO).</p>
           <h2>8. Änderung der Datenschutzerklärung</h2>
-          <p>Wir behalten uns das Recht vor, diese Datenschutzerklärung jederzeit unter Beachtung der geltenden Datenschutzvorschriften zu ändern. Derzeitiger Stand: Mai 2026.</p>
+          <p>Wir behalten uns das Recht vor, diese Datenschutzerklärung jederzeit unter Beachtung der geltenden Datenschutzvorschriften zu ändern. Derzeitiger Stand: Oktober 2026.</p>
         </div>
       </main>
       <footer className="bg-gray-100 py-8 px-4 mt-8 text-center text-sm text-gray-600">
-        <div className="mb-2">COzwei GmbH &bull; Gutenbergstraße 16A, 70176 Stuttgart &bull; Telefon: +49 711 12171034 &bull; E-Mail: mail@cozwei.de</div>
+        <div className="mb-2">COzwei GmbH &bull; Waldfeuchterstr. 274, 52525 Heinsberg &bull; HRB 30407, Amtsgericht Aachen &bull; Telefon: +49 711 12171034 &bull; E-Mail: mail@cozwei.de</div>
         <div className="flex justify-center gap-4 mb-2">
           <a href="/datenschutz" className="hover:underline">{t.privacy}</a>
           <a href="/impressum" className="hover:underline">{t.imprint}</a>

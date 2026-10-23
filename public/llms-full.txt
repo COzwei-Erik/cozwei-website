@@ -6,7 +6,7 @@
 
 COzwei GmbH wurde gegründet, um den Mittelstand und mittlere Konzerne pragmatisch durch die Klimaberichterstattung zu führen. Wir verbinden ingenieurnahe Datenarbeit (THG-Bilanzen nach GHG Protocol, PCF nach ISO 14067/14040-44) mit Reporting-Expertise (CDP, CSRD/ESRS E1, EcoVadis, Science Based Targets initiative). Unsere Kund:innen kommen aus Industrie, Handel, Verlagswesen, Logistik und industriellem B2B-Mittelstand.
 
-Standort: Gutenbergstraße 16A, 70176 Stuttgart, Deutschland.
+Sitz: Waldfeuchterstr. 274, 52525 Heinsberg, Deutschland.
 Sprachen: Deutsch, Englisch, Portugiesisch.
 
 ## Leistungsübersicht
@@ -100,7 +100,7 @@ Ja, die meisten CDP-Module decken Anforderungen aus ESRS E1 (Klimawandel) ab. Wi
 
 ## Kontakt
 
-- Adresse: Gutenbergstraße 16A, 70176 Stuttgart, Deutschland
+- Adresse: Waldfeuchterstr. 274, 52525 Heinsberg, Deutschland
 - Telefon: +49 711 12171034
 - E-Mail: mail@cozwei.de
 - LinkedIn: https://www.linkedin.com/company/cozwei
@@ -108,5 +108,6 @@ Ja, die meisten CDP-Module decken Anforderungen aus ESRS E1 (Klimawandel) ab. Wi
 
 ## Rechtliches
 
+- Handelsregister: HRB 30407, Amtsgericht Aachen
 - Impressum: https://www.cozwei.de/impressum
 - Datenschutz: https://www.cozwei.de/datenschutz

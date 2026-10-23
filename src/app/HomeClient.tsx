@@ -656,7 +656,7 @@ export default function HomeClient() {
         <div className="border-t border-white/15">
           <div className="max-w-7xl mx-auto px-6 py-6 text-center text-xs text-white/70 space-y-2">
             <div>
-              COzwei GmbH &bull; Gutenbergstraße 16A, 70176 Stuttgart &bull; Telefon: +49 711 12171034 &bull; E-Mail: mail@cozwei.de
+              COzwei GmbH &bull; Waldfeuchterstr. 274, 52525 Heinsberg &bull; HRB 30407, Amtsgericht Aachen &bull; Telefon: +49 711 12171034 &bull; E-Mail: mail@cozwei.de
             </div>
             <div className="flex justify-center gap-4">
               <a href="/datenschutz" className="hover:underline hover:text-white">Datenschutz</a>

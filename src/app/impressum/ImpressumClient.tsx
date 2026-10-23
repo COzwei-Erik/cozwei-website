@@ -43,9 +43,9 @@ export default function ImpressumClient() {
               COzwei GmbH
             </p>
             <p style={{ color: "#23243a" }}>
-              Gutenbergstraße 16a
+              Waldfeuchterstr. 274
               <br />
-              70176 Stuttgart
+              52525 Heinsberg
             </p>
           </InfoCard>
 
@@ -81,9 +81,9 @@ export default function ImpressumClient() {
 
           <InfoCard label="Registereintrag">
             <p style={{ color: "#23243a" }}>
-              Handelsregister Stuttgart
+              Registergericht: Amtsgericht Aachen
               <br />
-              HRB 787112
+              Registernummer: HRB 30407
             </p>
           </InfoCard>
 
@@ -102,7 +102,7 @@ export default function ImpressumClient() {
               <br />
               COzwei GmbH
               <br />
-              Gutenbergstraße 16a, 70176 Stuttgart
+              Waldfeuchterstr. 274, 52525 Heinsberg
             </p>
           </InfoCard>
         </div>
@@ -159,7 +159,7 @@ export default function ImpressumClient() {
 
       <footer className="bg-gray-100 py-8 px-4 mt-8 text-center text-sm text-gray-600">
         <div className="mb-2">
-          COzwei GmbH &bull; Gutenbergstraße 16A, 70176 Stuttgart &bull;
+          COzwei GmbH &bull; Waldfeuchterstr. 274, 52525 Heinsberg &bull; HRB 30407, Amtsgericht Aachen &bull;
           Telefon: +49 711 12171034 &bull; E-Mail: mail@cozwei.de
         </div>
         <div className="flex justify-center gap-4 mb-2">
