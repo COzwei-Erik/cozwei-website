@@ -263,13 +263,15 @@ export default function UeberUnsClient() {
 }
 
 function EuropeMap({ t }: { t: (typeof translations)["de"] }) {
-  const [hovered, setHovered] = React.useState<"sintra" | "stuttgart" | null>(null);
+  const [hovered, setHovered] = React.useState<"sintra" | "heinsberg" | null>(null);
   const [sintraBox, setSintraBox] = React.useState(false);
-  const [stuttgartBox, setStuttgartBox] = React.useState(false);
-  // Estimated positions for Sintra and Stuttgart on the map image
-  // (adjust after first try if needed)
-  // Sintra: left: 12%, top: 78%
-  // Stuttgart: left: 56%, top: 38%
+  const [heinsbergBox, setHeinsbergBox] = React.useState(false);
+  // Pin-Positionen in Prozent der Kartengrafik. Die Karte ist konisch
+  // projiziert, die Werte lassen sich also nicht aus Laengen- und
+  // Breitengraden ausrechnen, sondern sind am Bild abgelesen.
+  // Sintra: left 0.5%, top 82%
+  // Heinsberg: left 38.6%, top 51.7% (oestlich der niederlaendischen Grenze,
+  // noerdlich vom Dreilaendereck bei Aachen)
   return (
     <div className="relative w-full flex justify-center items-center" style={{ minHeight: 300, maxWidth: 700 }}>
       <Image
@@ -309,29 +311,31 @@ function EuropeMap({ t }: { t: (typeof translations)["de"] }) {
           </div>
         )}
       </div>
-      {/* Stuttgart marker */}
+      {/* Heinsberg marker */}
       <div
         className="absolute z-20"
-        style={{ left: '41.5%', top: '60%' }}
-        onMouseEnter={() => setHovered('stuttgart')}
-        onMouseLeave={() => setTimeout(() => { if (!stuttgartBox) setHovered(null); }, 50)}
+        style={{ left: '38.6%', top: '51.7%' }}
+        onMouseEnter={() => setHovered('heinsberg')}
+        onMouseLeave={() => setTimeout(() => { if (!heinsbergBox) setHovered(null); }, 50)}
       >
         <div className="w-4 h-4 sm:w-5 sm:h-5 bg-[#81B29A] border-2 sm:border-4 border-[#3D405B] rounded-full cursor-pointer transition-transform hover:scale-110" />
-        {(hovered === 'stuttgart' || stuttgartBox) && (
+        {(hovered === 'heinsberg' || heinsbergBox) && (
           <div className="absolute left-8 sm:left-10 top-[-20px] sm:top-[-30px] z-30 animate-fade-in"
-            onMouseEnter={() => setStuttgartBox(true)}
-            onMouseLeave={() => { setStuttgartBox(false); setHovered(null); }}
+            onMouseEnter={() => setHeinsbergBox(true)}
+            onMouseLeave={() => { setHeinsbergBox(false); setHovered(null); }}
           >
+            {/* TODO: Foto des Standorts Heinsberg ergaenzen. Das bisherige Bild
+                zeigte die Gutenbergstrasse in Stuttgart samt Strassenschild und
+                wurde beim Umzug entfernt, statt es falsch zu beschriften. */}
             <div className="bg-white/90 border border-[#81B29A]/40 rounded-xl p-3 sm:p-4 flex flex-col items-center w-48 sm:w-56">
-              <Image src="/Pictures/WhatsApp Bild 2025-06-15 um 19.04.26_0e38abfb.jpg" alt="Stuttgart" width={128} height={128} className="w-24 h-24 sm:w-32 sm:h-32 object-cover rounded-lg mb-2 transition-all duration-300" />
-              <div className="font-bold text-[#3D405B] mb-1 text-sm sm:text-base break-words">{t.aboutMapStuttgartLabel}</div>
+              <div className="font-bold text-[#3D405B] mb-1 text-sm sm:text-base break-words">{t.aboutMapHeinsbergLabel}</div>
               <a
-                href="https://www.google.com/maps?q=Gutenbergstraße+16A,+70176+Stuttgart,+Deutschland"
+                href="https://www.google.com/maps?q=Waldfeuchterstr.+274,+52525+Heinsberg,+Deutschland"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-xs sm:text-sm text-[#3D405B] underline hover:text-[#81B29A] transition break-words"
               >
-                {t.aboutMapStuttgartAddress}
+                {t.aboutMapHeinsbergAddress}
               </a>
             </div>
           </div>

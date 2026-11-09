@@ -33,7 +33,7 @@ export function organizationSchema() {
     "@context": "https://schema.org",
     ...ORGANIZATION,
     description:
-      "COzwei GmbH ist eine Nachhaltigkeits- und Dekarbonisierungsberatung mit Standorten in Stuttgart und Lissabon. Leistungen sind CO₂-Bilanzierung, Dekarbonisierung, Nachhaltigkeitsberichterstattung, Förderberatung und Automatisierung von Nachhaltigkeitsdaten.",
+      "COzwei GmbH ist eine Nachhaltigkeits- und Dekarbonisierungsberatung mit Standorten in Heinsberg und Lissabon. Leistungen sind CO₂-Bilanzierung, Dekarbonisierung, Nachhaltigkeitsberichterstattung, Förderberatung und Automatisierung von Nachhaltigkeitsdaten.",
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "customer service",
