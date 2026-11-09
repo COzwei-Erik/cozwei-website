@@ -93,7 +93,6 @@ export default function UeberUnsClient() {
                 <Image src="/Pictures/Erik.png" alt="Erik Jakob" width={120} height={120} className="rounded-xl object-cover flex-shrink-0 mb-4 md:mb-0 w-24 h-24 sm:w-32 sm:h-32 md:w-36 md:h-36 lg:w-44 lg:h-44" />
                 <div className="flex flex-col justify-center flex-1 items-center md:items-start text-center md:text-left">
                   <div className="text-lg sm:text-xl font-bold mb-1 text-[#3D405B] break-words">Erik Jakob</div>
-                  <div className="text-sm sm:text-base text-[#23243a] mb-1 break-words">{t.teamFocusErik}</div>
                   <div className="text-sm sm:text-base font-semibold mb-2 text-[#81B29A] tracking-wide break-words">{t.teamRoleErik}</div>
                   <div className="text-xs sm:text-sm text-[#3D405B] mb-1 break-all">erik.jakob@cozwei.de</div>
                   <div className="text-xs sm:text-sm text-[#3D405B] mb-3">+49 176 30886017</div>
