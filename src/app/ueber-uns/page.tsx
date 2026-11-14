@@ -270,9 +270,10 @@ function EuropeMap({ t }: { t: (typeof translations)["de"] }) {
   // (adjust after first try if needed)
   // Sintra: left: 12%, top: 78%
   // Stuttgart: left: 56%, top: 38%
-  // Heinsberg: left 38.6%, top 51.7%. Die Karte ist konisch projiziert, der
-  // Wert ist deshalb an der Grafik abgelesen, nicht aus Koordinaten gerechnet:
-  // oestlich der niederlaendischen Grenze, noerdlich vom Dreilaendereck Aachen.
+  // Heinsberg: left 37.9%, top 55.2%. Von Erik an der Karte markiert und
+  // gegengerechnet ueber zwei Landmarken (Suedspitze IJsselmeer, Stuttgart-
+  // Pin), die Massstab und die leichte Drehung der Kegelprojektion liefern.
+  // Ein frueherer Wert von 51.7% lag rund 100 km zu weit noerdlich.
   return (
     <div className="relative w-full flex justify-center items-center" style={{ minHeight: 300, maxWidth: 700 }}>
       <Image
@@ -344,7 +345,7 @@ function EuropeMap({ t }: { t: (typeof translations)["de"] }) {
           noch nicht. Sonst baugleich zu den beiden anderen Markern. */}
       <div
         className="absolute z-20"
-        style={{ left: '38.6%', top: '51.7%' }}
+        style={{ left: '37.9%', top: '55.2%' }}
         onMouseEnter={() => setHovered('heinsberg')}
         onMouseLeave={() => setTimeout(() => { if (!heinsbergBox) setHovered(null); }, 50)}
       >
